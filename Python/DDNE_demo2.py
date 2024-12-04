@@ -9,11 +9,11 @@ from utils import *
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # ====================
-data_name = 'Mesh-1'
-num_nodes = 38 # Number of nodes (Level-1 w/ fixed node set)
-num_snaps = 445 # Number of snapshots
+data_name = 'SMP22to12'
+num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
+num_snaps = 11 # Number of snapshots
 max_thres = 2000 # Threshold for maximum edge weight
-win_size = 10 # Window size of historical snapshots
+win_size = 2 # Window size of historical snapshots
 enc_dims = [num_nodes, 16] # Layer configuration of encoder
 dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
 alpha = 2.0
@@ -27,8 +27,8 @@ dropout_rate = 0.2 # Dropout rate
 epsilon = 1e-2 # Threshold of zero-refining
 batch_size = 1 # Batch size
 num_epochs = 100 # Number of training epochs
-num_val_snaps = 10 # Number of validation snapshots
-num_test_snaps = 50 # Number of test snapshots
+num_val_snaps = 2 # Number of validation snapshots
+num_test_snaps = 2 # Number of test snapshots
 num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
 
 # ====================
