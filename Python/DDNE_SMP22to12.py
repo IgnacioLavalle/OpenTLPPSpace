@@ -35,7 +35,7 @@ def main():
     data_name = 'SMP22to12'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 11 # Number of snapshots
-    max_thres = 2000 # Threshold for maximum edge weight
+    max_thres = 17500 # Threshold for maximum edge weight
     win_size = args.win_size # Window size of historical snapshots
     enc_dims = [num_nodes, 16] # Layer configuration of encoder
     dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
