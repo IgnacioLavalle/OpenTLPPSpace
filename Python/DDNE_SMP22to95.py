@@ -1,5 +1,5 @@
 # Demonstration of DDNE
-
+import json
 import torch
 import torch.optim as optim
 from DDNE.modules import *
@@ -25,8 +25,22 @@ def parse_args():
     parser.add_argument("--alpha", type=float, default=2.0, help="Alpha value (default: 2.0)")
     parser.add_argument("--beta", type=float, default=0.2, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
+    parser.add_argument("--max_tresh", type=int, default=1, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
+    parser.add_argument("--save_metrics", type=bool, default=False, help="If true saves rmse and mae mean for each epoch")
 
     return parser.parse_args()
+
+def save_metrics_to_json(parameters, train_metrics, val_metrics, test_metrics, filename="metrics.json"):
+    data = {
+        "parameters": parameters,
+        "metrics": {
+            "train": train_metrics,
+            "val": val_metrics,
+            "test": test_metrics
+        }
+    }
+    with open(filename, "w") as file:
+        json.dump(data, file, indent=4)
 
 
 def main():
@@ -35,7 +49,7 @@ def main():
     data_name = 'SMP22to95'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
-    max_thres = 17500 # Threshold for maximum edge weight
+    max_thres = args.max_tresh # Threshold for maximum edge weight
     win_size = args.win_size # Window size of historical snapshots
     enc_dims = [num_nodes, 16] # Layer configuration of encoder
     dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
@@ -64,6 +78,10 @@ def main():
     # Define the optimizer
     opt = optim.Adam(model.parameters(), lr=lr_val, weight_decay=weight_decay_val)
 
+    listaRmseTrain, listaMaeTrain = [], []
+    listaRmseVal, listaMaeVal = [], []
+    listaRmseTest, listaMaeTest = [], []
+    
     # ====================
     for epoch in range(num_epochs):
         # ====================
@@ -71,6 +89,8 @@ def main():
         model.train()
         num_batch = int(np.ceil(num_train_snaps/batch_size)) # Number of batch
         total_loss = 0.0
+        RMSE_list = []
+        MAE_list = []
         for b in range(num_batch):
             start_idx = b*batch_size
             end_idx = (b+1)*batch_size
@@ -100,12 +120,45 @@ def main():
                 loss_ = get_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta)
                 batch_loss = batch_loss + loss_
             # ==========
+            # ===========================
+            # Cálculo de RMSE y MAE en el entrenamiento
+            adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
+            adj_est *= max_thres  # Rescale edge weights to the original value range
+
+            # Refine the prediction result
+            #adj_est = (adj_est + adj_est.T) / 2
+            #for r in range(num_nodes):
+            #    adj_est[r, r] = 0
+            #for r in range(num_nodes):
+            #    for c in range(num_nodes):
+            #        if adj_est[r, c] <= epsilon:
+            #            adj_est[r, c] = 0
+
+            # Calcular RMSE y MAE
+            RMSE = get_RMSE(adj_est, gnd, num_nodes)
+            MAE = get_MAE(adj_est, gnd, num_nodes)
+            
+            # Almacenar los resultados
+            RMSE_list.append(RMSE)
+            MAE_list.append(MAE)
+
+
+            
             # Update model parameter according to batch loss
             opt.zero_grad()
             batch_loss.backward()
             opt.step()
             total_loss = total_loss + batch_loss
+            
         print('Epoch %d Total Loss %f' % (epoch, total_loss))
+        RMSE_mean = np.mean(RMSE_list)
+        RMSE_std = np.std(RMSE_list, ddof=1)
+        MAE_mean = np.mean(MAE_list)
+        MAE_std = np.std(MAE_list, ddof=1)
+        #listaRmseTrain.append(RMSE_mean)
+        #listaMaeTrain.append(MAE_mean)
+        print('Train Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
+
 
         # ====================
         # Validate the model
@@ -154,6 +207,8 @@ def main():
         RMSE_std = np.std(RMSE_list, ddof=1)
         MAE_mean = np.mean(MAE_list)
         MAE_std = np.std(MAE_list, ddof=1)
+        #listaRmseVal.append(RMSE_mean)
+        #listaMaeVal.append(MAE_mean)
         print('Val Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
 
         # ====================
@@ -203,8 +258,23 @@ def main():
         RMSE_std = np.std(RMSE_list, ddof=1)
         MAE_mean = np.mean(MAE_list)
         MAE_std = np.std(MAE_list, ddof=1)
+        #listaRmseTest.append(RMSE_mean)
+        #listaMaeTest.append(MAE_mean)
         print('Test Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
         print()
+    # ====================
+    # Save metrics
+    if args.save_metrics:
+        filename = f"metrics_{data_name}_epochs_{num_epochs}.json"
+        save_metrics_to_json(
+            vars(args),
+            {"RMSE_train": listaRmseTrain, "MAE_train": listaMaeTrain},
+            {"RMSE_val": listaRmseVal, "MAE_val": listaMaeVal},
+            {"RMSE_test": listaRmseTest, "MAE_test": listaMaeTest},
+            filename
+        )
+        print(f"Métricas guardadas en {filename}")
+
 
 if __name__ == "__main__":
     main()
