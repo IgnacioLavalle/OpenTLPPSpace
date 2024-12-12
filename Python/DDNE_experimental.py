@@ -1,5 +1,4 @@
 # Demonstration of DDNE
-import json
 import torch
 import torch.optim as optim
 from DDNE.modules import *
@@ -26,21 +25,8 @@ def parse_args():
     parser.add_argument("--beta", type=float, default=0.2, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_tresh", type=int, default=1, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
-    parser.add_argument("--save_metrics", type=bool, default=False, help="If true saves rmse and mae mean for each epoch")
 
     return parser.parse_args()
-
-def save_metrics_to_json(parameters, train_metrics, val_metrics, test_metrics, filename="metrics.json"):
-    data = {
-        "parameters": parameters,
-        "metrics": {
-            "train": train_metrics,
-            "val": val_metrics,
-            "test": test_metrics
-        }
-    }
-    with open(filename, "w") as file:
-        json.dump(data, file, indent=4)
 
 
 def main():
@@ -67,9 +53,15 @@ def main():
     num_val_snaps = args.num_val_snaps # Number of validation snapshots
     num_test_snaps = args.num_test_snaps # Number of test snapshots
     num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
-    lr_val = 10 ** (args.lr)
+    lr_val = 10 ** (-args.lr)
     weight_decay_val = 10 ** (-args.weight_decay)
 
+    print(f"data_name: {data_name}, max_tresh: {max_thres}, win_size: {win_size}, "
+    f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
+    f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
+    f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
+    f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {weight_decay_val}")
+    print()
 
     # ====================
     # Define the model
@@ -77,10 +69,6 @@ def main():
     # ==========
     # Define the optimizer
     opt = optim.Adam(model.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-
-    listaRmseTrain, listaMaeTrain = [], []
-    listaRmseVal, listaMaeVal = [], []
-    listaRmseTest, listaMaeTest = [], []
     
     # ====================
     for epoch in range(num_epochs):
@@ -125,14 +113,6 @@ def main():
             adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
             adj_est *= max_thres  # Rescale edge weights to the original value range
 
-            # Refine the prediction result
-            #adj_est = (adj_est + adj_est.T) / 2
-            #for r in range(num_nodes):
-            #    adj_est[r, r] = 0
-            #for r in range(num_nodes):
-            #    for c in range(num_nodes):
-            #        if adj_est[r, c] <= epsilon:
-            #            adj_est[r, c] = 0
 
             # Calcular RMSE y MAE
             RMSE = get_RMSE(adj_est, gnd, num_nodes)
@@ -155,8 +135,7 @@ def main():
         RMSE_std = np.std(RMSE_list, ddof=1)
         MAE_mean = np.mean(MAE_list)
         MAE_std = np.std(MAE_list, ddof=1)
-        #listaRmseTrain.append(RMSE_mean)
-        #listaMaeTrain.append(MAE_mean)
+
         print('Train Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
 
 
@@ -207,8 +186,7 @@ def main():
         RMSE_std = np.std(RMSE_list, ddof=1)
         MAE_mean = np.mean(MAE_list)
         MAE_std = np.std(MAE_list, ddof=1)
-        #listaRmseVal.append(RMSE_mean)
-        #listaMaeVal.append(MAE_mean)
+
         print('Val Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
 
         # ====================
@@ -258,23 +236,10 @@ def main():
         RMSE_std = np.std(RMSE_list, ddof=1)
         MAE_mean = np.mean(MAE_list)
         MAE_std = np.std(MAE_list, ddof=1)
-        #listaRmseTest.append(RMSE_mean)
-        #listaMaeTest.append(MAE_mean)
+
         print('Test Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
         print()
     # ====================
-    # Save metrics
-    if args.save_metrics:
-        filename = f"metrics_{data_name}_epochs_{num_epochs}.json"
-        save_metrics_to_json(
-            vars(args),
-            {"RMSE_train": listaRmseTrain, "MAE_train": listaMaeTrain},
-            {"RMSE_val": listaRmseVal, "MAE_val": listaMaeVal},
-            {"RMSE_test": listaRmseTest, "MAE_test": listaMaeTest},
-            filename
-        )
-        print(f"Métricas guardadas en {filename}")
-
 
 if __name__ == "__main__":
     main()
