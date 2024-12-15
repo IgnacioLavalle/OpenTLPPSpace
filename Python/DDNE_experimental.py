@@ -1,4 +1,5 @@
 # Demonstration of DDNE
+import time
 import torch
 import torch.optim as optim
 from DDNE.modules import *
@@ -19,8 +20,8 @@ def parse_args():
     parser.add_argument("--num_epochs", type=int, default=100, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
-    parser.add_argument("--lr", type=int, default=4, help="Learning rate (default: 1e-4)")
-    parser.add_argument("--weight_decay", type=int, default=4, help="Weight decay (default: 1e-4)")
+    parser.add_argument("--lr", type=float, default=0.0001, help="Learning rate (default: 1e-4)")
+    parser.add_argument("--weight_decay", type=float, default=0.0001, help="Weight decay (default: 1e-4)")
     parser.add_argument("--alpha", type=float, default=2.0, help="Alpha value (default: 2.0)")
     parser.add_argument("--beta", type=float, default=0.2, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
@@ -30,6 +31,7 @@ def parse_args():
 
 
 def main():
+    start_time = time.time()
     args = parse_args()
     # ====================
     data_name = 'experimental'
@@ -53,8 +55,8 @@ def main():
     num_val_snaps = args.num_val_snaps # Number of validation snapshots
     num_test_snaps = args.num_test_snaps # Number of test snapshots
     num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
-    lr_val = 10 ** (-args.lr)
-    weight_decay_val = 10 ** (-args.weight_decay)
+    lr_val = args.lr
+    weight_decay_val = args.weight_decay
 
     print(f"data_name: {data_name}, max_tresh: {max_thres}, win_size: {win_size}, "
     f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
@@ -240,6 +242,8 @@ def main():
         print('Test Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
         print()
     # ====================
+    print('Total runtime was %s seconds: ' % (time.time() - start_time))
+
 
 if __name__ == "__main__":
     main()
