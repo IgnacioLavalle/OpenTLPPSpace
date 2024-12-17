@@ -25,7 +25,7 @@ def parse_args():
     parser.add_argument("--alpha", type=float, default=2.0, help="Alpha value (default: 2.0)")
     parser.add_argument("--beta", type=float, default=0.2, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
-    parser.add_argument("--max_tresh", type=float, default=1.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
+    parser.add_argument("--max_thres", type=float, default=1.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
 
     return parser.parse_args()
 
@@ -37,7 +37,7 @@ def main():
     data_name = 'experimental'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
-    max_thres = args.max_tresh # Threshold for maximum edge weight
+    max_thres = args.max_thres # Threshold for maximum edge weight
     win_size = args.win_size # Window size of historical snapshots
     enc_dims = [num_nodes, 16] # Layer configuration of encoder
     dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
@@ -58,7 +58,7 @@ def main():
     lr_val = args.lr
     weight_decay_val = args.weight_decay
 
-    print(f"data_name: {data_name}, max_tresh: {max_thres}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
     f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
     f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
     f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
