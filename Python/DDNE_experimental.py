@@ -25,7 +25,7 @@ def parse_args():
     parser.add_argument("--alpha", type=float, default=2.0, help="Alpha value (default: 2.0)")
     parser.add_argument("--beta", type=float, default=0.2, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
-    parser.add_argument("--max_tresh", type=int, default=1, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
+    parser.add_argument("--max_tresh", type=float, default=1.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
 
     return parser.parse_args()
 
@@ -242,7 +242,7 @@ def main():
         print('Test Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
         print()
     # ====================
-    print('Total runtime was %s seconds: ' % (time.time() - start_time))
+    print('Total runtime was: %s seconds ' % (time.time() - start_time))
 
 
 if __name__ == "__main__":
