@@ -32,10 +32,10 @@ def parse_args():
 def main():
     start_time = time.time()
     args = parse_args()
-    correctly_predicted_count = 0
     misspredicted_1_count = 0
     misspredicted_0_count = 0
     total_elements = 0
+    total_edges_greater_equal_1 = 0
     # ====================
     data_name = 'SMP22to95'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
@@ -231,13 +231,15 @@ def main():
             gnd = get_adj_wei(edges, num_nodes, max_thres)
             # ====================
             if epoch == num_epochs - 1:  # Compute additional metrics only on the final epoch
-                #correctly_predicted_matrix = ((adj_est >= 1) & (gnd >= 1)) | ((adj_est < 1) & (gnd < 1))
-                #correctly_predicted_count += np.sum(correctly_predicted_matrix)
+
                 total_elements += adj_est.size
                 misspredicted_1_matrix = (adj_est >= 1) & (gnd < 1)
                 misspredicted_1_count += np.sum(misspredicted_1_matrix)
                 misspredicted_0_matrix = (adj_est < 1) & (gnd >= 1)
                 misspredicted_0_count += np.sum(misspredicted_0_matrix)
+                #Como la mayoria de las aristas tienen peso menor a 1, es una buena idea agregar el porcentaje de predicciones sobre el total de ejes con rca mayor a 1 
+                total_edges_greater_equal_1 += np.sum(gnd >= 1)
+
 
             # ====================
             # Evaluate the quality of current prediction operation
@@ -254,13 +256,17 @@ def main():
         print('Test Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
         print()
     # ====================
-    #total_matches = correctly_predicted_count 
-    #percentage_matches = (total_matches / total_elements) * 100
-    #print(f"Classification match percentage: {percentage_matches}")
+
     misspredicted_1_percentage = (misspredicted_1_count / total_elements) * 100
     misspredicted_0_percentage = (misspredicted_0_count / total_elements) * 100
     correctly_predicted_percentage = 100 - (misspredicted_1_percentage + misspredicted_0_percentage)
+    
+    misscaptured_1_edges_percentage = (misspredicted_1_count / total_edges_greater_equal_1) * 100
+    correctly_captured_1_edges_percentage = 100 - misscaptured_1_edges_percentage
+
     print(f"Classification match percentage: {correctly_predicted_percentage}, Miss-predicted as 0 percentage: {misspredicted_0_percentage}, Miss-predicted as 1 percentage: {misspredicted_1_percentage}")
+    print()
+    print(f"There were a total of {total_edges_greater_equal_1} edges whose weight was >= 1. {correctly_captured_1_edges_percentage}% were correcly predicted while {misscaptured_1_edges_percentage}% were not")
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
