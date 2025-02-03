@@ -273,7 +273,7 @@ def main():
     print()
     print(f"There were a total of {total_edges_greater_equal_1} edges whose weight was >= 1. {correctly_captured_1_edges_percentage}% were correcly predicted while {misscaptured_1_edges_percentage}% were not")
     print()
-    print(f"There were a total of {total_edges_lesser_than_1} edges whose weight was < 1. {correctly_captured_0_edges_percentage}% were correcly predicted while {correctly_captured_0_edges_percentage}% were not")
+    print(f"There were a total of {total_edges_lesser_than_1} edges whose weight was < 1. {correctly_captured_0_edges_percentage}% were correcly predicted while {misscaptured_0_edges_percentage}% were not")
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
