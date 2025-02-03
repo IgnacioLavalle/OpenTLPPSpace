@@ -12,7 +12,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Demonstration of DDNE")
-    #Argumentos con valores default
+    #adding arguments and their respective default value
 
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
@@ -115,15 +115,12 @@ def main():
                 batch_loss = batch_loss + loss_
             # ==========
             # ===========================
-            # Cálculo de RMSE y MAE en el entrenamiento
             adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
             adj_est *= max_thres  # Rescale edge weights to the original value range
 
-            # Calcular RMSE y MAE
+            # Calculate and store metrics
             RMSE = get_RMSE(adj_est, gnd, num_nodes)
-            MAE = get_MAE(adj_est, gnd, num_nodes)
-            
-            # Almacenar los resultados
+            MAE = get_MAE(adj_est, gnd, num_nodes)            
             RMSE_list.append(RMSE)
             MAE_list.append(MAE)
 
@@ -238,7 +235,7 @@ def main():
                 misspredicted_1_count += np.sum(misspredicted_1_matrix)
                 misspredicted_0_matrix = (adj_est < 1) & (gnd >= 1)
                 misspredicted_0_count += np.sum(misspredicted_0_matrix)
-                #Como la mayoria de las aristas tienen peso menor a 1, es una buena idea agregar el porcentaje de predicciones sobre el total de ejes con rca mayor a 1 
+                #Most edges weight less than 1. So i think it is a good idea to calculate percentages over total edges whose weight is >= 1
                 total_edges_greater_equal_1 += np.sum(gnd >= 1)
                 total_edges_lesser_than_1 += total_elements - total_edges_greater_equal_1
                 
@@ -260,6 +257,7 @@ def main():
         print()
     # ====================
 
+    #Classification related percentages
     misspredicted_1_percentage = (misspredicted_1_count / total_elements) * 100
     misspredicted_0_percentage = (misspredicted_0_count / total_elements) * 100
     correctly_predicted_percentage = 100 - (misspredicted_1_percentage + misspredicted_0_percentage)
@@ -270,7 +268,7 @@ def main():
     misscaptured_0_edges_percentage = (misspredicted_0_count / total_edges_lesser_than_1) * 100
     correctly_captured_0_edges_percentage = 100 - misscaptured_0_edges_percentage
 
-
+    #Final prints
     print(f"Classification match percentage: {correctly_predicted_percentage}, Miss-predicted as 0 percentage: {misspredicted_0_percentage}, Miss-predicted as 1 percentage: {misspredicted_1_percentage}")
     print()
     print(f"There were a total of {total_edges_greater_equal_1} edges whose weight was >= 1. {correctly_captured_1_edges_percentage}% were correcly predicted while {misscaptured_1_edges_percentage}% were not")
