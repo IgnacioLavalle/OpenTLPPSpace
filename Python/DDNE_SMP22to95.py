@@ -36,6 +36,7 @@ def main():
     misspredicted_0_count = 0
     total_elements = 0
     total_edges_greater_equal_1 = 0
+    total_edges_lesser_than_1 = 0
     # ====================
     data_name = 'SMP22to95'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
@@ -239,6 +240,8 @@ def main():
                 misspredicted_0_count += np.sum(misspredicted_0_matrix)
                 #Como la mayoria de las aristas tienen peso menor a 1, es una buena idea agregar el porcentaje de predicciones sobre el total de ejes con rca mayor a 1 
                 total_edges_greater_equal_1 += np.sum(gnd >= 1)
+                total_edges_lesser_than_1 += total_elements - total_edges_greater_equal_1
+                
 
 
             # ====================
@@ -264,9 +267,15 @@ def main():
     misscaptured_1_edges_percentage = (misspredicted_1_count / total_edges_greater_equal_1) * 100
     correctly_captured_1_edges_percentage = 100 - misscaptured_1_edges_percentage
 
+    misscaptured_0_edges_percentage = (misspredicted_0_count / total_edges_lesser_than_1) * 100
+    correctly_captured_0_edges_percentage = 100 - misscaptured_0_edges_percentage
+
+
     print(f"Classification match percentage: {correctly_predicted_percentage}, Miss-predicted as 0 percentage: {misspredicted_0_percentage}, Miss-predicted as 1 percentage: {misspredicted_1_percentage}")
     print()
     print(f"There were a total of {total_edges_greater_equal_1} edges whose weight was >= 1. {correctly_captured_1_edges_percentage}% were correcly predicted while {misscaptured_1_edges_percentage}% were not")
+    print()
+    print(f"There were a total of {total_edges_lesser_than_1} edges whose weight was < 1. {correctly_captured_0_edges_percentage}% were correcly predicted while {correctly_captured_0_edges_percentage}% were not")
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
