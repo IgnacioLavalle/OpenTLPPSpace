@@ -190,7 +190,8 @@ def main():
         MAE_std = np.std(MAE_list, ddof=1)
 
         print('Val Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
-
+        
+        """
         # ====================
         # Test the model
         model.eval()
@@ -244,7 +245,7 @@ def main():
         print('Test Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
         print()
     # ====================
-
+    """
     # ====================
     # Iterative Prediction over Test Years
     print("------- Iterative Prediction Test -------")
