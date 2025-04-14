@@ -299,6 +299,9 @@ def main():
         current_window.pop(0)
         current_window.append(torch.FloatTensor((adj_est / max_thres)).to(device))
     
+    filename_npy = f'predictionsWith_{num_train_snaps}Train_{num_val_snaps}Val_{num_test_snaps}TestSnaps.npy'
+    np.save(filename_npy, np.array(predictions, dtype=object))
+
     #Classification related percentages
     misspredicted_1_percentage = (misspredicted_1_count / total_elements) * 100
     misspredicted_0_percentage = (misspredicted_0_count / total_elements) * 100
