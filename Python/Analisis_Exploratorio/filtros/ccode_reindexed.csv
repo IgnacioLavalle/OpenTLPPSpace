@@ -1,0 +1,138 @@
+code,country_name,original_code,country_iso2,country_iso3
+0,Afghanistan,4,AF,AFG
+1,Algeria,12,DZ,DZA
+2,Angola,24,AO,AGO
+3,Azerbaijan,31,AZ,AZE
+4,Argentina,32,AR,ARG
+5,Australia,36,AU,AUS
+6,Austria,40,AT,AUT
+7,Bangladesh,50,BD,BGD
+8,Armenia,51,AM,ARM
+9,Belgium,56,BE,BEL
+10,Bolivia (Plurinational State of),68,BO,BOL
+11,Bosnia Herzegovina,70,BA,BIH
+12,Brazil,76,BR,BRA
+13,Bulgaria,100,BG,BGR
+14,Myanmar,104,MM,MMR
+15,Burundi,108,BI,BDI
+16,Belarus,112,BY,BLR
+17,Cambodia,116,KH,KHM
+18,Cameroon,120,CM,CMR
+19,Canada,124,CA,CAN
+20,Central African Rep.,140,CF,CAF
+21,Sri Lanka,144,LK,LKA
+22,Chad,148,TD,TCD
+23,Chile,152,CL,CHL
+24,China,156,CN,CHN
+25,Colombia,170,CO,COL
+26,Congo,178,CG,COG
+27,Dem. Rep. of the Congo,180,CD,COD
+28,Costa Rica,188,CR,CRI
+29,Croatia,191,HR,HRV
+30,Cuba,192,CU,CUB
+31,Czechia,203,CZ,CZE
+32,Benin,204,BJ,BEN
+33,Denmark,208,DK,DNK
+34,Dominican Rep.,214,DO,DOM
+35,Ecuador,218,EC,ECU
+36,El Salvador,222,SV,SLV
+37,Ethiopia,231,ET,ETH
+38,Eritrea,232,ER,ERI
+39,Finland,246,FI,FIN
+40,France,251,FR,FRA
+41,Georgia,268,GE,GEO
+42,State of Palestine,275,PS,PSE
+43,Germany,276,DE,DEU
+44,Ghana,288,GH,GHA
+45,Greece,300,GR,GRC
+46,Guatemala,320,GT,GTM
+47,Guinea,324,GN,GIN
+48,Haiti,332,HT,HTI
+49,Honduras,340,HN,HND
+50,"China, Hong Kong SAR",344,HK,HKG
+51,Hungary,348,HU,HUN
+52,Indonesia,360,ID,IDN
+53,Iran,364,IR,IRN
+54,Iraq,368,IQ,IRQ
+55,Ireland,372,IE,IRL
+56,Israel,376,IL,ISR
+57,Italy,380,IT,ITA
+58,Côte d'Ivoire,384,CI,CIV
+59,Japan,392,JP,JPN
+60,Kazakhstan,398,KZ,KAZ
+61,Jordan,400,JO,JOR
+62,Kenya,404,KE,KEN
+63,Dem. People's Rep. of Korea,408,KP,PRK
+64,Rep. of Korea,410,KR,KOR
+65,Kuwait,414,KW,KWT
+66,Kyrgyzstan,417,KG,KGZ
+67,Lao People's Dem. Rep.,418,LA,LAO
+68,Lebanon,422,LB,LBN
+69,Liberia,430,LR,LBR
+70,Libya,434,LY,LBY
+71,Lithuania,440,LT,LTU
+72,Madagascar,450,MG,MDG
+73,Malawi,454,MW,MWI
+74,Malaysia,458,MY,MYS
+75,Mali,466,ML,MLI
+76,Mauritania,478,MR,MRT
+77,Mexico,484,MX,MEX
+78,Mongolia,496,MN,MNG
+79,Morocco,504,MA,MAR
+80,Mozambique,508,MZ,MOZ
+81,Oman,512,OM,OMN
+82,Nepal,524,NP,NPL
+83,Netherlands,528,NL,NLD
+84,New Zealand,554,NZ,NZL
+85,Nicaragua,558,NI,NIC
+86,Niger,562,NE,NER
+87,Nigeria,566,NG,NGA
+88,Norway,579,NO,NOR
+89,Pakistan,586,PK,PAK
+90,Panama,591,PA,PAN
+91,Papua New Guinea,598,PG,PNG
+92,Paraguay,600,PY,PRY
+93,Peru,604,PE,PER
+94,Philippines,608,PH,PHL
+95,Poland,616,PL,POL
+96,Portugal,620,PT,PRT
+97,Qatar,634,QA,QAT
+98,Romania,642,RO,ROU
+99,Russian Federation,643,RU,RUS
+100,Rwanda,646,RW,RWA
+101,Saudi Arabia,682,SA,SAU
+102,Senegal,686,SN,SEN
+103,Serbia,688,RS,SRB
+104,Sierra Leone,694,SL,SLE
+105,India,699,IN,IND
+106,Singapore,702,SG,SGP
+107,Slovakia,703,SK,SVK
+108,Somalia,706,SO,SOM
+109,South Africa,710,ZA,ZAF
+110,Zimbabwe,716,ZW,ZWE
+111,Spain,724,ES,ESP
+112,South Sudan,728,SS,SSD
+113,Sudan,729,SD,SDN
+114,Sudan (...2011),736,SD,SDN
+115,Sweden,752,SE,SWE
+116,Switzerland,757,CH,CHE
+117,Syria,760,SY,SYR
+118,Tajikistan,762,TJ,TJK
+119,Thailand,764,TH,THA
+120,Togo,768,TG,TGO
+121,United Arab Emirates,784,AE,ARE
+122,Tunisia,788,TN,TUN
+123,Türkiye,792,TR,TUR
+124,Turkmenistan,795,TM,TKM
+125,Uganda,800,UG,UGA
+126,Ukraine,804,UA,UKR
+127,Egypt,818,EG,EGY
+128,United Kingdom,826,GB,GBR
+129,United Rep. of Tanzania,834,TZ,TZA
+130,USA,842,US,USA
+131,Burkina Faso,854,BF,BFA
+132,Uruguay,858,UY,URY
+133,Uzbekistan,860,UZ,UZB
+134,Venezuela,862,VE,VEN
+135,Yemen,887,YE,YEM
+136,Zambia,894,ZM,ZMB
