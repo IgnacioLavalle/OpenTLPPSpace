@@ -26,6 +26,8 @@ def parse_args():
     parser.add_argument("--beta", type=float, default=0.2, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_thres", type=float, default=1.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
+    parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
+
 
     return parser.parse_args()
 
@@ -38,7 +40,8 @@ def main():
     total_edges_greater_equal_1 = 0
     total_edges_lesser_than_1 = 0
     # ====================
-    data_name = 'SMP22to95'
+    #data_name = 'SMP22to95'
+    data_name = args.data_name
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     max_thres = args.max_thres # Threshold for maximum edge weight
