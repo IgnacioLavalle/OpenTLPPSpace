@@ -190,62 +190,7 @@ def main():
         MAE_std = np.std(MAE_list, ddof=1)
 
         print('Val Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
-        
-        """
-        # ====================
-        # Test the model
-        model.eval()
-        RMSE_list = []
-        MAE_list = []
-        for tau in range(num_snaps-num_test_snaps, num_snaps):
-            # ====================
-            adj_list = []  # List of historical adjacency matrices
-            for t in range(tau-win_size, tau):
-                # ==========
-                edges = edge_seq[t]
-                adj = get_adj_wei(edges, num_nodes, max_thres)
-                adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
-                adj_tnr = torch.FloatTensor(adj_norm).to(device)
-                adj_list.append(adj_tnr)
-            # ====================
-            # Get the prediction result
-            adj_est, _ = model(adj_list)
-            if torch.cuda.is_available():
-                adj_est = adj_est.cpu().data.numpy()
-            else:
-                adj_est = adj_est.data.numpy()
-            adj_est *= max_thres # Rescale the edge weights to the original value range
-            # ==========
-            # Refine the prediction result
-            adj_est = (adj_est+adj_est.T)/2
-            for r in range(num_nodes):
-                adj_est[r, r] = 0
-            for r in range(num_nodes):
-                for c in range(num_nodes):
-                    if adj_est[r, c] <= epsilon:
-                        adj_est[r, c] = 0
-            # ====================
-            # Get the ground-truth
-            edges = edge_seq[tau]
-            gnd = get_adj_wei(edges, num_nodes, max_thres)
-            # ====================
-
-            # ====================
-            # Evaluate the quality of current prediction operation
-            RMSE = get_RMSE(adj_est, gnd, num_nodes)
-            MAE = get_MAE(adj_est, gnd, num_nodes)
-            RMSE_list.append(RMSE)
-            MAE_list.append(MAE)
-        # ====================
-        RMSE_mean = np.mean(RMSE_list)
-        RMSE_std = np.std(RMSE_list, ddof=1)
-        MAE_mean = np.mean(MAE_list)
-        MAE_std = np.std(MAE_list, ddof=1)
-
-        print('Test Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
-        print()
-    # ====================
-    """
+       
     # ====================
     # Iterative Prediction over Test Years
     print("------- Iterative Prediction Test -------")
@@ -287,13 +232,40 @@ def main():
         print(f"Iterative Prediction Test on year {tau - start_test + 1}: RMSE {RMSE}, MAE {MAE}, KL {kl}")
         
         # Classification stats
-        total_elements += adj_est.size
-        misspredicted_1_matrix = (adj_est >= 1) & (gnd < 1)
-        misspredicted_1_count += np.sum(misspredicted_1_matrix)
-        misspredicted_0_matrix = (adj_est < 1) & (gnd >= 1)
-        misspredicted_0_count += np.sum(misspredicted_0_matrix)
-        total_edges_greater_equal_1 += np.sum(gnd >= 1)
-        total_edges_lesser_than_1 += (adj_est.size - np.sum(gnd >= 1))
+
+        # Classification per snapshot
+        snapshot_total_elements = adj_est.size
+        snapshot_misspredicted_1 = np.sum((adj_est >= 1) & (gnd < 1))  # false positive
+        snapshot_misspredicted_0 = np.sum((adj_est < 1) & (gnd >= 1))  # false negative
+        snapshot_total_edges_ge_1 = np.sum(gnd >= 1)
+        snapshot_total_edges_lt_1 = snapshot_total_elements - snapshot_total_edges_ge_1
+
+        snapshot_miss_1_pct = (snapshot_misspredicted_1 / snapshot_total_elements) * 100
+        snapshot_miss_0_pct = (snapshot_misspredicted_0 / snapshot_total_elements) * 100
+        snapshot_correct_pct = 100 - (snapshot_miss_1_pct + snapshot_miss_0_pct)
+
+        snapshot_misscaptured_1_pct = (snapshot_misspredicted_1 / snapshot_total_edges_ge_1) * 100 if snapshot_total_edges_ge_1 > 0 else 0
+        snapshot_correctly_captured_1_pct = 100 - snapshot_misscaptured_1_pct
+
+        snapshot_misscaptured_0_pct = (snapshot_misspredicted_0 / snapshot_total_edges_lt_1) * 100 if snapshot_total_edges_lt_1 > 0 else 0
+        snapshot_correctly_captured_0_pct = 100 - snapshot_misscaptured_0_pct
+
+        print()
+        print(f"Snapshot {tau - start_test + 1}")
+        print(f"Classification match percentage: {snapshot_correct_pct:.2f}%, Miss-predicted as 0 percentage: {snapshot_miss_0_pct:.2f}%, Miss-predicted as 1 percentage: {snapshot_miss_1_pct:.2f}%")
+        print()
+        print(f"There were a total of {snapshot_total_edges_ge_1} edges whose weight was >= 1. {snapshot_correctly_captured_1_pct:.2f}% were correctly predicted while {snapshot_misscaptured_1_pct:.2f}% were not")
+        print()
+        print(f"There were a total of {snapshot_total_edges_lt_1} edges whose weight was < 1. {snapshot_correctly_captured_0_pct:.2f}% were correctly predicted while {snapshot_misscaptured_0_pct:.2f}% were not")
+        print()
+
+
+        # Global classification
+        total_elements += snapshot_total_elements
+        misspredicted_1_count += snapshot_misspredicted_1
+        misspredicted_0_count += snapshot_misspredicted_0
+        total_edges_greater_equal_1 += snapshot_total_edges_ge_1
+        total_edges_lesser_than_1 += snapshot_total_edges_lt_1
         
         # Update window: we pop the oldest snapshot and them we append the latest prediction
         current_window.pop(0)
