@@ -6,6 +6,12 @@ from DDNE.modules import *
 from DDNE.loss import *
 from utils import *
 import argparse
+import json
+from sklearn.metrics import (
+    roc_curve, auc, accuracy_score, precision_score, 
+    recall_score, f1_score, classification_report
+)
+
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -204,7 +210,16 @@ def main():
         current_window.append(torch.FloatTensor(adj_norm).to(device))
     
     predictions = []
-    
+    snapshot_indices = []
+    fpr_list = []
+    tpr_list = []
+    roc_auc_list = []
+    accuracy_list = []
+    precision_list = []
+    recall_list = []
+    f1_list = []
+    classification_reports = []
+
     # Iterate on test snapshots
     for tau in range(start_test, num_snaps):
         model.eval()
@@ -225,6 +240,11 @@ def main():
         # Calculate metrics comparing them with ground-truth
         edges = edge_seq[tau]
         gnd = get_adj_wei(edges, num_nodes, max_thres)
+
+        true_labels = (gnd >= 1).astype(int).flatten()
+        pred_scores = adj_est.flatten()
+        pred_labels = (adj_est >= 1).astype(int).flatten()
+
         RMSE = get_RMSE(adj_est, gnd, num_nodes)
         MAE = get_MAE(adj_est, gnd, num_nodes)
         kl = get_EW_KL(adj_est, gnd, num_nodes)
@@ -234,39 +254,29 @@ def main():
         # Classification stats
 
         # Classification per snapshot
-        snapshot_total_elements = adj_est.size
-        snapshot_misspredicted_1 = np.sum((adj_est >= 1) & (gnd < 1))  # false positive
-        snapshot_misspredicted_0 = np.sum((adj_est < 1) & (gnd >= 1))  # false negative
-        snapshot_total_edges_ge_1 = np.sum(gnd >= 1)
-        snapshot_total_edges_lt_1 = snapshot_total_elements - snapshot_total_edges_ge_1
-
-        snapshot_miss_1_pct = (snapshot_misspredicted_1 / snapshot_total_elements) * 100
-        snapshot_miss_0_pct = (snapshot_misspredicted_0 / snapshot_total_elements) * 100
-        snapshot_correct_pct = 100 - (snapshot_miss_1_pct + snapshot_miss_0_pct)
-
-        snapshot_misscaptured_1_pct = (snapshot_misspredicted_1 / snapshot_total_edges_ge_1) * 100 if snapshot_total_edges_ge_1 > 0 else 0
-        snapshot_correctly_captured_1_pct = 100 - snapshot_misscaptured_1_pct
-
-        snapshot_misscaptured_0_pct = (snapshot_misspredicted_0 / snapshot_total_edges_lt_1) * 100 if snapshot_total_edges_lt_1 > 0 else 0
-        snapshot_correctly_captured_0_pct = 100 - snapshot_misscaptured_0_pct
-
-        print()
-        print(f"Snapshot {tau - start_test + 1}")
-        print(f"Classification match percentage: {snapshot_correct_pct:.2f}%, Miss-predicted as 0 percentage: {snapshot_miss_0_pct:.2f}%, Miss-predicted as 1 percentage: {snapshot_miss_1_pct:.2f}%")
-        print()
-        print(f"There were a total of {snapshot_total_edges_ge_1} edges whose weight was >= 1. {snapshot_correctly_captured_1_pct:.2f}% were correctly predicted while {snapshot_misscaptured_1_pct:.2f}% were not")
-        print()
-        print(f"There were a total of {snapshot_total_edges_lt_1} edges whose weight was < 1. {snapshot_correctly_captured_0_pct:.2f}% were correctly predicted while {snapshot_misscaptured_0_pct:.2f}% were not")
-        print()
-
-
-        # Global classification
-        total_elements += snapshot_total_elements
-        misspredicted_1_count += snapshot_misspredicted_1
-        misspredicted_0_count += snapshot_misspredicted_0
-        total_edges_greater_equal_1 += snapshot_total_edges_ge_1
-        total_edges_lesser_than_1 += snapshot_total_edges_lt_1
+        fpr, tpr, _ = roc_curve(true_labels, pred_scores)
+        roc_auc = auc(fpr, tpr)
+        acc = accuracy_score(true_labels, pred_labels)
+        prec = precision_score(true_labels, pred_labels, zero_division=0)
+        rec = recall_score(true_labels, pred_labels, zero_division=0)
+        f1 = f1_score(true_labels, pred_labels, zero_division=0)
+        class_report = classification_report(true_labels, pred_labels, output_dict=True)
         
+        snapshot_index = tau - start_test + 1
+        snapshot_indices.append(snapshot_index)
+        fpr_list.append(fpr.tolist())
+        tpr_list.append(tpr.tolist())
+        roc_auc_list.append(roc_auc)
+        accuracy_list.append(acc)
+        precision_list.append(prec)
+        recall_list.append(rec)
+        f1_list.append(f1)
+        classification_reports.append(class_report)
+
+        print(f"Snapshot {snapshot_index}: AUC={roc_auc:.3f}, Acc={acc:.3f}, Prec={prec:.3f}, Rec={rec:.3f}, F1={f1:.3f}")
+        print("Classification report:")
+        print(classification_report(true_labels, pred_labels))
+
         # Update window: we pop the oldest snapshot and them we append the latest prediction
         current_window.pop(0)
         current_window.append(torch.FloatTensor((adj_est / max_thres)).to(device))
@@ -274,24 +284,24 @@ def main():
     filename_npy = f'predictionsWith_{num_train_snaps}Train_{num_val_snaps}Val_{num_test_snaps}TestSnaps.npy'
     np.save(filename_npy, np.array(predictions, dtype=object))
 
-    #Classification related percentages
-    misspredicted_1_percentage = (misspredicted_1_count / total_elements) * 100
-    misspredicted_0_percentage = (misspredicted_0_count / total_elements) * 100
-    correctly_predicted_percentage = 100 - (misspredicted_1_percentage + misspredicted_0_percentage)
-    
-    misscaptured_1_edges_percentage = (misspredicted_1_count / total_edges_greater_equal_1) * 100
-    correctly_captured_1_edges_percentage = 100 - misscaptured_1_edges_percentage
+    # save metrics as json
+    metrics_summary = {
+        "snapshots": snapshot_indices,
+        "fpr": fpr_list,
+        "tpr": tpr_list,
+        "roc_auc": roc_auc_list,
+        "accuracy": accuracy_list,
+        "precision": precision_list,
+        "recall": recall_list,
+        "f1": f1_list,
+        "classification_reports": classification_reports
+    }
 
-    misscaptured_0_edges_percentage = (misspredicted_0_count / total_edges_lesser_than_1) * 100
-    correctly_captured_0_edges_percentage = 100 - misscaptured_0_edges_percentage
+    filename = f"snapshot_metrics_train{num_train_snaps}_test{num_test_snaps}.json"
+    with open(filename, "w") as f:
+        json.dump(metrics_summary, f, indent=2)
 
-    #Final prints
-    print()
-    print(f"Classification match percentage: {correctly_predicted_percentage}, Miss-predicted as 0 percentage: {misspredicted_0_percentage}, Miss-predicted as 1 percentage: {misspredicted_1_percentage}")
-    print()
-    print(f"There were a total of {total_edges_greater_equal_1} edges whose weight was >= 1. {correctly_captured_1_edges_percentage}% were correctly predicted while {misscaptured_1_edges_percentage}% were not")
-    print()
-    print(f"There were a total of {total_edges_lesser_than_1} edges whose weight was < 1. {correctly_captured_0_edges_percentage}% were correctly predicted while {misscaptured_0_edges_percentage}% were not")
+
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
