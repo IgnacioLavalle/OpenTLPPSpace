@@ -9,7 +9,8 @@ import argparse
 import json
 from sklearn.metrics import (
     roc_curve, auc, accuracy_score, precision_score, 
-    recall_score, f1_score, classification_report
+    recall_score, f1_score, classification_report,
+    precision_recall_curve, average_precision_score
 )
 
 
@@ -32,6 +33,9 @@ def parse_args():
     parser.add_argument("--beta", type=float, default=0.0, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
+    parser.add_argument("--save_forecast", type=bool, default=False, help="Indicates whether you want or not to save the forecast result")
+    parser.add_argument("--save_metrics", type=bool, default=True, help="Indicates whether you want or not to save the classification metrics json")
+
 
     return parser.parse_args()
 
@@ -43,6 +47,8 @@ def main():
     total_elements = 0
     total_edges_greater_equal_1 = 0
     total_edges_lesser_than_1 = 0
+    save_forecast = args.save_forecast
+    save_metrics = args.save_metrics
     # ====================
     data_name = 'SMP22to95'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
@@ -219,6 +225,11 @@ def main():
     recall_list = []
     f1_list = []
     classification_reports = []
+    precision_curve_list = []
+    recall_curve_list = []
+    average_precision_list = []
+
+
 
     # Iterate on test snapshots
     for tau in range(start_test, num_snaps):
@@ -261,6 +272,16 @@ def main():
         rec = recall_score(true_labels, pred_labels, zero_division=0)
         f1 = f1_score(true_labels, pred_labels, zero_division=0)
         class_report = classification_report(true_labels, pred_labels, output_dict=True)
+
+        # Precision-Recall Curve
+        precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
+        avg_prec = average_precision_score(true_labels, pred_scores)
+
+        precision_curve_list.append(precision_vals.tolist())
+        recall_curve_list.append(recall_vals.tolist())
+        average_precision_list.append(avg_prec)
+
+
         
         snapshot_index = tau - start_test + 1
         snapshot_indices.append(snapshot_index)
@@ -273,7 +294,7 @@ def main():
         f1_list.append(f1)
         classification_reports.append(class_report)
 
-        print(f"Snapshot {snapshot_index}: AUC={roc_auc:.3f}, Acc={acc:.3f}, Prec={prec:.3f}, Rec={rec:.3f}, F1={f1:.3f}")
+        print(f"Snapshot {snapshot_index}: AUC={roc_auc:.3f}, AUC-PR={avg_prec:.3f}, Acc={acc:.3f}, Prec={prec:.3f}, Rec={rec:.3f}, F1={f1:.3f}")
         print("Classification report:")
         print(classification_report(true_labels, pred_labels))
 
@@ -281,25 +302,31 @@ def main():
         current_window.pop(0)
         current_window.append(torch.FloatTensor((adj_est / max_thres)).to(device))
     
-    filename_npy = f'predictionsWith_{num_train_snaps}Train_{num_val_snaps}Val_{num_test_snaps}TestSnaps.npy'
-    np.save(filename_npy, np.array(predictions, dtype=object))
+    if save_forecast:
+        filename_npy = f'predictionsWith_{num_train_snaps}Train_{num_val_snaps}Val_{num_test_snaps}TestSnaps.npy'
+        np.save(filename_npy, np.array(predictions, dtype=object))
 
-    # save metrics as json
-    metrics_summary = {
-        "snapshots": snapshot_indices,
-        "fpr": fpr_list,
-        "tpr": tpr_list,
-        "roc_auc": roc_auc_list,
-        "accuracy": accuracy_list,
-        "precision": precision_list,
-        "recall": recall_list,
-        "f1": f1_list,
-        "classification_reports": classification_reports
-    }
+    if save_metrics:
+        # save metrics as json
+        metrics_summary = {
+            "snapshots": snapshot_indices,
+            "fpr": fpr_list,
+            "tpr": tpr_list,
+            "roc_auc": roc_auc_list,
+            "accuracy": accuracy_list,
+            "precision": precision_list,
+            "recall": recall_list,
+            "f1": f1_list,
+            "classification_reports": classification_reports,
+            "precision_curve": precision_curve_list,
+            "recall_curve": recall_curve_list,
+            "average_precision": average_precision_list
 
-    filename = f"snapshot_metrics_train{num_train_snaps}_test{num_test_snaps}.json"
-    with open(filename, "w") as f:
-        json.dump(metrics_summary, f, indent=2)
+        }
+
+        filename = f"snapshot_metrics_train{num_train_snaps}_test{num_test_snaps}.json"
+        with open(filename, "w") as f:
+            json.dump(metrics_summary, f, indent=2)
 
 
     print()
