@@ -8,9 +8,9 @@ from utils import *
 import argparse
 import json
 from sklearn.metrics import (
-    roc_curve, auc, accuracy_score, precision_score, 
+    mean_absolute_error, mean_squared_error, roc_curve, auc, accuracy_score, precision_score, 
     recall_score, f1_score, classification_report,
-    precision_recall_curve, average_precision_score
+    precision_recall_curve, average_precision_score, root_mean_squared_error
 )
 
 
@@ -158,7 +158,7 @@ def main():
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
                 adj_est, dyn_emb = model(adj_list)
-                loss_ = loss_ = get_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta, valid_mask)
+                loss_ = loss_ = get_masked_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta, valid_mask)
                 batch_loss = batch_loss + loss_
             # ==========
             # ===========================
@@ -172,7 +172,7 @@ def main():
             adj_est_np *= max_thres  # Reescalar
             gnd_np *= max_thres
 
-            RMSE = mean_squared_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np], squared=False)
+            RMSE = root_mean_squared_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
             MAE = mean_absolute_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
 
 
