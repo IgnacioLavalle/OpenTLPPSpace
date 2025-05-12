@@ -170,7 +170,6 @@ def main():
             gnd_np = gnd  # ya es numpy
 
             adj_est_np *= max_thres  # Reescalar
-            gnd_np *= max_thres
 
             RMSE = root_mean_squared_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
             MAE = mean_absolute_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
@@ -217,33 +216,28 @@ def main():
             # ====================
             # Get the prediction result
             adj_est, _ = model(adj_list)
-            if torch.cuda.is_available():
-                adj_est = adj_est.cpu().data.numpy()
-            else:
-                adj_est = adj_est.data.numpy()
-            adj_est *= max_thres # Rescale edge weights to the original value range
+            adj_est_np = adj_est.detach().cpu().numpy()
+            #if torch.cuda.is_available():
+            #    adj_est = adj_est.cpu().data.numpy()
+            #else:
+            #    adj_est = adj_est.data.numpy()
+            #adj_est *= max_thres # Rescale edge weights to the original value range
+            adj_est_np *= max_thres
+
             # ==========
             # Refine the prediction result
-            adj_est = (adj_est+adj_est.T)/2
-            for r in range(num_nodes):
-                adj_est[r, r] = 0
-            for r in range(num_nodes):
-                for c in range(num_nodes):
-                    if adj_est[r, c] <= epsilon:
-                        adj_est[r, c] = 0
+            adj_est_np = (adj_est_np + adj_est_np.T) / 2
+            np.fill_diagonal(adj_est_np, 0)
+            adj_est_np[adj_est_np <= epsilon] = 0
+
             # ====================
             # Get ground-truth
             edges = edge_seq[tau]
             gnd = get_adj_wei(edges, num_nodes, max_thres)
-            if isinstance(adj_est, torch.Tensor):
-                adj_est_np = adj_est.detach().cpu().numpy()
-            else:
-                adj_est_np = adj_est
+            gnd_np = np.array(gnd)
 
-            gnd_np = gnd  # ya es numpy
 
             adj_est_np *= max_thres  # Reescalar
-            gnd_np *= max_thres
 
             # ====================
             # Evaluate the quality of current prediction operation
@@ -344,11 +338,11 @@ def main():
         rmse_std = np.std(sq_errors)
 
 
-        RMSE = get_RMSE(adj_est, gnd, num_nodes)
-        MAE = get_MAE(adj_est, gnd, num_nodes)
-        kl = get_EW_KL(adj_est, gnd, num_nodes)
+        RMSE = root_mean_squared_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
+        MAE = mean_absolute_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
+        #kl = get_EW_KL(adj_est, gnd, num_nodes)
 
-        print(f"Iterative Prediction Test on year {tau - start_test + 1}: RMSE {RMSE}, MAE {MAE}, KL {kl}")
+        print(f"Iterative Prediction Test on year {tau - start_test + 1}: RMSE {RMSE}, MAE {MAE}")
         print()
         print(f"Iterative Prediction Test on year {tau - start_test + 1}: Filtered RMSE: {filtered_rmse} std: {rmse_std},  MAE {filtered_mae}, std: {mae_std}")
 
