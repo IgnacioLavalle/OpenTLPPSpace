@@ -254,7 +254,6 @@ def main():
 
         ### 
         #This part filters unwanted connections; we have a bipartite graph but DDNE takes it as a squared matrix, which makes a lot of noise in the results
-        #At this moment, this filter only works for classification related metrics
 
         max_country = 136 #Max country index is 136
         min_product = 137  # Minimum product index is 137
@@ -272,6 +271,19 @@ def main():
         pred_scores = pred_vals
         pred_labels = (pred_vals >= 1).astype(int)
 
+        #Errors
+        abs_errors = np.abs(pred_vals - true_vals)
+        sq_errors = (pred_vals - true_vals) ** 2
+
+        #MAE and std
+        filtered_mae = np.mean(abs_errors)
+        mae_std = np.std(abs_errors)
+
+        #RMSE and std
+        filtered_rmse = np.sqrt(np.mean(sq_errors))
+        rmse_std = np.std(sq_errors)
+
+
         ###
 
         RMSE = get_RMSE(adj_est, gnd, num_nodes)
@@ -279,7 +291,9 @@ def main():
         kl = get_EW_KL(adj_est, gnd, num_nodes)
 
         print(f"Iterative Prediction Test on year {tau - start_test + 1}: RMSE {RMSE}, MAE {MAE}, KL {kl}")
-        
+        print()
+        print(f"Iterative Prediction Test on year {tau - start_test + 1}: Filtered RMSE: {filtered_rmse} std: {rmse_std},  MAE {filtered_mae}, std: {mae_std}")
+
         # Classification stats
 
         # Classification per snapshot
