@@ -235,10 +235,19 @@ def main():
             # Get ground-truth
             edges = edge_seq[tau]
             gnd = get_adj_wei(edges, num_nodes, max_thres)
+            adj_est_np = adj_est.detach().cpu().numpy()
+            gnd_np = gnd  # ya es numpy
+
+            adj_est_np *= max_thres  # Reescalar
+            gnd_np *= max_thres
+
             # ====================
             # Evaluate the quality of current prediction operation
             #RMSE = get_RMSE(adj_est, gnd, num_nodes)
             #MAE = get_MAE(adj_est, gnd, num_nodes)
+            RMSE = root_mean_squared_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
+            MAE = mean_absolute_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
+
             RMSE_list.append(RMSE)
             MAE_list.append(MAE)
         # ====================
