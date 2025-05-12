@@ -237,8 +237,6 @@ def main():
             gnd_np = np.array(gnd)
 
 
-            adj_est_np *= max_thres  # Reescalar
-
             # ====================
             # Evaluate the quality of current prediction operation
             #RMSE = get_RMSE(adj_est, gnd, num_nodes)
