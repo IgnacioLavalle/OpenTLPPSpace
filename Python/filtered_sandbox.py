@@ -177,8 +177,8 @@ def main():
 
 
             # Calculate and store metrics
-            RMSE = get_RMSE(adj_est, gnd, num_nodes)
-            MAE = get_MAE(adj_est, gnd, num_nodes)            
+            #RMSE = get_RMSE(adj_est, gnd, num_nodes)
+            #MAE = get_MAE(adj_est, gnd, num_nodes)            
             RMSE_list.append(RMSE)
             MAE_list.append(MAE)
 
@@ -237,8 +237,8 @@ def main():
             gnd = get_adj_wei(edges, num_nodes, max_thres)
             # ====================
             # Evaluate the quality of current prediction operation
-            RMSE = get_RMSE(adj_est, gnd, num_nodes)
-            MAE = get_MAE(adj_est, gnd, num_nodes)
+            #RMSE = get_RMSE(adj_est, gnd, num_nodes)
+            #MAE = get_MAE(adj_est, gnd, num_nodes)
             RMSE_list.append(RMSE)
             MAE_list.append(MAE)
         # ====================
