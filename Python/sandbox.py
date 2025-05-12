@@ -256,11 +256,14 @@ def main():
         print(f"Dim est: ({len(adj_est)}, {len(adj_est[0])}))")
 
 
-        country_nodes = 136
-        product_nodes = 1355
-        total_nodes = country_nodes + product_nodes 
+        max_country = 136 #El max indice de u es 136
+        min_product = 137  # índice mínimo de productos
+        max_product = 1354 #el max indice de v es 1354 
+        total_nodes = max_product + 1  # o sea 1355
+ 
         valid_mask = np.zeros((total_nodes, total_nodes), dtype=bool)
-        valid_mask[:country_nodes, country_nodes:] = True
+
+        valid_mask[0:137, 137:1355] = True
 
         true_vals = gnd[valid_mask]
         pred_vals = adj_est[valid_mask]
