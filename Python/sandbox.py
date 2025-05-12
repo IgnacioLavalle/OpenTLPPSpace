@@ -252,8 +252,8 @@ def main():
         edges = edge_seq[tau]
         gnd = get_adj_wei(edges, num_nodes, max_thres)
 
-        print(f"Dim gnd: ({len(gnd)}, {len(gnd[0])}))")
-        print(f"Dim est: ({len(adj_est)}, {len(adj_est[0])}))")
+        #print(f"Dim gnd: ({len(gnd)}, {len(gnd[0])}))")
+        #print(f"Dim est: ({len(adj_est)}, {len(adj_est[0])}))")
 
 
         max_country = 136 #El max indice de u es 136
@@ -298,8 +298,8 @@ def main():
         average_precision_list.append(avg_prec)
 
 
-        ##### 
-        #Calculado a mano
+        """ 
+        #Calculado a mano (obviamente es equivalente a scikit)
 
         TP = np.sum((pred_labels == 1) & (true_labels == 1))
         FP = np.sum((pred_labels == 1) & (true_labels == 0))
@@ -311,7 +311,7 @@ def main():
         mf1 = 2 * mprecision * mrecall / (mprecision + mrecall) if (mprecision + mrecall) > 0 else 0
         maccuracy = (TP + TN) / (TP + FP + FN + TN)
 
-        #####
+        """
         
         snapshot_index = tau - start_test + 1
         snapshot_indices.append(snapshot_index)
@@ -327,7 +327,7 @@ def main():
         print(f"Snapshot {snapshot_index}: AUC={roc_auc:.3f}, AUC-PR={avg_prec:.3f}, Acc={acc:.3f}, Prec={prec:.3f}, Rec={rec:.3f}, F1={f1:.3f}")
         print("Classification report:")
         print(classification_report(true_labels, pred_labels))
-        print(f"A mano: precision: {mprecision}, recall: {mrecall}, f1: {mf1}, accuracy: {maccuracy}" )
+       # print(f"A mano: precision: {mprecision}, recall: {mrecall}, f1: {mf1}, accuracy: {maccuracy}" )
 
         # Update window: we pop the oldest snapshot and them we append the latest prediction
         current_window.pop(0)

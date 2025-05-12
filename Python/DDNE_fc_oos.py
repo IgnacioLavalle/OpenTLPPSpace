@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size (default: 1)")
-    parser.add_argument("--num_epochs", type=int, default=100, help="Number of training epochs (default: 100)")
+    parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
     parser.add_argument("--lr", type=float, default=0.005, help="Learning rate (default: 1e-4)")
@@ -252,9 +252,27 @@ def main():
         edges = edge_seq[tau]
         gnd = get_adj_wei(edges, num_nodes, max_thres)
 
-        true_labels = (gnd >= 1).astype(int).flatten()
-        pred_scores = adj_est.flatten()
-        pred_labels = (adj_est >= 1).astype(int).flatten()
+        ### 
+        #This part filters unwanted connections; we have a bipartite graph but DDNE takes it as a squared matrix, which makes a lot of noise in the results
+        #At this moment, this filter only works for classification related metrics
+
+        max_country = 136 #Max country index is 136
+        min_product = 137  # Minimum product index is 137
+        max_product = 1354 #max product index is 1354 
+        total_nodes = max_product + 1  #so we have 1355 total nodes
+ 
+        valid_mask = np.zeros((total_nodes, total_nodes), dtype=bool)
+
+        valid_mask[0:137, 137:1355] = True
+
+        true_vals = gnd[valid_mask]
+        pred_vals = adj_est[valid_mask]
+
+        true_labels = (true_vals >= 1).astype(int)
+        pred_scores = pred_vals
+        pred_labels = (pred_vals >= 1).astype(int)
+
+        ###
 
         RMSE = get_RMSE(adj_est, gnd, num_nodes)
         MAE = get_MAE(adj_est, gnd, num_nodes)
