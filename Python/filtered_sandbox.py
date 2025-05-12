@@ -235,7 +235,11 @@ def main():
             # Get ground-truth
             edges = edge_seq[tau]
             gnd = get_adj_wei(edges, num_nodes, max_thres)
-            adj_est_np = adj_est.detach().cpu().numpy()
+            if isinstance(adj_est, torch.Tensor):
+                adj_est_np = adj_est.detach().cpu().numpy()
+            else:
+                adj_est_np = adj_est
+
             gnd_np = gnd  # ya es numpy
 
             adj_est_np *= max_thres  # Reescalar
