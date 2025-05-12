@@ -39,6 +39,37 @@ def parse_args():
 
     return parser.parse_args()
 
+def get_masked_DDNE_loss(adj_est, gnd, neigh, emb, alpha, beta, valid_mask=None):
+    '''
+    Function to define the loss of DDNE with optional masking
+    :param adj_est: predicted adjacency matrix
+    :param gnd: ground-truth adjacency matrix
+    :param neigh: connection frequency matrix
+    :param emb: learned temporal embeddings
+    :param alpha, beta: hyperparameters
+    :param valid_mask: optional mask for filtering valid entries (bool tensor)
+    :return: loss of DDNE
+    '''
+    # ====================
+    P = torch.ones_like(gnd)
+    P_alpha = alpha * P
+    P = torch.where(gnd == 0, P, P_alpha)
+
+    # If valid_mask is given, compute reconstruction loss only over valid entries
+    if valid_mask is not None:
+        diff = (adj_est - gnd)[valid_mask]
+        weight = P[valid_mask]
+        loss = torch.sum((diff * weight) ** 2)
+    else:
+        loss = torch.norm(torch.mul((adj_est - gnd), P), p='fro') ** 2
+
+    # Laplacian regularization term
+    deg = torch.diag(torch.sum(neigh, dim=0))
+    lap = deg - neigh
+    loss += (beta / 2) * torch.trace(torch.mm(emb.t(), torch.mm(lap, emb)))
+
+    return loss
+
 
 def main():
     start_time = time.time()
@@ -127,12 +158,23 @@ def main():
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
                 adj_est, dyn_emb = model(adj_list)
-                loss_ = get_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta)
+                loss_ = loss_ = get_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta, valid_mask)
                 batch_loss = batch_loss + loss_
             # ==========
             # ===========================
-            adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
-            adj_est *= max_thres  # Rescale edge weights to the original value range
+
+            ##adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
+            #adj_est *= max_thres  # Rescale edge weights to the original value range
+
+            adj_est_np = adj_est.detach().cpu().numpy()
+            gnd_np = gnd  # ya es numpy
+
+            adj_est_np *= max_thres  # Reescalar
+            gnd_np *= max_thres
+
+            RMSE = mean_squared_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np], squared=False)
+            MAE = mean_absolute_error(gnd_np[valid_mask_np], adj_est_np[valid_mask_np])
+
 
             # Calculate and store metrics
             RMSE = get_RMSE(adj_est, gnd, num_nodes)
