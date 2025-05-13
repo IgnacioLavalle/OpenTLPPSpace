@@ -88,9 +88,6 @@ def main():
     # ==========
     # Define the optimizer
     opt = optim.Adam(model.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-    valid_mask_np = np.zeros((num_nodes, num_nodes), dtype=bool)
-    valid_mask_np[0:137, 137:1355] = True  # País: 0–136, Producto: 137–1354
-    valid_mask = torch.BoolTensor(valid_mask_np).to(device)
 
     # ====================
     for epoch in range(num_epochs):
