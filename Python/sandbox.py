@@ -35,6 +35,7 @@ def parse_args():
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
     parser.add_argument("--save_forecast", type=bool, default=False, help="Indicates whether you want or not to save the forecast result")
     parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the classification metrics json")
+    parser.add_argument("--weight_boost", type=float, default=0.0, help="")
 
 
     return parser.parse_args()
@@ -74,6 +75,8 @@ def main():
     num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
     lr_val = args.lr
     weight_decay_val = args.weight_decay
+    
+    weight_boost = args.weight_boost
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
@@ -267,6 +270,7 @@ def main():
         valid_mask[0:137, 137:1355] = True
 
         true_vals = gnd[valid_mask]
+        adj_est += weight_boost
         pred_vals = adj_est[valid_mask]
 
         true_labels = (true_vals >= 1).astype(int)
