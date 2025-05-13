@@ -79,6 +79,14 @@ def main():
 
     # ====================
     # Define the model
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+      f"beta: {beta}, "
+      f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
+      f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
+      f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {weight_decay_val}")
+
+    print()
+
     model = dyngraph2vec(struc_dims, temp_dims, dec_dims, dropout_rate).to(device)
     # ==========
     # Define the optimizer
