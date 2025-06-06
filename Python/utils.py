@@ -45,6 +45,35 @@ def get_adj_wei(edges, num_nodes, max_thres):
 
     return adj
 
+
+def get_adj_wei_bipartite(edges, num_U, num_V, min_product, max_thres):
+    '''
+    Construye la matriz de adyacencia ponderada para un grafo bipartito U-V.
+    
+    :param edges: lista de tuplas (u, v, weight)
+    :param num_U: número de nodos en U
+    :param num_V: número de nodos en V
+    :param min_product: índice mínimo de productos (V)
+    :param max_thres: umbral máximo para pesos de aristas
+    :return: matriz de adyacencia (shape: num_U x num_V)
+    '''
+    adj = np.zeros((num_U, num_V))
+    for src, dst, wei in edges:
+        u = int(src)
+        v = int(dst) - min_product  # Normalizar índice de V para usarlo como columna
+
+        # Clipping del peso
+        wei = min(float(wei), max_thres)
+
+        if 0 <= u < num_U and 0 <= v < num_V:
+            adj[u, v] = wei
+        else:
+            print(f"[WARN] Ignorado: ({u}, {v + min_product}) fuera de rango.")
+
+    return adj
+
+
+
 def get_gnn_sup(adj):
     '''
     Function to get GNN support (normalized adjacency matrix w/ self-connected edges)
