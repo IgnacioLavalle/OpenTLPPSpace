@@ -38,6 +38,9 @@ def parse_args():
     parser.add_argument("--save_forecast", type=bool, default=False, help="Indicates whether you want or not to save the forecast result")
     parser.add_argument("--save_metrics", type=bool, default=True, help="Indicates whether you want or not to save the classification metrics json")
     parser.add_argument("--filter", type=bool, default=False, help="Indicates whether you want or not to filter edges below 0.1")
+    parser.add_argument("--wc", type=float, default=5.0, help="Indicates weight of class 1")
+
+    
 
 
     return parser.parse_args()
