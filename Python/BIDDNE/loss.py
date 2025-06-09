@@ -35,7 +35,7 @@ def get_DDNE_bipartite_loss(adj_est, gnd, neigh, emb_U, emb_V, alpha, beta):
 """
 def get_DDNE_bipartite_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta, weight_class_1=5.0):
     loss_mse = ((adj_est - gnd_tnr)**2)
-    weight_mask = (gnd_tnr >= 1.0).float() * weight_class_1 + (gnd_tnr < 1.0).float()
+    weight_mask = (gnd_tnr >= 0.5).float() * weight_class_1 + (gnd_tnr < 0.5).float()
     loss_mse = loss_mse * weight_mask
     loss_mse = torch.sum(loss_mse) / torch.sum(weight_mask)
 
