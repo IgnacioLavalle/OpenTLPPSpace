@@ -1,4 +1,5 @@
 # Demonstration of BIDDNE
+import random
 import time
 import torch
 import torch.optim as optim
@@ -36,6 +37,7 @@ def parse_args():
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
     parser.add_argument("--save_forecast", type=bool, default=False, help="Indicates whether you want or not to save the forecast result")
     parser.add_argument("--save_metrics", type=bool, default=True, help="Indicates whether you want or not to save the classification metrics json")
+    parser.add_argument("--filter", type=bool, default=False, help="Indicates whether you want or not to filter edges below 0.1")
 
 
     return parser.parse_args()
@@ -58,10 +60,14 @@ def main():
     num_snaps = 28 # Number of snapshots
     max_thres = args.max_thres # Threshold for maximum edge weight
     win_size = args.win_size # Window size of historical snapshots
-    enc_dims = [num_nodes, 16] # Layer configuration of encoder
-    dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
+    latent_embedding_dim = 128
+    enc_dims = [num_nodes, 16] 
+    dec_dims = [2*enc_dims[-1]*win_size, 32, latent_embedding_dim] 
+    #enc_dims = [num_nodes, 16] # Layer configuration of encoder
+    #dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
     alpha = args.alpha
     beta = args.beta
+    filter = args.filter
 
     # ====================
     edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
@@ -123,12 +129,17 @@ def main():
                     neigh_tnr += adj_tnr
                 # ==========
                 edges = edge_seq[tau]
+                if filter:
+                    edges = [e for e in edges if e[2] >= 0.1]
                 gnd = get_adj_wei_bipartite(edges, num_U, num_V, 137 , max_thres) # Training ground-truth
                 gnd_norm = gnd/max_thres  # Normalize the edge weights (in ground-truth) to [0, 1]
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
                 adj_est, (emb_U, emb_V) = model(adj_list)
-                loss_ = get_DDNE_bipartite_loss(adj_est, gnd_tnr, neigh_tnr, emb_U, emb_V, alpha, beta)
+                combined_dyn_emb = torch.cat((emb_U, emb_V), dim=0) # Concatenate along the node dimension
+                loss_ = get_DDNE_bipartite_loss(adj_est, gnd_tnr, neigh_tnr, combined_dyn_emb, alpha, beta, weight_class_1=5.0)
+
+                #loss_ = get_DDNE_bipartite_loss(adj_est, gnd_tnr, neigh_tnr, emb_U, emb_V, alpha, beta)
                 batch_loss = batch_loss + loss_
             # ==========
             # ===========================
@@ -163,6 +174,10 @@ def main():
         model.eval()
         RMSE_list = []
         MAE_list = []
+
+        precision_list = []
+        recall_list = []
+
         for tau in range(num_snaps-num_test_snaps-num_val_snaps, num_snaps-num_test_snaps):
             # ====================
             adj_list = [] # List of historical adjacency matrices
@@ -191,30 +206,43 @@ def main():
             MAE = get_MAE_(adj_est, gnd)
             RMSE_list.append(RMSE)
             MAE_list.append(MAE)
+                # ==========
+            # Clasificación binaria para métricas en clase 1
+            threshold = 1.0
+            pred_binary = (adj_est >= threshold).astype(int)
+            gnd_binary = (gnd >= threshold).astype(int)
+
+            # Flatten bipartite region (U x V)
+            pred_flat = pred_binary[0:num_U, 137:].flatten()
+            gnd_flat = gnd_binary[0:num_U, 137:].flatten()
+
+            # Evitar advertencias si no hay positivos
+            if np.sum(gnd_flat) > 0:
+                precision = precision_score(gnd_flat, pred_flat, pos_label=1, zero_division=0)
+                recall = recall_score(gnd_flat, pred_flat, pos_label=1, zero_division=0)
+                precision_list.append(precision)
+                recall_list.append(recall)
+
         # ====================
         RMSE_mean = np.mean(RMSE_list)
         RMSE_std = np.std(RMSE_list, ddof=1)
         MAE_mean = np.mean(MAE_list)
         MAE_std = np.std(MAE_list, ddof=1)
+        precision_mean = np.mean(precision_list)
+        recall_mean = np.mean(recall_list)
+
+
 
         print('Val Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
+        print(f"Precision clase 1: {precision_mean:.4f}")
+        print(f"Recall clase 1: {recall_mean:.4f}")
+
        
     # ====================
     predictions = []
     snapshot_indices = []
     classification_reports = []
-    """
-    fpr_list = []
-    tpr_list = []
-    roc_auc_list = []
-    accuracy_list = []
-    precision_list = []
-    recall_list = []
-    f1_list = []
-    precision_curve_list = []
-    recall_curve_list = []
-    average_precision_list = []
-    """
+
     # Iterative Prediction over Test Years
     print("------- Iterative Prediction Test -------")
     start_test = num_snaps - num_test_snaps
@@ -248,31 +276,6 @@ def main():
         min_product = 137  # Minimum product index is 137
         max_product = 1354 #max product index is 1354 
         total_nodes = max_product + 1  #so we have 1355 total nodes
-        
-        """
-        valid_mask = np.zeros((total_nodes, total_nodes), dtype=bool)
-
-        valid_mask[0:137, 137:1355] = True
-
-        true_vals = gnd[valid_mask]
-        pred_vals = adj_est[valid_mask]
-
-        true_labels = (true_vals >= 1).astype(int)
-        pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
-        
-        #Errors
-        abs_errors = np.abs(pred_vals - true_vals)
-        sq_errors = (pred_vals - true_vals) ** 2
-
-        #MAE and std
-        filtered_mae = np.mean(abs_errors)
-        mae_std = np.std(abs_errors)
-
-        #RMSE and std
-        filtered_rmse = np.sqrt(np.mean(sq_errors))
-        rmse_std = np.std(sq_errors)
-        """
 
         true_labels = (gnd >= 1).astype(int).flatten()
         pred_labels = (adj_est >= 1).astype(int).flatten()
@@ -289,33 +292,11 @@ def main():
         # Classification stats
 
         # Classification per snapshot
-        #fpr, tpr, _ = roc_curve(true_labels, pred_scores)
-        #roc_auc = auc(fpr, tpr)
-        #acc = accuracy_score(true_labels, pred_labels)
-        #prec = precision_score(true_labels, pred_labels, zero_division=0)
-        #rec = recall_score(true_labels, pred_labels, zero_division=0)
-        #f1 = f1_score(true_labels, pred_labels, zero_division=0)
         class_report = classification_report(true_labels, pred_labels, output_dict=True, zero_division=0)
-
-        # Precision-Recall Curve
-        #precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
-        #avg_prec = average_precision_score(true_labels, pred_scores)
-
-        #precision_curve_list.append(precision_vals.tolist())
-        #recall_curve_list.append(recall_vals.tolist())
-        #average_precision_list.append(avg_prec)
-
 
         
         snapshot_index = tau - start_test + 1
         snapshot_indices.append(snapshot_index)
-        #fpr_list.append(fpr.tolist())
-        #tpr_list.append(tpr.tolist())
-        #roc_auc_list.append(roc_auc)
-        #accuracy_list.append(acc)
-        #precision_list.append(prec)
-        #recall_list.append(rec)
-        #f1_list.append(f1)
         classification_reports.append(class_report)
 
         #print(f"Snapshot {snapshot_index}: AUC={roc_auc:.3f}, AUC-PR={avg_prec:.3f}, Acc={acc:.3f}, Prec={prec:.3f}, Rec={rec:.3f}, F1={f1:.3f}")
@@ -326,35 +307,6 @@ def main():
         current_window.pop(0)
         current_window.append(torch.FloatTensor((adj_est / max_thres)).to(device))
     
-
-    """
-    if save_forecast:
-        filename_npy = f'predictionsWith_{num_train_snaps}Train_{num_val_snaps}Val_{num_test_snaps}TestSnaps.npy'
-        np.save(filename_npy, np.array(predictions, dtype=object))
-
-    if save_metrics:
-        # save metrics as json
-        metrics_summary = {
-            "snapshots": snapshot_indices,
-            "fpr": fpr_list,
-            "tpr": tpr_list,
-            "roc_auc": roc_auc_list,
-            "accuracy": accuracy_list,
-            "precision": precision_list,
-            "recall": recall_list,
-            "f1": f1_list,
-            "classification_reports": classification_reports,
-            "precision_curve": precision_curve_list,
-            "recall_curve": recall_curve_list,
-            "average_precision": average_precision_list
-
-        }
-
-        filename = f"snapshot_metrics_train{num_train_snaps}_test{num_test_snaps}.json"
-        with open(filename, "w") as f:
-            json.dump(metrics_summary, f, indent=2)
-    """
-
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
