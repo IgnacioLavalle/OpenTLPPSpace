@@ -160,6 +160,24 @@ def main():
             # Update model parameter according to batch loss
             opt.zero_grad()
             batch_loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+            """
+            # ---GRADIENT MONITORING ---
+            if epoch % 1 == 0 and b == 0: # Print for first batch of every epoch
+                print(f"\n--- Epoch {epoch}, Batch {b} Gradients ---")
+                total_grad_norm = 0.0
+                for name, param in model.named_parameters():
+                    if param.grad is not None:
+                        param_grad_norm = param.grad.data.norm(2).item() # L2 norm
+                        total_grad_norm += param_grad_norm**2
+                        print(f"  Param: {name:<30} Grad Norm: {param_grad_norm:.10f}") # More precision for small gradients
+                    else:
+                        print(f"  Param: {name:<30} Grad: None")
+                total_grad_norm = total_grad_norm**0.5
+                print(f"Total Model Grad Norm: {total_grad_norm:.10f}")
+                print("--- End Gradients ---\n")
+            # ---GRADIENT MONITORING ---
+            """
             opt.step()
             total_loss = total_loss + batch_loss
             
