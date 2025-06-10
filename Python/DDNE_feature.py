@@ -92,9 +92,13 @@ def main():
     valid_mask = np.zeros((total_nodes, total_nodes), dtype=bool)
 
     valid_mask[0:137, 137:1355] = True
-    node_labels = np.zeros(num_nodes, dtype=np.float32)
-    node_labels[137:] = 1.0
-    node_labels_tnr = torch.FloatTensor(node_labels).unsqueeze(1).to(device)
+    #node_labels = np.zeros(num_nodes, dtype=np.float32)
+    #node_labels[137:] = 1.0
+    #node_labels_tnr = torch.FloatTensor(node_labels).unsqueeze(1).to(device)
+    node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
+    node_labels[:137, 1] = 1.0
+    node_labels[137:, 0] = 1.0 
+    node_labels_tnr = torch.FloatTensor(node_labels).to(device)
 
     ###
 
