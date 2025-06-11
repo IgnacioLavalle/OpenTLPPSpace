@@ -1,2 +1,4 @@
 Python/data/SMP22to95_edge_seq.npy
+*.pyc
+__pycache__/
 
