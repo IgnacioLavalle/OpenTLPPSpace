@@ -214,16 +214,16 @@ def main():
 
         # ====================
 
-        print('Val Epoch %d '
-            'C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f) '
-            'C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
-            (epoch,
-            c0_prec_mean, c0_prec_std,
+        print('Val Epoch %d' % epoch)
+        print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
+            (c0_prec_mean, c0_prec_std,
             c0_recall_mean, c0_recall_std,
-            c0_f1_mean, c0_f1_std,
-            c1_prec_mean, c1_prec_std,
+            c0_f1_mean, c0_f1_std))
+        print('  C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
+            (c1_prec_mean, c1_prec_std,
             c1_recall_mean, c1_recall_std,
             c1_f1_mean, c1_f1_std))
+
         
         if c1_f1_mean > best_val_f1:
             best_val_f1 = c1_f1_mean
@@ -314,14 +314,13 @@ def main():
 
     # ====================
 
-    print('Test Epoch %d '
-        'C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f) '
-        'C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
-        (epoch,
-        c0_prec_mean, c0_prec_std,
+    print('Test Epoch %d' % epoch)
+    print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
+        (c0_prec_mean, c0_prec_std,
         c0_recall_mean, c0_recall_std,
-        c0_f1_mean, c0_f1_std,
-        c1_prec_mean, c1_prec_std,
+        c0_f1_mean, c0_f1_std))
+    print('  C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
+        (c1_prec_mean, c1_prec_std,
         c1_recall_mean, c1_recall_std,
         c1_f1_mean, c1_f1_std))
     print()
