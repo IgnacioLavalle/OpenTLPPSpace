@@ -127,7 +127,7 @@ def main():
                 # ==========
                 adj_est, dyn_emb = model(adj_list)
                 dyn_emb = torch.cat([dyn_emb, node_labels_tnr], dim=1)
-                loss_ = get_DDNE_L2_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta)
+                loss_ = get_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta)
                 batch_loss = batch_loss + loss_
             # ==========
             # ===========================
