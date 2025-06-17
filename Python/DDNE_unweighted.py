@@ -44,7 +44,6 @@ def main():
     data_name = args.data_name
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
-    max_thres = args.max_thres # Threshold for maximum edge weight
     win_size = args.win_size # Window size of historical snapshots
     enc_dims = [num_nodes, 16] # Layer configuration of encoder
     dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
@@ -78,7 +77,7 @@ def main():
 
 
 
-    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, win_size: {win_size}, "
       f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
       f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
@@ -114,14 +113,14 @@ def main():
                 for t in range(tau-win_size, tau):
                     edges = edge_seq[t]
                     adj = get_adj_unweighted(edges, num_nodes)
-                    adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
+                    adj_norm = adj # Normalize the edge weights to [0, 1]
                     adj_tnr = torch.FloatTensor(adj_norm).to(device)
                     adj_list.append(adj_tnr)
                     neigh_tnr += adj_tnr
                 # ==========
                 edges = edge_seq[tau]
                 gnd = get_adj_unweighted(edges, num_nodes) # Training ground-truth
-                gnd_norm = gnd/max_thres  # Normalize the edge weights (in ground-truth) to [0, 1]
+                gnd_norm = gnd  # Normalize the edge weights (in ground-truth) to [0, 1]
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
                 adj_est, dyn_emb = model(adj_list)
@@ -131,7 +130,6 @@ def main():
             # ==========
             # ===========================
             adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
-            adj_est *= max_thres  # Rescale edge weights to the original value range
             
             # Update model parameter according to batch loss
             opt.zero_grad()
@@ -159,7 +157,7 @@ def main():
                 # ==========
                 edges = edge_seq[t]
                 adj = get_adj_unweighted(edges, num_nodes)
-                adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
+                adj_norm = adj # Normalize the edge weights to [0, 1]
                 adj_tnr = torch.FloatTensor(adj_norm).to(device)
                 adj_list.append(adj_tnr)
             # ====================
@@ -169,10 +167,7 @@ def main():
                 adj_est = adj_est.cpu().data.numpy()
             else:
                 adj_est = adj_est.data.numpy()
-            adj_est *= max_thres # Rescale edge weights to the original value range
             # ==========
-            # Refine the prediction result
-            adj_est = (adj_est+adj_est.T)/2
             # ====================
             # Get ground-truth
             edges = edge_seq[tau]
@@ -257,7 +252,7 @@ def main():
             # ==========
             edges = edge_seq[t]
             adj = get_adj_unweighted(edges, num_nodes)
-            adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
+            adj_norm = adj # Normalize the edge weights to [0, 1]
             adj_tnr = torch.FloatTensor(adj_norm).to(device)
             adj_list.append(adj_tnr)
         # ====================
@@ -267,10 +262,7 @@ def main():
             adj_est = adj_est.cpu().data.numpy()
         else:
             adj_est = adj_est.data.numpy()
-        adj_est *= max_thres # Rescale the edge weights to the original value range
         # ==========
-        # Refine the prediction result
-        adj_est = (adj_est+adj_est.T)/2
         # ====================
         # Get the ground-truth
         edges = edge_seq[tau]
