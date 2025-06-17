@@ -48,7 +48,7 @@ def get_adj_wei(edges, num_nodes, max_thres):
 
 def get_adj_wei_bipartite(edges, num_U, num_V, min_product, max_thres):
     '''
-    Construye la matriz de adyacencia ponderada para un grafo bipartito U-V.
+    Construye la matriz de adyacencia con pesos para un grafo bipartito U-V.
     
     :param edges: lista de tuplas (u, v, weight)
     :param num_U: número de nodos en U
@@ -60,7 +60,7 @@ def get_adj_wei_bipartite(edges, num_U, num_V, min_product, max_thres):
     adj = np.zeros((num_U, num_V))
     for src, dst, wei in edges:
         u = int(src)
-        v = int(dst) - min_product  # Normalizar índice de V para usarlo como columna
+        v = int(dst) - min_product  # Normaliza índice de V para usarlo como columna
 
         # Clipping del peso
         wei = min(float(wei), max_thres)
@@ -72,6 +72,30 @@ def get_adj_wei_bipartite(edges, num_U, num_V, min_product, max_thres):
 
     return adj
 
+def get_adj_unweighted(edges, num_nodes):
+    '''
+    Function to get the (unweighted) adjacency matrix according to the edge list
+    :param edges: edge list
+    :param node_num: number of nodes
+    :param max_thres: threshold of the maximum edge weight
+    :return: adj: adjacency matrix
+    '''
+    adj = np.zeros((num_nodes, num_nodes))
+    num_edges = len(edges)
+    for i in range(num_edges):
+        src = int(edges[i][0])
+        dst = int(edges[i][1])
+        wei = float(edges[i][2])
+        if wei>=1:
+            wei = 1
+        else:
+            wei = 0
+        adj[src, dst] = wei
+        adj[dst, src] = wei
+    for i in range(num_nodes):
+        adj[i, i] = 0
+
+    return adj
 
 
 def get_gnn_sup(adj):
