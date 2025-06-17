@@ -1,4 +1,15 @@
 Python/data/SMP22to95_edge_seq.npy
 *.pyc
 __pycache__/
+Python/data/Enron_edge_seq.npy
+Python/data/Mesh-1_edge_seq.npy
+Python/data/Mesh-1_feat.npy
+Python/data/Mesh-2_edge_seq.npy
+Python/data/Mesh-2_feat.npy
+Python/BIDDNE/__pycache__/__init__.cpython-312.pyc
+Python/DDNE/__pycache__/loss.cpython-312.pyc
+Python/DDNE/__pycache__/modules.cpython-312.pyc
+Python/__pycache__/utils.cpython-312.pyc
+.venv/
+Python/.venv/
 
