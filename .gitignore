@@ -6,6 +6,7 @@ Python/data/Mesh-1_edge_seq.npy
 Python/data/Mesh-1_feat.npy
 Python/data/Mesh-2_edge_seq.npy
 Python/data/Mesh-2_feat.npy
+Python/data/NetworkGAN_TMF_feats_Mesh-1.npy
 Python/BIDDNE/__pycache__/__init__.cpython-312.pyc
 Python/DDNE/__pycache__/loss.cpython-312.pyc
 Python/DDNE/__pycache__/modules.cpython-312.pyc
