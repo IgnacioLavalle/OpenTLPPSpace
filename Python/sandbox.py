@@ -6,12 +6,9 @@ from DDNE.modules import *
 from DDNE.loss import *
 from utils import *
 import argparse
-import json
-from sklearn.metrics import (
-    roc_curve, auc, accuracy_score, precision_score, 
-    recall_score, f1_score, classification_report,
-    precision_recall_curve, average_precision_score
-)
+import numpy as np
+from sklearn.metrics import precision_recall_fscore_support
+import warnings
 
 
 
@@ -24,7 +21,7 @@ def parse_args():
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size (default: 1)")
-    parser.add_argument("--num_epochs", type=int, default=100, help="Number of training epochs (default: 100)")
+    parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
     parser.add_argument("--lr", type=float, default=0.005, help="Learning rate (default: 1e-4)")
@@ -33,26 +30,19 @@ def parse_args():
     parser.add_argument("--beta", type=float, default=0.0, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
-    parser.add_argument("--save_forecast", type=bool, default=False, help="Indicates whether you want or not to save the forecast result")
-    parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the classification metrics json")
-    parser.add_argument("--weight_boost", type=float, default=0.0, help="")
+    parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
 
 
     return parser.parse_args()
 
-
 def main():
+    warnings.filterwarnings("ignore")
+
     start_time = time.time()
     args = parse_args()
-    misspredicted_1_count = 0
-    misspredicted_0_count = 0
-    total_elements = 0
-    total_edges_greater_equal_1 = 0
-    total_edges_lesser_than_1 = 0
-    save_forecast = args.save_forecast
-    save_metrics = args.save_metrics
     # ====================
-    data_name = 'SMP22to95'
+    #data_name = 'SMP22to95'
+    data_name = args.data_name
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     max_thres = args.max_thres # Threshold for maximum edge weight
@@ -75,8 +65,19 @@ def main():
     num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
     lr_val = args.lr
     weight_decay_val = args.weight_decay
-    
-    weight_boost = args.weight_boost
+    valid_mask = np.zeros((1355, 1355), dtype=bool)
+    valid_mask[0:137, 137:1355] = True
+    node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
+    node_labels[:137, 1] = 1.0
+    node_labels[137:, 0] = 1.0 
+    node_labels_tnr = torch.FloatTensor(node_labels).to(device)
+
+    best_val_f1 = -1.0 # Or any metric you want to track for 'best' model
+    best_epoch = -1
+    best_model_state = None # To store the state_dict of the best model
+
+
+
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
@@ -91,7 +92,7 @@ def main():
     # ==========
     # Define the optimizer
     opt = optim.Adam(model.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-
+    
     # ====================
     for epoch in range(num_epochs):
         # ====================
@@ -99,8 +100,6 @@ def main():
         model.train()
         num_batch = int(np.ceil(num_train_snaps/batch_size)) # Number of batch
         total_loss = 0.0
-        RMSE_list = []
-        MAE_list = []
         for b in range(num_batch):
             start_idx = b*batch_size
             end_idx = (b+1)*batch_size
@@ -127,41 +126,33 @@ def main():
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
                 adj_est, dyn_emb = model(adj_list)
+                dyn_emb = torch.cat([dyn_emb, node_labels_tnr], dim=1)
                 loss_ = get_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta)
                 batch_loss = batch_loss + loss_
             # ==========
             # ===========================
             adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
             adj_est *= max_thres  # Rescale edge weights to the original value range
-
-            # Calculate and store metrics
-            RMSE = get_RMSE(adj_est, gnd, num_nodes)
-            MAE = get_MAE(adj_est, gnd, num_nodes)            
-            RMSE_list.append(RMSE)
-            MAE_list.append(MAE)
-
-
             
             # Update model parameter according to batch loss
             opt.zero_grad()
             batch_loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             opt.step()
             total_loss = total_loss + batch_loss
             
         print('Epoch %d Total Loss %f' % (epoch, total_loss))
-        RMSE_mean = np.mean(RMSE_list)
-        RMSE_std = np.std(RMSE_list, ddof=1)
-        MAE_mean = np.mean(MAE_list)
-        MAE_std = np.std(MAE_list, ddof=1)
-
-        print('Train Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
 
 
         # ====================
         # Validate the model
         model.eval()
-        RMSE_list = []
-        MAE_list = []
+        c0precision_list = []
+        c0recall_list = []
+        c0f1_list = []
+        c1precision_list = []
+        c1recall_list = []
+        c1f1_list = []
         for tau in range(num_snaps-num_test_snaps-num_val_snaps, num_snaps-num_test_snaps):
             # ====================
             adj_list = [] # List of historical adjacency matrices
@@ -182,205 +173,158 @@ def main():
             adj_est *= max_thres # Rescale edge weights to the original value range
             # ==========
             # Refine the prediction result
-            adj_est = (adj_est+adj_est.T)/2
-            for r in range(num_nodes):
-                adj_est[r, r] = 0
-            for r in range(num_nodes):
-                for c in range(num_nodes):
-                    if adj_est[r, c] <= epsilon:
-                        adj_est[r, c] = 0
+            #adj_est = (adj_est+adj_est.T)/2
             # ====================
             # Get ground-truth
             edges = edge_seq[tau]
             gnd = get_adj_wei(edges, num_nodes, max_thres)
+            true_vals = gnd[valid_mask]
+            pred_vals = adj_est[valid_mask]
             # ====================
             # Evaluate the quality of current prediction operation
-            RMSE = get_RMSE(adj_est, gnd, num_nodes)
-            MAE = get_MAE(adj_est, gnd, num_nodes)
-            RMSE_list.append(RMSE)
-            MAE_list.append(MAE)
+
+            true_labels = (true_vals >= 1).astype(int)
+            pred_labels = (pred_vals >= 1).astype(int)
+            precision_per_class, recall_per_class, f1_per_class, _ = \
+            precision_recall_fscore_support(true_labels, pred_labels, average=None, labels=[0, 1], zero_division=0)
+            c0precision_list.append(precision_per_class[0])
+            c1precision_list.append(precision_per_class[1])
+            c0recall_list.append(recall_per_class[0])
+            c1recall_list.append(recall_per_class[1])
+            c0f1_list.append(f1_per_class[0])
+            c1f1_list.append(f1_per_class[1])
+
+            # ====================
+            # Evaluate the quality of current prediction operation
+            c0_prec_mean = np.mean(c0precision_list)
+            c0_prec_std = np.std(c0precision_list, ddof=1)
+            c1_prec_mean = np.mean(c1precision_list)
+            c1_prec_std = np.std(c1precision_list, ddof=1)
+
+            c0_recall_mean = np.mean(c0recall_list)
+            c0_recall_std = np.std(c0recall_list, ddof=1)
+            c1_recall_mean = np.mean(c1recall_list)
+            c1_recall_std = np.std(c1recall_list, ddof=1)
+
+            c0_f1_mean = np.mean(c0f1_list)
+            c0_f1_std = np.std(c0f1_list, ddof=1)
+            c1_f1_mean = np.mean(c1f1_list)
+            c1_f1_std = np.std(c1f1_list, ddof=1)
+
+
         # ====================
-        RMSE_mean = np.mean(RMSE_list)
-        RMSE_std = np.std(RMSE_list, ddof=1)
-        MAE_mean = np.mean(MAE_list)
-        MAE_std = np.std(MAE_list, ddof=1)
 
-        print('Val Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
-       
-    # ====================
-    # Iterative Prediction over Test Years
-    print("------- Iterative Prediction Test -------")
-    start_test = num_snaps - num_test_snaps
-    # Initialize current_window with real data
-    current_window = []
-    for t in range(start_test - win_size, start_test):
-        edges = edge_seq[t]
-        adj = get_adj_wei(edges, num_nodes, max_thres)
-        adj_norm = adj / max_thres
-        current_window.append(torch.FloatTensor(adj_norm).to(device))
-    
-    predictions = []
-    snapshot_indices = []
-    fpr_list = []
-    tpr_list = []
-    roc_auc_list = []
-    accuracy_list = []
-    precision_list = []
-    recall_list = []
-    f1_list = []
-    classification_reports = []
-    precision_curve_list = []
-    recall_curve_list = []
-    average_precision_list = []
+        print('Val Epoch %d' % epoch)
+        print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
+            (c0_prec_mean, c0_prec_std,
+            c0_recall_mean, c0_recall_std,
+            c0_f1_mean, c0_f1_std))
+        print('  C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
+            (c1_prec_mean, c1_prec_std,
+            c1_recall_mean, c1_recall_std,
+            c1_f1_mean, c1_f1_std))
 
-
-
-    # Iterate on test snapshots
-    for tau in range(start_test, num_snaps):
-        model.eval()
-        with torch.no_grad():
-            adj_est, _ = model(current_window)
-        adj_est = (adj_est.cpu().data.numpy() if torch.cuda.is_available() 
-                   else adj_est.data.numpy())
-        adj_est *= max_thres
-        # Prediction refinement
-        adj_est = (adj_est + adj_est.T) / 2
-        np.fill_diagonal(adj_est, 0)
-        for r in range(num_nodes):
-            for c in range(num_nodes):
-                if adj_est[r, c] <= epsilon:
-                    adj_est[r, c] = 0
-        predictions.append(adj_est)
         
-        # Calculate metrics comparing them with ground-truth
+        if c1_f1_mean > best_val_f1:
+            best_val_f1 = c1_f1_mean
+            best_epoch = epoch
+            best_model_state = model.state_dict() # Save model's parameters
+            print(f"  --> New best validation C1 F1: {best_val_f1:.4f} at epoch {best_epoch}. Model saved.")
+
+
+        # ====================
+    print("Training complete. Running final test evaluation")
+    print()
+    # Load the best model found during validation
+    if best_model_state is not None:
+        model.load_state_dict(best_model_state)
+        print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
+    else:
+        print("No best model saved. Using the model from the last epoch for testing.")
+
+    # Test the model
+    model.eval()
+    c0precision_list = []
+    c0recall_list = []
+    c0f1_list = []
+    c1precision_list = []
+    c1recall_list = []
+    c1f1_list = []
+
+    for tau in range(num_snaps-num_test_snaps, num_snaps):
+        # ====================
+        adj_list = []  # List of historical adjacency matrices
+        for t in range(tau-win_size, tau):
+            # ==========
+            edges = edge_seq[t]
+            adj = get_adj_wei(edges, num_nodes, max_thres)
+            adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
+            adj_tnr = torch.FloatTensor(adj_norm).to(device)
+            adj_list.append(adj_tnr)
+        # ====================
+        # Get the prediction result
+        adj_est, _ = model(adj_list)
+        if torch.cuda.is_available():
+            adj_est = adj_est.cpu().data.numpy()
+        else:
+            adj_est = adj_est.data.numpy()
+        adj_est *= max_thres # Rescale the edge weights to the original value range
+        # ==========
+        # Refine the prediction result
+        #adj_est = (adj_est+adj_est.T)/2
+        # ====================
+        # Get the ground-truth
         edges = edge_seq[tau]
         gnd = get_adj_wei(edges, num_nodes, max_thres)
-
-        #print(f"Dim gnd: ({len(gnd)}, {len(gnd[0])}))")
-        #print(f"Dim est: ({len(adj_est)}, {len(adj_est[0])}))")
-
-
-        max_country = 136 #El max indice de u es 136
-        min_product = 137  # índice mínimo de productos
-        max_product = 1354 #el max indice de v es 1354 
-        total_nodes = max_product + 1  # o sea 1355
- 
-        valid_mask = np.zeros((total_nodes, total_nodes), dtype=bool)
-
-        valid_mask[0:137, 137:1355] = True
-
         true_vals = gnd[valid_mask]
-        adj_est += weight_boost
         pred_vals = adj_est[valid_mask]
 
+        # ====================
+        # Evaluate the quality of current prediction operation
+
         true_labels = (true_vals >= 1).astype(int)
-        pred_scores = pred_vals
         pred_labels = (pred_vals >= 1).astype(int)
-
-        #Errors
-        abs_errors = np.abs(pred_vals - true_vals)
-        sq_errors = (pred_vals - true_vals) ** 2
-
-        #MAE and std
-        filtered_mae = np.mean(abs_errors)
-        mae_std = np.std(abs_errors)
-
-        #RMSE and std
-        filtered_rmse = np.sqrt(np.mean(sq_errors))
-        rmse_std = np.std(sq_errors)
-
-
-        RMSE = get_RMSE(adj_est, gnd, num_nodes)
-        MAE = get_MAE(adj_est, gnd, num_nodes)
-        kl = get_EW_KL(adj_est, gnd, num_nodes)
-
-        print(f"Iterative Prediction Test on year {tau - start_test + 1}: RMSE {RMSE}, MAE {MAE}, KL {kl}")
-        print()
-        print(f"Iterative Prediction Test on year {tau - start_test + 1}: Filtered RMSE: {filtered_rmse} std: {rmse_std},  MAE {filtered_mae}, std: {mae_std}")
-
+        precision_per_class, recall_per_class, f1_per_class, _ = \
+        precision_recall_fscore_support(true_labels, pred_labels, average=None, labels=[0, 1], zero_division=0)
+        c0precision_list.append(precision_per_class[0])
+        c1precision_list.append(precision_per_class[1])
+        c0recall_list.append(recall_per_class[0])
+        c1recall_list.append(recall_per_class[1])
+        c0f1_list.append(f1_per_class[0])
+        c1f1_list.append(f1_per_class[1])
         
-        # Classification stats
+        # ====================
+        # Evaluate the quality of current prediction operation
 
-        # Classification per snapshot
-        fpr, tpr, _ = roc_curve(true_labels, pred_scores)
-        roc_auc = auc(fpr, tpr)
-        acc = accuracy_score(true_labels, pred_labels)
-        prec = precision_score(true_labels, pred_labels, zero_division=0)
-        rec = recall_score(true_labels, pred_labels, zero_division=0)
-        f1 = f1_score(true_labels, pred_labels, zero_division=0)
-        class_report = classification_report(true_labels, pred_labels, output_dict=True)
-
-        # Precision-Recall Curve
-        precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
-        avg_prec = average_precision_score(true_labels, pred_scores)
-
-        precision_curve_list.append(precision_vals.tolist())
-        recall_curve_list.append(recall_vals.tolist())
-        average_precision_list.append(avg_prec)
+        c0_prec_mean = np.mean(c0precision_list)
+        c0_prec_std = np.std(c0precision_list, ddof=1) if len(c0precision_list) > 1 else 0.0
+        c1_prec_mean = np.mean(c1precision_list)
+        c1_prec_std = np.std(c1precision_list, ddof=1) if len(c1precision_list) > 1 else 0.0
 
 
-        """ 
-        #Calculado a mano (obviamente es equivalente a scikit)
+        c0_recall_mean = np.mean(c0recall_list)
+        c0_recall_std = np.std(c0recall_list, ddof=1) if len(c0recall_list) > 1 else 0.0
+        c1_recall_mean = np.mean(c1recall_list)
+        c1_recall_std = np.std(c1recall_list, ddof=1) if len(c1recall_list) > 1 else 0.0
 
-        TP = np.sum((pred_labels == 1) & (true_labels == 1))
-        FP = np.sum((pred_labels == 1) & (true_labels == 0))
-        FN = np.sum((pred_labels == 0) & (true_labels == 1))
-        TN = np.sum((pred_labels == 0) & (true_labels == 0))
+        c0_f1_mean = np.mean(c0f1_list)
+        c0_f1_std = np.std(c0f1_list, ddof=1) if len(c0f1_list) > 1 else 0.0
+        c1_f1_mean = np.mean(c1f1_list)
+        c1_f1_std = np.std(c1f1_list, ddof=1) if len(c1f1_list) > 1 else 0.0
 
-        mprecision = TP / (TP + FP) if (TP + FP) > 0 else 0
-        mrecall = TP / (TP + FN) if (TP + FN) > 0 else 0
-        mf1 = 2 * mprecision * mrecall / (mprecision + mrecall) if (mprecision + mrecall) > 0 else 0
-        maccuracy = (TP + TN) / (TP + FP + FN + TN)
+    # ====================
 
-        """
-        
-        snapshot_index = tau - start_test + 1
-        snapshot_indices.append(snapshot_index)
-        fpr_list.append(fpr.tolist())
-        tpr_list.append(tpr.tolist())
-        roc_auc_list.append(roc_auc)
-        accuracy_list.append(acc)
-        precision_list.append(prec)
-        recall_list.append(rec)
-        f1_list.append(f1)
-        classification_reports.append(class_report)
-
-        print(f"Snapshot {snapshot_index}: AUC={roc_auc:.3f}, AUC-PR={avg_prec:.3f}, Acc={acc:.3f}, Prec={prec:.3f}, Rec={rec:.3f}, F1={f1:.3f}")
-        print("Classification report:")
-        print(classification_report(true_labels, pred_labels))
-       # print(f"A mano: precision: {mprecision}, recall: {mrecall}, f1: {mf1}, accuracy: {maccuracy}" )
-
-        # Update window: we pop the oldest snapshot and them we append the latest prediction
-        current_window.pop(0)
-        current_window.append(torch.FloatTensor((adj_est / max_thres)).to(device))
-    
-    if save_forecast:
-        filename_npy = f'predictionsWith_{num_train_snaps}Train_{num_val_snaps}Val_{num_test_snaps}TestSnaps.npy'
-        np.save(filename_npy, np.array(predictions, dtype=object))
-
-    if save_metrics:
-        # save metrics as json
-        metrics_summary = {
-            "snapshots": snapshot_indices,
-            "fpr": fpr_list,
-            "tpr": tpr_list,
-            "roc_auc": roc_auc_list,
-            "accuracy": accuracy_list,
-            "precision": precision_list,
-            "recall": recall_list,
-            "f1": f1_list,
-            "classification_reports": classification_reports,
-            "precision_curve": precision_curve_list,
-            "recall_curve": recall_curve_list,
-            "average_precision": average_precision_list
-
-        }
-
-        filename = f"snapshot_metrics_train{num_train_snaps}_test{num_test_snaps}.json"
-        with open(filename, "w") as f:
-            json.dump(metrics_summary, f, indent=2)
-
-
+    print('Test Epoch %d' % epoch)
+    print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
+        (c0_prec_mean, c0_prec_std,
+        c0_recall_mean, c0_recall_std,
+        c0_f1_mean, c0_f1_std))
+    print('  C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
+        (c1_prec_mean, c1_prec_std,
+        c1_recall_mean, c1_recall_std,
+        c1_f1_mean, c1_f1_std))
+    print()
+    # ====================
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
