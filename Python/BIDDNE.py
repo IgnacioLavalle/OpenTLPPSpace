@@ -55,208 +55,130 @@ def get_MAE_(pred, true, *args):
 def main():
     start_time = time.time()
     args = parse_args()
-    save_forecast = args.save_forecast
-    save_metrics = args.save_metrics
-    # ====================
+
+    # Parámetros generales
     data_name = 'SMP22to95'
-    num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
-    num_snaps = 28 # Number of snapshots
-    max_thres = args.max_thres # Threshold for maximum edge weight
-    win_size = args.win_size # Window size of historical snapshots
+    num_nodes = 1355
+    num_snaps = 28
+    max_thres = args.max_thres
+    win_size = args.win_size
     latent_embedding_dim = 128
-    enc_dims = [num_nodes, 16] 
-    dec_dims = [2*enc_dims[-1]*win_size, 32, latent_embedding_dim] 
-    #enc_dims = [num_nodes, 16] # Layer configuration of encoder
-    #dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
-    alpha = args.alpha
-    beta = args.beta
-    filter = args.filter
+    enc_dims = enc_dims = [1218, 16]
+    dec_dims = [2 * enc_dims[-1] * win_size, 32, latent_embedding_dim]
+    num_U =137
+    num_V = 1218
 
-    # ====================
-    edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
-
-    # ====================
-    dropout_rate = args.dropout_rate # Dropout rate
-    epsilon = 10 ** (-args.epsilon) # Threshold of zero-refining
-    batch_size = args.batch_size # Batch size
-    num_epochs = args.num_epochs # Number of training epochs
-    num_val_snaps = args.num_val_snaps # Number of validation snapshots
-    num_test_snaps = args.num_test_snaps # Number of test snapshots
-    num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
+    alpha, beta = args.alpha, args.beta
+    dropout_rate = args.dropout_rate
+    epsilon = 10 ** (-args.epsilon)
+    batch_size = args.batch_size
+    num_epochs = args.num_epochs
+    num_val_snaps = args.num_val_snaps
+    num_test_snaps = args.num_test_snaps
+    num_train_snaps = num_snaps - num_val_snaps - num_test_snaps
     lr_val = args.lr
     weight_decay_val = args.weight_decay
+    filter_edges = args.filter
+    weight_class_1 = args.wc
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
-      f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
-      f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
-      f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
-      f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {weight_decay_val}")
-
+          f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
+          f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
+          f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
+          f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {weight_decay_val}")
     print()
-    # ====================
-    # Define the model
-    model = DDNE(enc_dims, dec_dims, dropout_rate,num_U=137, num_V=1218).to(device)
-    num_U=137
-    num_V=1218
-    # ==========
-    # Define the optimizer
+
+    # Cargar datos
+    edge_seq = np.load(f'data/{data_name}_edge_seq.npy', allow_pickle=True)
+
+    # Definir modelo y optimizador
+    model = DDNE(enc_dims, dec_dims, dropout_rate, num_u=137, num_v=1218).to(device)
     opt = optim.Adam(model.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-    
-    # ====================
+
+    # Entrenamiento
     for epoch in range(num_epochs):
-        # ====================
-        # Train the model
         model.train()
-        num_batch = int(np.ceil(num_train_snaps/batch_size)) # Number of batch
         total_loss = 0.0
-        RMSE_list = []
-        MAE_list = []
-        for b in range(num_batch):
-            start_idx = b*batch_size
-            end_idx = (b+1)*batch_size
-            if end_idx>num_train_snaps:
-                end_idx = num_train_snaps
-            # ====================
-            # Training for current batch
+        RMSE_list, MAE_list = [], []
+
+        for b in range(int(np.ceil(num_train_snaps / batch_size))):
+            start_idx, end_idx = b * batch_size, min((b + 1) * batch_size, num_train_snaps)
             batch_loss = 0.0
+
             for tau in range(start_idx, end_idx):
-                # ==========
-                adj_list = [] # List of historical adjacency matrices
-                neigh_tnr = neigh_tnr = torch.zeros((num_U, num_V)).to(device)
-                for t in range(tau-win_size, tau):
-                    edges = edge_seq[t]
-                    adj = get_adj_wei_bipartite(edges, num_U, num_V, 137 , max_thres)
-                    adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
-                    adj_tnr = torch.FloatTensor(adj_norm).to(device)
+                adj_list = []
+                neigh_tnr = torch.zeros((num_U, num_V)).to(device)
+
+                for t in range(tau - win_size, tau):
+                    adj = get_adj_wei_bipartite(edge_seq[t], num_U, num_V, num_U, max_thres)
+                    adj_tnr = torch.FloatTensor(adj / max_thres).to(device)
                     adj_list.append(adj_tnr)
                     neigh_tnr += adj_tnr
-                # ==========
+
                 edges = edge_seq[tau]
-                if filter:
+                if filter_edges:
                     edges = [e for e in edges if e[2] >= 0.1]
-                gnd = get_adj_wei_bipartite(edges, num_U, num_V, 137 , max_thres) # Training ground-truth
-                gnd_norm = gnd/max_thres  # Normalize the edge weights (in ground-truth) to [0, 1]
-                gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
-                # ==========
+                gnd = get_adj_wei_bipartite(edges, num_U, num_V, num_U, max_thres)
+                gnd_tnr = torch.FloatTensor(gnd / max_thres).to(device)
+
                 adj_est, (emb_U, emb_V) = model(adj_list)
-                combined_dyn_emb = torch.cat((emb_U, emb_V), dim=0) # Concatenate along the node dimension
-                loss_ = get_DDNE_bipartite_loss(adj_est, gnd_tnr, neigh_tnr, combined_dyn_emb, alpha, beta, weight_class_1=5.0)
+                loss_ = get_DDNE_bipartite_loss(adj_est, gnd_tnr, emb_U, emb_V, beta=alpha, weight_class_1=weight_class_1)
+                batch_loss += loss_
 
-                #loss_ = get_DDNE_bipartite_loss(adj_est, gnd_tnr, neigh_tnr, emb_U, emb_V, alpha, beta)
-                batch_loss = batch_loss + loss_
-            # ==========
-            # ===========================
-            adj_est = adj_est.cpu().data.numpy() if torch.cuda.is_available() else adj_est.data.numpy()
-            adj_est *= max_thres  # Rescale edge weights to the original value range
+                # Métricas para esta iteración
+                adj_est_np = adj_est.detach().cpu().numpy() * max_thres
+                RMSE_list.append(get_RMSE_(adj_est_np, gnd))
+                MAE_list.append(get_MAE_(adj_est_np, gnd))
 
-            # Calculate and store metrics
-            RMSE = get_RMSE_(adj_est, gnd)
-            MAE = get_MAE_(adj_est, gnd)            
-            RMSE_list.append(RMSE)
-            MAE_list.append(MAE)
-
-
-            
-            # Update model parameter according to batch loss
+            # Optimización
             opt.zero_grad()
             batch_loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-            """
-            # ---GRADIENT MONITORING ---
-            if epoch % 1 == 0 and b == 0: # Print for first batch of every epoch
-                print(f"\n--- Epoch {epoch}, Batch {b} Gradients ---")
-                total_grad_norm = 0.0
-                for name, param in model.named_parameters():
-                    if param.grad is not None:
-                        param_grad_norm = param.grad.data.norm(2).item() # L2 norm
-                        total_grad_norm += param_grad_norm**2
-                        print(f"  Param: {name:<30} Grad Norm: {param_grad_norm:.10f}") # More precision for small gradients
-                    else:
-                        print(f"  Param: {name:<30} Grad: None")
-                total_grad_norm = total_grad_norm**0.5
-                print(f"Total Model Grad Norm: {total_grad_norm:.10f}")
-                print("--- End Gradients ---\n")
-            # ---GRADIENT MONITORING ---
-            """
             opt.step()
-            total_loss = total_loss + batch_loss
-            
-        print('Epoch %d Total Loss %f' % (epoch, total_loss))
-        RMSE_mean = np.mean(RMSE_list)
-        RMSE_std = np.std(RMSE_list, ddof=1)
-        MAE_mean = np.mean(MAE_list)
-        MAE_std = np.std(MAE_list, ddof=1)
+            total_loss += batch_loss
 
-        print('Train Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
+        print(f"Epoch {epoch} Total Loss: {total_loss:.4f}")
+        print(f"Train Epoch {epoch} RMSE: {np.mean(RMSE_list):.4f} ± {np.std(RMSE_list, ddof=1):.4f} "
+              f"MAE: {np.mean(MAE_list):.4f} ± {np.std(MAE_list, ddof=1):.4f}")
 
-
-        # ====================
-        # Validate the model
+        # Validación
         model.eval()
-        RMSE_list = []
-        MAE_list = []
+        RMSE_list, MAE_list = [], []
+        precision_list, recall_list = [], []
 
-        precision_list = []
-        recall_list = []
-
-        for tau in range(num_snaps-num_test_snaps-num_val_snaps, num_snaps-num_test_snaps):
-            # ====================
-            adj_list = [] # List of historical adjacency matrices
-            for t in range(tau-win_size, tau):
-                # ==========
-                edges = edge_seq[t]
-                adj = get_adj_wei_bipartite(edges, num_U, num_V, 137 , max_thres)
-                adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
-                adj_tnr = torch.FloatTensor(adj_norm).to(device)
+        for tau in range(num_snaps - num_test_snaps - num_val_snaps, num_snaps - num_test_snaps):
+            adj_list = []
+            for t in range(tau - win_size, tau):
+                adj = get_adj_wei_bipartite(edge_seq[t], num_U, num_V, num_U, max_thres)
+                adj_tnr = torch.FloatTensor(adj / max_thres).to(device)
                 adj_list.append(adj_tnr)
-            # ====================
-            # Get the prediction result
-            adj_est, _ = model(adj_list)
-            if torch.cuda.is_available():
-                adj_est = adj_est.cpu().data.numpy()
-            else:
-                adj_est = adj_est.data.numpy()
-            adj_est *= max_thres # Rescale edge weights to the original value range
-            # ==========
-            # Get ground-truth
-            edges = edge_seq[tau]
-            gnd = get_adj_wei_bipartite(edges, num_U, num_V, 137 , max_thres)
-            # ====================
-            # Evaluate the quality of current prediction operation
-            RMSE = get_RMSE_(adj_est, gnd)
-            MAE = get_MAE_(adj_est, gnd)
-            RMSE_list.append(RMSE)
-            MAE_list.append(MAE)
-                # ==========
-            # Clasificación binaria para métricas en clase 1
-            threshold = 1.0
-            pred_binary = (adj_est >= threshold).astype(int)
-            gnd_binary = (gnd >= threshold).astype(int)
 
-            # Flatten bipartite region (U x V)
-            pred_flat = pred_binary[0:num_U, 137:].flatten()
-            gnd_flat = gnd_binary[0:num_U, 137:].flatten()
+            with torch.no_grad():
+                adj_est, _ = model(adj_list)
+            adj_est_np = adj_est.cpu().numpy() * max_thres
+            gnd = get_adj_wei_bipartite(edge_seq[tau], num_U, num_V, num_U, max_thres)
 
-            # Evitar advertencias si no hay positivos
+            RMSE_list.append(get_RMSE_(adj_est_np, gnd))
+            MAE_list.append(get_MAE_(adj_est_np, gnd))
+
+            # Clasificación binaria para métricas
+            pred_bin = (adj_est_np >= 1.0).astype(int)
+            gnd_bin = (gnd >= 1.0).astype(int)
+
+            pred_flat = pred_bin[0:num_U, num_U:].flatten()
+            gnd_flat = gnd_bin[0:num_U, num_U:].flatten()
+
             if np.sum(gnd_flat) > 0:
-                precision = precision_score(gnd_flat, pred_flat, pos_label=1, zero_division=0)
-                recall = recall_score(gnd_flat, pred_flat, pos_label=1, zero_division=0)
-                precision_list.append(precision)
-                recall_list.append(recall)
+                precision_list.append(precision_score(gnd_flat, pred_flat, zero_division=0))
+                recall_list.append(recall_score(gnd_flat, pred_flat, zero_division=0))
 
-        # ====================
-        RMSE_mean = np.mean(RMSE_list)
-        RMSE_std = np.std(RMSE_list, ddof=1)
-        MAE_mean = np.mean(MAE_list)
-        MAE_std = np.std(MAE_list, ddof=1)
-        precision_mean = np.mean(precision_list)
-        recall_mean = np.mean(recall_list)
+        print(f"Val Epoch {epoch} RMSE: {np.mean(RMSE_list):.4f} ± {np.std(RMSE_list, ddof=1):.4f} "
+              f"MAE: {np.mean(MAE_list):.4f} ± {np.std(MAE_list, ddof=1):.4f}")
+        print(f"Precision clase 1: {np.mean(precision_list):.4f}")
+        print(f"Recall clase 1: {np.mean(recall_list):.4f}")
 
+    # ... continuación con predicciones iterativas ...
 
-
-        print('Val Epoch %d RMSE %f %f MAE %f %f' % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
-        print(f"Precision clase 1: {precision_mean:.4f}")
-        print(f"Recall clase 1: {recall_mean:.4f}")
 
        
     # ====================
