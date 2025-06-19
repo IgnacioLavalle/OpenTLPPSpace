@@ -8,11 +8,9 @@ from BIDDNE.loss import *
 from utils import *
 import argparse
 import numpy as np
-import json
 from sklearn.metrics import (
-    roc_curve, auc, accuracy_score, precision_score, 
-    recall_score, f1_score, classification_report,
-    precision_recall_curve, average_precision_score
+    precision_score, 
+    recall_score, classification_report
 )
 
 
@@ -88,14 +86,14 @@ def main():
           f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {weight_decay_val}")
     print()
 
-    # Cargar datos
+    #load dataset
     edge_seq = np.load(f'data/{data_name}_edge_seq.npy', allow_pickle=True)
 
-    # Definir modelo y optimizador
+    #Model
     model = DDNE(enc_dims, dec_dims, dropout_rate, num_u=137, num_v=1218).to(device)
     opt = optim.Adam(model.parameters(), lr=lr_val, weight_decay=weight_decay_val)
 
-    # Entrenamiento
+    #Train
     for epoch in range(num_epochs):
         model.train()
         total_loss = 0.0
@@ -125,12 +123,12 @@ def main():
                 loss_ = get_DDNE_bipartite_loss(adj_est, gnd_tnr, emb_U, emb_V, beta=alpha, weight_class_1=weight_class_1)
                 batch_loss += loss_
 
-                # Métricas para esta iteración
+                #Metrics
                 adj_est_np = adj_est.detach().cpu().numpy() * max_thres
                 RMSE_list.append(get_RMSE_(adj_est_np, gnd))
                 MAE_list.append(get_MAE_(adj_est_np, gnd))
 
-            # Optimización
+            
             opt.zero_grad()
             batch_loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
@@ -141,7 +139,7 @@ def main():
         print(f"Train Epoch {epoch} RMSE: {np.mean(RMSE_list):.4f} ± {np.std(RMSE_list, ddof=1):.4f} "
               f"MAE: {np.mean(MAE_list):.4f} ± {np.std(MAE_list, ddof=1):.4f}")
 
-        # Validación
+        #Validation
         model.eval()
         RMSE_list, MAE_list = [], []
         precision_list, recall_list = [], []
@@ -161,7 +159,7 @@ def main():
             RMSE_list.append(get_RMSE_(adj_est_np, gnd))
             MAE_list.append(get_MAE_(adj_est_np, gnd))
 
-            # Clasificación binaria para métricas
+            #Binary classification
             pred_bin = (adj_est_np >= 1.0).astype(int)
             gnd_bin = (gnd >= 1.0).astype(int)
 
@@ -176,10 +174,6 @@ def main():
               f"MAE: {np.mean(MAE_list):.4f} ± {np.std(MAE_list, ddof=1):.4f}")
         print(f"Precision clase 1: {np.mean(precision_list):.4f}")
         print(f"Recall clase 1: {np.mean(recall_list):.4f}")
-
-    # ... continuación con predicciones iterativas ...
-
-
        
     # ====================
     predictions = []
@@ -211,20 +205,14 @@ def main():
         # Calculate metrics comparing them with ground-truth
         edges = edge_seq[tau]
         gnd = get_adj_wei_bipartite(edges, num_U, num_V, 137 , max_thres)
-
-        ### 
-        #This part filters unwanted connections; we have a bipartite graph but DDNE takes it as a squared matrix, which makes a lot of noise in the results
-
-        max_country = 136 #Max country index is 136
-        min_product = 137  # Minimum product index is 137
-        max_product = 1354 #max product index is 1354 
-        total_nodes = max_product + 1  #so we have 1355 total nodes
+ 
+        #max_country = 136 #Max country index is 136
+        #min_product = 137  # Minimum product index is 137
+        #max_product = 1354 #max product index is 1354 
+        #total_nodes = max_product + 1  #so we have 1355 total nodes
 
         true_labels = (gnd >= 1).astype(int).flatten()
         pred_labels = (adj_est >= 1).astype(int).flatten()
-
-        ###
-
         RMSE = get_RMSE_(adj_est, gnd)
         MAE = get_MAE_(adj_est, gnd)
 

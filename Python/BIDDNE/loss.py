@@ -16,7 +16,7 @@ def get_DDNE_bipartite_loss(adj_est, gnd_tnr, emb_u, emb_v, beta=1e-4, weight_cl
     loss_mse = loss_mse * weight_mask
     loss_mse = torch.sum(loss_mse) / torch.sum(weight_mask)
 
-    # Regularización L2 sobre los embeddings
+    # L2 regularization
     reg_u = torch.sum(torch.norm(emb_u, dim=1))
     reg_v = torch.sum(torch.norm(emb_v, dim=1))
     loss_reg = reg_u + reg_v

@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class DDNE(nn.Module):
     '''
-    DDNE adaptado para grafos bipartitos (matrices rectangulares).
+    DDNE for bipartite graphs).
     '''
     def __init__(self, enc_dims, dec_dims, dropout_rate, num_u=137, num_v=1218):
         super(DDNE, self).__init__()
@@ -23,7 +23,7 @@ class DDNE(nn.Module):
 
 class DDNE_Enc(nn.Module):
     '''
-    Encoder para DDNE bipartito.
+    BIDDNE Encoder.
     '''
     def __init__(self, enc_dims, dropout_rate, num_u=137, num_v=1218):
         super(DDNE_Enc, self).__init__()
@@ -31,7 +31,7 @@ class DDNE_Enc(nn.Module):
         self.dropout_rate = dropout_rate
         self.num_layers = len(enc_dims) - 1
 
-        # GRUs separados para nodos u y v
+        # Separated GRUs for nodes u and v
         self.for_RNNs_u = nn.ModuleList()
         self.rev_RNNs_u = nn.ModuleList()
         self.for_RNNs_v = nn.ModuleList()
@@ -58,7 +58,7 @@ class DDNE_Enc(nn.Module):
         u_seq = torch.stack(adj_list, dim=0)  # [T, 137, 1218]
         v_seq = torch.stack([A.transpose(0, 1) for A in adj_list], dim=0)  # [T, 1218, 137]
 
-        # Procesamiento u
+        # u nodes processing
         for_in_u = u_seq
         rev_in_u = torch.flip(u_seq, dims=[0])
         for l in range(self.num_layers):
@@ -66,7 +66,7 @@ class DDNE_Enc(nn.Module):
             rev_out_u, _ = self.rev_RNNs_u[l](rev_in_u)
             for_in_u, rev_in_u = for_out_u, rev_out_u
 
-        # Procesamiento v
+        # v nodes processing
         for_in_v = v_seq
         rev_in_v = torch.flip(v_seq, dims=[0])
         for l in range(self.num_layers):
@@ -74,7 +74,7 @@ class DDNE_Enc(nn.Module):
             rev_out_v, _ = self.rev_RNNs_v[l](rev_in_v)
             for_in_v, rev_in_v = for_out_v, rev_out_v
 
-        # Concatenar embeddings del último timestamp
+        # concatenate last snapshot embeddings
         emb_u = torch.cat([for_out_u[-1], rev_out_u[-1]], dim=-1)  # [137 x 2*d]
         emb_v = torch.cat([for_out_v[-1], rev_out_v[-1]], dim=-1)  # [1218 x 2*d]
 
@@ -82,13 +82,13 @@ class DDNE_Enc(nn.Module):
 
 class DDNE_Dec(nn.Module):
     '''
-    Decoder para reconstruir matriz bipartita a partir de embeddings.
+    BIDDNE Decoder.
     '''
     def __init__(self):
         super(DDNE_Dec, self).__init__()
 
     def forward(self, emb_u, emb_v):
         # emb_u: [137 x d], emb_v: [1218 x d]
-        # reconstrucción de la matriz: [137 x 1218]
+        # Matrix reconstruction: [137 x 1218]
         adj_est = torch.sigmoid(torch.matmul(emb_u, emb_v.T))
         return adj_est
