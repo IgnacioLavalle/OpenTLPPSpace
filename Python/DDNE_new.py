@@ -195,21 +195,21 @@ def main():
             c1f1_list.append(f1_per_class[1])
 
             # ====================
-            # Evaluate the quality of current prediction operation
-            c0_prec_mean = np.mean(c0precision_list)
-            c0_prec_std = np.std(c0precision_list, ddof=1)
-            c1_prec_mean = np.mean(c1precision_list)
-            c1_prec_std = np.std(c1precision_list, ddof=1)
+        # Evaluate the quality of current prediction operation
+        c0_prec_mean = np.mean(c0precision_list)
+        c0_prec_std = np.std(c0precision_list, ddof=1)
+        c1_prec_mean = np.mean(c1precision_list)
+        c1_prec_std = np.std(c1precision_list, ddof=1)
 
-            c0_recall_mean = np.mean(c0recall_list)
-            c0_recall_std = np.std(c0recall_list, ddof=1)
-            c1_recall_mean = np.mean(c1recall_list)
-            c1_recall_std = np.std(c1recall_list, ddof=1)
+        c0_recall_mean = np.mean(c0recall_list)
+        c0_recall_std = np.std(c0recall_list, ddof=1)
+        c1_recall_mean = np.mean(c1recall_list)
+        c1_recall_std = np.std(c1recall_list, ddof=1)
 
-            c0_f1_mean = np.mean(c0f1_list)
-            c0_f1_std = np.std(c0f1_list, ddof=1)
-            c1_f1_mean = np.mean(c1f1_list)
-            c1_f1_std = np.std(c1f1_list, ddof=1)
+        c0_f1_mean = np.mean(c0f1_list)
+        c0_f1_std = np.std(c0f1_list, ddof=1)
+        c1_f1_mean = np.mean(c1f1_list)
+        c1_f1_std = np.std(c1f1_list, ddof=1)
 
 
         # ====================
@@ -294,23 +294,23 @@ def main():
         c1f1_list.append(f1_per_class[1])
         
         # ====================
-        # Evaluate the quality of current prediction operation
+    # Evaluate the quality of current prediction operation
 
-        c0_prec_mean = np.mean(c0precision_list)
-        c0_prec_std = np.std(c0precision_list, ddof=1) if len(c0precision_list) > 1 else 0.0
-        c1_prec_mean = np.mean(c1precision_list)
-        c1_prec_std = np.std(c1precision_list, ddof=1) if len(c1precision_list) > 1 else 0.0
+    c0_prec_mean = np.mean(c0precision_list)
+    c0_prec_std = np.std(c0precision_list, ddof=1) if len(c0precision_list) > 1 else 0.0
+    c1_prec_mean = np.mean(c1precision_list)
+    c1_prec_std = np.std(c1precision_list, ddof=1) if len(c1precision_list) > 1 else 0.0
 
 
-        c0_recall_mean = np.mean(c0recall_list)
-        c0_recall_std = np.std(c0recall_list, ddof=1) if len(c0recall_list) > 1 else 0.0
-        c1_recall_mean = np.mean(c1recall_list)
-        c1_recall_std = np.std(c1recall_list, ddof=1) if len(c1recall_list) > 1 else 0.0
+    c0_recall_mean = np.mean(c0recall_list)
+    c0_recall_std = np.std(c0recall_list, ddof=1) if len(c0recall_list) > 1 else 0.0
+    c1_recall_mean = np.mean(c1recall_list)
+    c1_recall_std = np.std(c1recall_list, ddof=1) if len(c1recall_list) > 1 else 0.0
 
-        c0_f1_mean = np.mean(c0f1_list)
-        c0_f1_std = np.std(c0f1_list, ddof=1) if len(c0f1_list) > 1 else 0.0
-        c1_f1_mean = np.mean(c1f1_list)
-        c1_f1_std = np.std(c1f1_list, ddof=1) if len(c1f1_list) > 1 else 0.0
+    c0_f1_mean = np.mean(c0f1_list)
+    c0_f1_std = np.std(c0f1_list, ddof=1) if len(c0f1_list) > 1 else 0.0
+    c1_f1_mean = np.mean(c1f1_list)
+    c1_f1_std = np.std(c1f1_list, ddof=1) if len(c1f1_list) > 1 else 0.0
 
     # ====================
 
