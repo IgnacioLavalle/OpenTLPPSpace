@@ -14,6 +14,10 @@ import warnings
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+if torch.cuda.is_available():
+    torch.cuda.empty_cache()
+    torch.backends.cudnn.benchmark = True  
+    torch.backends.cudnn.enabled = True
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Demonstration of GCNGAN")
@@ -139,9 +143,11 @@ def main():
                 sup = get_gnn_sup(adj_norm)
                 sup_sp = sp.sparse.coo_matrix(sup)
                 sup_sp = sparse_to_tuple(sup_sp)
-                idxs = torch.LongTensor(sup_sp[0].astype(float)).to(device)
+                #idxs = torch.LongTensor(sup_sp[0].astype(float)).to(device)
+                idxs = torch.LongTensor(sup_sp[0]).to(device)
                 vals = torch.FloatTensor(sup_sp[1]).to(device)
-                sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                #sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2], dtype=torch.float32).to(device)
                 sup_list.append(sup_tnr)
                 # =========
                 # Generate random noise
@@ -219,7 +225,8 @@ def main():
                 sup_sp = sparse_to_tuple(sup_sp)
                 idxs = torch.LongTensor(sup_sp[0].astype(float)).to(device)
                 vals = torch.FloatTensor(sup_sp[1]).to(device)
-                sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                #sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2], dtype=torch.float32).to(device)
                 sup_list.append(sup_tnr)
                 # ==========
                 # Generate random noise
@@ -338,7 +345,8 @@ def main():
             sup_sp = sparse_to_tuple(sup_sp)
             idxs = torch.LongTensor(sup_sp[0].astype(float)).to(device)
             vals = torch.FloatTensor(sup_sp[1]).to(device)
-            sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+            #sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+            sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2], dtype=torch.float32).to(device)
             sup_list.append(sup_tnr)
             # ==========
             # Generate random noise
