@@ -5,6 +5,8 @@ import torch.optim as optim
 from GCN_GAN.modules import *
 from GCN_GAN.loss import *
 from utils import *
+import os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 
 import time
 import argparse
@@ -163,7 +165,8 @@ def main():
             for _ in range(1):
                 # ====================
                 # Train the discriminator
-                adj_est = gen_net(sup_list, noise_list)
+                #adj_est = gen_net(sup_list, noise_list)
+                adj_est = gen_net(sup_list, noise_list).detach()
                 disc_real, disc_fake = disc_net(gnd_tnr, adj_est, num_nodes)
                 disc_loss = get_disc_loss(disc_real, disc_fake) # Loss of the discriminator
                 disc_opt.zero_grad()
