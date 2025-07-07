@@ -35,6 +35,7 @@ def parse_args():
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
     parser.add_argument("--save_forecast", type=bool, default=False, help="Indicates whether you want or not to save the forecast result")
     parser.add_argument("--save_metrics", type=bool, default=True, help="Indicates whether you want or not to save the classification metrics json")
+    parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
 
 
     return parser.parse_args()
@@ -50,7 +51,7 @@ def main():
     save_forecast = args.save_forecast
     save_metrics = args.save_metrics
     # ====================
-    data_name = 'SMP22to95'
+    data_name = args.data_name
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     max_thres = args.max_thres # Threshold for maximum edge weight
