@@ -51,17 +51,6 @@ def append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_lis
     c0f1_list.append(f1_per_class[0])
     c1f1_list.append(f1_per_class[1])
 
-    print('  C0 Prec: %f C0 Rec: %f  C0 F1: %f' %
-        (precision_per_class[0],
-        recall_per_class[0],
-        f1_per_class[0]))
-    print('  C1 Prec: %f  C1 Rec: %f  C1 F1: %f ' %
-        (precision_per_class[1],
-        recall_per_class[1], 
-        f1_per_class[1]))
-    print()
-
-
 def mean_and_std_from_classlists(c0_list, c1_list):
     c0_mean = np.mean(c0_list)
     c0_std = np.std(c0_list, ddof=1) if len(c0_list) > 1 else 0.0
@@ -402,6 +391,17 @@ def main():
         print()
 
         append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
+
+        print('  C0 Prec: %f  C0 Rec: %f  C0 F1: %f' %
+            (c0precision_list[-1],
+            c0recall_list[-1],
+            c0f1_list[-1]))
+        print('  C1 Prec: %f  C1 Rec: %f  C1 F1: %f' %
+            (c1precision_list[-1],
+            c1recall_list[-1],
+            c1f1_list[-1]))
+        print()
+
 
         #Errors
         abs_errors = np.abs(pred_vals - true_vals)
