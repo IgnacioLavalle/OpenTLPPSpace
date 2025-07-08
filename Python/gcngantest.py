@@ -2,7 +2,7 @@
 
 import torch
 import torch.optim as optim
-from GCN_GAN_Bipartito.modules import *
+from GCN_GAN.modules import *
 from GCN_GAN.loss import *
 from utils import *
 import os
@@ -88,7 +88,7 @@ def main():
     struc_dims = [noise_dim, 32, 16] # Layer configuration of structural encoder
     temp_dims = [num_nodes*struc_dims[-1], 1024] # Layer configuration of temporal encoder
     dec_dims = [temp_dims[-1], num_nodes*num_nodes] # Layer configuration of decoder
-    disc_dims = [num_valid, 512, 64, 1] # Layer configuration of discriminator
+    disc_dims = [4096, 512, 64, 1] # Layer configuration of discriminator
     win_size = args.win_size # Window size of historical snapshots
     alpha = args.alpha # Hyper-parameter to adjust the contribution of the MSE loss
 
@@ -181,14 +181,8 @@ def main():
                 #adj_est = gen_net(sup_list, noise_list)
                 adj_est = gen_net(sup_list, noise_list).detach()
 
-                valid = valid_mask.astype(bool)
-                gnd_valid = gnd_tnr[valid]
-                adj_est_valid = adj_est[valid]
-                real_input = gnd_valid.view(1, -1)
-                fake_input = adj_est_valid.view(1, -1) 
-                disc_real, disc_fake = disc_net(real_input, fake_input)
-
-                disc_loss = get_disc_loss(disc_real, disc_fake) # Loss of the discriminator
+                disc_real, disc_fake = disc_net(gnd_tnr, adj_est, num_nodes)
+                disc_loss = get_disc_loss(disc_real, disc_fake)
                 disc_opt.zero_grad()
                 #Al ejecutar la siguiente linea muere
                 disc_loss.backward()
@@ -203,10 +197,9 @@ def main():
                 # ==========
                 # Train the generative network
                 adj_est = gen_net(sup_list, noise_list)
-                gnd_valid = gnd_tnr[valid]
-                adj_est_valid = adj_est[valid]
-                _, disc_fake = disc_net(gnd_valid, adj_est_valid, num_nodes)
-                gen_loss = get_gen_loss(adj_est_valid, gnd_valid, disc_fake, alpha) # Loss of the generative network
+
+                _, disc_fake = disc_net(gnd_tnr, adj_est, num_nodes)
+                gen_loss = get_gen_loss(adj_est, gnd_tnr, disc_fake, alpha) # Loss of the generative network
                 gen_opt.zero_grad()
                 gen_loss.backward()
                 gen_opt.step()
