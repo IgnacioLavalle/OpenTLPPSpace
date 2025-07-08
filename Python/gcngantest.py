@@ -2,7 +2,7 @@
 
 import torch
 import torch.optim as optim
-from GCN_GAN.modules import *
+from GCN_GAN_Bipartito.modules import *
 from GCN_GAN.loss import *
 from utils import *
 import os
@@ -75,6 +75,9 @@ def mean_and_std_from_classlists(c0_list, c1_list):
 def main():
     start_time = time.time()
     args = parse_args()
+    valid_mask = np.zeros((1355, 1355), dtype=bool)
+    valid_mask[0:137, 137:1355] = True
+    num_valid = valid_mask.sum()
 
     # ====================
     data_name = args.data_name
@@ -85,14 +88,13 @@ def main():
     struc_dims = [noise_dim, 32, 16] # Layer configuration of structural encoder
     temp_dims = [num_nodes*struc_dims[-1], 1024] # Layer configuration of temporal encoder
     dec_dims = [temp_dims[-1], num_nodes*num_nodes] # Layer configuration of decoder
-    disc_dims = [4096, 512, 64, 1] # Layer configuration of discriminator
+    disc_dims = [num_valid, 512, 64, 1] # Layer configuration of discriminator
     win_size = args.win_size # Window size of historical snapshots
     alpha = args.alpha # Hyper-parameter to adjust the contribution of the MSE loss
 
     # ====================
     edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
-    valid_mask = np.zeros((1355, 1355), dtype=bool)
-    valid_mask[0:137, 137:1355] = True
+
 
     #La parte de abajo es el one hot encoding que todavia no se donde meterlo en este codigo
     #node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
@@ -183,7 +185,7 @@ def main():
                 gnd_valid = gnd_tnr[valid]
                 adj_est_valid = adj_est[valid]
 
-                disc_real, disc_fake = disc_net(gnd_valid, adj_est_valid, num_nodes)
+                disc_real, disc_fake = disc_net(gnd_valid, adj_est_valid)
                 disc_loss = get_disc_loss(disc_real, disc_fake) # Loss of the discriminator
                 disc_opt.zero_grad()
                 #Al ejecutar la siguiente linea muere
