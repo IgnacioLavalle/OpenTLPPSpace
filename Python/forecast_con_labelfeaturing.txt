@@ -1,0 +1,1599 @@
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3860: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:223: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:181: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:215: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+data_name: SMP22to95, max_thres: 2.0, win_size: 2, enc_dims: [1355, 16], dec_dims: [64, 32, 1355], alpha: 3.0, beta: 0.0, dropout_rate: 0.2, epsilon: 0.01, batch_size: 1, num_epochs: 500, num_val_snaps: 0, num_test_snaps: 6, num_train_snaps: 22, lr_val: 0.005, weight_decay_val: 0.0001
+
+Epoch 0 Total Loss 9580290.000000
+Train Epoch 0 RMSE 0.555716 0.292288 MAE 0.460275 0.361452
+Val Epoch 0 RMSE nan nan MAE nan nan
+Epoch 1 Total Loss 5115302.500000
+Train Epoch 1 RMSE 0.265177 0.006327 MAE 0.122955 0.010165
+Val Epoch 1 RMSE nan nan MAE nan nan
+Epoch 2 Total Loss 4656253.000000
+Train Epoch 2 RMSE 0.249341 0.005786 MAE 0.106574 0.011252
+Val Epoch 2 RMSE nan nan MAE nan nan
+Epoch 3 Total Loss 4394665.500000
+Train Epoch 3 RMSE 0.241366 0.004996 MAE 0.099163 0.009709
+Val Epoch 3 RMSE nan nan MAE nan nan
+Epoch 4 Total Loss 4202602.000000
+Train Epoch 4 RMSE 0.236072 0.005869 MAE 0.094812 0.011733
+Val Epoch 4 RMSE nan nan MAE nan nan
+Epoch 5 Total Loss 4024904.750000
+Train Epoch 5 RMSE 0.231286 0.004719 MAE 0.089795 0.008255
+Val Epoch 5 RMSE nan nan MAE nan nan
+Epoch 6 Total Loss 3900656.500000
+Train Epoch 6 RMSE 0.227675 0.005256 MAE 0.087738 0.008723
+Val Epoch 6 RMSE nan nan MAE nan nan
+Epoch 7 Total Loss 3775328.000000
+Train Epoch 7 RMSE 0.223816 0.004697 MAE 0.084159 0.008145
+Val Epoch 7 RMSE nan nan MAE nan nan
+Epoch 8 Total Loss 3678448.000000
+Train Epoch 8 RMSE 0.221047 0.004543 MAE 0.081558 0.006854
+Val Epoch 8 RMSE nan nan MAE nan nan
+Epoch 9 Total Loss 3595661.000000
+Train Epoch 9 RMSE 0.218404 0.004307 MAE 0.078950 0.006123
+Val Epoch 9 RMSE nan nan MAE nan nan
+Epoch 10 Total Loss 3538160.000000
+Train Epoch 10 RMSE 0.216347 0.004130 MAE 0.076513 0.005414
+Val Epoch 10 RMSE nan nan MAE nan nan
+Epoch 11 Total Loss 3475868.250000
+Train Epoch 11 RMSE 0.214649 0.004465 MAE 0.074863 0.005348
+Val Epoch 11 RMSE nan nan MAE nan nan
+Epoch 12 Total Loss 3439122.500000
+Train Epoch 12 RMSE 0.213699 0.004490 MAE 0.073576 0.005477
+Val Epoch 12 RMSE nan nan MAE nan nan
+Epoch 13 Total Loss 3403347.250000
+Train Epoch 13 RMSE 0.212420 0.004063 MAE 0.072504 0.005651
+Val Epoch 13 RMSE nan nan MAE nan nan
+Epoch 14 Total Loss 3371426.000000
+Train Epoch 14 RMSE 0.211178 0.003642 MAE 0.070734 0.004482
+Val Epoch 14 RMSE nan nan MAE nan nan
+Epoch 15 Total Loss 3342843.000000
+Train Epoch 15 RMSE 0.210670 0.003796 MAE 0.070340 0.004201
+Val Epoch 15 RMSE nan nan MAE nan nan
+Epoch 16 Total Loss 3311475.500000
+Train Epoch 16 RMSE 0.209683 0.003853 MAE 0.069442 0.003912
+Val Epoch 16 RMSE nan nan MAE nan nan
+Epoch 17 Total Loss 3285197.000000
+Train Epoch 17 RMSE 0.208984 0.003941 MAE 0.068800 0.003255
+Val Epoch 17 RMSE nan nan MAE nan nan
+Epoch 18 Total Loss 3257142.500000
+Train Epoch 18 RMSE 0.208237 0.004181 MAE 0.068052 0.002680
+Val Epoch 18 RMSE nan nan MAE nan nan
+Epoch 19 Total Loss 3242982.000000
+Train Epoch 19 RMSE 0.207981 0.004227 MAE 0.067502 0.002218
+Val Epoch 19 RMSE nan nan MAE nan nan
+Epoch 20 Total Loss 3227452.500000
+Train Epoch 20 RMSE 0.207240 0.004114 MAE 0.066779 0.002383
+Val Epoch 20 RMSE nan nan MAE nan nan
+Epoch 21 Total Loss 3209200.500000
+Train Epoch 21 RMSE 0.207044 0.004681 MAE 0.066613 0.002333
+Val Epoch 21 RMSE nan nan MAE nan nan
+Epoch 22 Total Loss 3198561.750000
+Train Epoch 22 RMSE 0.206410 0.004493 MAE 0.066197 0.002218
+Val Epoch 22 RMSE nan nan MAE nan nan
+Epoch 23 Total Loss 3177548.500000
+Train Epoch 23 RMSE 0.206023 0.004622 MAE 0.065670 0.002264
+Val Epoch 23 RMSE nan nan MAE nan nan
+Epoch 24 Total Loss 3167216.500000
+Train Epoch 24 RMSE 0.205938 0.004732 MAE 0.065724 0.002477
+Val Epoch 24 RMSE nan nan MAE nan nan
+Epoch 25 Total Loss 3155684.000000
+Train Epoch 25 RMSE 0.205593 0.004698 MAE 0.065470 0.002740
+Val Epoch 25 RMSE nan nan MAE nan nan
+Epoch 26 Total Loss 3147292.750000
+Train Epoch 26 RMSE 0.205512 0.004646 MAE 0.065462 0.002560
+Val Epoch 26 RMSE nan nan MAE nan nan
+Epoch 27 Total Loss 3129652.250000
+Train Epoch 27 RMSE 0.204570 0.004722 MAE 0.064619 0.002447
+Val Epoch 27 RMSE nan nan MAE nan nan
+Epoch 28 Total Loss 3126156.000000
+Train Epoch 28 RMSE 0.204797 0.004665 MAE 0.064582 0.002376
+Val Epoch 28 RMSE nan nan MAE nan nan
+Epoch 29 Total Loss 3115616.000000
+Train Epoch 29 RMSE 0.204550 0.005065 MAE 0.064485 0.002709
+Val Epoch 29 RMSE nan nan MAE nan nan
+Epoch 30 Total Loss 3110001.500000
+Train Epoch 30 RMSE 0.204198 0.004814 MAE 0.064150 0.002348
+Val Epoch 30 RMSE nan nan MAE nan nan
+Epoch 31 Total Loss 3100494.000000
+Train Epoch 31 RMSE 0.203964 0.004981 MAE 0.064069 0.002607
+Val Epoch 31 RMSE nan nan MAE nan nan
+Epoch 32 Total Loss 3099854.000000
+Train Epoch 32 RMSE 0.204375 0.004817 MAE 0.064217 0.002662
+Val Epoch 32 RMSE nan nan MAE nan nan
+Epoch 33 Total Loss 3087135.750000
+Train Epoch 33 RMSE 0.203718 0.004287 MAE 0.063999 0.002324
+Val Epoch 33 RMSE nan nan MAE nan nan
+Epoch 34 Total Loss 3074222.250000
+Train Epoch 34 RMSE 0.203641 0.004740 MAE 0.064062 0.002318
+Val Epoch 34 RMSE nan nan MAE nan nan
+Epoch 35 Total Loss 3065391.500000
+Train Epoch 35 RMSE 0.203186 0.004544 MAE 0.063391 0.001801
+Val Epoch 35 RMSE nan nan MAE nan nan
+Epoch 36 Total Loss 3066538.250000
+Train Epoch 36 RMSE 0.203229 0.004341 MAE 0.063493 0.002131
+Val Epoch 36 RMSE nan nan MAE nan nan
+Epoch 37 Total Loss 3042683.000000
+Train Epoch 37 RMSE 0.202625 0.004768 MAE 0.063078 0.002198
+Val Epoch 37 RMSE nan nan MAE nan nan
+Epoch 38 Total Loss 3040413.000000
+Train Epoch 38 RMSE 0.202732 0.004994 MAE 0.063095 0.002255
+Val Epoch 38 RMSE nan nan MAE nan nan
+Epoch 39 Total Loss 3041611.500000
+Train Epoch 39 RMSE 0.202597 0.004489 MAE 0.062962 0.001935
+Val Epoch 39 RMSE nan nan MAE nan nan
+Epoch 40 Total Loss 3038280.500000
+Train Epoch 40 RMSE 0.202452 0.004593 MAE 0.062821 0.001622
+Val Epoch 40 RMSE nan nan MAE nan nan
+Epoch 41 Total Loss 3036674.500000
+Train Epoch 41 RMSE 0.202070 0.004885 MAE 0.062422 0.001757
+Val Epoch 41 RMSE nan nan MAE nan nan
+Epoch 42 Total Loss 3016583.250000
+Train Epoch 42 RMSE 0.201790 0.004754 MAE 0.062403 0.001898
+Val Epoch 42 RMSE nan nan MAE nan nan
+Epoch 43 Total Loss 3023381.000000
+Train Epoch 43 RMSE 0.202206 0.005234 MAE 0.062653 0.002436
+Val Epoch 43 RMSE nan nan MAE nan nan
+Epoch 44 Total Loss 3012076.000000
+Train Epoch 44 RMSE 0.201716 0.004975 MAE 0.062505 0.001950
+Val Epoch 44 RMSE nan nan MAE nan nan
+Epoch 45 Total Loss 3004900.000000
+Train Epoch 45 RMSE 0.201582 0.004755 MAE 0.062039 0.001679
+Val Epoch 45 RMSE nan nan MAE nan nan
+Epoch 46 Total Loss 3007858.500000
+Train Epoch 46 RMSE 0.201619 0.005047 MAE 0.062225 0.002061
+Val Epoch 46 RMSE nan nan MAE nan nan
+Epoch 47 Total Loss 3001092.750000
+Train Epoch 47 RMSE 0.201340 0.004998 MAE 0.061951 0.002049
+Val Epoch 47 RMSE nan nan MAE nan nan
+Epoch 48 Total Loss 2997040.000000
+Train Epoch 48 RMSE 0.201637 0.004978 MAE 0.062330 0.002243
+Val Epoch 48 RMSE nan nan MAE nan nan
+Epoch 49 Total Loss 2996739.000000
+Train Epoch 49 RMSE 0.201080 0.004998 MAE 0.061878 0.001853
+Val Epoch 49 RMSE nan nan MAE nan nan
+Epoch 50 Total Loss 3000934.750000
+Train Epoch 50 RMSE 0.201019 0.004617 MAE 0.061602 0.001828
+Val Epoch 50 RMSE nan nan MAE nan nan
+Epoch 51 Total Loss 2990683.750000
+Train Epoch 51 RMSE 0.201216 0.004824 MAE 0.062035 0.002204
+Val Epoch 51 RMSE nan nan MAE nan nan
+Epoch 52 Total Loss 2984635.500000
+Train Epoch 52 RMSE 0.200663 0.004692 MAE 0.061682 0.001996
+Val Epoch 52 RMSE nan nan MAE nan nan
+Epoch 53 Total Loss 2971513.000000
+Train Epoch 53 RMSE 0.200230 0.004352 MAE 0.061346 0.001911
+Val Epoch 53 RMSE nan nan MAE nan nan
+Epoch 54 Total Loss 2969299.000000
+Train Epoch 54 RMSE 0.200157 0.005233 MAE 0.061441 0.002196
+Val Epoch 54 RMSE nan nan MAE nan nan
+Epoch 55 Total Loss 2966588.500000
+Train Epoch 55 RMSE 0.200483 0.004985 MAE 0.061536 0.002005
+Val Epoch 55 RMSE nan nan MAE nan nan
+Epoch 56 Total Loss 2958356.500000
+Train Epoch 56 RMSE 0.200089 0.005039 MAE 0.061265 0.002063
+Val Epoch 56 RMSE nan nan MAE nan nan
+Epoch 57 Total Loss 2961518.750000
+Train Epoch 57 RMSE 0.200010 0.004798 MAE 0.061089 0.001915
+Val Epoch 57 RMSE nan nan MAE nan nan
+Epoch 58 Total Loss 2957255.000000
+Train Epoch 58 RMSE 0.200082 0.005560 MAE 0.061310 0.002378
+Val Epoch 58 RMSE nan nan MAE nan nan
+Epoch 59 Total Loss 2963568.250000
+Train Epoch 59 RMSE 0.200490 0.005202 MAE 0.061390 0.002425
+Val Epoch 59 RMSE nan nan MAE nan nan
+Epoch 60 Total Loss 2964653.750000
+Train Epoch 60 RMSE 0.200361 0.005195 MAE 0.061456 0.002334
+Val Epoch 60 RMSE nan nan MAE nan nan
+Epoch 61 Total Loss 2953124.750000
+Train Epoch 61 RMSE 0.199938 0.005577 MAE 0.061143 0.002409
+Val Epoch 61 RMSE nan nan MAE nan nan
+Epoch 62 Total Loss 2949762.500000
+Train Epoch 62 RMSE 0.199562 0.005627 MAE 0.061087 0.002744
+Val Epoch 62 RMSE nan nan MAE nan nan
+Epoch 63 Total Loss 2961754.250000
+Train Epoch 63 RMSE 0.200152 0.005010 MAE 0.061118 0.002306
+Val Epoch 63 RMSE nan nan MAE nan nan
+Epoch 64 Total Loss 2954565.750000
+Train Epoch 64 RMSE 0.199977 0.005468 MAE 0.061240 0.002652
+Val Epoch 64 RMSE nan nan MAE nan nan
+Epoch 65 Total Loss 2958361.250000
+Train Epoch 65 RMSE 0.199989 0.004696 MAE 0.061243 0.002383
+Val Epoch 65 RMSE nan nan MAE nan nan
+Epoch 66 Total Loss 2950536.500000
+Train Epoch 66 RMSE 0.200106 0.005684 MAE 0.061366 0.003246
+Val Epoch 66 RMSE nan nan MAE nan nan
+Epoch 67 Total Loss 2941045.000000
+Train Epoch 67 RMSE 0.199530 0.005488 MAE 0.061005 0.002675
+Val Epoch 67 RMSE nan nan MAE nan nan
+Epoch 68 Total Loss 2946153.750000
+Train Epoch 68 RMSE 0.199626 0.005139 MAE 0.061203 0.002727
+Val Epoch 68 RMSE nan nan MAE nan nan
+Epoch 69 Total Loss 2948936.500000
+Train Epoch 69 RMSE 0.199730 0.005555 MAE 0.061130 0.002725
+Val Epoch 69 RMSE nan nan MAE nan nan
+Epoch 70 Total Loss 2937301.500000
+Train Epoch 70 RMSE 0.199042 0.005455 MAE 0.060810 0.002947
+Val Epoch 70 RMSE nan nan MAE nan nan
+Epoch 71 Total Loss 2939623.750000
+Train Epoch 71 RMSE 0.199331 0.004903 MAE 0.060988 0.002895
+Val Epoch 71 RMSE nan nan MAE nan nan
+Epoch 72 Total Loss 2931812.500000
+Train Epoch 72 RMSE 0.199135 0.005650 MAE 0.060895 0.003026
+Val Epoch 72 RMSE nan nan MAE nan nan
+Epoch 73 Total Loss 2936710.000000
+Train Epoch 73 RMSE 0.199398 0.005245 MAE 0.061134 0.002540
+Val Epoch 73 RMSE nan nan MAE nan nan
+Epoch 74 Total Loss 2918308.750000
+Train Epoch 74 RMSE 0.199134 0.005816 MAE 0.060978 0.003051
+Val Epoch 74 RMSE nan nan MAE nan nan
+Epoch 75 Total Loss 2925873.250000
+Train Epoch 75 RMSE 0.199403 0.005257 MAE 0.061151 0.002845
+Val Epoch 75 RMSE nan nan MAE nan nan
+Epoch 76 Total Loss 2923430.500000
+Train Epoch 76 RMSE 0.199029 0.005243 MAE 0.061005 0.003040
+Val Epoch 76 RMSE nan nan MAE nan nan
+Epoch 77 Total Loss 2929106.750000
+Train Epoch 77 RMSE 0.199089 0.005091 MAE 0.060865 0.002612
+Val Epoch 77 RMSE nan nan MAE nan nan
+Epoch 78 Total Loss 2922439.500000
+Train Epoch 78 RMSE 0.198913 0.005209 MAE 0.060693 0.002750
+Val Epoch 78 RMSE nan nan MAE nan nan
+Epoch 79 Total Loss 2923308.750000
+Train Epoch 79 RMSE 0.198826 0.004466 MAE 0.060769 0.002427
+Val Epoch 79 RMSE nan nan MAE nan nan
+Epoch 80 Total Loss 2922996.000000
+Train Epoch 80 RMSE 0.198653 0.005013 MAE 0.060610 0.002592
+Val Epoch 80 RMSE nan nan MAE nan nan
+Epoch 81 Total Loss 2917230.000000
+Train Epoch 81 RMSE 0.198515 0.005712 MAE 0.060691 0.002792
+Val Epoch 81 RMSE nan nan MAE nan nan
+Epoch 82 Total Loss 2910771.000000
+Train Epoch 82 RMSE 0.198395 0.004786 MAE 0.060535 0.002656
+Val Epoch 82 RMSE nan nan MAE nan nan
+Epoch 83 Total Loss 2907992.250000
+Train Epoch 83 RMSE 0.198412 0.005030 MAE 0.060729 0.002183
+Val Epoch 83 RMSE nan nan MAE nan nan
+Epoch 84 Total Loss 2909596.750000
+Train Epoch 84 RMSE 0.198122 0.005210 MAE 0.060359 0.002247
+Val Epoch 84 RMSE nan nan MAE nan nan
+Epoch 85 Total Loss 2915914.500000
+Train Epoch 85 RMSE 0.198407 0.005655 MAE 0.060491 0.002269
+Val Epoch 85 RMSE nan nan MAE nan nan
+Epoch 86 Total Loss 2916138.500000
+Train Epoch 86 RMSE 0.198591 0.005263 MAE 0.060638 0.002178
+Val Epoch 86 RMSE nan nan MAE nan nan
+Epoch 87 Total Loss 2918502.750000
+Train Epoch 87 RMSE 0.198657 0.005264 MAE 0.060679 0.002184
+Val Epoch 87 RMSE nan nan MAE nan nan
+Epoch 88 Total Loss 2905708.500000
+Train Epoch 88 RMSE 0.198552 0.005466 MAE 0.060803 0.002200
+Val Epoch 88 RMSE nan nan MAE nan nan
+Epoch 89 Total Loss 2920415.500000
+Train Epoch 89 RMSE 0.199343 0.005369 MAE 0.061205 0.002451
+Val Epoch 89 RMSE nan nan MAE nan nan
+Epoch 90 Total Loss 2914928.250000
+Train Epoch 90 RMSE 0.198706 0.005373 MAE 0.060759 0.002428
+Val Epoch 90 RMSE nan nan MAE nan nan
+Epoch 91 Total Loss 2913996.250000
+Train Epoch 91 RMSE 0.198773 0.005658 MAE 0.060805 0.002701
+Val Epoch 91 RMSE nan nan MAE nan nan
+Epoch 92 Total Loss 2913794.250000
+Train Epoch 92 RMSE 0.198977 0.005902 MAE 0.061124 0.003065
+Val Epoch 92 RMSE nan nan MAE nan nan
+Epoch 93 Total Loss 2909249.000000
+Train Epoch 93 RMSE 0.198611 0.005280 MAE 0.060745 0.002633
+Val Epoch 93 RMSE nan nan MAE nan nan
+Epoch 94 Total Loss 2908122.250000
+Train Epoch 94 RMSE 0.198304 0.005008 MAE 0.060520 0.002501
+Val Epoch 94 RMSE nan nan MAE nan nan
+Epoch 95 Total Loss 2913211.000000
+Train Epoch 95 RMSE 0.198249 0.005326 MAE 0.060586 0.002351
+Val Epoch 95 RMSE nan nan MAE nan nan
+Epoch 96 Total Loss 2902610.750000
+Train Epoch 96 RMSE 0.198223 0.004802 MAE 0.060616 0.001993
+Val Epoch 96 RMSE nan nan MAE nan nan
+Epoch 97 Total Loss 2901434.500000
+Train Epoch 97 RMSE 0.198166 0.005897 MAE 0.060511 0.002800
+Val Epoch 97 RMSE nan nan MAE nan nan
+Epoch 98 Total Loss 2899633.250000
+Train Epoch 98 RMSE 0.198019 0.005823 MAE 0.060547 0.002887
+Val Epoch 98 RMSE nan nan MAE nan nan
+Epoch 99 Total Loss 2906923.750000
+Train Epoch 99 RMSE 0.198280 0.005244 MAE 0.060546 0.002852
+Val Epoch 99 RMSE nan nan MAE nan nan
+Epoch 100 Total Loss 2905468.250000
+Train Epoch 100 RMSE 0.197999 0.004996 MAE 0.060284 0.002249
+Val Epoch 100 RMSE nan nan MAE nan nan
+Epoch 101 Total Loss 2898610.500000
+Train Epoch 101 RMSE 0.198239 0.005672 MAE 0.060440 0.002819
+Val Epoch 101 RMSE nan nan MAE nan nan
+Epoch 102 Total Loss 2899561.250000
+Train Epoch 102 RMSE 0.198147 0.005385 MAE 0.060467 0.002617
+Val Epoch 102 RMSE nan nan MAE nan nan
+Epoch 103 Total Loss 2889569.250000
+Train Epoch 103 RMSE 0.197914 0.004932 MAE 0.060518 0.002351
+Val Epoch 103 RMSE nan nan MAE nan nan
+Epoch 104 Total Loss 2890766.250000
+Train Epoch 104 RMSE 0.197780 0.004626 MAE 0.060328 0.002360
+Val Epoch 104 RMSE nan nan MAE nan nan
+Epoch 105 Total Loss 2890296.750000
+Train Epoch 105 RMSE 0.197553 0.005438 MAE 0.060338 0.002748
+Val Epoch 105 RMSE nan nan MAE nan nan
+Epoch 106 Total Loss 2887548.500000
+Train Epoch 106 RMSE 0.197638 0.005225 MAE 0.060198 0.002625
+Val Epoch 106 RMSE nan nan MAE nan nan
+Epoch 107 Total Loss 2882522.500000
+Train Epoch 107 RMSE 0.197516 0.005431 MAE 0.060311 0.002771
+Val Epoch 107 RMSE nan nan MAE nan nan
+Epoch 108 Total Loss 2906116.000000
+Train Epoch 108 RMSE 0.198032 0.005359 MAE 0.060630 0.003015
+Val Epoch 108 RMSE nan nan MAE nan nan
+Epoch 109 Total Loss 2887002.500000
+Train Epoch 109 RMSE 0.197597 0.004923 MAE 0.060155 0.002530
+Val Epoch 109 RMSE nan nan MAE nan nan
+Epoch 110 Total Loss 2886111.000000
+Train Epoch 110 RMSE 0.197857 0.005493 MAE 0.060612 0.002761
+Val Epoch 110 RMSE nan nan MAE nan nan
+Epoch 111 Total Loss 2891182.750000
+Train Epoch 111 RMSE 0.197825 0.004936 MAE 0.060504 0.002537
+Val Epoch 111 RMSE nan nan MAE nan nan
+Epoch 112 Total Loss 2883193.000000
+Train Epoch 112 RMSE 0.197571 0.005397 MAE 0.060287 0.002786
+Val Epoch 112 RMSE nan nan MAE nan nan
+Epoch 113 Total Loss 2890408.000000
+Train Epoch 113 RMSE 0.197553 0.005192 MAE 0.060251 0.002708
+Val Epoch 113 RMSE nan nan MAE nan nan
+Epoch 114 Total Loss 2890222.750000
+Train Epoch 114 RMSE 0.197729 0.005132 MAE 0.060467 0.002346
+Val Epoch 114 RMSE nan nan MAE nan nan
+Epoch 115 Total Loss 2889511.500000
+Train Epoch 115 RMSE 0.197968 0.005455 MAE 0.060559 0.002876
+Val Epoch 115 RMSE nan nan MAE nan nan
+Epoch 116 Total Loss 2892507.500000
+Train Epoch 116 RMSE 0.197975 0.004455 MAE 0.060508 0.002073
+Val Epoch 116 RMSE nan nan MAE nan nan
+Epoch 117 Total Loss 2882774.500000
+Train Epoch 117 RMSE 0.197187 0.005048 MAE 0.060147 0.002200
+Val Epoch 117 RMSE nan nan MAE nan nan
+Epoch 118 Total Loss 2884068.250000
+Train Epoch 118 RMSE 0.197277 0.004798 MAE 0.060221 0.001991
+Val Epoch 118 RMSE nan nan MAE nan nan
+Epoch 119 Total Loss 2881296.500000
+Train Epoch 119 RMSE 0.197087 0.005380 MAE 0.060012 0.002272
+Val Epoch 119 RMSE nan nan MAE nan nan
+Epoch 120 Total Loss 2879467.000000
+Train Epoch 120 RMSE 0.197213 0.005163 MAE 0.060152 0.002223
+Val Epoch 120 RMSE nan nan MAE nan nan
+Epoch 121 Total Loss 2872335.750000
+Train Epoch 121 RMSE 0.196708 0.005265 MAE 0.059771 0.002130
+Val Epoch 121 RMSE nan nan MAE nan nan
+Epoch 122 Total Loss 2875991.000000
+Train Epoch 122 RMSE 0.197454 0.005471 MAE 0.060069 0.001988
+Val Epoch 122 RMSE nan nan MAE nan nan
+Epoch 123 Total Loss 2885132.500000
+Train Epoch 123 RMSE 0.197447 0.005494 MAE 0.060362 0.002138
+Val Epoch 123 RMSE nan nan MAE nan nan
+Epoch 124 Total Loss 2884412.000000
+Train Epoch 124 RMSE 0.197681 0.005372 MAE 0.060490 0.001757
+Val Epoch 124 RMSE nan nan MAE nan nan
+Epoch 125 Total Loss 2890266.500000
+Train Epoch 125 RMSE 0.197638 0.005673 MAE 0.060515 0.002217
+Val Epoch 125 RMSE nan nan MAE nan nan
+Epoch 126 Total Loss 2889281.500000
+Train Epoch 126 RMSE 0.197342 0.005798 MAE 0.060101 0.002024
+Val Epoch 126 RMSE nan nan MAE nan nan
+Epoch 127 Total Loss 2891814.000000
+Train Epoch 127 RMSE 0.197644 0.005326 MAE 0.060247 0.002349
+Val Epoch 127 RMSE nan nan MAE nan nan
+Epoch 128 Total Loss 2896620.750000
+Train Epoch 128 RMSE 0.198233 0.005423 MAE 0.060945 0.002758
+Val Epoch 128 RMSE nan nan MAE nan nan
+Epoch 129 Total Loss 2880809.000000
+Train Epoch 129 RMSE 0.197065 0.005390 MAE 0.060006 0.002538
+Val Epoch 129 RMSE nan nan MAE nan nan
+Epoch 130 Total Loss 2884239.000000
+Train Epoch 130 RMSE 0.197626 0.005554 MAE 0.060193 0.002795
+Val Epoch 130 RMSE nan nan MAE nan nan
+Epoch 131 Total Loss 2878602.500000
+Train Epoch 131 RMSE 0.197163 0.005648 MAE 0.060274 0.002911
+Val Epoch 131 RMSE nan nan MAE nan nan
+Epoch 132 Total Loss 2878760.250000
+Train Epoch 132 RMSE 0.197552 0.005314 MAE 0.060220 0.002694
+Val Epoch 132 RMSE nan nan MAE nan nan
+Epoch 133 Total Loss 2888061.000000
+Train Epoch 133 RMSE 0.197579 0.005094 MAE 0.060431 0.002724
+Val Epoch 133 RMSE nan nan MAE nan nan
+Epoch 134 Total Loss 2885725.000000
+Train Epoch 134 RMSE 0.197450 0.004781 MAE 0.060398 0.002343
+Val Epoch 134 RMSE nan nan MAE nan nan
+Epoch 135 Total Loss 2886903.250000
+Train Epoch 135 RMSE 0.197842 0.005302 MAE 0.060452 0.002386
+Val Epoch 135 RMSE nan nan MAE nan nan
+Epoch 136 Total Loss 2880224.750000
+Train Epoch 136 RMSE 0.197364 0.005626 MAE 0.060276 0.002042
+Val Epoch 136 RMSE nan nan MAE nan nan
+Epoch 137 Total Loss 2886752.000000
+Train Epoch 137 RMSE 0.197665 0.005265 MAE 0.060446 0.002170
+Val Epoch 137 RMSE nan nan MAE nan nan
+Epoch 138 Total Loss 2880453.750000
+Train Epoch 138 RMSE 0.197320 0.005453 MAE 0.060303 0.002376
+Val Epoch 138 RMSE nan nan MAE nan nan
+Epoch 139 Total Loss 2881286.750000
+Train Epoch 139 RMSE 0.197448 0.005067 MAE 0.060346 0.002523
+Val Epoch 139 RMSE nan nan MAE nan nan
+Epoch 140 Total Loss 2887961.000000
+Train Epoch 140 RMSE 0.197377 0.005478 MAE 0.060104 0.002768
+Val Epoch 140 RMSE nan nan MAE nan nan
+Epoch 141 Total Loss 2875237.750000
+Train Epoch 141 RMSE 0.197143 0.005219 MAE 0.060250 0.002495
+Val Epoch 141 RMSE nan nan MAE nan nan
+Epoch 142 Total Loss 2872861.000000
+Train Epoch 142 RMSE 0.196950 0.004622 MAE 0.060119 0.002452
+Val Epoch 142 RMSE nan nan MAE nan nan
+Epoch 143 Total Loss 2869077.500000
+Train Epoch 143 RMSE 0.197240 0.005518 MAE 0.060276 0.002668
+Val Epoch 143 RMSE nan nan MAE nan nan
+Epoch 144 Total Loss 2867894.500000
+Train Epoch 144 RMSE 0.196995 0.005185 MAE 0.060279 0.002593
+Val Epoch 144 RMSE nan nan MAE nan nan
+Epoch 145 Total Loss 2874746.500000
+Train Epoch 145 RMSE 0.197069 0.005576 MAE 0.060233 0.002865
+Val Epoch 145 RMSE nan nan MAE nan nan
+Epoch 146 Total Loss 2880236.500000
+Train Epoch 146 RMSE 0.197257 0.004862 MAE 0.060203 0.002719
+Val Epoch 146 RMSE nan nan MAE nan nan
+Epoch 147 Total Loss 2872596.250000
+Train Epoch 147 RMSE 0.196972 0.005573 MAE 0.060192 0.003092
+Val Epoch 147 RMSE nan nan MAE nan nan
+Epoch 148 Total Loss 2873782.500000
+Train Epoch 148 RMSE 0.196757 0.005574 MAE 0.059949 0.002801
+Val Epoch 148 RMSE nan nan MAE nan nan
+Epoch 149 Total Loss 2874503.500000
+Train Epoch 149 RMSE 0.196901 0.004829 MAE 0.060103 0.002401
+Val Epoch 149 RMSE nan nan MAE nan nan
+Epoch 150 Total Loss 2868834.000000
+Train Epoch 150 RMSE 0.196865 0.005220 MAE 0.060232 0.002482
+Val Epoch 150 RMSE nan nan MAE nan nan
+Epoch 151 Total Loss 2871600.750000
+Train Epoch 151 RMSE 0.196626 0.005741 MAE 0.059954 0.003008
+Val Epoch 151 RMSE nan nan MAE nan nan
+Epoch 152 Total Loss 2869613.250000
+Train Epoch 152 RMSE 0.196680 0.005709 MAE 0.060064 0.002766
+Val Epoch 152 RMSE nan nan MAE nan nan
+Epoch 153 Total Loss 2859352.750000
+Train Epoch 153 RMSE 0.196365 0.005447 MAE 0.060061 0.002956
+Val Epoch 153 RMSE nan nan MAE nan nan
+Epoch 154 Total Loss 2856408.000000
+Train Epoch 154 RMSE 0.196155 0.005171 MAE 0.059708 0.002616
+Val Epoch 154 RMSE nan nan MAE nan nan
+Epoch 155 Total Loss 2864066.750000
+Train Epoch 155 RMSE 0.196308 0.005814 MAE 0.059858 0.002792
+Val Epoch 155 RMSE nan nan MAE nan nan
+Epoch 156 Total Loss 2860121.500000
+Train Epoch 156 RMSE 0.196138 0.004966 MAE 0.059639 0.002535
+Val Epoch 156 RMSE nan nan MAE nan nan
+Epoch 157 Total Loss 2864324.250000
+Train Epoch 157 RMSE 0.196351 0.004948 MAE 0.059886 0.002653
+Val Epoch 157 RMSE nan nan MAE nan nan
+Epoch 158 Total Loss 2861315.750000
+Train Epoch 158 RMSE 0.196270 0.004910 MAE 0.059872 0.002390
+Val Epoch 158 RMSE nan nan MAE nan nan
+Epoch 159 Total Loss 2860396.000000
+Train Epoch 159 RMSE 0.196601 0.005708 MAE 0.059888 0.002298
+Val Epoch 159 RMSE nan nan MAE nan nan
+Epoch 160 Total Loss 2867834.750000
+Train Epoch 160 RMSE 0.196590 0.004643 MAE 0.060039 0.001607
+Val Epoch 160 RMSE nan nan MAE nan nan
+Epoch 161 Total Loss 2869265.500000
+Train Epoch 161 RMSE 0.197064 0.004813 MAE 0.060199 0.001819
+Val Epoch 161 RMSE nan nan MAE nan nan
+Epoch 162 Total Loss 2852923.500000
+Train Epoch 162 RMSE 0.196227 0.005274 MAE 0.059895 0.002011
+Val Epoch 162 RMSE nan nan MAE nan nan
+Epoch 163 Total Loss 2869546.000000
+Train Epoch 163 RMSE 0.196251 0.005221 MAE 0.059712 0.001672
+Val Epoch 163 RMSE nan nan MAE nan nan
+Epoch 164 Total Loss 2886021.000000
+Train Epoch 164 RMSE 0.197528 0.005592 MAE 0.060477 0.002184
+Val Epoch 164 RMSE nan nan MAE nan nan
+Epoch 165 Total Loss 2871545.250000
+Train Epoch 165 RMSE 0.196902 0.005311 MAE 0.060063 0.002491
+Val Epoch 165 RMSE nan nan MAE nan nan
+Epoch 166 Total Loss 2881106.000000
+Train Epoch 166 RMSE 0.197194 0.005442 MAE 0.060367 0.002563
+Val Epoch 166 RMSE nan nan MAE nan nan
+Epoch 167 Total Loss 2863614.000000
+Train Epoch 167 RMSE 0.196435 0.005128 MAE 0.060011 0.002443
+Val Epoch 167 RMSE nan nan MAE nan nan
+Epoch 168 Total Loss 2865056.000000
+Train Epoch 168 RMSE 0.197108 0.005543 MAE 0.060314 0.002513
+Val Epoch 168 RMSE nan nan MAE nan nan
+Epoch 169 Total Loss 2859789.750000
+Train Epoch 169 RMSE 0.196619 0.005784 MAE 0.060025 0.002625
+Val Epoch 169 RMSE nan nan MAE nan nan
+Epoch 170 Total Loss 2866428.750000
+Train Epoch 170 RMSE 0.196948 0.005185 MAE 0.060284 0.002444
+Val Epoch 170 RMSE nan nan MAE nan nan
+Epoch 171 Total Loss 2857256.500000
+Train Epoch 171 RMSE 0.196308 0.004799 MAE 0.059876 0.001796
+Val Epoch 171 RMSE nan nan MAE nan nan
+Epoch 172 Total Loss 2843053.500000
+Train Epoch 172 RMSE 0.195668 0.005145 MAE 0.059447 0.002257
+Val Epoch 172 RMSE nan nan MAE nan nan
+Epoch 173 Total Loss 2860525.500000
+Train Epoch 173 RMSE 0.196465 0.005547 MAE 0.059883 0.002353
+Val Epoch 173 RMSE nan nan MAE nan nan
+Epoch 174 Total Loss 2863205.500000
+Train Epoch 174 RMSE 0.196419 0.005341 MAE 0.059891 0.002680
+Val Epoch 174 RMSE nan nan MAE nan nan
+Epoch 175 Total Loss 2850767.500000
+Train Epoch 175 RMSE 0.196229 0.005617 MAE 0.059790 0.003105
+Val Epoch 175 RMSE nan nan MAE nan nan
+Epoch 176 Total Loss 2859580.500000
+Train Epoch 176 RMSE 0.196457 0.005573 MAE 0.059939 0.002726
+Val Epoch 176 RMSE nan nan MAE nan nan
+Epoch 177 Total Loss 2854582.000000
+Train Epoch 177 RMSE 0.196521 0.005256 MAE 0.060077 0.002489
+Val Epoch 177 RMSE nan nan MAE nan nan
+Epoch 178 Total Loss 2861853.500000
+Train Epoch 178 RMSE 0.196344 0.005639 MAE 0.059901 0.002561
+Val Epoch 178 RMSE nan nan MAE nan nan
+Epoch 179 Total Loss 2854049.500000
+Train Epoch 179 RMSE 0.196419 0.005923 MAE 0.059974 0.002877
+Val Epoch 179 RMSE nan nan MAE nan nan
+Epoch 180 Total Loss 2846055.000000
+Train Epoch 180 RMSE 0.195880 0.005473 MAE 0.059652 0.002505
+Val Epoch 180 RMSE nan nan MAE nan nan
+Epoch 181 Total Loss 2865942.250000
+Train Epoch 181 RMSE 0.196254 0.005397 MAE 0.059738 0.002753
+Val Epoch 181 RMSE nan nan MAE nan nan
+Epoch 182 Total Loss 2851683.000000
+Train Epoch 182 RMSE 0.196230 0.005643 MAE 0.059847 0.002706
+Val Epoch 182 RMSE nan nan MAE nan nan
+Epoch 183 Total Loss 2858748.250000
+Train Epoch 183 RMSE 0.196465 0.005546 MAE 0.059784 0.002911
+Val Epoch 183 RMSE nan nan MAE nan nan
+Epoch 184 Total Loss 2866728.000000
+Train Epoch 184 RMSE 0.196929 0.005256 MAE 0.060052 0.003030
+Val Epoch 184 RMSE nan nan MAE nan nan
+Epoch 185 Total Loss 2857611.000000
+Train Epoch 185 RMSE 0.196452 0.005559 MAE 0.059995 0.002977
+Val Epoch 185 RMSE nan nan MAE nan nan
+Epoch 186 Total Loss 2858666.500000
+Train Epoch 186 RMSE 0.196316 0.005231 MAE 0.059956 0.002793
+Val Epoch 186 RMSE nan nan MAE nan nan
+Epoch 187 Total Loss 2861592.250000
+Train Epoch 187 RMSE 0.196293 0.005223 MAE 0.060013 0.002880
+Val Epoch 187 RMSE nan nan MAE nan nan
+Epoch 188 Total Loss 2852282.500000
+Train Epoch 188 RMSE 0.195706 0.004965 MAE 0.059562 0.002607
+Val Epoch 188 RMSE nan nan MAE nan nan
+Epoch 189 Total Loss 2868634.750000
+Train Epoch 189 RMSE 0.196584 0.005409 MAE 0.059938 0.003028
+Val Epoch 189 RMSE nan nan MAE nan nan
+Epoch 190 Total Loss 2861457.000000
+Train Epoch 190 RMSE 0.196377 0.005366 MAE 0.059952 0.002921
+Val Epoch 190 RMSE nan nan MAE nan nan
+Epoch 191 Total Loss 2868510.000000
+Train Epoch 191 RMSE 0.196238 0.004871 MAE 0.059824 0.002264
+Val Epoch 191 RMSE nan nan MAE nan nan
+Epoch 192 Total Loss 2859176.250000
+Train Epoch 192 RMSE 0.196171 0.004846 MAE 0.059902 0.002264
+Val Epoch 192 RMSE nan nan MAE nan nan
+Epoch 193 Total Loss 2852217.250000
+Train Epoch 193 RMSE 0.195874 0.004890 MAE 0.059665 0.002427
+Val Epoch 193 RMSE nan nan MAE nan nan
+Epoch 194 Total Loss 2864520.750000
+Train Epoch 194 RMSE 0.196141 0.005090 MAE 0.059738 0.002091
+Val Epoch 194 RMSE nan nan MAE nan nan
+Epoch 195 Total Loss 2856227.250000
+Train Epoch 195 RMSE 0.196316 0.004933 MAE 0.059933 0.001678
+Val Epoch 195 RMSE nan nan MAE nan nan
+Epoch 196 Total Loss 2861866.750000
+Train Epoch 196 RMSE 0.196367 0.005160 MAE 0.059779 0.001773
+Val Epoch 196 RMSE nan nan MAE nan nan
+Epoch 197 Total Loss 2854284.500000
+Train Epoch 197 RMSE 0.196075 0.005378 MAE 0.059826 0.002283
+Val Epoch 197 RMSE nan nan MAE nan nan
+Epoch 198 Total Loss 2858108.750000
+Train Epoch 198 RMSE 0.196266 0.005408 MAE 0.059877 0.002214
+Val Epoch 198 RMSE nan nan MAE nan nan
+Epoch 199 Total Loss 2855070.000000
+Train Epoch 199 RMSE 0.196010 0.005803 MAE 0.059787 0.002199
+Val Epoch 199 RMSE nan nan MAE nan nan
+Epoch 200 Total Loss 2859408.500000
+Train Epoch 200 RMSE 0.196711 0.006114 MAE 0.060062 0.002927
+Val Epoch 200 RMSE nan nan MAE nan nan
+Epoch 201 Total Loss 2862894.500000
+Train Epoch 201 RMSE 0.196443 0.005772 MAE 0.059923 0.002403
+Val Epoch 201 RMSE nan nan MAE nan nan
+Epoch 202 Total Loss 2840033.500000
+Train Epoch 202 RMSE 0.195872 0.005055 MAE 0.059800 0.002114
+Val Epoch 202 RMSE nan nan MAE nan nan
+Epoch 203 Total Loss 2854928.500000
+Train Epoch 203 RMSE 0.195940 0.005029 MAE 0.059482 0.002152
+Val Epoch 203 RMSE nan nan MAE nan nan
+Epoch 204 Total Loss 2849116.250000
+Train Epoch 204 RMSE 0.195885 0.005029 MAE 0.059561 0.002281
+Val Epoch 204 RMSE nan nan MAE nan nan
+Epoch 205 Total Loss 2847085.500000
+Train Epoch 205 RMSE 0.195966 0.004898 MAE 0.059666 0.002333
+Val Epoch 205 RMSE nan nan MAE nan nan
+Epoch 206 Total Loss 2851196.000000
+Train Epoch 206 RMSE 0.195937 0.005094 MAE 0.059514 0.002003
+Val Epoch 206 RMSE nan nan MAE nan nan
+Epoch 207 Total Loss 2845649.000000
+Train Epoch 207 RMSE 0.195871 0.005706 MAE 0.059510 0.002513
+Val Epoch 207 RMSE nan nan MAE nan nan
+Epoch 208 Total Loss 2854747.500000
+Train Epoch 208 RMSE 0.196049 0.004973 MAE 0.059673 0.002139
+Val Epoch 208 RMSE nan nan MAE nan nan
+Epoch 209 Total Loss 2854174.000000
+Train Epoch 209 RMSE 0.196424 0.005349 MAE 0.059953 0.002170
+Val Epoch 209 RMSE nan nan MAE nan nan
+Epoch 210 Total Loss 2836701.750000
+Train Epoch 210 RMSE 0.195701 0.005377 MAE 0.059475 0.002405
+Val Epoch 210 RMSE nan nan MAE nan nan
+Epoch 211 Total Loss 2841962.750000
+Train Epoch 211 RMSE 0.195551 0.004658 MAE 0.059373 0.001967
+Val Epoch 211 RMSE nan nan MAE nan nan
+Epoch 212 Total Loss 2851809.500000
+Train Epoch 212 RMSE 0.196358 0.005708 MAE 0.059770 0.002561
+Val Epoch 212 RMSE nan nan MAE nan nan
+Epoch 213 Total Loss 2836574.000000
+Train Epoch 213 RMSE 0.195460 0.005595 MAE 0.059323 0.002262
+Val Epoch 213 RMSE nan nan MAE nan nan
+Epoch 214 Total Loss 2855057.000000
+Train Epoch 214 RMSE 0.195846 0.005166 MAE 0.059329 0.001925
+Val Epoch 214 RMSE nan nan MAE nan nan
+Epoch 215 Total Loss 2841509.250000
+Train Epoch 215 RMSE 0.195890 0.005077 MAE 0.059622 0.002102
+Val Epoch 215 RMSE nan nan MAE nan nan
+Epoch 216 Total Loss 2850025.500000
+Train Epoch 216 RMSE 0.196099 0.005558 MAE 0.059737 0.002570
+Val Epoch 216 RMSE nan nan MAE nan nan
+Epoch 217 Total Loss 2844567.500000
+Train Epoch 217 RMSE 0.195867 0.005117 MAE 0.059401 0.002007
+Val Epoch 217 RMSE nan nan MAE nan nan
+Epoch 218 Total Loss 2839861.500000
+Train Epoch 218 RMSE 0.195677 0.005723 MAE 0.059602 0.002515
+Val Epoch 218 RMSE nan nan MAE nan nan
+Epoch 219 Total Loss 2860720.750000
+Train Epoch 219 RMSE 0.196492 0.005110 MAE 0.059787 0.002282
+Val Epoch 219 RMSE nan nan MAE nan nan
+Epoch 220 Total Loss 2846943.500000
+Train Epoch 220 RMSE 0.195433 0.004675 MAE 0.059245 0.001821
+Val Epoch 220 RMSE nan nan MAE nan nan
+Epoch 221 Total Loss 2858305.250000
+Train Epoch 221 RMSE 0.196204 0.005263 MAE 0.059605 0.002410
+Val Epoch 221 RMSE nan nan MAE nan nan
+Epoch 222 Total Loss 2859271.750000
+Train Epoch 222 RMSE 0.196295 0.005115 MAE 0.059757 0.002240
+Val Epoch 222 RMSE nan nan MAE nan nan
+Epoch 223 Total Loss 2851789.500000
+Train Epoch 223 RMSE 0.195771 0.005417 MAE 0.059573 0.002538
+Val Epoch 223 RMSE nan nan MAE nan nan
+Epoch 224 Total Loss 2856202.250000
+Train Epoch 224 RMSE 0.196102 0.004974 MAE 0.059570 0.002332
+Val Epoch 224 RMSE nan nan MAE nan nan
+Epoch 225 Total Loss 2846847.500000
+Train Epoch 225 RMSE 0.196110 0.005426 MAE 0.059755 0.002563
+Val Epoch 225 RMSE nan nan MAE nan nan
+Epoch 226 Total Loss 2845321.000000
+Train Epoch 226 RMSE 0.195754 0.005700 MAE 0.059442 0.002628
+Val Epoch 226 RMSE nan nan MAE nan nan
+Epoch 227 Total Loss 2854275.500000
+Train Epoch 227 RMSE 0.196271 0.005002 MAE 0.059887 0.002555
+Val Epoch 227 RMSE nan nan MAE nan nan
+Epoch 228 Total Loss 2854928.000000
+Train Epoch 228 RMSE 0.195929 0.004617 MAE 0.059531 0.001980
+Val Epoch 228 RMSE nan nan MAE nan nan
+Epoch 229 Total Loss 2842999.500000
+Train Epoch 229 RMSE 0.195946 0.005230 MAE 0.059578 0.002539
+Val Epoch 229 RMSE nan nan MAE nan nan
+Epoch 230 Total Loss 2841763.500000
+Train Epoch 230 RMSE 0.195767 0.005151 MAE 0.059551 0.002297
+Val Epoch 230 RMSE nan nan MAE nan nan
+Epoch 231 Total Loss 2846958.000000
+Train Epoch 231 RMSE 0.195816 0.005328 MAE 0.059501 0.002318
+Val Epoch 231 RMSE nan nan MAE nan nan
+Epoch 232 Total Loss 2836716.750000
+Train Epoch 232 RMSE 0.195712 0.005515 MAE 0.059550 0.002473
+Val Epoch 232 RMSE nan nan MAE nan nan
+Epoch 233 Total Loss 2849724.250000
+Train Epoch 233 RMSE 0.195551 0.005426 MAE 0.059455 0.002504
+Val Epoch 233 RMSE nan nan MAE nan nan
+Epoch 234 Total Loss 2838173.750000
+Train Epoch 234 RMSE 0.195851 0.005384 MAE 0.059562 0.002390
+Val Epoch 234 RMSE nan nan MAE nan nan
+Epoch 235 Total Loss 2829578.000000
+Train Epoch 235 RMSE 0.195366 0.005421 MAE 0.059460 0.002303
+Val Epoch 235 RMSE nan nan MAE nan nan
+Epoch 236 Total Loss 2845507.000000
+Train Epoch 236 RMSE 0.195766 0.005375 MAE 0.059510 0.002494
+Val Epoch 236 RMSE nan nan MAE nan nan
+Epoch 237 Total Loss 2842738.500000
+Train Epoch 237 RMSE 0.195849 0.005600 MAE 0.059674 0.002486
+Val Epoch 237 RMSE nan nan MAE nan nan
+Epoch 238 Total Loss 2837507.000000
+Train Epoch 238 RMSE 0.195488 0.005371 MAE 0.059504 0.002607
+Val Epoch 238 RMSE nan nan MAE nan nan
+Epoch 239 Total Loss 2846722.250000
+Train Epoch 239 RMSE 0.195922 0.005217 MAE 0.059786 0.002609
+Val Epoch 239 RMSE nan nan MAE nan nan
+Epoch 240 Total Loss 2842760.750000
+Train Epoch 240 RMSE 0.195648 0.005150 MAE 0.059558 0.002475
+Val Epoch 240 RMSE nan nan MAE nan nan
+Epoch 241 Total Loss 2844382.750000
+Train Epoch 241 RMSE 0.195484 0.005179 MAE 0.059469 0.002208
+Val Epoch 241 RMSE nan nan MAE nan nan
+Epoch 242 Total Loss 2844449.750000
+Train Epoch 242 RMSE 0.195897 0.005441 MAE 0.059675 0.002326
+Val Epoch 242 RMSE nan nan MAE nan nan
+Epoch 243 Total Loss 2851291.000000
+Train Epoch 243 RMSE 0.196083 0.005450 MAE 0.059756 0.002576
+Val Epoch 243 RMSE nan nan MAE nan nan
+Epoch 244 Total Loss 2850027.750000
+Train Epoch 244 RMSE 0.195872 0.005334 MAE 0.059357 0.002224
+Val Epoch 244 RMSE nan nan MAE nan nan
+Epoch 245 Total Loss 2835129.250000
+Train Epoch 245 RMSE 0.195243 0.004972 MAE 0.059452 0.002284
+Val Epoch 245 RMSE nan nan MAE nan nan
+Epoch 246 Total Loss 2842326.000000
+Train Epoch 246 RMSE 0.195684 0.005474 MAE 0.059515 0.003038
+Val Epoch 246 RMSE nan nan MAE nan nan
+Epoch 247 Total Loss 2840198.250000
+Train Epoch 247 RMSE 0.195673 0.005467 MAE 0.059467 0.002778
+Val Epoch 247 RMSE nan nan MAE nan nan
+Epoch 248 Total Loss 2847883.500000
+Train Epoch 248 RMSE 0.195939 0.005786 MAE 0.059542 0.002601
+Val Epoch 248 RMSE nan nan MAE nan nan
+Epoch 249 Total Loss 2860332.250000
+Train Epoch 249 RMSE 0.196410 0.005607 MAE 0.059742 0.002597
+Val Epoch 249 RMSE nan nan MAE nan nan
+Epoch 250 Total Loss 2846374.500000
+Train Epoch 250 RMSE 0.195822 0.005349 MAE 0.059417 0.002978
+Val Epoch 250 RMSE nan nan MAE nan nan
+Epoch 251 Total Loss 2849217.750000
+Train Epoch 251 RMSE 0.195888 0.005214 MAE 0.059420 0.002775
+Val Epoch 251 RMSE nan nan MAE nan nan
+Epoch 252 Total Loss 2843494.250000
+Train Epoch 252 RMSE 0.195762 0.005576 MAE 0.059181 0.002987
+Val Epoch 252 RMSE nan nan MAE nan nan
+Epoch 253 Total Loss 2846405.750000
+Train Epoch 253 RMSE 0.196263 0.005185 MAE 0.059861 0.002981
+Val Epoch 253 RMSE nan nan MAE nan nan
+Epoch 254 Total Loss 2844931.000000
+Train Epoch 254 RMSE 0.195459 0.004827 MAE 0.059272 0.002461
+Val Epoch 254 RMSE nan nan MAE nan nan
+Epoch 255 Total Loss 2842458.750000
+Train Epoch 255 RMSE 0.195425 0.005008 MAE 0.059268 0.002258
+Val Epoch 255 RMSE nan nan MAE nan nan
+Epoch 256 Total Loss 2862663.250000
+Train Epoch 256 RMSE 0.195952 0.005107 MAE 0.059466 0.001957
+Val Epoch 256 RMSE nan nan MAE nan nan
+Epoch 257 Total Loss 2847692.000000
+Train Epoch 257 RMSE 0.196302 0.004926 MAE 0.059952 0.001944
+Val Epoch 257 RMSE nan nan MAE nan nan
+Epoch 258 Total Loss 2833170.250000
+Train Epoch 258 RMSE 0.195054 0.005272 MAE 0.059345 0.001777
+Val Epoch 258 RMSE nan nan MAE nan nan
+Epoch 259 Total Loss 2847631.500000
+Train Epoch 259 RMSE 0.195699 0.004958 MAE 0.059530 0.001780
+Val Epoch 259 RMSE nan nan MAE nan nan
+Epoch 260 Total Loss 2843260.000000
+Train Epoch 260 RMSE 0.195826 0.004911 MAE 0.059644 0.001941
+Val Epoch 260 RMSE nan nan MAE nan nan
+Epoch 261 Total Loss 2845021.250000
+Train Epoch 261 RMSE 0.195850 0.005499 MAE 0.059582 0.002230
+Val Epoch 261 RMSE nan nan MAE nan nan
+Epoch 262 Total Loss 2844113.250000
+Train Epoch 262 RMSE 0.195984 0.005669 MAE 0.059610 0.002187
+Val Epoch 262 RMSE nan nan MAE nan nan
+Epoch 263 Total Loss 2845479.250000
+Train Epoch 263 RMSE 0.195733 0.004874 MAE 0.059545 0.001712
+Val Epoch 263 RMSE nan nan MAE nan nan
+Epoch 264 Total Loss 2845939.500000
+Train Epoch 264 RMSE 0.195793 0.005289 MAE 0.059703 0.002129
+Val Epoch 264 RMSE nan nan MAE nan nan
+Epoch 265 Total Loss 2837548.000000
+Train Epoch 265 RMSE 0.195303 0.005432 MAE 0.059130 0.002143
+Val Epoch 265 RMSE nan nan MAE nan nan
+Epoch 266 Total Loss 2840185.000000
+Train Epoch 266 RMSE 0.195740 0.005367 MAE 0.059364 0.002200
+Val Epoch 266 RMSE nan nan MAE nan nan
+Epoch 267 Total Loss 2842969.250000
+Train Epoch 267 RMSE 0.195680 0.004931 MAE 0.059421 0.002113
+Val Epoch 267 RMSE nan nan MAE nan nan
+Epoch 268 Total Loss 2838929.500000
+Train Epoch 268 RMSE 0.195533 0.004998 MAE 0.059209 0.002281
+Val Epoch 268 RMSE nan nan MAE nan nan
+Epoch 269 Total Loss 2834546.000000
+Train Epoch 269 RMSE 0.195687 0.006052 MAE 0.059539 0.003051
+Val Epoch 269 RMSE nan nan MAE nan nan
+Epoch 270 Total Loss 2837193.500000
+Train Epoch 270 RMSE 0.195359 0.005462 MAE 0.059100 0.002701
+Val Epoch 270 RMSE nan nan MAE nan nan
+Epoch 271 Total Loss 2828002.000000
+Train Epoch 271 RMSE 0.195501 0.005823 MAE 0.059411 0.002991
+Val Epoch 271 RMSE nan nan MAE nan nan
+Epoch 272 Total Loss 2848217.750000
+Train Epoch 272 RMSE 0.195810 0.005242 MAE 0.059362 0.002729
+Val Epoch 272 RMSE nan nan MAE nan nan
+Epoch 273 Total Loss 2849470.000000
+Train Epoch 273 RMSE 0.195953 0.005609 MAE 0.059440 0.002811
+Val Epoch 273 RMSE nan nan MAE nan nan
+Epoch 274 Total Loss 2841565.000000
+Train Epoch 274 RMSE 0.195921 0.005317 MAE 0.059597 0.002383
+Val Epoch 274 RMSE nan nan MAE nan nan
+Epoch 275 Total Loss 2850733.500000
+Train Epoch 275 RMSE 0.195806 0.005050 MAE 0.059550 0.002599
+Val Epoch 275 RMSE nan nan MAE nan nan
+Epoch 276 Total Loss 2834648.250000
+Train Epoch 276 RMSE 0.195380 0.005183 MAE 0.059471 0.002642
+Val Epoch 276 RMSE nan nan MAE nan nan
+Epoch 277 Total Loss 2831953.500000
+Train Epoch 277 RMSE 0.195379 0.005502 MAE 0.059333 0.002838
+Val Epoch 277 RMSE nan nan MAE nan nan
+Epoch 278 Total Loss 2851283.750000
+Train Epoch 278 RMSE 0.196075 0.005387 MAE 0.059739 0.002585
+Val Epoch 278 RMSE nan nan MAE nan nan
+Epoch 279 Total Loss 2837570.000000
+Train Epoch 279 RMSE 0.195385 0.005102 MAE 0.059372 0.002243
+Val Epoch 279 RMSE nan nan MAE nan nan
+Epoch 280 Total Loss 2833771.250000
+Train Epoch 280 RMSE 0.194989 0.005198 MAE 0.059217 0.002342
+Val Epoch 280 RMSE nan nan MAE nan nan
+Epoch 281 Total Loss 2830189.750000
+Train Epoch 281 RMSE 0.195493 0.005404 MAE 0.059524 0.002591
+Val Epoch 281 RMSE nan nan MAE nan nan
+Epoch 282 Total Loss 2837059.000000
+Train Epoch 282 RMSE 0.195262 0.006053 MAE 0.059190 0.002760
+Val Epoch 282 RMSE nan nan MAE nan nan
+Epoch 283 Total Loss 2835024.250000
+Train Epoch 283 RMSE 0.195304 0.005592 MAE 0.059406 0.002637
+Val Epoch 283 RMSE nan nan MAE nan nan
+Epoch 284 Total Loss 2832520.250000
+Train Epoch 284 RMSE 0.195224 0.005407 MAE 0.059450 0.002691
+Val Epoch 284 RMSE nan nan MAE nan nan
+Epoch 285 Total Loss 2828455.250000
+Train Epoch 285 RMSE 0.195179 0.004681 MAE 0.059213 0.002172
+Val Epoch 285 RMSE nan nan MAE nan nan
+Epoch 286 Total Loss 2831250.250000
+Train Epoch 286 RMSE 0.195168 0.005326 MAE 0.059033 0.002275
+Val Epoch 286 RMSE nan nan MAE nan nan
+Epoch 287 Total Loss 2841310.250000
+Train Epoch 287 RMSE 0.195570 0.005302 MAE 0.059378 0.001835
+Val Epoch 287 RMSE nan nan MAE nan nan
+Epoch 288 Total Loss 2837833.750000
+Train Epoch 288 RMSE 0.195183 0.005422 MAE 0.059196 0.002058
+Val Epoch 288 RMSE nan nan MAE nan nan
+Epoch 289 Total Loss 2846448.250000
+Train Epoch 289 RMSE 0.195992 0.005362 MAE 0.059634 0.002314
+Val Epoch 289 RMSE nan nan MAE nan nan
+Epoch 290 Total Loss 2840503.500000
+Train Epoch 290 RMSE 0.195665 0.005166 MAE 0.059548 0.002382
+Val Epoch 290 RMSE nan nan MAE nan nan
+Epoch 291 Total Loss 2834299.000000
+Train Epoch 291 RMSE 0.195439 0.005004 MAE 0.059563 0.002610
+Val Epoch 291 RMSE nan nan MAE nan nan
+Epoch 292 Total Loss 2842940.250000
+Train Epoch 292 RMSE 0.195412 0.005724 MAE 0.059373 0.002962
+Val Epoch 292 RMSE nan nan MAE nan nan
+Epoch 293 Total Loss 2830045.000000
+Train Epoch 293 RMSE 0.194890 0.005455 MAE 0.059219 0.002196
+Val Epoch 293 RMSE nan nan MAE nan nan
+Epoch 294 Total Loss 2844352.000000
+Train Epoch 294 RMSE 0.195411 0.005017 MAE 0.059260 0.002045
+Val Epoch 294 RMSE nan nan MAE nan nan
+Epoch 295 Total Loss 2833343.500000
+Train Epoch 295 RMSE 0.194909 0.004804 MAE 0.059089 0.002280
+Val Epoch 295 RMSE nan nan MAE nan nan
+Epoch 296 Total Loss 2835696.000000
+Train Epoch 296 RMSE 0.195061 0.004991 MAE 0.059340 0.002355
+Val Epoch 296 RMSE nan nan MAE nan nan
+Epoch 297 Total Loss 2834285.000000
+Train Epoch 297 RMSE 0.194815 0.004967 MAE 0.059236 0.002550
+Val Epoch 297 RMSE nan nan MAE nan nan
+Epoch 298 Total Loss 2830550.750000
+Train Epoch 298 RMSE 0.194814 0.005310 MAE 0.059098 0.002600
+Val Epoch 298 RMSE nan nan MAE nan nan
+Epoch 299 Total Loss 2835370.750000
+Train Epoch 299 RMSE 0.195388 0.005191 MAE 0.059416 0.001978
+Val Epoch 299 RMSE nan nan MAE nan nan
+Epoch 300 Total Loss 2839704.750000
+Train Epoch 300 RMSE 0.195525 0.005106 MAE 0.059431 0.002154
+Val Epoch 300 RMSE nan nan MAE nan nan
+Epoch 301 Total Loss 2843889.250000
+Train Epoch 301 RMSE 0.195480 0.004843 MAE 0.059589 0.001751
+Val Epoch 301 RMSE nan nan MAE nan nan
+Epoch 302 Total Loss 2831444.750000
+Train Epoch 302 RMSE 0.195162 0.005170 MAE 0.059337 0.002254
+Val Epoch 302 RMSE nan nan MAE nan nan
+Epoch 303 Total Loss 2836883.000000
+Train Epoch 303 RMSE 0.195340 0.005386 MAE 0.059365 0.002343
+Val Epoch 303 RMSE nan nan MAE nan nan
+Epoch 304 Total Loss 2829963.000000
+Train Epoch 304 RMSE 0.194820 0.005215 MAE 0.059094 0.002218
+Val Epoch 304 RMSE nan nan MAE nan nan
+Epoch 305 Total Loss 2837085.000000
+Train Epoch 305 RMSE 0.195669 0.005378 MAE 0.059564 0.002192
+Val Epoch 305 RMSE nan nan MAE nan nan
+Epoch 306 Total Loss 2831263.250000
+Train Epoch 306 RMSE 0.195038 0.005146 MAE 0.059062 0.001987
+Val Epoch 306 RMSE nan nan MAE nan nan
+Epoch 307 Total Loss 2842885.000000
+Train Epoch 307 RMSE 0.195648 0.005081 MAE 0.059714 0.002145
+Val Epoch 307 RMSE nan nan MAE nan nan
+Epoch 308 Total Loss 2839072.000000
+Train Epoch 308 RMSE 0.195649 0.005637 MAE 0.059446 0.002279
+Val Epoch 308 RMSE nan nan MAE nan nan
+Epoch 309 Total Loss 2839721.250000
+Train Epoch 309 RMSE 0.195522 0.005318 MAE 0.059668 0.002019
+Val Epoch 309 RMSE nan nan MAE nan nan
+Epoch 310 Total Loss 2854415.750000
+Train Epoch 310 RMSE 0.196481 0.005208 MAE 0.059947 0.001989
+Val Epoch 310 RMSE nan nan MAE nan nan
+Epoch 311 Total Loss 2839042.250000
+Train Epoch 311 RMSE 0.195491 0.004909 MAE 0.059435 0.001866
+Val Epoch 311 RMSE nan nan MAE nan nan
+Epoch 312 Total Loss 2845507.500000
+Train Epoch 312 RMSE 0.195727 0.004876 MAE 0.059585 0.001954
+Val Epoch 312 RMSE nan nan MAE nan nan
+Epoch 313 Total Loss 2844550.500000
+Train Epoch 313 RMSE 0.195654 0.005740 MAE 0.059476 0.002349
+Val Epoch 313 RMSE nan nan MAE nan nan
+Epoch 314 Total Loss 2826750.750000
+Train Epoch 314 RMSE 0.195228 0.005436 MAE 0.059453 0.002383
+Val Epoch 314 RMSE nan nan MAE nan nan
+Epoch 315 Total Loss 2827735.500000
+Train Epoch 315 RMSE 0.194995 0.005775 MAE 0.059267 0.002473
+Val Epoch 315 RMSE nan nan MAE nan nan
+Epoch 316 Total Loss 2842911.750000
+Train Epoch 316 RMSE 0.195620 0.005875 MAE 0.059614 0.002470
+Val Epoch 316 RMSE nan nan MAE nan nan
+Epoch 317 Total Loss 2846685.500000
+Train Epoch 317 RMSE 0.195604 0.005241 MAE 0.059582 0.002109
+Val Epoch 317 RMSE nan nan MAE nan nan
+Epoch 318 Total Loss 2848524.500000
+Train Epoch 318 RMSE 0.195714 0.005230 MAE 0.059485 0.002351
+Val Epoch 318 RMSE nan nan MAE nan nan
+Epoch 319 Total Loss 2824791.250000
+Train Epoch 319 RMSE 0.195239 0.006374 MAE 0.059422 0.002978
+Val Epoch 319 RMSE nan nan MAE nan nan
+Epoch 320 Total Loss 2836004.500000
+Train Epoch 320 RMSE 0.195413 0.005724 MAE 0.059654 0.003083
+Val Epoch 320 RMSE nan nan MAE nan nan
+Epoch 321 Total Loss 2836894.750000
+Train Epoch 321 RMSE 0.195727 0.005938 MAE 0.059558 0.002995
+Val Epoch 321 RMSE nan nan MAE nan nan
+Epoch 322 Total Loss 2839030.250000
+Train Epoch 322 RMSE 0.195436 0.005678 MAE 0.059317 0.002885
+Val Epoch 322 RMSE nan nan MAE nan nan
+Epoch 323 Total Loss 2824971.250000
+Train Epoch 323 RMSE 0.195006 0.005677 MAE 0.059241 0.002837
+Val Epoch 323 RMSE nan nan MAE nan nan
+Epoch 324 Total Loss 2845943.000000
+Train Epoch 324 RMSE 0.195464 0.005362 MAE 0.059398 0.002681
+Val Epoch 324 RMSE nan nan MAE nan nan
+Epoch 325 Total Loss 2841929.500000
+Train Epoch 325 RMSE 0.195398 0.005303 MAE 0.059416 0.002397
+Val Epoch 325 RMSE nan nan MAE nan nan
+Epoch 326 Total Loss 2837371.000000
+Train Epoch 326 RMSE 0.195674 0.005548 MAE 0.059612 0.002741
+Val Epoch 326 RMSE nan nan MAE nan nan
+Epoch 327 Total Loss 2858667.750000
+Train Epoch 327 RMSE 0.196084 0.005038 MAE 0.059831 0.002514
+Val Epoch 327 RMSE nan nan MAE nan nan
+Epoch 328 Total Loss 2835543.250000
+Train Epoch 328 RMSE 0.195706 0.004895 MAE 0.059832 0.002474
+Val Epoch 328 RMSE nan nan MAE nan nan
+Epoch 329 Total Loss 2826273.000000
+Train Epoch 329 RMSE 0.195030 0.005376 MAE 0.059684 0.002738
+Val Epoch 329 RMSE nan nan MAE nan nan
+Epoch 330 Total Loss 2846431.250000
+Train Epoch 330 RMSE 0.195319 0.005014 MAE 0.059380 0.002515
+Val Epoch 330 RMSE nan nan MAE nan nan
+Epoch 331 Total Loss 2845333.000000
+Train Epoch 331 RMSE 0.195414 0.005162 MAE 0.059488 0.002134
+Val Epoch 331 RMSE nan nan MAE nan nan
+Epoch 332 Total Loss 2838574.750000
+Train Epoch 332 RMSE 0.195132 0.004720 MAE 0.059602 0.002081
+Val Epoch 332 RMSE nan nan MAE nan nan
+Epoch 333 Total Loss 2825147.750000
+Train Epoch 333 RMSE 0.195102 0.005807 MAE 0.059571 0.002291
+Val Epoch 333 RMSE nan nan MAE nan nan
+Epoch 334 Total Loss 2843636.250000
+Train Epoch 334 RMSE 0.195714 0.005765 MAE 0.059601 0.002374
+Val Epoch 334 RMSE nan nan MAE nan nan
+Epoch 335 Total Loss 2819323.750000
+Train Epoch 335 RMSE 0.194854 0.005619 MAE 0.059324 0.002369
+Val Epoch 335 RMSE nan nan MAE nan nan
+Epoch 336 Total Loss 2836202.250000
+Train Epoch 336 RMSE 0.195307 0.005734 MAE 0.059475 0.002335
+Val Epoch 336 RMSE nan nan MAE nan nan
+Epoch 337 Total Loss 2825329.250000
+Train Epoch 337 RMSE 0.194779 0.005331 MAE 0.059164 0.002378
+Val Epoch 337 RMSE nan nan MAE nan nan
+Epoch 338 Total Loss 2842920.500000
+Train Epoch 338 RMSE 0.195804 0.005965 MAE 0.059645 0.003103
+Val Epoch 338 RMSE nan nan MAE nan nan
+Epoch 339 Total Loss 2841096.500000
+Train Epoch 339 RMSE 0.195710 0.005389 MAE 0.059629 0.002424
+Val Epoch 339 RMSE nan nan MAE nan nan
+Epoch 340 Total Loss 2827572.250000
+Train Epoch 340 RMSE 0.194906 0.005582 MAE 0.059122 0.002358
+Val Epoch 340 RMSE nan nan MAE nan nan
+Epoch 341 Total Loss 2838149.750000
+Train Epoch 341 RMSE 0.195203 0.005644 MAE 0.059254 0.002547
+Val Epoch 341 RMSE nan nan MAE nan nan
+Epoch 342 Total Loss 2839875.250000
+Train Epoch 342 RMSE 0.195338 0.005664 MAE 0.059276 0.002951
+Val Epoch 342 RMSE nan nan MAE nan nan
+Epoch 343 Total Loss 2835825.250000
+Train Epoch 343 RMSE 0.195452 0.005310 MAE 0.059475 0.002666
+Val Epoch 343 RMSE nan nan MAE nan nan
+Epoch 344 Total Loss 2839441.500000
+Train Epoch 344 RMSE 0.195985 0.005355 MAE 0.059781 0.002764
+Val Epoch 344 RMSE nan nan MAE nan nan
+Epoch 345 Total Loss 2839495.750000
+Train Epoch 345 RMSE 0.195291 0.004752 MAE 0.059233 0.002153
+Val Epoch 345 RMSE nan nan MAE nan nan
+Epoch 346 Total Loss 2821199.250000
+Train Epoch 346 RMSE 0.194811 0.005658 MAE 0.059264 0.002535
+Val Epoch 346 RMSE nan nan MAE nan nan
+Epoch 347 Total Loss 2832309.500000
+Train Epoch 347 RMSE 0.195106 0.005379 MAE 0.059414 0.002608
+Val Epoch 347 RMSE nan nan MAE nan nan
+Epoch 348 Total Loss 2821931.750000
+Train Epoch 348 RMSE 0.195256 0.005015 MAE 0.059425 0.002080
+Val Epoch 348 RMSE nan nan MAE nan nan
+Epoch 349 Total Loss 2832537.750000
+Train Epoch 349 RMSE 0.194986 0.005253 MAE 0.059396 0.002050
+Val Epoch 349 RMSE nan nan MAE nan nan
+Epoch 350 Total Loss 2831731.500000
+Train Epoch 350 RMSE 0.195143 0.005500 MAE 0.059273 0.002431
+Val Epoch 350 RMSE nan nan MAE nan nan
+Epoch 351 Total Loss 2834565.500000
+Train Epoch 351 RMSE 0.195202 0.005326 MAE 0.059566 0.002242
+Val Epoch 351 RMSE nan nan MAE nan nan
+Epoch 352 Total Loss 2837233.500000
+Train Epoch 352 RMSE 0.195480 0.005276 MAE 0.059639 0.002129
+Val Epoch 352 RMSE nan nan MAE nan nan
+Epoch 353 Total Loss 2820976.750000
+Train Epoch 353 RMSE 0.194928 0.005395 MAE 0.059367 0.002004
+Val Epoch 353 RMSE nan nan MAE nan nan
+Epoch 354 Total Loss 2839171.250000
+Train Epoch 354 RMSE 0.195502 0.005511 MAE 0.059472 0.002117
+Val Epoch 354 RMSE nan nan MAE nan nan
+Epoch 355 Total Loss 2831789.750000
+Train Epoch 355 RMSE 0.194903 0.005632 MAE 0.059262 0.002287
+Val Epoch 355 RMSE nan nan MAE nan nan
+Epoch 356 Total Loss 2828208.000000
+Train Epoch 356 RMSE 0.195222 0.006319 MAE 0.059404 0.002535
+Val Epoch 356 RMSE nan nan MAE nan nan
+Epoch 357 Total Loss 2835404.250000
+Train Epoch 357 RMSE 0.195398 0.005951 MAE 0.059568 0.002684
+Val Epoch 357 RMSE nan nan MAE nan nan
+Epoch 358 Total Loss 2824852.250000
+Train Epoch 358 RMSE 0.195009 0.005741 MAE 0.059292 0.002536
+Val Epoch 358 RMSE nan nan MAE nan nan
+Epoch 359 Total Loss 2831402.000000
+Train Epoch 359 RMSE 0.195396 0.005257 MAE 0.059319 0.002518
+Val Epoch 359 RMSE nan nan MAE nan nan
+Epoch 360 Total Loss 2843044.750000
+Train Epoch 360 RMSE 0.195289 0.005021 MAE 0.059353 0.001971
+Val Epoch 360 RMSE nan nan MAE nan nan
+Epoch 361 Total Loss 2855097.500000
+Train Epoch 361 RMSE 0.195713 0.005493 MAE 0.059601 0.002237
+Val Epoch 361 RMSE nan nan MAE nan nan
+Epoch 362 Total Loss 2842883.500000
+Train Epoch 362 RMSE 0.195451 0.004859 MAE 0.059663 0.002166
+Val Epoch 362 RMSE nan nan MAE nan nan
+Epoch 363 Total Loss 2823873.750000
+Train Epoch 363 RMSE 0.195108 0.005203 MAE 0.059455 0.002036
+Val Epoch 363 RMSE nan nan MAE nan nan
+Epoch 364 Total Loss 2815435.750000
+Train Epoch 364 RMSE 0.194461 0.005615 MAE 0.059016 0.002126
+Val Epoch 364 RMSE nan nan MAE nan nan
+Epoch 365 Total Loss 2823455.750000
+Train Epoch 365 RMSE 0.195055 0.005308 MAE 0.059352 0.002414
+Val Epoch 365 RMSE nan nan MAE nan nan
+Epoch 366 Total Loss 2836420.500000
+Train Epoch 366 RMSE 0.195395 0.004771 MAE 0.059526 0.002006
+Val Epoch 366 RMSE nan nan MAE nan nan
+Epoch 367 Total Loss 2834075.500000
+Train Epoch 367 RMSE 0.195465 0.005658 MAE 0.059533 0.002202
+Val Epoch 367 RMSE nan nan MAE nan nan
+Epoch 368 Total Loss 2829796.250000
+Train Epoch 368 RMSE 0.195013 0.005258 MAE 0.059349 0.001975
+Val Epoch 368 RMSE nan nan MAE nan nan
+Epoch 369 Total Loss 2826414.500000
+Train Epoch 369 RMSE 0.195033 0.005743 MAE 0.059292 0.002527
+Val Epoch 369 RMSE nan nan MAE nan nan
+Epoch 370 Total Loss 2824276.250000
+Train Epoch 370 RMSE 0.195010 0.005199 MAE 0.059395 0.002543
+Val Epoch 370 RMSE nan nan MAE nan nan
+Epoch 371 Total Loss 2821666.500000
+Train Epoch 371 RMSE 0.194744 0.005584 MAE 0.059170 0.002268
+Val Epoch 371 RMSE nan nan MAE nan nan
+Epoch 372 Total Loss 2822299.750000
+Train Epoch 372 RMSE 0.194560 0.005840 MAE 0.059151 0.002689
+Val Epoch 372 RMSE nan nan MAE nan nan
+Epoch 373 Total Loss 2829655.500000
+Train Epoch 373 RMSE 0.195342 0.005773 MAE 0.059431 0.002739
+Val Epoch 373 RMSE nan nan MAE nan nan
+Epoch 374 Total Loss 2823441.500000
+Train Epoch 374 RMSE 0.194765 0.005543 MAE 0.059237 0.002474
+Val Epoch 374 RMSE nan nan MAE nan nan
+Epoch 375 Total Loss 2832847.000000
+Train Epoch 375 RMSE 0.195214 0.004959 MAE 0.059369 0.002006
+Val Epoch 375 RMSE nan nan MAE nan nan
+Epoch 376 Total Loss 2829161.750000
+Train Epoch 376 RMSE 0.194714 0.004896 MAE 0.059045 0.002072
+Val Epoch 376 RMSE nan nan MAE nan nan
+Epoch 377 Total Loss 2814802.500000
+Train Epoch 377 RMSE 0.194471 0.005455 MAE 0.059178 0.002208
+Val Epoch 377 RMSE nan nan MAE nan nan
+Epoch 378 Total Loss 2833658.000000
+Train Epoch 378 RMSE 0.195174 0.005190 MAE 0.059336 0.001885
+Val Epoch 378 RMSE nan nan MAE nan nan
+Epoch 379 Total Loss 2837780.000000
+Train Epoch 379 RMSE 0.195036 0.004892 MAE 0.059175 0.002064
+Val Epoch 379 RMSE nan nan MAE nan nan
+Epoch 380 Total Loss 2825815.000000
+Train Epoch 380 RMSE 0.195558 0.005796 MAE 0.059887 0.002391
+Val Epoch 380 RMSE nan nan MAE nan nan
+Epoch 381 Total Loss 2816536.750000
+Train Epoch 381 RMSE 0.194636 0.005751 MAE 0.059179 0.002484
+Val Epoch 381 RMSE nan nan MAE nan nan
+Epoch 382 Total Loss 2824000.750000
+Train Epoch 382 RMSE 0.195247 0.005206 MAE 0.059534 0.002317
+Val Epoch 382 RMSE nan nan MAE nan nan
+Epoch 383 Total Loss 2820980.250000
+Train Epoch 383 RMSE 0.194355 0.005288 MAE 0.058908 0.002435
+Val Epoch 383 RMSE nan nan MAE nan nan
+Epoch 384 Total Loss 2820923.000000
+Train Epoch 384 RMSE 0.195087 0.006083 MAE 0.059441 0.002821
+Val Epoch 384 RMSE nan nan MAE nan nan
+Epoch 385 Total Loss 2830198.250000
+Train Epoch 385 RMSE 0.194915 0.005668 MAE 0.059438 0.002662
+Val Epoch 385 RMSE nan nan MAE nan nan
+Epoch 386 Total Loss 2821571.750000
+Train Epoch 386 RMSE 0.194904 0.005700 MAE 0.059300 0.002464
+Val Epoch 386 RMSE nan nan MAE nan nan
+Epoch 387 Total Loss 2829739.250000
+Train Epoch 387 RMSE 0.194871 0.005649 MAE 0.059269 0.002413
+Val Epoch 387 RMSE nan nan MAE nan nan
+Epoch 388 Total Loss 2814271.000000
+Train Epoch 388 RMSE 0.194757 0.005442 MAE 0.059287 0.002699
+Val Epoch 388 RMSE nan nan MAE nan nan
+Epoch 389 Total Loss 2840958.250000
+Train Epoch 389 RMSE 0.195621 0.005218 MAE 0.059496 0.002776
+Val Epoch 389 RMSE nan nan MAE nan nan
+Epoch 390 Total Loss 2831458.000000
+Train Epoch 390 RMSE 0.195128 0.005730 MAE 0.059342 0.002834
+Val Epoch 390 RMSE nan nan MAE nan nan
+Epoch 391 Total Loss 2829652.250000
+Train Epoch 391 RMSE 0.194802 0.005605 MAE 0.059228 0.002948
+Val Epoch 391 RMSE nan nan MAE nan nan
+Epoch 392 Total Loss 2831548.000000
+Train Epoch 392 RMSE 0.195137 0.005266 MAE 0.059509 0.002729
+Val Epoch 392 RMSE nan nan MAE nan nan
+Epoch 393 Total Loss 2828129.250000
+Train Epoch 393 RMSE 0.194829 0.005807 MAE 0.059339 0.002695
+Val Epoch 393 RMSE nan nan MAE nan nan
+Epoch 394 Total Loss 2839281.750000
+Train Epoch 394 RMSE 0.195271 0.004981 MAE 0.059577 0.002669
+Val Epoch 394 RMSE nan nan MAE nan nan
+Epoch 395 Total Loss 2825200.500000
+Train Epoch 395 RMSE 0.194776 0.005431 MAE 0.059373 0.002648
+Val Epoch 395 RMSE nan nan MAE nan nan
+Epoch 396 Total Loss 2829209.000000
+Train Epoch 396 RMSE 0.194865 0.005356 MAE 0.059293 0.002274
+Val Epoch 396 RMSE nan nan MAE nan nan
+Epoch 397 Total Loss 2831639.000000
+Train Epoch 397 RMSE 0.194936 0.005760 MAE 0.059161 0.002413
+Val Epoch 397 RMSE nan nan MAE nan nan
+Epoch 398 Total Loss 2825757.750000
+Train Epoch 398 RMSE 0.195001 0.005087 MAE 0.059277 0.002000
+Val Epoch 398 RMSE nan nan MAE nan nan
+Epoch 399 Total Loss 2826985.500000
+Train Epoch 399 RMSE 0.194760 0.005507 MAE 0.059280 0.002146
+Val Epoch 399 RMSE nan nan MAE nan nan
+Epoch 400 Total Loss 2835669.250000
+Train Epoch 400 RMSE 0.195170 0.005935 MAE 0.059436 0.002405
+Val Epoch 400 RMSE nan nan MAE nan nan
+Epoch 401 Total Loss 2838187.750000
+Train Epoch 401 RMSE 0.195482 0.005466 MAE 0.059444 0.002362
+Val Epoch 401 RMSE nan nan MAE nan nan
+Epoch 402 Total Loss 2834247.000000
+Train Epoch 402 RMSE 0.195033 0.005974 MAE 0.059452 0.002421
+Val Epoch 402 RMSE nan nan MAE nan nan
+Epoch 403 Total Loss 2832555.750000
+Train Epoch 403 RMSE 0.195147 0.005559 MAE 0.059372 0.002128
+Val Epoch 403 RMSE nan nan MAE nan nan
+Epoch 404 Total Loss 2828237.500000
+Train Epoch 404 RMSE 0.194925 0.005635 MAE 0.059358 0.002319
+Val Epoch 404 RMSE nan nan MAE nan nan
+Epoch 405 Total Loss 2837405.750000
+Train Epoch 405 RMSE 0.195100 0.005557 MAE 0.059533 0.002044
+Val Epoch 405 RMSE nan nan MAE nan nan
+Epoch 406 Total Loss 2834843.500000
+Train Epoch 406 RMSE 0.194910 0.006138 MAE 0.059113 0.002685
+Val Epoch 406 RMSE nan nan MAE nan nan
+Epoch 407 Total Loss 2853356.500000
+Train Epoch 407 RMSE 0.196071 0.005888 MAE 0.059654 0.002643
+Val Epoch 407 RMSE nan nan MAE nan nan
+Epoch 408 Total Loss 2831386.000000
+Train Epoch 408 RMSE 0.195201 0.005831 MAE 0.059614 0.002635
+Val Epoch 408 RMSE nan nan MAE nan nan
+Epoch 409 Total Loss 2834043.500000
+Train Epoch 409 RMSE 0.195207 0.005307 MAE 0.059522 0.002663
+Val Epoch 409 RMSE nan nan MAE nan nan
+Epoch 410 Total Loss 2823195.500000
+Train Epoch 410 RMSE 0.194604 0.005317 MAE 0.059069 0.002630
+Val Epoch 410 RMSE nan nan MAE nan nan
+Epoch 411 Total Loss 2839163.750000
+Train Epoch 411 RMSE 0.195014 0.004931 MAE 0.059170 0.002346
+Val Epoch 411 RMSE nan nan MAE nan nan
+Epoch 412 Total Loss 2824993.250000
+Train Epoch 412 RMSE 0.194672 0.005692 MAE 0.059129 0.002603
+Val Epoch 412 RMSE nan nan MAE nan nan
+Epoch 413 Total Loss 2820875.000000
+Train Epoch 413 RMSE 0.194955 0.004990 MAE 0.059185 0.002327
+Val Epoch 413 RMSE nan nan MAE nan nan
+Epoch 414 Total Loss 2828195.750000
+Train Epoch 414 RMSE 0.195060 0.005077 MAE 0.059272 0.002072
+Val Epoch 414 RMSE nan nan MAE nan nan
+Epoch 415 Total Loss 2808921.750000
+Train Epoch 415 RMSE 0.194528 0.005542 MAE 0.059036 0.002173
+Val Epoch 415 RMSE nan nan MAE nan nan
+Epoch 416 Total Loss 2832241.750000
+Train Epoch 416 RMSE 0.194940 0.005865 MAE 0.059279 0.002572
+Val Epoch 416 RMSE nan nan MAE nan nan
+Epoch 417 Total Loss 2819135.250000
+Train Epoch 417 RMSE 0.194454 0.005468 MAE 0.059142 0.002169
+Val Epoch 417 RMSE nan nan MAE nan nan
+Epoch 418 Total Loss 2824790.750000
+Train Epoch 418 RMSE 0.195098 0.005167 MAE 0.059333 0.002340
+Val Epoch 418 RMSE nan nan MAE nan nan
+Epoch 419 Total Loss 2836532.500000
+Train Epoch 419 RMSE 0.195242 0.005817 MAE 0.059542 0.002434
+Val Epoch 419 RMSE nan nan MAE nan nan
+Epoch 420 Total Loss 2840999.250000
+Train Epoch 420 RMSE 0.195384 0.005176 MAE 0.059352 0.002196
+Val Epoch 420 RMSE nan nan MAE nan nan
+Epoch 421 Total Loss 2835092.750000
+Train Epoch 421 RMSE 0.195078 0.004934 MAE 0.059215 0.002353
+Val Epoch 421 RMSE nan nan MAE nan nan
+Epoch 422 Total Loss 2827484.500000
+Train Epoch 422 RMSE 0.195011 0.005063 MAE 0.059106 0.002167
+Val Epoch 422 RMSE nan nan MAE nan nan
+Epoch 423 Total Loss 2826139.500000
+Train Epoch 423 RMSE 0.194891 0.005526 MAE 0.059375 0.002817
+Val Epoch 423 RMSE nan nan MAE nan nan
+Epoch 424 Total Loss 2819706.000000
+Train Epoch 424 RMSE 0.194576 0.005267 MAE 0.058998 0.002393
+Val Epoch 424 RMSE nan nan MAE nan nan
+Epoch 425 Total Loss 2833106.000000
+Train Epoch 425 RMSE 0.194978 0.005355 MAE 0.059369 0.002656
+Val Epoch 425 RMSE nan nan MAE nan nan
+Epoch 426 Total Loss 2815298.750000
+Train Epoch 426 RMSE 0.194537 0.004948 MAE 0.059022 0.002044
+Val Epoch 426 RMSE nan nan MAE nan nan
+Epoch 427 Total Loss 2821900.000000
+Train Epoch 427 RMSE 0.194871 0.005996 MAE 0.059315 0.002501
+Val Epoch 427 RMSE nan nan MAE nan nan
+Epoch 428 Total Loss 2823849.500000
+Train Epoch 428 RMSE 0.194755 0.005329 MAE 0.059045 0.002335
+Val Epoch 428 RMSE nan nan MAE nan nan
+Epoch 429 Total Loss 2834130.250000
+Train Epoch 429 RMSE 0.194948 0.005201 MAE 0.059254 0.002119
+Val Epoch 429 RMSE nan nan MAE nan nan
+Epoch 430 Total Loss 2818637.750000
+Train Epoch 430 RMSE 0.194499 0.005184 MAE 0.058993 0.001770
+Val Epoch 430 RMSE nan nan MAE nan nan
+Epoch 431 Total Loss 2814746.250000
+Train Epoch 431 RMSE 0.194693 0.005572 MAE 0.059233 0.002153
+Val Epoch 431 RMSE nan nan MAE nan nan
+Epoch 432 Total Loss 2823776.750000
+Train Epoch 432 RMSE 0.194843 0.005941 MAE 0.059170 0.002417
+Val Epoch 432 RMSE nan nan MAE nan nan
+Epoch 433 Total Loss 2811424.750000
+Train Epoch 433 RMSE 0.194443 0.005679 MAE 0.059208 0.002593
+Val Epoch 433 RMSE nan nan MAE nan nan
+Epoch 434 Total Loss 2821708.750000
+Train Epoch 434 RMSE 0.194468 0.005214 MAE 0.059003 0.002321
+Val Epoch 434 RMSE nan nan MAE nan nan
+Epoch 435 Total Loss 2822550.500000
+Train Epoch 435 RMSE 0.194595 0.005659 MAE 0.059016 0.002587
+Val Epoch 435 RMSE nan nan MAE nan nan
+Epoch 436 Total Loss 2811120.250000
+Train Epoch 436 RMSE 0.194314 0.005709 MAE 0.058999 0.002402
+Val Epoch 436 RMSE nan nan MAE nan nan
+Epoch 437 Total Loss 2830057.250000
+Train Epoch 437 RMSE 0.195106 0.005677 MAE 0.059312 0.002687
+Val Epoch 437 RMSE nan nan MAE nan nan
+Epoch 438 Total Loss 2825388.750000
+Train Epoch 438 RMSE 0.195300 0.006038 MAE 0.059344 0.002711
+Val Epoch 438 RMSE nan nan MAE nan nan
+Epoch 439 Total Loss 2817482.500000
+Train Epoch 439 RMSE 0.194545 0.005791 MAE 0.059106 0.002956
+Val Epoch 439 RMSE nan nan MAE nan nan
+Epoch 440 Total Loss 2821976.000000
+Train Epoch 440 RMSE 0.194802 0.005708 MAE 0.059302 0.002897
+Val Epoch 440 RMSE nan nan MAE nan nan
+Epoch 441 Total Loss 2826797.750000
+Train Epoch 441 RMSE 0.194872 0.005426 MAE 0.059082 0.002672
+Val Epoch 441 RMSE nan nan MAE nan nan
+Epoch 442 Total Loss 2817510.750000
+Train Epoch 442 RMSE 0.194462 0.005757 MAE 0.059103 0.002887
+Val Epoch 442 RMSE nan nan MAE nan nan
+Epoch 443 Total Loss 2833119.500000
+Train Epoch 443 RMSE 0.195006 0.005650 MAE 0.059211 0.002772
+Val Epoch 443 RMSE nan nan MAE nan nan
+Epoch 444 Total Loss 2831946.500000
+Train Epoch 444 RMSE 0.194912 0.005243 MAE 0.059232 0.002865
+Val Epoch 444 RMSE nan nan MAE nan nan
+Epoch 445 Total Loss 2824581.250000
+Train Epoch 445 RMSE 0.194648 0.005541 MAE 0.059168 0.002487
+Val Epoch 445 RMSE nan nan MAE nan nan
+Epoch 446 Total Loss 2837033.000000
+Train Epoch 446 RMSE 0.195581 0.005307 MAE 0.059469 0.002329
+Val Epoch 446 RMSE nan nan MAE nan nan
+Epoch 447 Total Loss 2828276.250000
+Train Epoch 447 RMSE 0.194863 0.005435 MAE 0.059234 0.002257
+Val Epoch 447 RMSE nan nan MAE nan nan
+Epoch 448 Total Loss 2828382.000000
+Train Epoch 448 RMSE 0.194903 0.005044 MAE 0.059028 0.002247
+Val Epoch 448 RMSE nan nan MAE nan nan
+Epoch 449 Total Loss 2825749.250000
+Train Epoch 449 RMSE 0.194847 0.005542 MAE 0.059008 0.002346
+Val Epoch 449 RMSE nan nan MAE nan nan
+Epoch 450 Total Loss 2820288.250000
+Train Epoch 450 RMSE 0.194890 0.005466 MAE 0.059219 0.002912
+Val Epoch 450 RMSE nan nan MAE nan nan
+Epoch 451 Total Loss 2831598.750000
+Train Epoch 451 RMSE 0.194813 0.005493 MAE 0.059114 0.002593
+Val Epoch 451 RMSE nan nan MAE nan nan
+Epoch 452 Total Loss 2829397.250000
+Train Epoch 452 RMSE 0.195281 0.005557 MAE 0.059513 0.002490
+Val Epoch 452 RMSE nan nan MAE nan nan
+Epoch 453 Total Loss 2820437.750000
+Train Epoch 453 RMSE 0.194652 0.005358 MAE 0.059034 0.002431
+Val Epoch 453 RMSE nan nan MAE nan nan
+Epoch 454 Total Loss 2830177.250000
+Train Epoch 454 RMSE 0.195168 0.005380 MAE 0.059317 0.002243
+Val Epoch 454 RMSE nan nan MAE nan nan
+Epoch 455 Total Loss 2822353.750000
+Train Epoch 455 RMSE 0.195021 0.005443 MAE 0.059333 0.002411
+Val Epoch 455 RMSE nan nan MAE nan nan
+Epoch 456 Total Loss 2842714.500000
+Train Epoch 456 RMSE 0.195706 0.005258 MAE 0.059663 0.002317
+Val Epoch 456 RMSE nan nan MAE nan nan
+Epoch 457 Total Loss 2827420.500000
+Train Epoch 457 RMSE 0.194777 0.005091 MAE 0.059165 0.002067
+Val Epoch 457 RMSE nan nan MAE nan nan
+Epoch 458 Total Loss 2846756.250000
+Train Epoch 458 RMSE 0.195428 0.005508 MAE 0.059397 0.002127
+Val Epoch 458 RMSE nan nan MAE nan nan
+Epoch 459 Total Loss 2817516.500000
+Train Epoch 459 RMSE 0.194484 0.005389 MAE 0.059179 0.002256
+Val Epoch 459 RMSE nan nan MAE nan nan
+Epoch 460 Total Loss 2828495.000000
+Train Epoch 460 RMSE 0.194865 0.005624 MAE 0.059331 0.002401
+Val Epoch 460 RMSE nan nan MAE nan nan
+Epoch 461 Total Loss 2827405.000000
+Train Epoch 461 RMSE 0.194894 0.004768 MAE 0.059250 0.001817
+Val Epoch 461 RMSE nan nan MAE nan nan
+Epoch 462 Total Loss 2819731.750000
+Train Epoch 462 RMSE 0.194348 0.005419 MAE 0.058843 0.002048
+Val Epoch 462 RMSE nan nan MAE nan nan
+Epoch 463 Total Loss 2836533.500000
+Train Epoch 463 RMSE 0.195238 0.005369 MAE 0.059271 0.002145
+Val Epoch 463 RMSE nan nan MAE nan nan
+Epoch 464 Total Loss 2832266.000000
+Train Epoch 464 RMSE 0.195237 0.005174 MAE 0.059324 0.001764
+Val Epoch 464 RMSE nan nan MAE nan nan
+Epoch 465 Total Loss 2839407.000000
+Train Epoch 465 RMSE 0.194896 0.004997 MAE 0.059116 0.002050
+Val Epoch 465 RMSE nan nan MAE nan nan
+Epoch 466 Total Loss 2824713.750000
+Train Epoch 466 RMSE 0.195049 0.005066 MAE 0.059358 0.002076
+Val Epoch 466 RMSE nan nan MAE nan nan
+Epoch 467 Total Loss 2822185.500000
+Train Epoch 467 RMSE 0.194634 0.005318 MAE 0.059110 0.002409
+Val Epoch 467 RMSE nan nan MAE nan nan
+Epoch 468 Total Loss 2819554.000000
+Train Epoch 468 RMSE 0.194257 0.005069 MAE 0.058965 0.001952
+Val Epoch 468 RMSE nan nan MAE nan nan
+Epoch 469 Total Loss 2839252.750000
+Train Epoch 469 RMSE 0.195243 0.004992 MAE 0.059386 0.001733
+Val Epoch 469 RMSE nan nan MAE nan nan
+Epoch 470 Total Loss 2826358.750000
+Train Epoch 470 RMSE 0.195038 0.005215 MAE 0.059282 0.002001
+Val Epoch 470 RMSE nan nan MAE nan nan
+Epoch 471 Total Loss 2836109.500000
+Train Epoch 471 RMSE 0.195172 0.005261 MAE 0.059351 0.001949
+Val Epoch 471 RMSE nan nan MAE nan nan
+Epoch 472 Total Loss 2818511.250000
+Train Epoch 472 RMSE 0.194468 0.005597 MAE 0.059106 0.002695
+Val Epoch 472 RMSE nan nan MAE nan nan
+Epoch 473 Total Loss 2823722.000000
+Train Epoch 473 RMSE 0.194777 0.005539 MAE 0.059330 0.002382
+Val Epoch 473 RMSE nan nan MAE nan nan
+Epoch 474 Total Loss 2819591.750000
+Train Epoch 474 RMSE 0.194540 0.005693 MAE 0.059049 0.002314
+Val Epoch 474 RMSE nan nan MAE nan nan
+Epoch 475 Total Loss 2815561.000000
+Train Epoch 475 RMSE 0.194495 0.005423 MAE 0.059051 0.002419
+Val Epoch 475 RMSE nan nan MAE nan nan
+Epoch 476 Total Loss 2840330.250000
+Train Epoch 476 RMSE 0.195352 0.005843 MAE 0.059388 0.002594
+Val Epoch 476 RMSE nan nan MAE nan nan
+Epoch 477 Total Loss 2829361.000000
+Train Epoch 477 RMSE 0.195283 0.005115 MAE 0.059469 0.002378
+Val Epoch 477 RMSE nan nan MAE nan nan
+Epoch 478 Total Loss 2824941.500000
+Train Epoch 478 RMSE 0.194867 0.005416 MAE 0.059195 0.002262
+Val Epoch 478 RMSE nan nan MAE nan nan
+Epoch 479 Total Loss 2822153.750000
+Train Epoch 479 RMSE 0.194832 0.005004 MAE 0.059286 0.002064
+Val Epoch 479 RMSE nan nan MAE nan nan
+Epoch 480 Total Loss 2821024.750000
+Train Epoch 480 RMSE 0.194396 0.005393 MAE 0.059008 0.002076
+Val Epoch 480 RMSE nan nan MAE nan nan
+Epoch 481 Total Loss 2828325.500000
+Train Epoch 481 RMSE 0.194783 0.005172 MAE 0.059130 0.001950
+Val Epoch 481 RMSE nan nan MAE nan nan
+Epoch 482 Total Loss 2827833.500000
+Train Epoch 482 RMSE 0.195116 0.005576 MAE 0.059247 0.002093
+Val Epoch 482 RMSE nan nan MAE nan nan
+Epoch 483 Total Loss 2838920.250000
+Train Epoch 483 RMSE 0.195180 0.005788 MAE 0.059474 0.002620
+Val Epoch 483 RMSE nan nan MAE nan nan
+Epoch 484 Total Loss 2816287.750000
+Train Epoch 484 RMSE 0.194688 0.005906 MAE 0.059181 0.002537
+Val Epoch 484 RMSE nan nan MAE nan nan
+Epoch 485 Total Loss 2828635.000000
+Train Epoch 485 RMSE 0.194872 0.005018 MAE 0.059058 0.002022
+Val Epoch 485 RMSE nan nan MAE nan nan
+Epoch 486 Total Loss 2819630.250000
+Train Epoch 486 RMSE 0.194851 0.006236 MAE 0.059113 0.002486
+Val Epoch 486 RMSE nan nan MAE nan nan
+Epoch 487 Total Loss 2831290.250000
+Train Epoch 487 RMSE 0.195055 0.005710 MAE 0.059213 0.002510
+Val Epoch 487 RMSE nan nan MAE nan nan
+Epoch 488 Total Loss 2808018.250000
+Train Epoch 488 RMSE 0.194034 0.005775 MAE 0.058716 0.002472
+Val Epoch 488 RMSE nan nan MAE nan nan
+Epoch 489 Total Loss 2812486.500000
+Train Epoch 489 RMSE 0.194738 0.006173 MAE 0.059327 0.002874
+Val Epoch 489 RMSE nan nan MAE nan nan
+Epoch 490 Total Loss 2818360.750000
+Train Epoch 490 RMSE 0.194435 0.006058 MAE 0.058792 0.002561
+Val Epoch 490 RMSE nan nan MAE nan nan
+Epoch 491 Total Loss 2819421.250000
+Train Epoch 491 RMSE 0.194858 0.005663 MAE 0.059064 0.002411
+Val Epoch 491 RMSE nan nan MAE nan nan
+Epoch 492 Total Loss 2818875.500000
+Train Epoch 492 RMSE 0.194633 0.006061 MAE 0.059129 0.002834
+Val Epoch 492 RMSE nan nan MAE nan nan
+Epoch 493 Total Loss 2814468.500000
+Train Epoch 493 RMSE 0.194326 0.005810 MAE 0.058777 0.002735
+Val Epoch 493 RMSE nan nan MAE nan nan
+Epoch 494 Total Loss 2813176.500000
+Train Epoch 494 RMSE 0.194716 0.005483 MAE 0.059215 0.002402
+Val Epoch 494 RMSE nan nan MAE nan nan
+Epoch 495 Total Loss 2820298.750000
+Train Epoch 495 RMSE 0.194690 0.005378 MAE 0.058922 0.002429
+Val Epoch 495 RMSE nan nan MAE nan nan
+Epoch 496 Total Loss 2824996.750000
+Train Epoch 496 RMSE 0.194951 0.005331 MAE 0.059293 0.002418
+Val Epoch 496 RMSE nan nan MAE nan nan
+Epoch 497 Total Loss 2834672.250000
+Train Epoch 497 RMSE 0.195117 0.005492 MAE 0.059161 0.002395
+Val Epoch 497 RMSE nan nan MAE nan nan
+Epoch 498 Total Loss 2821107.000000
+Train Epoch 498 RMSE 0.194551 0.006117 MAE 0.058940 0.002755
+Val Epoch 498 RMSE nan nan MAE nan nan
+Epoch 499 Total Loss 2829886.000000
+Train Epoch 499 RMSE 0.195180 0.006134 MAE 0.059193 0.002472
+Val Epoch 499 RMSE nan nan MAE nan nan
+------- Iterative Prediction Test -------
+Iterative Prediction Test on year 1: RMSE 0.1650156802020512, MAE 0.043903603258370096, KL 0.48629046125731384
+
+Iterative Prediction Test on year 1: Filtered RMSE: 0.384764607263456 std: 0.389306733288947,  MAE 0.23407763428958667, std: 0.3053710269950181
+Snapshot 1: AUC=0.935, AUC-PR=0.779, Acc=0.923, Prec=0.803, Rec=0.596, F1=0.684
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.98      0.96    143423
+           1       0.80      0.60      0.68     23443
+
+    accuracy                           0.92    166866
+   macro avg       0.87      0.79      0.82    166866
+weighted avg       0.92      0.92      0.92    166866
+
+Iterative Prediction Test on year 2: RMSE 0.17606197091207174, MAE 0.04834860071691405, KL 0.5454149694476352
+
+Iterative Prediction Test on year 2: Filtered RMSE: 0.4111877766589271 std: 0.4078986029816574,  MAE 0.2602211970923148, std: 0.31837134961794894
+Snapshot 2: AUC=0.920, AUC-PR=0.734, Acc=0.914, Prec=0.749, Rec=0.583, F1=0.656
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.97      0.95    143410
+           1       0.75      0.58      0.66     23456
+
+    accuracy                           0.91    166866
+   macro avg       0.84      0.78      0.80    166866
+weighted avg       0.91      0.91      0.91    166866
+
+Iterative Prediction Test on year 3: RMSE 0.18615992952939087, MAE 0.05309884913873717, KL 0.5976235198331195
+
+Iterative Prediction Test on year 3: Filtered RMSE: 0.4351635941688025 std: 0.41400109136852664,  MAE 0.28704943918961373, std: 0.32706264407730595
+Snapshot 3: AUC=0.908, AUC-PR=0.692, Acc=0.905, Prec=0.687, Rec=0.579, F1=0.629
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.96      0.95    143605
+           1       0.69      0.58      0.63     23261
+
+    accuracy                           0.90    166866
+   macro avg       0.81      0.77      0.79    166866
+weighted avg       0.90      0.90      0.90    166866
+
+Iterative Prediction Test on year 4: RMSE 0.19546696833827967, MAE 0.0571417432631564, KL 0.6478279997906888
+
+Iterative Prediction Test on year 4: Filtered RMSE: 0.45719284742604144 std: 0.4257456134867763,  MAE 0.3096975158362914, std: 0.33632238763181027
+Snapshot 4: AUC=0.898, AUC-PR=0.652, Acc=0.895, Prec=0.630, Rec=0.579, F1=0.604
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.95      0.94    143950
+           1       0.63      0.58      0.60     22916
+
+    accuracy                           0.90    166866
+   macro avg       0.78      0.76      0.77    166866
+weighted avg       0.89      0.90      0.89    166866
+
+Iterative Prediction Test on year 5: RMSE 0.20387073440739406, MAE 0.060605076171088464, KL 0.6780813986224309
+
+Iterative Prediction Test on year 5: Filtered RMSE: 0.4770505281805348 std: 0.44015102434046244,  MAE 0.3290731104517947, std: 0.34538108578048704
+Snapshot 5: AUC=0.887, AUC-PR=0.621, Acc=0.886, Prec=0.591, Rec=0.576, F1=0.583
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.94      0.93    143801
+           1       0.59      0.58      0.58     23065
+
+    accuracy                           0.89    166866
+   macro avg       0.76      0.76      0.76    166866
+weighted avg       0.89      0.89      0.89    166866
+
+Iterative Prediction Test on year 6: RMSE 0.21183435783972318, MAE 0.06380882423809131, KL 0.7182626145917889
+
+Iterative Prediction Test on year 6: Filtered RMSE: 0.49585182354452567 std: 0.45527996049152364,  MAE 0.346968309759282, std: 0.35423441805564054
+Snapshot 6: AUC=0.876, AUC-PR=0.591, Acc=0.878, Prec=0.554, Rec=0.575, F1=0.564
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.93      0.93    143970
+           1       0.55      0.58      0.56     22896
+
+    accuracy                           0.88    166866
+   macro avg       0.74      0.75      0.75    166866
+weighted avg       0.88      0.88      0.88    166866
+
+
+Total runtime was: 2302.8975973129272 seconds
