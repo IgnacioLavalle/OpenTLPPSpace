@@ -13,7 +13,6 @@ import argparse
 import numpy as np
 from sklearn.metrics import precision_recall_fscore_support
 import warnings
-import gc
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -75,9 +74,6 @@ def mean_and_std_from_classlists(c0_list, c1_list):
 def main():
     start_time = time.time()
     args = parse_args()
-    valid_mask = np.zeros((1355, 1355), dtype=bool)
-    valid_mask[0:137, 137:1355] = True
-    num_valid = valid_mask.sum()
 
     # ====================
     data_name = args.data_name
@@ -88,13 +84,14 @@ def main():
     struc_dims = [noise_dim, 32, 16] # Layer configuration of structural encoder
     temp_dims = [num_nodes*struc_dims[-1], 1024] # Layer configuration of temporal encoder
     dec_dims = [temp_dims[-1], num_nodes*num_nodes] # Layer configuration of decoder
-    disc_dims = [4096, 512, 64, 1] # Layer configuration of discriminator
+    disc_dims = [num_nodes*num_nodes, 512, 256, 64, 1] # Layer configuration of discriminator
     win_size = args.win_size # Window size of historical snapshots
     alpha = args.alpha # Hyper-parameter to adjust the contribution of the MSE loss
 
     # ====================
     edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
-
+    valid_mask = np.zeros((1355, 1355), dtype=bool)
+    valid_mask[0:137, 137:1355] = True
 
     #La parte de abajo es el one hot encoding que todavia no se donde meterlo en este codigo
     #node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
@@ -120,10 +117,10 @@ def main():
     lr_val = args.lr
     weight_decay_val = args.weight_decay
     # Define the optimizer
-    gen_opt = optim.RMSprop(gen_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-    disc_opt = optim.RMSprop(disc_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-    #gen_opt = optim.Adam(gen_net.parameters(), lr=1e-4, weight_decay=0)
-    #disc_opt = optim.Adam(disc_net.parameters(), lr=1e-4, weight_decay=0)
+    #gen_opt = optim.RMSprop(gen_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
+    #disc_opt = optim.RMSprop(disc_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
+    gen_opt = optim.Adam(gen_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
+    disc_opt = optim.Adam(disc_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"alpha: {alpha}, clipping step: {c}, "
@@ -180,15 +177,12 @@ def main():
                 # Train the discriminator
                 #adj_est = gen_net(sup_list, noise_list)
                 adj_est = gen_net(sup_list, noise_list).detach()
-
                 disc_real, disc_fake = disc_net(gnd_tnr, adj_est, num_nodes)
-                disc_loss = get_disc_loss(disc_real, disc_fake)
+                disc_loss = get_disc_loss(disc_real, disc_fake) # Loss of the discriminator
                 disc_opt.zero_grad()
                 #Al ejecutar la siguiente linea muere
                 disc_loss.backward()
                 #Aca ya murió
-                torch.cuda.empty_cache()
-                gc.collect() 
                 disc_opt.step()
                 # ===========
                 # Clip parameters of discriminator
@@ -197,7 +191,6 @@ def main():
                 # ==========
                 # Train the generative network
                 adj_est = gen_net(sup_list, noise_list)
-
                 _, disc_fake = disc_net(gnd_tnr, adj_est, num_nodes)
                 gen_loss = get_gen_loss(adj_est, gnd_tnr, disc_fake, alpha) # Loss of the generative network
                 gen_opt.zero_grad()
