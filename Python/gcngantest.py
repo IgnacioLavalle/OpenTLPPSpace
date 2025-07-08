@@ -184,8 +184,10 @@ def main():
                 valid = valid_mask.astype(bool)
                 gnd_valid = gnd_tnr[valid]
                 adj_est_valid = adj_est[valid]
+                real_input = gnd_valid.view(1, -1)
+                fake_input = adj_est_valid.view(1, -1) 
+                disc_real, disc_fake = disc_net(real_input, fake_input)
 
-                disc_real, disc_fake = disc_net(gnd_valid, adj_est_valid)
                 disc_loss = get_disc_loss(disc_real, disc_fake) # Loss of the discriminator
                 disc_opt.zero_grad()
                 #Al ejecutar la siguiente linea muere
