@@ -77,7 +77,7 @@ def main():
 
     # ====================
     data_name = args.data_name
-    num_nodes = 677 # Number of nodes (Level-1 w/ fixed node set)
+    num_nodes = 678 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     max_thres = args.max_thres # Threshold for maximum edge weight
     noise_dim = 32 # Dimension of noise input
