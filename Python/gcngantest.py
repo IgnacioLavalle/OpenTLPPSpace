@@ -90,8 +90,8 @@ def main():
 
     # ====================
     edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
-    valid_mask = np.zeros((1355, 1355), dtype=bool)
-    valid_mask[0:137, 137:1355] = True
+    valid_mask = np.zeros((678, 678), dtype=bool)
+    valid_mask[0:137, 137:678] = True
 
     #La parte de abajo es el one hot encoding que todavia no se donde meterlo en este codigo
     #node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
