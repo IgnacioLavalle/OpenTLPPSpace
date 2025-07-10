@@ -30,7 +30,8 @@ def parse_args():
     parser.add_argument("--num_epochs", type=int, default=100, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
-    parser.add_argument("--lr", type=float, default=0.0001, help="Learning rate (default: 1e-4)")
+    parser.add_argument("--lr_gen", type=float, default=0.0001, help="Learning rate for generator (default: 1e-4)")
+    parser.add_argument("--lr_disc", type=float, default=0.0001, help="Learning rate for discriminator (default: 1e-4)")
     parser.add_argument("--weight_decay", type=float, default=0.00001, help="Weight decay (default: 1e-5)")
     parser.add_argument("--alpha", type=float, default=10.0, help="Alpha value (default: 10.0)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
@@ -114,19 +115,20 @@ def main():
     gen_net = GCN_GAN(struc_dims, temp_dims, dec_dims, dropout_rate).to(device) # Generator
     disc_net = DiscNet(disc_dims, dropout_rate).to(device) # Discriminator
     # ==========
-    lr_val = args.lr
+    lr_gen = args.lr_gen
+    lr_disc = args.lr_disc
     weight_decay_val = args.weight_decay
     # Define the optimizer
-    #gen_opt = optim.RMSprop(gen_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-    #disc_opt = optim.RMSprop(disc_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-    gen_opt = optim.Adam(gen_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
-    disc_opt = optim.Adam(disc_net.parameters(), lr=lr_val, weight_decay=weight_decay_val)
+    gen_opt = optim.RMSprop(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
+    disc_opt = optim.RMSprop(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
+    #gen_opt = optim.Adam(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
+    #disc_opt = optim.Adam(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"alpha: {alpha}, clipping step: {c}, "
       f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
-      f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {weight_decay_val}")
+      f"num_train_snaps: {num_train_snaps}, lr_gen: {lr_gen}, lr_disc: {lr_disc},  weight_decay_val: {weight_decay_val}")
 
     print()
 
