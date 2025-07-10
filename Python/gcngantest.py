@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument("--alpha", type=float, default=10.0, help="Alpha value (default: 10.0)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
-    parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
+    parser.add_argument("--data_name", type=str, default ='Recortado677', help = "Dataset name")
     parser.add_argument("--clipping_step", type=float, default =0.01, help = "Threshold of the clipping step (for parameters of discriminator)")
 
 
@@ -77,7 +77,7 @@ def main():
 
     # ====================
     data_name = args.data_name
-    num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
+    num_nodes = 677 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     max_thres = args.max_thres # Threshold for maximum edge weight
     noise_dim = 32 # Dimension of noise input
