@@ -38,6 +38,8 @@ def parse_args():
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='Recortado677', help = "Dataset name")
     parser.add_argument("--clipping_step", type=float, default =0.01, help = "Threshold of the clipping step (for parameters of discriminator)")
+    parser.add_argument("--patience", type=int, default=50, help="Threshold of early stopping patience (default: 50)")
+
 
 
     return parser.parse_args()
@@ -51,16 +53,6 @@ def append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_lis
     c1recall_list.append(recall_per_class[1])
     c0f1_list.append(f1_per_class[0])
     c1f1_list.append(f1_per_class[1])
-
-    print('  C0 Prec: %f C0 Rec: %f  C0 F1: %f' %
-        (precision_per_class[0],
-        recall_per_class[0],
-        f1_per_class[0]))
-    print('  C1 Prec: %f  C1 Rec: %f  C1 F1: %f ' %
-        (precision_per_class[1],
-        recall_per_class[1], 
-        f1_per_class[1]))
-    print()
 
 
 def mean_and_std_from_classlists(c0_list, c1_list):
@@ -124,9 +116,15 @@ def main():
     #gen_opt = optim.Adam(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
     #disc_opt = optim.Adam(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
 
+    best_val_f1 = -1.0 # Or any metric you want to track for 'best' model
+    best_epoch = -1
+    counter = 0
+    patience = args.patience
+
+
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"alpha: {alpha}, clipping step: {c}, "
-      f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, "
+      f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, patience: {patience} "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
       f"num_train_snaps: {num_train_snaps}, lr_gen: {lr_gen}, lr_disc: {lr_disc},  weight_decay_val: {weight_decay_val}")
 
@@ -327,6 +325,16 @@ def main():
             (c1_prec_mean, c1_prec_std,
             c1_recall_mean, c1_recall_std,
             c1_f1_mean, c1_f1_std))
+        
+        #EarlyStopping stage
+        if c1_f1_mean > best_val_f1:
+            best_val_f1 = c1_f1_mean
+            best_epoch = epoch
+        else:
+            counter += 1
+            if counter >= patience:
+                print("Early stopping triggered")
+                break
 
         # ====================
     # Test the model
@@ -405,6 +413,17 @@ def main():
 
         append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
 
+        print('  C0 Prec: %f  C0 Rec: %f  C0 F1: %f' %
+            (c0precision_list[-1],
+            c0recall_list[-1],
+            c0f1_list[-1]))
+        print('  C1 Prec: %f  C1 Rec: %f  C1 F1: %f' %
+            (c1precision_list[-1],
+            c1recall_list[-1],
+            c1f1_list[-1]))
+        print()
+
+
         #Errors
         abs_errors = np.abs(pred_vals - true_vals)
         sq_errors = (pred_vals - true_vals) ** 2 
@@ -453,6 +472,8 @@ def main():
         (c1_prec_mean, c1_prec_std,
         c1_recall_mean, c1_recall_std,
         c1_f1_mean, c1_f1_std))
+    print()
+    print('Best F1 during validation was: %f during epoch: %d' % (best_val_f1, best_epoch))
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
