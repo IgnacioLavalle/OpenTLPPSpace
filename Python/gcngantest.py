@@ -330,12 +330,13 @@ def main():
         if c1_f1_mean > best_val_f1:
             best_val_f1 = c1_f1_mean
             best_epoch = epoch
+        """
         else:
             counter += 1
             if counter >= patience:
                 print("Early stopping triggered")
                 break
-
+        """
         # ====================
     # Test the model
     gen_net.eval()
