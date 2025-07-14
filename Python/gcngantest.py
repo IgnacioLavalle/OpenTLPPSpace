@@ -335,6 +335,8 @@ def main():
             best_epoch = epoch
             best_gen_state = gen_net.state_dict()
             best_disc_state = disc_net.state_dict()
+            best_gen_opt_state = gen_opt.state_dict()     
+            best_disc_opt_state = disc_opt.state_dict()    
 
        
         else:
@@ -346,8 +348,10 @@ def main():
         # ====================
     # Test the model
     if best_gen_state is not None:
-        gen_opt.load_state_dict(best_gen_state)
-        disc_opt.load_state_dict(best_disc_state)
+        gen_net.load_state_dict(best_gen_state)
+        disc_net.load_state_dict(best_disc_state)
+        gen_opt.load_state_dict(best_gen_opt_state)   
+        disc_opt.load_state_dict(best_disc_opt_state) 
         print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
     else:
         print("No best model saved. Using the model from the last epoch for testing.")
