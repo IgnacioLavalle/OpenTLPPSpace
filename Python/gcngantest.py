@@ -120,6 +120,9 @@ def main():
     best_epoch = -1
     counter = 0
     patience = args.patience
+    best_gen_state = None
+    best_disc_state = None
+
 
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
@@ -330,6 +333,9 @@ def main():
         if c1_f1_mean > best_val_f1:
             best_val_f1 = c1_f1_mean
             best_epoch = epoch
+            best_gen_state = gen_net.state_dict()
+            best_disc_state = disc_net.state_dict()
+
         """
         else:
             counter += 1
@@ -339,6 +345,13 @@ def main():
         """
         # ====================
     # Test the model
+    if best_gen_state is not None:
+        gen_opt.load_state_dict(best_gen_state)
+        disc_opt.load_state_dict(best_disc_state)
+        print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
+    else:
+        print("No best model saved. Using the model from the last epoch for testing.")
+
     gen_net.eval()
     disc_net.eval()
     # ==========
