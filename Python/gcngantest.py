@@ -336,21 +336,23 @@ def main():
             best_gen_state = gen_net.state_dict()
             best_disc_state = disc_net.state_dict()
             best_gen_opt_state = gen_opt.state_dict()     
-            best_disc_opt_state = disc_opt.state_dict()    
+            best_disc_opt_state = disc_opt.state_dict()
+            counter = 0    
 
        
         else:
-            counter += 1
-            if epoch >= 200 and counter >= patience:
-                print("Early stopping triggered")
-                break
+            if epoch >= 200:
+                counter += 1
+                if counter >= patience:
+                    print("Early stopping triggered")
+                    break
         
         # ====================
     # Test the model
     if best_gen_state is not None:
         gen_net.load_state_dict(best_gen_state)
         disc_net.load_state_dict(best_disc_state)
-        gen_opt.load_state_dict(best_gen_opt_state)   
+        gen_opt.load_state_dict(best_gen_opt_state)     
         disc_opt.load_state_dict(best_disc_opt_state) 
         print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
     else:
