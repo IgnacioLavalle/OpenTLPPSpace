@@ -336,13 +336,13 @@ def main():
             best_gen_state = gen_net.state_dict()
             best_disc_state = disc_net.state_dict()
 
-        """
+       
         else:
             counter += 1
-            if counter >= patience:
+            if epoch >= 200 and counter >= patience:
                 print("Early stopping triggered")
                 break
-        """
+        
         # ====================
     # Test the model
     if best_gen_state is not None:
