@@ -1,0 +1,1081 @@
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3904: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:147: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:227: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:184: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+data_name: Recortado677, max_thres: 1.5, win_size: 2, alpha: 4.0, clipping step: 0.005, dropout_rate: 0.2, epsilon: 0.01, patience: 60 num_epochs: 260, num_val_snaps: 0, num_test_snaps: 6, num_train_snaps: 22, lr_gen: 8e-05, lr_disc: 0.0001,  weight_decay_val: 1e-05
+
+#0 Train G-Loss 124906.499316 D-Loss -0.706581
+Val Epoch 0 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#1 Train G-Loss 19506.852393 D-Loss -2.254683
+Val Epoch 1 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#2 Train G-Loss 17021.239258 D-Loss -3.276776
+Val Epoch 2 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#3 Train G-Loss 16365.892480 D-Loss -3.633215
+Val Epoch 3 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#4 Train G-Loss 16058.530176 D-Loss -3.322847
+Val Epoch 4 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#5 Train G-Loss 15884.665381 D-Loss -3.208289
+Val Epoch 5 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#6 Train G-Loss 15770.365918 D-Loss -3.072127
+Val Epoch 6 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#7 Train G-Loss 15689.617822 D-Loss -2.823619
+Val Epoch 7 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#8 Train G-Loss 15633.367920 D-Loss -2.546976
+Val Epoch 8 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#9 Train G-Loss 15588.657178 D-Loss -2.406086
+Val Epoch 9 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#10 Train G-Loss 15555.008203 D-Loss -2.141695
+Val Epoch 10 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#11 Train G-Loss 15527.703564 D-Loss -1.915419
+Val Epoch 11 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#12 Train G-Loss 15506.618506 D-Loss -2.139379
+Val Epoch 12 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#13 Train G-Loss 15488.752832 D-Loss -1.964139
+Val Epoch 13 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#14 Train G-Loss 15473.772656 D-Loss -1.968204
+Val Epoch 14 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#15 Train G-Loss 15461.371338 D-Loss -1.654869
+Val Epoch 15 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#16 Train G-Loss 15451.646094 D-Loss -1.727512
+Val Epoch 16 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#17 Train G-Loss 15442.457422 D-Loss -1.310093
+Val Epoch 17 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#18 Train G-Loss 15435.555371 D-Loss -1.652318
+Val Epoch 18 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#19 Train G-Loss 15428.693311 D-Loss -1.436815
+Val Epoch 19 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#20 Train G-Loss 15423.675977 D-Loss -1.602147
+Val Epoch 20 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#21 Train G-Loss 15419.289941 D-Loss -1.614977
+Val Epoch 21 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#22 Train G-Loss 15414.109180 D-Loss -1.600495
+Val Epoch 22 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#23 Train G-Loss 15410.446680 D-Loss -1.388782
+Val Epoch 23 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#24 Train G-Loss 15407.614502 D-Loss -0.866974
+Val Epoch 24 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#25 Train G-Loss 15404.948828 D-Loss -0.995546
+Val Epoch 25 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#26 Train G-Loss 15402.384326 D-Loss -1.483791
+Val Epoch 26 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#27 Train G-Loss 15399.698877 D-Loss -1.414082
+Val Epoch 27 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#28 Train G-Loss 15397.532275 D-Loss -1.208474
+Val Epoch 28 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#29 Train G-Loss 15394.853857 D-Loss -1.150338
+Val Epoch 29 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#30 Train G-Loss 15395.140332 D-Loss -0.917885
+Val Epoch 30 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#31 Train G-Loss 15392.027246 D-Loss -0.529972
+Val Epoch 31 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#32 Train G-Loss 15389.056934 D-Loss -0.838399
+Val Epoch 32 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#33 Train G-Loss 15387.015479 D-Loss -0.663605
+Val Epoch 33 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#34 Train G-Loss 15385.079346 D-Loss -1.022883
+Val Epoch 34 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#35 Train G-Loss 15381.930371 D-Loss -0.657495
+Val Epoch 35 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#36 Train G-Loss 15378.697070 D-Loss -0.999515
+Val Epoch 36 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#37 Train G-Loss 15380.972559 D-Loss -0.577992
+Val Epoch 37 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#38 Train G-Loss 15381.152295 D-Loss -0.711326
+Val Epoch 38 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#39 Train G-Loss 15371.505176 D-Loss -0.753703
+Val Epoch 39 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#40 Train G-Loss 15379.383936 D-Loss -0.480537
+Val Epoch 40 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#41 Train G-Loss 15373.666309 D-Loss -0.864474
+Val Epoch 41 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#42 Train G-Loss 15371.503516 D-Loss -0.487087
+Val Epoch 42 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#43 Train G-Loss 15363.921973 D-Loss -0.551064
+Val Epoch 43 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#44 Train G-Loss 15364.425928 D-Loss -0.677896
+Val Epoch 44 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#45 Train G-Loss 15363.621875 D-Loss -0.399122
+Val Epoch 45 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#46 Train G-Loss 15363.890527 D-Loss -0.388181
+Val Epoch 46 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#47 Train G-Loss 15363.350244 D-Loss -0.557886
+Val Epoch 47 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#48 Train G-Loss 15352.155811 D-Loss -0.420043
+Val Epoch 48 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#49 Train G-Loss 15355.707666 D-Loss -0.294653
+Val Epoch 49 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#50 Train G-Loss 15352.124268 D-Loss -0.452750
+Val Epoch 50 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#51 Train G-Loss 15333.808057 D-Loss -0.529112
+Val Epoch 51 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#52 Train G-Loss 15339.832813 D-Loss -0.706975
+Val Epoch 52 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#53 Train G-Loss 15337.633057 D-Loss -0.442882
+Val Epoch 53 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#54 Train G-Loss 15347.035840 D-Loss -0.535040
+Val Epoch 54 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#55 Train G-Loss 15345.604150 D-Loss -0.616576
+Val Epoch 55 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#56 Train G-Loss 15336.752051 D-Loss 0.049858
+Val Epoch 56 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#57 Train G-Loss 15324.326221 D-Loss -0.428385
+Val Epoch 57 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#58 Train G-Loss 15312.660791 D-Loss -0.183798
+Val Epoch 58 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#59 Train G-Loss 15299.949512 D-Loss -0.226559
+Val Epoch 59 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#60 Train G-Loss 15325.704687 D-Loss -0.434223
+Val Epoch 60 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#61 Train G-Loss 15323.446338 D-Loss -0.168858
+Val Epoch 61 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#62 Train G-Loss 15308.127393 D-Loss -0.514983
+Val Epoch 62 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#63 Train G-Loss 15313.637256 D-Loss -0.059816
+Val Epoch 63 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#64 Train G-Loss 15303.802051 D-Loss -0.238807
+Val Epoch 64 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#65 Train G-Loss 15273.793311 D-Loss 0.012944
+Val Epoch 65 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#66 Train G-Loss 15307.180420 D-Loss -0.262163
+Val Epoch 66 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#67 Train G-Loss 15309.016309 D-Loss -0.002440
+Val Epoch 67 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#68 Train G-Loss 15292.876465 D-Loss -0.451701
+Val Epoch 68 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#69 Train G-Loss 15287.852930 D-Loss -0.212436
+Val Epoch 69 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#70 Train G-Loss 15271.430371 D-Loss -0.327177
+Val Epoch 70 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#71 Train G-Loss 15302.087354 D-Loss -0.104560
+Val Epoch 71 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#72 Train G-Loss 15268.372119 D-Loss -0.097516
+Val Epoch 72 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#73 Train G-Loss 15293.096045 D-Loss -0.216186
+Val Epoch 73 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#74 Train G-Loss 15278.784375 D-Loss -0.362848
+Val Epoch 74 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#75 Train G-Loss 15286.030957 D-Loss -0.393334
+Val Epoch 75 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#76 Train G-Loss 15251.163232 D-Loss -0.397084
+Val Epoch 76 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#77 Train G-Loss 15252.316797 D-Loss 0.044936
+Val Epoch 77 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#78 Train G-Loss 15264.332910 D-Loss -0.319710
+Val Epoch 78 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#79 Train G-Loss 15282.634277 D-Loss -0.266931
+Val Epoch 79 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#80 Train G-Loss 15259.559570 D-Loss -0.521861
+Val Epoch 80 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#81 Train G-Loss 15262.794971 D-Loss -0.276298
+Val Epoch 81 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#82 Train G-Loss 15235.677295 D-Loss -0.089866
+Val Epoch 82 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#83 Train G-Loss 15233.219775 D-Loss -0.403257
+Val Epoch 83 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#84 Train G-Loss 15254.777637 D-Loss -0.577494
+Val Epoch 84 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#85 Train G-Loss 15251.927002 D-Loss -0.252511
+Val Epoch 85 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#86 Train G-Loss 15237.551465 D-Loss -0.265157
+Val Epoch 86 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#87 Train G-Loss 15252.534619 D-Loss -0.439730
+Val Epoch 87 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#88 Train G-Loss 15258.382129 D-Loss -0.183777
+Val Epoch 88 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#89 Train G-Loss 15235.675488 D-Loss -0.310218
+Val Epoch 89 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#90 Train G-Loss 15247.808936 D-Loss -0.303548
+Val Epoch 90 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#91 Train G-Loss 15241.096729 D-Loss -0.218153
+Val Epoch 91 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#92 Train G-Loss 15237.205518 D-Loss -0.156360
+Val Epoch 92 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#93 Train G-Loss 15220.356055 D-Loss -0.383529
+Val Epoch 93 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#94 Train G-Loss 15228.575000 D-Loss -0.644452
+Val Epoch 94 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#95 Train G-Loss 15226.119238 D-Loss -0.303941
+Val Epoch 95 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#96 Train G-Loss 15221.035986 D-Loss -0.436818
+Val Epoch 96 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#97 Train G-Loss 15224.658398 D-Loss -0.438435
+Val Epoch 97 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#98 Train G-Loss 15217.597119 D-Loss -0.282191
+Val Epoch 98 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#99 Train G-Loss 15224.714258 D-Loss -0.517185
+Val Epoch 99 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#100 Train G-Loss 15211.740625 D-Loss -0.307766
+Val Epoch 100 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#101 Train G-Loss 15217.057666 D-Loss -0.534248
+Val Epoch 101 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#102 Train G-Loss 15214.423340 D-Loss -0.480209
+Val Epoch 102 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#103 Train G-Loss 15215.434912 D-Loss -0.472059
+Val Epoch 103 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#104 Train G-Loss 15209.416406 D-Loss -0.013472
+Val Epoch 104 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#105 Train G-Loss 15207.429590 D-Loss -0.345348
+Val Epoch 105 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#106 Train G-Loss 15200.617822 D-Loss -0.392024
+Val Epoch 106 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#107 Train G-Loss 15202.389502 D-Loss -0.412661
+Val Epoch 107 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#108 Train G-Loss 15204.480762 D-Loss -0.277835
+Val Epoch 108 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#109 Train G-Loss 15209.014746 D-Loss -0.296235
+Val Epoch 109 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#110 Train G-Loss 15199.393213 D-Loss -0.300727
+Val Epoch 110 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#111 Train G-Loss 15186.258496 D-Loss -0.497957
+Val Epoch 111 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#112 Train G-Loss 15189.455908 D-Loss -0.449274
+Val Epoch 112 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#113 Train G-Loss 15186.110205 D-Loss -0.361702
+Val Epoch 113 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#114 Train G-Loss 15177.417627 D-Loss -0.629994
+Val Epoch 114 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#115 Train G-Loss 15165.679004 D-Loss -0.400246
+Val Epoch 115 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#116 Train G-Loss 15182.823047 D-Loss -0.376944
+Val Epoch 116 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#117 Train G-Loss 15175.024268 D-Loss -0.575805
+Val Epoch 117 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#118 Train G-Loss 15172.728906 D-Loss -0.715153
+Val Epoch 118 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#119 Train G-Loss 15157.214893 D-Loss -0.590342
+Val Epoch 119 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#120 Train G-Loss 15177.309717 D-Loss -0.143541
+Val Epoch 120 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#121 Train G-Loss 15172.748340 D-Loss -0.551578
+Val Epoch 121 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#122 Train G-Loss 15156.657129 D-Loss -0.506300
+Val Epoch 122 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#123 Train G-Loss 15161.832275 D-Loss -0.459183
+Val Epoch 123 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#124 Train G-Loss 15160.097070 D-Loss -0.329429
+Val Epoch 124 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#125 Train G-Loss 15165.408105 D-Loss -0.527741
+Val Epoch 125 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#126 Train G-Loss 15143.173389 D-Loss -0.302249
+Val Epoch 126 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#127 Train G-Loss 15149.091943 D-Loss -0.438955
+Val Epoch 127 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#128 Train G-Loss 15142.080127 D-Loss -0.353313
+Val Epoch 128 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#129 Train G-Loss 15126.572949 D-Loss -0.438544
+Val Epoch 129 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#130 Train G-Loss 15136.649023 D-Loss -0.526139
+Val Epoch 130 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#131 Train G-Loss 15126.154492 D-Loss -0.512065
+Val Epoch 131 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#132 Train G-Loss 15107.203662 D-Loss -0.679526
+Val Epoch 132 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#133 Train G-Loss 15095.865234 D-Loss -0.373068
+Val Epoch 133 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#134 Train G-Loss 15131.727441 D-Loss -0.497486
+Val Epoch 134 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#135 Train G-Loss 15108.393994 D-Loss -0.402983
+Val Epoch 135 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#136 Train G-Loss 15106.995068 D-Loss -0.484977
+Val Epoch 136 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#137 Train G-Loss 15116.646191 D-Loss -0.182167
+Val Epoch 137 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#138 Train G-Loss 15106.295850 D-Loss -0.295048
+Val Epoch 138 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#139 Train G-Loss 15110.701514 D-Loss -0.576311
+Val Epoch 139 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#140 Train G-Loss 15098.522803 D-Loss -0.378603
+Val Epoch 140 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#141 Train G-Loss 15087.814062 D-Loss -0.709370
+Val Epoch 141 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#142 Train G-Loss 15066.219922 D-Loss -0.776215
+Val Epoch 142 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#143 Train G-Loss 15064.420361 D-Loss -0.404593
+Val Epoch 143 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#144 Train G-Loss 15116.354785 D-Loss -0.479673
+Val Epoch 144 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#145 Train G-Loss 15086.343359 D-Loss -0.715412
+Val Epoch 145 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#146 Train G-Loss 15065.882959 D-Loss -0.738058
+Val Epoch 146 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#147 Train G-Loss 15066.810742 D-Loss -0.706048
+Val Epoch 147 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#148 Train G-Loss 15052.843555 D-Loss -0.779014
+Val Epoch 148 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#149 Train G-Loss 15050.019971 D-Loss -0.371118
+Val Epoch 149 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#150 Train G-Loss 15020.207666 D-Loss -0.607718
+Val Epoch 150 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#151 Train G-Loss 15047.439844 D-Loss -0.475852
+Val Epoch 151 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#152 Train G-Loss 15128.476904 D-Loss -0.801773
+Val Epoch 152 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#153 Train G-Loss 15052.806543 D-Loss -0.545878
+Val Epoch 153 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#154 Train G-Loss 15001.854297 D-Loss -0.586181
+Val Epoch 154 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#155 Train G-Loss 14963.372314 D-Loss -0.676093
+Val Epoch 155 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#156 Train G-Loss 14954.347070 D-Loss -0.504501
+Val Epoch 156 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#157 Train G-Loss 14907.728467 D-Loss -0.697946
+Val Epoch 157 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#158 Train G-Loss 14815.696338 D-Loss -0.701337
+Val Epoch 158 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#159 Train G-Loss 14840.985010 D-Loss -0.728832
+Val Epoch 159 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#160 Train G-Loss 14928.762354 D-Loss -0.684569
+Val Epoch 160 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#161 Train G-Loss 15053.577295 D-Loss -0.799477
+Val Epoch 161 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#162 Train G-Loss 15054.795850 D-Loss -0.673624
+Val Epoch 162 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#163 Train G-Loss 14994.419824 D-Loss -0.624129
+Val Epoch 163 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#164 Train G-Loss 14950.716064 D-Loss -0.536126
+Val Epoch 164 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#165 Train G-Loss 14796.408252 D-Loss -0.373673
+Val Epoch 165 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#166 Train G-Loss 14645.800000 D-Loss -0.796341
+Val Epoch 166 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#167 Train G-Loss 14378.851367 D-Loss -0.591012
+Val Epoch 167 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#168 Train G-Loss 14131.385059 D-Loss -0.675905
+Val Epoch 168 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#169 Train G-Loss 13725.976440 D-Loss -0.886706
+Val Epoch 169 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#170 Train G-Loss 13376.604541 D-Loss -0.777379
+Val Epoch 170 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#171 Train G-Loss 13204.959326 D-Loss -0.351018
+Val Epoch 171 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#172 Train G-Loss 12784.320850 D-Loss -0.217276
+Val Epoch 172 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#173 Train G-Loss 12616.592651 D-Loss -0.495408
+Val Epoch 173 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#174 Train G-Loss 12474.395776 D-Loss -0.386873
+Val Epoch 174 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#175 Train G-Loss 12328.690210 D-Loss -0.233443
+Val Epoch 175 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#176 Train G-Loss 12082.259766 D-Loss -0.566858
+Val Epoch 176 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#177 Train G-Loss 11980.079834 D-Loss -0.171848
+Val Epoch 177 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#178 Train G-Loss 11809.964160 D-Loss -0.494778
+Val Epoch 178 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#179 Train G-Loss 11510.685400 D-Loss -0.179056
+Val Epoch 179 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#180 Train G-Loss 11408.184814 D-Loss -0.294778
+Val Epoch 180 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#181 Train G-Loss 11322.339087 D-Loss -0.313194
+Val Epoch 181 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#182 Train G-Loss 11393.071680 D-Loss -0.519799
+Val Epoch 182 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#183 Train G-Loss 10953.592627 D-Loss 0.002829
+Val Epoch 183 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#184 Train G-Loss 11022.308765 D-Loss -0.257121
+Val Epoch 184 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#185 Train G-Loss 10860.761450 D-Loss -0.350631
+Val Epoch 185 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#186 Train G-Loss 11334.974023 D-Loss -0.191367
+Val Epoch 186 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#187 Train G-Loss 10716.525220 D-Loss -0.198143
+Val Epoch 187 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#188 Train G-Loss 10653.313892 D-Loss -0.257259
+Val Epoch 188 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#189 Train G-Loss 10708.034692 D-Loss -0.391693
+Val Epoch 189 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#190 Train G-Loss 10345.131812 D-Loss -0.287962
+Val Epoch 190 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#191 Train G-Loss 10672.115747 D-Loss -0.213688
+Val Epoch 191 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#192 Train G-Loss 10417.506982 D-Loss -0.295790
+Val Epoch 192 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#193 Train G-Loss 10343.480371 D-Loss -0.234044
+Val Epoch 193 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#194 Train G-Loss 10637.027588 D-Loss 0.022747
+Val Epoch 194 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#195 Train G-Loss 10260.142090 D-Loss -0.116440
+Val Epoch 195 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#196 Train G-Loss 10323.633081 D-Loss -0.119817
+Val Epoch 196 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#197 Train G-Loss 10417.712012 D-Loss -0.031199
+Val Epoch 197 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#198 Train G-Loss 10227.753271 D-Loss -0.070810
+Val Epoch 198 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#199 Train G-Loss 9974.069116 D-Loss -0.113849
+Val Epoch 199 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#200 Train G-Loss 10347.357007 D-Loss -0.136394
+Val Epoch 200 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#201 Train G-Loss 10085.802612 D-Loss -0.065139
+Val Epoch 201 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#202 Train G-Loss 9988.845093 D-Loss -0.190861
+Val Epoch 202 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#203 Train G-Loss 9999.808691 D-Loss -0.331323
+Val Epoch 203 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#204 Train G-Loss 9714.257056 D-Loss 0.038304
+Val Epoch 204 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#205 Train G-Loss 9712.728198 D-Loss -0.191996
+Val Epoch 205 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#206 Train G-Loss 9542.012573 D-Loss -0.157202
+Val Epoch 206 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#207 Train G-Loss 9805.471069 D-Loss -0.238753
+Val Epoch 207 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#208 Train G-Loss 10101.850952 D-Loss -0.273511
+Val Epoch 208 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#209 Train G-Loss 9690.852124 D-Loss -0.153549
+Val Epoch 209 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#210 Train G-Loss 9816.457397 D-Loss -0.178853
+Val Epoch 210 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#211 Train G-Loss 9629.235522 D-Loss -0.075337
+Val Epoch 211 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#212 Train G-Loss 9513.301099 D-Loss -0.176149
+Val Epoch 212 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#213 Train G-Loss 9542.547314 D-Loss -0.191300
+Val Epoch 213 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#214 Train G-Loss 9511.244409 D-Loss -0.330477
+Val Epoch 214 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#215 Train G-Loss 9625.495752 D-Loss -0.153151
+Val Epoch 215 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#216 Train G-Loss 9186.955591 D-Loss -0.113757
+Val Epoch 216 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#217 Train G-Loss 9092.176489 D-Loss -0.051076
+Val Epoch 217 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#218 Train G-Loss 9385.874146 D-Loss -0.176259
+Val Epoch 218 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#219 Train G-Loss 9531.918481 D-Loss 0.001481
+Val Epoch 219 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#220 Train G-Loss 9398.522974 D-Loss -0.031150
+Val Epoch 220 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#221 Train G-Loss 9439.832739 D-Loss -0.188393
+Val Epoch 221 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#222 Train G-Loss 9775.247607 D-Loss -0.204386
+Val Epoch 222 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#223 Train G-Loss 9368.120752 D-Loss -0.128439
+Val Epoch 223 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#224 Train G-Loss 9324.908838 D-Loss -0.166493
+Val Epoch 224 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#225 Train G-Loss 8942.942932 D-Loss -0.073129
+Val Epoch 225 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#226 Train G-Loss 9072.477124 D-Loss -0.144813
+Val Epoch 226 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#227 Train G-Loss 9107.039600 D-Loss -0.029329
+Val Epoch 227 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#228 Train G-Loss 9434.395410 D-Loss -0.023770
+Val Epoch 228 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#229 Train G-Loss 9244.175586 D-Loss -0.260047
+Val Epoch 229 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#230 Train G-Loss 9014.438159 D-Loss -0.365566
+Val Epoch 230 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#231 Train G-Loss 8321.638220 D-Loss -0.054375
+Val Epoch 231 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#232 Train G-Loss 9219.471582 D-Loss -0.147415
+Val Epoch 232 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#233 Train G-Loss 8893.414404 D-Loss -0.290884
+Val Epoch 233 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#234 Train G-Loss 8818.759155 D-Loss -0.183508
+Val Epoch 234 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#235 Train G-Loss 9034.059351 D-Loss -0.133928
+Val Epoch 235 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#236 Train G-Loss 8793.602832 D-Loss -0.115212
+Val Epoch 236 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#237 Train G-Loss 8904.198193 D-Loss -0.184872
+Val Epoch 237 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#238 Train G-Loss 8457.234473 D-Loss -0.144231
+Val Epoch 238 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#239 Train G-Loss 8805.664380 D-Loss -0.053928
+Val Epoch 239 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#240 Train G-Loss 8841.952686 D-Loss -0.076120
+Val Epoch 240 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#241 Train G-Loss 8827.453235 D-Loss -0.201223
+Val Epoch 241 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#242 Train G-Loss 8555.119324 D-Loss -0.152107
+Val Epoch 242 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#243 Train G-Loss 9432.924109 D-Loss -0.060437
+Val Epoch 243 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#244 Train G-Loss 8608.121582 D-Loss -0.278404
+Val Epoch 244 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#245 Train G-Loss 8569.654150 D-Loss -0.062203
+Val Epoch 245 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#246 Train G-Loss 9196.674829 D-Loss 0.041441
+Val Epoch 246 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#247 Train G-Loss 8802.855078 D-Loss -0.059132
+Val Epoch 247 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#248 Train G-Loss 8811.173389 D-Loss -0.247343
+Val Epoch 248 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#249 Train G-Loss 9099.125635 D-Loss -0.283175
+Val Epoch 249 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#250 Train G-Loss 9200.806348 D-Loss -0.203764
+Val Epoch 250 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#251 Train G-Loss 8561.134253 D-Loss 0.000681
+Val Epoch 251 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#252 Train G-Loss 8730.982678 D-Loss 0.022220
+Val Epoch 252 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#253 Train G-Loss 8337.175513 D-Loss -0.116109
+Val Epoch 253 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#254 Train G-Loss 8548.428491 D-Loss -0.182993
+Val Epoch 254 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#255 Train G-Loss 8507.347949 D-Loss -0.120327
+Val Epoch 255 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#256 Train G-Loss 8367.248413 D-Loss -0.098350
+Val Epoch 256 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#257 Train G-Loss 8553.132947 D-Loss -0.133839
+Val Epoch 257 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#258 Train G-Loss 8436.500317 D-Loss -0.163670
+Val Epoch 258 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+#259 Train G-Loss 8992.877075 D-Loss -0.126403
+Val Epoch 259 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Early stopping triggered
+No best model saved. Using the model from the last epoch for testing.
+------- Iterative Prediction with GAN model -------
+Iterative GAN Prediction on snapshot 22: RMSE 0.19742267387016807, MAE 0.08169200334509275
+  C0 Prec: 0.973393  C0 Rec: 0.979261  C0 F1: 0.976318
+  C1 Prec: 0.884207  C1 Rec: 0.855415  C1 F1: 0.869573
+
+Iterative GAN Prediction on snapshot 23: RMSE 0.22775567479995745, MAE 0.09682460443764195
+  C0 Prec: 0.969565  C0 Rec: 0.974736  C0 F1: 0.972143
+  C1 Prec: 0.858295  C1 Rec: 0.833362  C1 F1: 0.845645
+
+Iterative GAN Prediction on snapshot 24: RMSE 0.24608873125507963, MAE 0.10708894504799799
+  C0 Prec: 0.965604  C0 Rec: 0.971138  C0 F1: 0.968363
+  C1 Prec: 0.837352  C1 Rec: 0.811155  C1 F1: 0.824045
+
+Iterative GAN Prediction on snapshot 25: RMSE 0.26347040976475755, MAE 0.11640734966025092
+  C0 Prec: 0.964797  C0 Rec: 0.965948  C0 F1: 0.965372
+  C1 Prec: 0.808877  C1 Rec: 0.803495  C1 F1: 0.806177
+
+Iterative GAN Prediction on snapshot 26: RMSE 0.2730747983594917, MAE 0.12234770190338158
+  C0 Prec: 0.960677  C0 Rec: 0.965654  C0 F1: 0.963159
+  C1 Prec: 0.804960  C1 Rec: 0.781959  C1 F1: 0.793293
+
+Iterative GAN Prediction on snapshot 27: RMSE 0.2932441376444895, MAE 0.13333643982185267
+  C0 Prec: 0.958083  C0 Rec: 0.959775  C0 F1: 0.958928
+  C1 Prec: 0.772878  C1 Rec: 0.765250  C1 F1: 0.769045
+
+
+Total runtime was: 855.3617997169495 seconds
