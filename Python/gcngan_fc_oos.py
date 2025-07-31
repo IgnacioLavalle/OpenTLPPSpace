@@ -1,5 +1,7 @@
 # Demonstration of GCN-GAN
 
+import json
+from sklearn.base import accuracy_score
 import torch
 import torch.optim as optim
 from GCN_GAN.modules import *
@@ -11,7 +13,7 @@ os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 import time
 import argparse
 import numpy as np
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import auc, average_precision_score, precision_recall_curve, precision_recall_fscore_support, roc_curve
 import warnings
 
 
@@ -39,6 +41,7 @@ def parse_args():
     parser.add_argument("--data_name", type=str, default ='Recortado677', help = "Dataset name")
     parser.add_argument("--clipping_step", type=float, default =0.005, help = "Threshold of the clipping step (for parameters of discriminator)")
     parser.add_argument("--patience", type=int, default=10, help="Threshold of early stopping patience (default: 50)")
+    parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the roc auc and pr auc metrics as json")
 
 
 
@@ -80,6 +83,7 @@ def main():
     disc_dims = [num_nodes*num_nodes, 512, 256, 64, 1] # Layer configuration of discriminator
     win_size = args.win_size # Window size of historical snapshots
     alpha = args.alpha # Hyper-parameter to adjust the contribution of the MSE loss
+    save_metrics = args.save_metrics
 
     # ====================
     edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
@@ -258,16 +262,6 @@ def main():
                 adj_est = adj_est.data.numpy()
             adj_est *= max_thres  # Rescale the edge weights to the original value range
 
-            # ==========
-            # Refine the prediction result
-            #adj_est = (adj_est+adj_est.T)/2
-            #for r in range(num_nodes):
-            #    adj_est[r, r] = 0
-            #for r in range(num_nodes):
-            #    for c in range(num_nodes):
-            #        if adj_est[r, c] <= epsilon:
-            #            adj_est[r, c] = 0
-
             # ====================
             # Get the ground-truth
             edges = edge_seq[tau]
@@ -370,10 +364,20 @@ def main():
     c1recall_list = []
     c1f1_list = []
 
+    fpr_list = []
+    tpr_list = []
+    roc_auc_list = []
+    accuracy_list = []
+
+
+    precision_curve_list = []
+    recall_curve_list = []
+    average_precision_list = []
+
     print("------- Iterative Prediction with GAN model -------")
     start_test = num_snaps - num_test_snaps
 
-    # Inicializar la ventana con snapshots reales
+    # Initialize windows with real snapshots
     current_window = []
     for t in range(start_test - win_size, start_test):
         edges = edge_seq[t]
@@ -394,14 +398,14 @@ def main():
         gen_net.eval()
         disc_net.eval()
 
-        # Generar lista de ruido
+        # generate noise list
         noise_list = []
         for _ in range(win_size):
             noise_feat = gen_noise(num_nodes, noise_dim)
             noise_feat_tnr = torch.FloatTensor(noise_feat).to(device)
             noise_list.append(noise_feat_tnr)
 
-        # === Generar predicción ===
+        # === generate prediction ===
         with torch.no_grad():
             adj_est = gen_net(current_window, noise_list)
 
@@ -410,7 +414,7 @@ def main():
 
         predictions.append(adj_est)
 
-        # === Preparar para la próxima iteración ===
+        # === Next iteration set up ===
         adj_norm = adj_est / max_thres
         sup = get_gnn_sup(adj_norm)
         sup_sp = sp.sparse.coo_matrix(sup)
@@ -419,7 +423,7 @@ def main():
         vals = torch.FloatTensor(sup_sp[1]).to(device)
         sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, sup_sp[2], dtype=torch.float32).to(device)
 
-        # Actualizar ventana
+        # Update window
         current_window.pop(0)
         current_window.append(sup_tnr)
 
@@ -431,6 +435,7 @@ def main():
         pred_vals = adj_est[valid_mask]
 
         true_labels = (true_vals >= 1).astype(int)
+        pred_scores = pred_vals
         pred_labels = (pred_vals >= 1).astype(int)
 
         abs_errors = np.abs(pred_vals - true_vals)
@@ -456,38 +461,47 @@ def main():
             c1f1_list[-1]))
         print()
 
+        # Precision-Recall Curve
+        precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
+        avg_prec = average_precision_score(true_labels, pred_scores)
+
+        precision_curve_list.append(precision_vals.tolist())
+        recall_curve_list.append(recall_vals.tolist())
+        average_precision_list.append(avg_prec)
+
+        # Roc Auc and accuracy
+        fpr, tpr, _ = roc_curve(true_labels, pred_scores)
+        roc_auc = auc(fpr, tpr)
+        acc = accuracy_score(true_labels, pred_labels)
+
+        fpr_list.append(fpr.tolist())
+        tpr_list.append(tpr.tolist())
+        roc_auc_list.append(roc_auc)
+        accuracy_list.append(acc)
+
         RMSE_list.append(RMSE)
         MAE_list.append(MAE)
 
-    # === Final reporting ===
-    #print("\n--- Summary ---")
-    #print(f"Avg RMSE: {np.mean(RMSE_list):.4f}, Std: {np.std(RMSE_list):.4f}")
-    #print(f"Avg MAE: {np.mean(MAE_list):.4f}, Std: {np.std(MAE_list):.4f}")
-
-
     # ====================
 
-    # Classification metrics per class: Precision, Recall, F1
-    """
-    c0_prec_mean, c0_prec_std, c1_prec_mean, c1_prec_std = mean_and_std_from_classlists(c0precision_list, c1precision_list)
+    if save_metrics:
+        # save metrics as json
+        metrics_summary = {
+            "fpr": fpr_list,
+            "tpr": tpr_list,
+            "roc_auc": roc_auc_list,
+            "accuracy": accuracy_list,
+            "precision_curve": precision_curve_list,
+            "recall_curve": recall_curve_list,
+            "average_precision": average_precision_list
 
-    c0_recall_mean, c0_recall_std, c1_recall_mean, c1_recall_std = mean_and_std_from_classlists(c0recall_list, c1recall_list)
+        }
 
-    c0_f1_mean, c0_f1_std, c1_f1_mean, c1_f1_std = mean_and_std_from_classlists(c0f1_list, c1f1_list)
+        filename = f"gcngan_curve_metrics_with_train{num_train_snaps}_test{num_test_snaps}.json"
+        with open(filename, "w") as f:
+            json.dump(metrics_summary, f, indent=2)
 
 
-    print()
-    print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
-        (c0_prec_mean, c0_prec_std,
-        c0_recall_mean, c0_recall_std,
-        c0_f1_mean, c0_f1_std))
-    print('  C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
-        (c1_prec_mean, c1_prec_std,
-        c1_recall_mean, c1_recall_std,
-        c1_f1_mean, c1_f1_std))
-    print()
-    print('Best F1 during validation was: %f during epoch: %d' % (best_val_f1, best_epoch))
-    """
 
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
