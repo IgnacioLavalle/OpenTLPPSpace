@@ -456,8 +456,6 @@ def main():
         MAE = filtered_mae
 
         print(f"Iterative GAN Prediction on snapshot {tau}: RMSE {RMSE}, MAE {MAE}")
-        print(f"  MAE on class 1 ground truth: {mae_class_1} , RMSE on class 1: {rmse_class_1}")
-        print(f"  MAE on class 0 ground truth: {mae_class_0} , RMSE on class 0: {rmse_class_0}")
 
         append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
 
@@ -473,7 +471,7 @@ def main():
         print(f"  MAE on class 1 ground truth: {mae_class_1} , RMSE on class 1: {rmse_class_1}")
         print(f"  MAE on class 0 ground truth: {mae_class_0} , RMSE on class 0: {rmse_class_0}")
         print()
-        
+
         # Precision-Recall Curve
         precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
         avg_prec = average_precision_score(true_labels, pred_scores)
