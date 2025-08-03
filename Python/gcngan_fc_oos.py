@@ -433,12 +433,21 @@ def main():
         true_vals = gnd[valid_mask]
         pred_vals = adj_est[valid_mask]
 
+
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
         pred_labels = (pred_vals >= 1).astype(int)
+        mask_class_1 = (true_labels == 1)
+        mask_class_0 = (true_labels == 0)
+
 
         abs_errors = np.abs(pred_vals - true_vals)
         sq_errors = (pred_vals - true_vals) ** 2
+
+        mae_class_1 = np.mean(abs_errors[mask_class_1])
+        rmse_class_1 = np.sqrt(np.mean(sq_errors[mask_class_1]))
+        mae_class_0 = np.mean(abs_errors[mask_class_0])
+        rmse_class_0 = np.sqrt(np.mean(sq_errors[mask_class_0]))
 
         filtered_mae = np.mean(abs_errors)
         filtered_rmse = np.sqrt(np.mean(sq_errors))
@@ -447,6 +456,8 @@ def main():
         MAE = filtered_mae
 
         print(f"Iterative GAN Prediction on snapshot {tau}: RMSE {RMSE}, MAE {MAE}")
+        print(f"  MAE on class 1 ground truth: {mae_class_1} , RMSE on class 1: {rmse_class_1}")
+        print(f"  MAE on class 0 ground truth: {mae_class_0} , RMSE on class 0: {rmse_class_0}")
 
         append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
 
@@ -459,7 +470,10 @@ def main():
             c1recall_list[-1],
             c1f1_list[-1]))
         print()
-
+        print(f"  MAE on class 1 ground truth: {mae_class_1} , RMSE on class 1: {rmse_class_1}")
+        print(f"  MAE on class 0 ground truth: {mae_class_0} , RMSE on class 0: {rmse_class_0}")
+        print()
+        
         # Precision-Recall Curve
         precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
         avg_prec = average_precision_score(true_labels, pred_scores)
