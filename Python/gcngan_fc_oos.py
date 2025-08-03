@@ -1,7 +1,6 @@
 # Demonstration of GCN-GAN
 
 import json
-from sklearn.base import accuracy_score
 import torch
 import torch.optim as optim
 from GCN_GAN.modules import *
