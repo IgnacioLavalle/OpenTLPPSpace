@@ -72,6 +72,13 @@ def main():
     dec_list = get_dec_list(win_size, theta) # Get the list of decaying factors
 
     # ====================
+
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+      f"hid_dim: {hid_dim}, lambd: {lambd}, theta: {theta}, beta: {beta}, "
+      f"b_iterations: {b_iterations}, num_epochs: {num_epochs}, lr: {learn_rate}")
+    print()
+    
+    # ====================
     RMSE_list = []
     MAE_list = []
 
