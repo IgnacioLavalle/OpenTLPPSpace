@@ -140,6 +140,7 @@ def main():
 
 
         print('RMSE %f MAE %f' % (RMSE, MAE))
+        print()
 
     # ====================
     RMSE_mean = np.mean(RMSE_list)
