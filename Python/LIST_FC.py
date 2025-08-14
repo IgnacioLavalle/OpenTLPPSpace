@@ -121,7 +121,8 @@ def main():
                           num_epochs, beta, learn_rate, device)
         adj_est = LIST_model.LIST_fun(current_window)
 
-        adj_est = adj_est.cpu().numpy() if torch.cuda.is_available() else adj_est.numpy()
+        adj_est = adj_est.detach().cpu().numpy()
+
 
         # === Evaluate ===
         gnd_edges = edge_seq[tau]

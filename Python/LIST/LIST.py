@@ -162,7 +162,7 @@ def get_adj_norm(adj):
     '''
     # ====================
     num_nodes, _ = adj.shape
-    degs = np.sqrt(np.sum(adj, axis=1))
+    degs = np.sqrt(np.maximum(np.sum(adj, axis=1), 0))
     sup = adj # GNN support
     for i in range(num_nodes):
         if degs[i]>0:
