@@ -120,7 +120,7 @@ def main():
         LIST_model = LIST(num_nodes, hid_dim, win_size, dec_list, P_list,
                           num_epochs, beta, learn_rate, device)
         adj_est = LIST_model.LIST_fun(current_window)
-
+        adj_est = torch.nan_to_num(adj_est, nan=0.0, posinf=2.0, neginf=0.0)
         adj_est = adj_est.detach().cpu().numpy()
 
 
