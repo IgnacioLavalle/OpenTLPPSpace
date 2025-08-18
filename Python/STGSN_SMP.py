@@ -18,14 +18,14 @@ def parse_args():
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size (default: 1)")
-    parser.add_argument("--num_epochs", type=int, default=100, help="Number of training epochs (default: 100)")
+    parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
     parser.add_argument("--lr", type=float, default=0.0001, help="Learning rate (default: 1e-4)")
     parser.add_argument("--weight_decay", type=float, default=0.0001, help="Weight decay (default: 1e-4)")
     parser.add_argument("--theta", type=float, default=0.1, help="theta value (default: 0.1)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
-    parser.add_argument("--max_thres", type=float, default=1.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
+    parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 2) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
     parser.add_argument("--feat_name", type=str, default ='SMP22to95_oh', help = "Dataset features name")
     parser.add_argument("--feat_dim", type=int, default=32, help="dimensionality of feautre input (default: 32)")
@@ -149,7 +149,8 @@ def main():
                     sup_sp = sparse_to_tuple(sup_sp)
                     idxs = torch.LongTensor(sup_sp[0].astype(float)).to(device)
                     vals = torch.FloatTensor(sup_sp[1]).to(device)
-                    sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                    #sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                    sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, torch.Size(sup_sp[2]), dtype=torch.float32, device=device)
                     sup_list.append(sup_tnr)
                     # ==========
                     coef = (1-theta)**(tau-t)
@@ -162,7 +163,8 @@ def main():
                 col_sup_sp = sparse_to_tuple(col_sup_sp)
                 idxs = torch.LongTensor(col_sup_sp[0].astype(float)).to(device)
                 vals = torch.FloatTensor(col_sup_sp[1]).to(device)
-                col_sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, col_sup_sp[2]).float().to(device)
+                #col_sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, col_sup_sp[2]).float().to(device)
+                col_sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, torch.Size(col_sup_sp[2]), dtype=torch.float32, device=device)
                 # ==========
                 edges = edge_seq[tau]
                 gnd = get_adj_wei(edges, num_nodes, max_thres) # Training ground-truth
@@ -209,7 +211,8 @@ def main():
                 sup_sp = sparse_to_tuple(sup_sp)
                 idxs = torch.LongTensor(sup_sp[0].astype(float)).to(device)
                 vals = torch.FloatTensor(sup_sp[1]).to(device)
-                sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                #sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+                sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, torch.Size(sup_sp[2]), dtype=torch.float32, device=device)
                 sup_list.append(sup_tnr)
                 # ==========
                 coef = (1-theta)**(tau-t)
@@ -222,7 +225,8 @@ def main():
             col_sup_sp = sparse_to_tuple(col_sup_sp)
             idxs = torch.LongTensor(col_sup_sp[0].astype(float)).to(device)
             vals = torch.FloatTensor(col_sup_sp[1]).to(device)
-            col_sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, col_sup_sp[2]).float().to(device)
+            #col_sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, col_sup_sp[2]).float().to(device)
+            col_sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, torch.Size(col_sup_sp[2]), dtype=torch.float32, device=device)
             # ==========
             # Get the prediction result
             adj_est = model(sup_list, feat_list, col_sup_tnr, feat_tnr, num_nodes)
@@ -335,7 +339,8 @@ def main():
             sup_sp = sparse_to_tuple(sup_sp)
             idxs = torch.LongTensor(sup_sp[0].astype(float)).to(device)
             vals = torch.FloatTensor(sup_sp[1]).to(device)
-            sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+            #sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, sup_sp[2]).float().to(device)
+            sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, torch.Size(sup_sp[2]), dtype=torch.float32, device=device)
             sup_list.append(sup_tnr)
             # ==========
             coef = (1-theta)**(tau-t)
@@ -348,7 +353,8 @@ def main():
         col_sup_sp = sparse_to_tuple(col_sup_sp)
         idxs = torch.LongTensor(col_sup_sp[0].astype(float)).to(device)
         vals = torch.FloatTensor(col_sup_sp[1]).to(device)
-        col_sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, col_sup_sp[2]).float().to(device)
+        #col_sup_tnr = torch.sparse.FloatTensor(idxs.t(), vals, col_sup_sp[2]).float().to(device)
+        col_sup_tnr = torch.sparse_coo_tensor(idxs.t(), vals, torch.Size(col_sup_sp[2]), dtype=torch.float32, device=device)
         # ==========
         # Get the prediction result
         adj_est = model(sup_list, feat_list, col_sup_tnr, feat_tnr, num_nodes)
