@@ -26,7 +26,7 @@ def parse_args():
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 2) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
-
+    parser.add_argument("--dim", type=int, default=128)
 
     return parser.parse_args()
 
@@ -59,9 +59,12 @@ def main():
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     max_thres = args.max_thres # Threshold for maximum edge weight
-    struc_dims = [num_nodes, 32] # Layer configuration of structural encoder (FC)
-    temp_dims = [struc_dims[-1], 16, 16] # Layer configuration of temporal encoder (RNN)
-    dec_dims = [temp_dims[-1], 32, num_nodes] # Layer configuration of decoder (FC)
+    dim_1 = args.dim
+    dim_2 = dim_1 // 2
+    
+    struc_dims = [num_nodes, dim_1] # Layer configuration of structural encoder (FC)
+    temp_dims = [dim_1, dim_2, dim_2] # Layer configuration of temporal encoder (RNN)
+    dec_dims = [dim_2, dim_1, num_nodes] # Layer configuration of decoder (FC)
     beta = args.beta # Hyper-parameter of loss
 
     # ====================
@@ -85,7 +88,7 @@ def main():
     best_epoch = -1
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
-      f"dropout_rate: {dropout_rate}, beta: {beta}, batch_size: {batch_size}, "
+      f"dropout_rate: {dropout_rate}, beta: {beta}, batch_size: {batch_size}, dim_1: {dim_1}, dim_2: {dim_2}, "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
       f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {wdecay}")
 
