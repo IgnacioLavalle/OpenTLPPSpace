@@ -27,6 +27,9 @@ def parse_args():
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 2) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
     parser.add_argument("--dim", type=int, default=128)
+    parser.add_argument("--trigger", type=int, default=350)
+    parser.add_argument("--patience", type=int, default=10)
+    parser.add_argument("--es", type=bool, default=False)
 
     return parser.parse_args()
 
@@ -86,6 +89,11 @@ def main():
 
     best_val_f1 = -1.0 # Or any metric you want to track for 'best' model
     best_epoch = -1
+    best_model_state = None
+    trigger = args.trigger
+    counter = 0
+    patience = args.patience
+    early_stopping_on = args.es
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"dropout_rate: {dropout_rate}, beta: {beta}, batch_size: {batch_size}, dim_1: {dim_1}, dim_2: {dim_2}, "
@@ -232,9 +240,26 @@ def main():
         if c1_f1_mean > best_val_f1:
             best_val_f1 = c1_f1_mean
             best_epoch = epoch
+            best_model_state = model.state_dict() # Save model's parameters
+            print(f"  --> New best validation C1 F1: {best_val_f1:.4f} at epoch {best_epoch}. Model saved.")
+            counter = 0
+        
+        else:
+            if epoch >= trigger:
+                counter += 1
+                if counter > patience and early_stopping_on:
+                    print("Early stopping triggered")
+                    break
+
 
     # ====================
     # Test the model
+    if best_model_state is not None:
+        model.load_state_dict(best_model_state)
+        print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
+    else:
+        print("No best model saved. Using the model from the last epoch for testing.")
+    print()
     model.eval()
     RMSE_list = []
     MAE_list = []
