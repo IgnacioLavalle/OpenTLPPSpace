@@ -218,7 +218,7 @@ def main():
 
         c0_f1_mean, c0_f1_std, c1_f1_mean, c1_f1_std = mean_and_std_from_classlists(c0f1_list, c1f1_list)
 
-        print('Val Pre Epoch %d RMSE %f %f MAE %f %f'
+        print('Val Epoch %d RMSE %f %f MAE %f %f'
             % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
         print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
             (c0_prec_mean, c0_prec_std,
