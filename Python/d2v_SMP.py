@@ -30,6 +30,8 @@ def parse_args():
     parser.add_argument("--trigger", type=int, default=350)
     parser.add_argument("--patience", type=int, default=10)
     parser.add_argument("--es", type=bool, default=False)
+    parser.add_argument("--class_th", type=float, default=1.0, help="Threshold for classification prediction (default: 2) ")
+
 
     return parser.parse_args()
 
@@ -83,7 +85,7 @@ def main():
     num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
     lr_val = args.lr
     wdecay = args.weight_decay
-
+    class_th = args.class_th
     valid_mask = np.zeros((1355, 1355), dtype=bool)
     valid_mask[0:137, 137:1355] = True
 
@@ -195,7 +197,7 @@ def main():
             pred_vals = adj_est[valid_mask]
 
             true_labels = (true_vals >= 1).astype(int)
-            pred_labels = (pred_vals >= 1).astype(int)
+            pred_labels = (pred_vals >= class_th).astype(int)
 
             append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
 
@@ -302,7 +304,7 @@ def main():
         pred_vals = adj_est[valid_mask]
 
         true_labels = (true_vals >= 1).astype(int)
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= class_th).astype(int)
 
         print('Test snapshot %d metrics per snapshot:'
             % (tau))
