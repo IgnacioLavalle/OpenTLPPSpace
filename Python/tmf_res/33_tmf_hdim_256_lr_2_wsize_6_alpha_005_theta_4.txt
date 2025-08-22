@@ -1,0 +1,164 @@
+data_name: SMP22to95, max_thres: 2.0, win_size: 6, hid_dim: 256, alpha: 0.005, theta: 0.4, beta: 0.01, num_epochs: 500, lr: 0.2
+
+snapshot 6 metrics
+
+  C0 Prec: 0.971894  C0 Rec: 0.970135  C0 F1: 0.971014
+  C1 Prec: 0.816968  C1 Rec: 0.826130  C1 F1: 0.821524
+
+RMSE 0.349330 MAE 0.205930
+
+snapshot 7 metrics
+
+  C0 Prec: 0.972221  C0 Rec: 0.970984  C0 F1: 0.971602
+  C1 Prec: 0.820690  C1 Rec: 0.827196  C1 F1: 0.823930
+
+RMSE 0.347171 MAE 0.204489
+
+snapshot 8 metrics
+
+  C0 Prec: 0.971849  C0 Rec: 0.971592  C0 F1: 0.971720
+  C1 Prec: 0.822902  C1 Rec: 0.824260  C1 F1: 0.823580
+
+RMSE 0.350237 MAE 0.206051
+
+snapshot 9 metrics
+
+  C0 Prec: 0.971397  C0 Rec: 0.974302  C0 F1: 0.972847
+  C1 Prec: 0.837175  C1 Rec: 0.821603  C1 F1: 0.829316
+
+RMSE 0.338113 MAE 0.201113
+
+snapshot 10 metrics
+
+  C0 Prec: 0.971557  C0 Rec: 0.974953  C0 F1: 0.973252
+  C1 Prec: 0.841609  C1 Rec: 0.823413  C1 F1: 0.832412
+
+RMSE 0.334007 MAE 0.198863
+
+snapshot 11 metrics
+
+  C0 Prec: 0.970355  C0 Rec: 0.975096  C0 F1: 0.972719
+  C1 Prec: 0.844172  C1 Rec: 0.819130  C1 F1: 0.831462
+
+RMSE 0.338945 MAE 0.200244
+
+snapshot 12 metrics
+
+  C0 Prec: 0.969439  C0 Rec: 0.974166  C0 F1: 0.971797
+  C1 Prec: 0.842772  C1 Rec: 0.818479  C1 F1: 0.830448
+
+RMSE 0.339900 MAE 0.202026
+
+snapshot 13 metrics
+
+  C0 Prec: 0.971572  C0 Rec: 0.972259  C0 F1: 0.971915
+  C1 Prec: 0.835391  C1 Rec: 0.831898  C1 F1: 0.833641
+
+RMSE 0.334928 MAE 0.200536
+
+snapshot 14 metrics
+
+  C0 Prec: 0.970900  C0 Rec: 0.969841  C0 F1: 0.970370
+  C1 Prec: 0.820404  C1 Rec: 0.825768  C1 F1: 0.823077
+
+RMSE 0.347923 MAE 0.205307
+
+snapshot 15 metrics
+
+  C0 Prec: 0.970857  C0 Rec: 0.972195  C0 F1: 0.971525
+  C1 Prec: 0.832645  C1 Rec: 0.825795  C1 F1: 0.829206
+
+RMSE 0.339118 MAE 0.202865
+
+snapshot 16 metrics
+
+  C0 Prec: 0.973793  C0 Rec: 0.973678  C0 F1: 0.973735
+  C1 Prec: 0.839150  C1 Rec: 0.839758  C1 F1: 0.839454
+
+RMSE 0.329551 MAE 0.197497
+
+snapshot 17 metrics
+
+  C0 Prec: 0.972481  C0 Rec: 0.976156  C0 F1: 0.974315
+  C1 Prec: 0.852508  C1 Rec: 0.833038  C1 F1: 0.842660
+
+RMSE 0.326959 MAE 0.197532
+
+snapshot 18 metrics
+
+  C0 Prec: 0.974184  C0 Rec: 0.976333  C0 F1: 0.975257
+  C1 Prec: 0.854879  C1 Rec: 0.843466  C1 F1: 0.849134
+
+RMSE 0.317824 MAE 0.191266
+
+snapshot 19 metrics
+
+  C0 Prec: 0.975029  C0 Rec: 0.976792  C0 F1: 0.975910
+  C1 Prec: 0.857535  C1 Rec: 0.848123  C1 F1: 0.852803
+
+RMSE 0.316349 MAE 0.189186
+
+snapshot 20 metrics
+
+  C0 Prec: 0.975481  C0 Rec: 0.975903  C0 F1: 0.975692
+  C1 Prec: 0.851607  C1 Rec: 0.849347  C1 F1: 0.850476
+
+RMSE 0.316228 MAE 0.190451
+
+snapshot 21 metrics
+
+  C0 Prec: 0.975260  C0 Rec: 0.976896  C0 F1: 0.976077
+  C1 Prec: 0.855199  C1 Rec: 0.846303  C1 F1: 0.850728
+
+RMSE 0.314410 MAE 0.190323
+
+snapshot 22 metrics
+
+  C0 Prec: 0.972692  C0 Rec: 0.977995  C0 F1: 0.975336
+  C1 Prec: 0.860730  C1 Rec: 0.832018  C1 F1: 0.846130
+
+RMSE 0.312349 MAE 0.190789
+
+snapshot 23 metrics
+
+  C0 Prec: 0.975140  C0 Rec: 0.978084  C0 F1: 0.976609
+  C1 Prec: 0.863484  C1 Rec: 0.847544  C1 F1: 0.855440
+
+RMSE 0.307477 MAE 0.186276
+
+snapshot 24 metrics
+
+  C0 Prec: 0.976866  C0 Rec: 0.976825  C0 F1: 0.976846
+  C1 Prec: 0.856965  C1 Rec: 0.857186  C1 F1: 0.857075
+
+RMSE 0.307869 MAE 0.185523
+
+snapshot 25 metrics
+
+  C0 Prec: 0.976736  C0 Rec: 0.976506  C0 F1: 0.976621
+  C1 Prec: 0.852636  C1 Rec: 0.853901  C1 F1: 0.853268
+
+RMSE 0.302736 MAE 0.183503
+
+snapshot 26 metrics
+
+  C0 Prec: 0.975169  C0 Rec: 0.978262  C0 F1: 0.976713
+  C1 Prec: 0.861736  C1 Rec: 0.844700  C1 F1: 0.853133
+
+RMSE 0.302456 MAE 0.184550
+
+snapshot 27 metrics
+
+  C0 Prec: 0.974586  C0 Rec: 0.976217  C0 F1: 0.975401
+  C1 Prec: 0.848863  C1 Rec: 0.839928  C1 F1: 0.844372
+
+RMSE 0.315937 MAE 0.189420
+
+Final metrics mean and std
+
+  C0 Prec: 0.973157 (+-0.002143) C0 Rec: 0.974780 (+-0.002602) C0 F1: 0.973967 (+-0.002153)
+  C1 Prec: 0.844092 (+-0.014399) C1 Rec: 0.835408 (+-0.011967) C1 F1: 0.839694 (+-0.012073)
+
+RMSE 0.326810 0.015928 MAE 0.195625 0.007591
+
+Total runtime was: 44.66615080833435 seconds
