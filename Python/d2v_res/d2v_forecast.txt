@@ -1,0 +1,2067 @@
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3904: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:147: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:227: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:184: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+data_name: SMP22to95, max_thres: 2.0, win_size: 1, dropout_rate: 0.2, beta: 0.2, batch_size: 1, dim_1: 1024, dim_2: 512, num_epochs: 500, num_val_snaps: 0, num_test_snaps: 6, num_train_snaps: 22, lr_val: 0.0001, weight_decay_val: 0.002
+
+Epoch 0 Total Loss 1267604.375000
+Val Epoch 0 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 1 Total Loss 1024956.562500
+Val Epoch 1 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 2 Total Loss 707529.562500
+Val Epoch 2 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 3 Total Loss 605648.500000
+Val Epoch 3 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 4 Total Loss 563030.750000
+Val Epoch 4 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 5 Total Loss 541362.437500
+Val Epoch 5 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 6 Total Loss 530435.812500
+Val Epoch 6 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 7 Total Loss 523806.843750
+Val Epoch 7 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 8 Total Loss 518451.812500
+Val Epoch 8 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 9 Total Loss 513630.343750
+Val Epoch 9 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 10 Total Loss 509641.625000
+Val Epoch 10 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 11 Total Loss 506264.218750
+Val Epoch 11 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 12 Total Loss 503608.937500
+Val Epoch 12 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 13 Total Loss 501584.968750
+Val Epoch 13 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 14 Total Loss 500049.125000
+Val Epoch 14 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 15 Total Loss 498723.468750
+Val Epoch 15 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 16 Total Loss 497746.312500
+Val Epoch 16 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 17 Total Loss 496487.281250
+Val Epoch 17 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 18 Total Loss 495430.843750
+Val Epoch 18 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 19 Total Loss 494197.937500
+Val Epoch 19 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 20 Total Loss 492897.468750
+Val Epoch 20 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 21 Total Loss 491415.281250
+Val Epoch 21 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 22 Total Loss 489974.312500
+Val Epoch 22 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 23 Total Loss 488029.968750
+Val Epoch 23 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 24 Total Loss 485845.500000
+Val Epoch 24 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 25 Total Loss 483385.093750
+Val Epoch 25 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 26 Total Loss 480352.843750
+Val Epoch 26 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 27 Total Loss 477261.656250
+Val Epoch 27 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 28 Total Loss 473986.000000
+Val Epoch 28 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 29 Total Loss 470430.406250
+Val Epoch 29 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 30 Total Loss 466856.531250
+Val Epoch 30 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 31 Total Loss 463640.468750
+Val Epoch 31 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 32 Total Loss 461032.000000
+Val Epoch 32 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 33 Total Loss 458912.250000
+Val Epoch 33 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 34 Total Loss 457200.906250
+Val Epoch 34 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 35 Total Loss 455393.750000
+Val Epoch 35 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 36 Total Loss 453575.031250
+Val Epoch 36 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 37 Total Loss 451584.812500
+Val Epoch 37 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 38 Total Loss 449463.125000
+Val Epoch 38 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 39 Total Loss 447036.437500
+Val Epoch 39 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 40 Total Loss 444425.875000
+Val Epoch 40 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 41 Total Loss 441596.750000
+Val Epoch 41 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 42 Total Loss 438419.250000
+Val Epoch 42 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 43 Total Loss 435544.406250
+Val Epoch 43 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 44 Total Loss 432885.687500
+Val Epoch 44 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 45 Total Loss 431047.812500
+Val Epoch 45 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 46 Total Loss 429482.312500
+Val Epoch 46 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 47 Total Loss 428337.125000
+Val Epoch 47 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 48 Total Loss 427464.375000
+Val Epoch 48 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 49 Total Loss 425748.281250
+Val Epoch 49 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 50 Total Loss 423934.187500
+Val Epoch 50 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 51 Total Loss 421747.562500
+Val Epoch 51 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 52 Total Loss 420607.750000
+Val Epoch 52 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 53 Total Loss 419444.218750
+Val Epoch 53 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 54 Total Loss 418005.468750
+Val Epoch 54 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 55 Total Loss 416801.812500
+Val Epoch 55 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 56 Total Loss 415459.593750
+Val Epoch 56 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 57 Total Loss 414294.968750
+Val Epoch 57 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 58 Total Loss 413159.781250
+Val Epoch 58 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 59 Total Loss 411735.000000
+Val Epoch 59 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 60 Total Loss 410463.437500
+Val Epoch 60 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 61 Total Loss 408959.000000
+Val Epoch 61 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 62 Total Loss 407556.437500
+Val Epoch 62 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 63 Total Loss 406205.437500
+Val Epoch 63 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 64 Total Loss 404542.593750
+Val Epoch 64 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 65 Total Loss 403052.406250
+Val Epoch 65 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 66 Total Loss 401878.312500
+Val Epoch 66 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 67 Total Loss 400274.937500
+Val Epoch 67 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 68 Total Loss 398977.281250
+Val Epoch 68 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 69 Total Loss 397545.062500
+Val Epoch 69 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 70 Total Loss 396177.875000
+Val Epoch 70 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 71 Total Loss 394715.812500
+Val Epoch 71 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 72 Total Loss 392998.718750
+Val Epoch 72 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 73 Total Loss 391630.187500
+Val Epoch 73 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 74 Total Loss 390264.625000
+Val Epoch 74 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 75 Total Loss 388910.312500
+Val Epoch 75 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 76 Total Loss 387570.625000
+Val Epoch 76 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 77 Total Loss 386138.500000
+Val Epoch 77 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 78 Total Loss 384763.968750
+Val Epoch 78 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 79 Total Loss 383273.312500
+Val Epoch 79 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 80 Total Loss 381703.218750
+Val Epoch 80 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 81 Total Loss 380230.812500
+Val Epoch 81 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 82 Total Loss 378787.093750
+Val Epoch 82 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 83 Total Loss 377070.031250
+Val Epoch 83 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 84 Total Loss 375568.781250
+Val Epoch 84 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 85 Total Loss 374064.375000
+Val Epoch 85 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 86 Total Loss 372374.281250
+Val Epoch 86 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 87 Total Loss 370999.312500
+Val Epoch 87 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 88 Total Loss 369306.031250
+Val Epoch 88 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 89 Total Loss 367826.875000
+Val Epoch 89 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 90 Total Loss 366225.468750
+Val Epoch 90 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 91 Total Loss 364733.968750
+Val Epoch 91 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 92 Total Loss 363071.968750
+Val Epoch 92 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 93 Total Loss 361543.125000
+Val Epoch 93 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 94 Total Loss 360052.968750
+Val Epoch 94 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 95 Total Loss 358580.468750
+Val Epoch 95 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 96 Total Loss 357225.312500
+Val Epoch 96 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 97 Total Loss 355961.531250
+Val Epoch 97 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 98 Total Loss 354669.000000
+Val Epoch 98 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 99 Total Loss 353031.875000
+Val Epoch 99 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 100 Total Loss 351967.343750
+Val Epoch 100 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 101 Total Loss 350496.781250
+Val Epoch 101 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 102 Total Loss 349383.781250
+Val Epoch 102 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 103 Total Loss 347879.156250
+Val Epoch 103 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 104 Total Loss 346728.906250
+Val Epoch 104 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 105 Total Loss 345561.125000
+Val Epoch 105 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 106 Total Loss 344220.500000
+Val Epoch 106 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 107 Total Loss 343027.968750
+Val Epoch 107 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 108 Total Loss 341487.687500
+Val Epoch 108 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 109 Total Loss 340473.312500
+Val Epoch 109 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 110 Total Loss 339376.187500
+Val Epoch 110 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 111 Total Loss 338230.968750
+Val Epoch 111 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 112 Total Loss 336922.468750
+Val Epoch 112 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 113 Total Loss 335484.593750
+Val Epoch 113 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 114 Total Loss 334529.375000
+Val Epoch 114 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 115 Total Loss 333584.843750
+Val Epoch 115 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 116 Total Loss 332280.843750
+Val Epoch 116 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 117 Total Loss 331263.250000
+Val Epoch 117 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 118 Total Loss 329986.656250
+Val Epoch 118 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 119 Total Loss 328926.125000
+Val Epoch 119 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 120 Total Loss 327707.187500
+Val Epoch 120 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 121 Total Loss 326730.125000
+Val Epoch 121 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 122 Total Loss 325415.906250
+Val Epoch 122 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 123 Total Loss 324494.531250
+Val Epoch 123 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 124 Total Loss 323457.750000
+Val Epoch 124 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 125 Total Loss 322584.906250
+Val Epoch 125 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 126 Total Loss 321284.312500
+Val Epoch 126 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 127 Total Loss 320115.843750
+Val Epoch 127 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 128 Total Loss 318989.156250
+Val Epoch 128 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 129 Total Loss 317469.125000
+Val Epoch 129 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 130 Total Loss 316238.062500
+Val Epoch 130 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 131 Total Loss 315360.062500
+Val Epoch 131 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 132 Total Loss 314367.656250
+Val Epoch 132 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 133 Total Loss 313438.562500
+Val Epoch 133 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 134 Total Loss 312633.562500
+Val Epoch 134 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 135 Total Loss 311401.062500
+Val Epoch 135 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 136 Total Loss 310136.156250
+Val Epoch 136 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 137 Total Loss 308575.812500
+Val Epoch 137 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 138 Total Loss 307299.000000
+Val Epoch 138 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 139 Total Loss 306020.156250
+Val Epoch 139 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 140 Total Loss 304660.281250
+Val Epoch 140 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 141 Total Loss 303606.843750
+Val Epoch 141 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 142 Total Loss 302483.593750
+Val Epoch 142 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 143 Total Loss 301481.093750
+Val Epoch 143 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 144 Total Loss 300172.031250
+Val Epoch 144 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 145 Total Loss 299275.468750
+Val Epoch 145 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 146 Total Loss 298170.281250
+Val Epoch 146 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 147 Total Loss 297139.937500
+Val Epoch 147 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 148 Total Loss 296097.875000
+Val Epoch 148 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 149 Total Loss 295297.437500
+Val Epoch 149 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 150 Total Loss 293936.062500
+Val Epoch 150 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 151 Total Loss 292892.187500
+Val Epoch 151 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 152 Total Loss 291926.968750
+Val Epoch 152 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 153 Total Loss 291138.187500
+Val Epoch 153 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 154 Total Loss 289962.500000
+Val Epoch 154 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 155 Total Loss 288647.281250
+Val Epoch 155 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 156 Total Loss 287648.218750
+Val Epoch 156 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 157 Total Loss 286612.843750
+Val Epoch 157 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 158 Total Loss 285355.593750
+Val Epoch 158 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 159 Total Loss 284456.937500
+Val Epoch 159 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 160 Total Loss 283333.125000
+Val Epoch 160 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 161 Total Loss 282315.000000
+Val Epoch 161 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 162 Total Loss 281024.343750
+Val Epoch 162 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 163 Total Loss 280019.812500
+Val Epoch 163 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 164 Total Loss 278920.687500
+Val Epoch 164 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 165 Total Loss 277703.250000
+Val Epoch 165 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 166 Total Loss 276624.781250
+Val Epoch 166 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 167 Total Loss 275417.031250
+Val Epoch 167 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 168 Total Loss 274425.468750
+Val Epoch 168 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 169 Total Loss 273700.968750
+Val Epoch 169 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 170 Total Loss 272354.562500
+Val Epoch 170 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 171 Total Loss 271504.562500
+Val Epoch 171 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 172 Total Loss 270595.625000
+Val Epoch 172 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 173 Total Loss 269553.375000
+Val Epoch 173 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 174 Total Loss 268776.687500
+Val Epoch 174 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 175 Total Loss 267518.437500
+Val Epoch 175 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 176 Total Loss 266543.625000
+Val Epoch 176 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 177 Total Loss 265579.000000
+Val Epoch 177 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 178 Total Loss 265252.031250
+Val Epoch 178 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 179 Total Loss 264205.968750
+Val Epoch 179 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 180 Total Loss 263069.468750
+Val Epoch 180 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 181 Total Loss 262265.281250
+Val Epoch 181 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 182 Total Loss 261590.359375
+Val Epoch 182 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 183 Total Loss 260653.781250
+Val Epoch 183 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 184 Total Loss 259721.031250
+Val Epoch 184 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 185 Total Loss 258929.000000
+Val Epoch 185 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 186 Total Loss 258121.250000
+Val Epoch 186 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 187 Total Loss 257215.765625
+Val Epoch 187 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 188 Total Loss 256121.109375
+Val Epoch 188 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 189 Total Loss 255310.015625
+Val Epoch 189 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 190 Total Loss 254796.218750
+Val Epoch 190 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 191 Total Loss 253959.453125
+Val Epoch 191 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 192 Total Loss 253095.156250
+Val Epoch 192 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 193 Total Loss 252412.890625
+Val Epoch 193 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 194 Total Loss 251954.843750
+Val Epoch 194 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 195 Total Loss 251087.078125
+Val Epoch 195 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 196 Total Loss 250641.859375
+Val Epoch 196 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 197 Total Loss 249936.171875
+Val Epoch 197 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 198 Total Loss 249165.625000
+Val Epoch 198 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 199 Total Loss 248624.328125
+Val Epoch 199 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 200 Total Loss 248211.437500
+Val Epoch 200 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 201 Total Loss 247644.062500
+Val Epoch 201 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 202 Total Loss 247338.796875
+Val Epoch 202 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 203 Total Loss 246607.062500
+Val Epoch 203 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 204 Total Loss 245812.515625
+Val Epoch 204 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 205 Total Loss 245231.312500
+Val Epoch 205 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 206 Total Loss 244477.406250
+Val Epoch 206 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 207 Total Loss 243828.812500
+Val Epoch 207 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 208 Total Loss 243192.812500
+Val Epoch 208 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 209 Total Loss 242363.437500
+Val Epoch 209 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 210 Total Loss 241758.765625
+Val Epoch 210 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 211 Total Loss 241045.437500
+Val Epoch 211 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 212 Total Loss 240625.000000
+Val Epoch 212 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 213 Total Loss 240110.250000
+Val Epoch 213 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 214 Total Loss 239485.921875
+Val Epoch 214 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 215 Total Loss 238848.921875
+Val Epoch 215 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 216 Total Loss 238651.000000
+Val Epoch 216 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 217 Total Loss 238309.843750
+Val Epoch 217 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 218 Total Loss 237582.109375
+Val Epoch 218 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 219 Total Loss 237240.828125
+Val Epoch 219 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 220 Total Loss 236784.250000
+Val Epoch 220 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 221 Total Loss 236206.015625
+Val Epoch 221 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 222 Total Loss 235712.906250
+Val Epoch 222 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 223 Total Loss 235324.156250
+Val Epoch 223 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 224 Total Loss 234480.765625
+Val Epoch 224 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 225 Total Loss 233828.390625
+Val Epoch 225 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 226 Total Loss 233277.343750
+Val Epoch 226 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 227 Total Loss 232424.093750
+Val Epoch 227 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 228 Total Loss 231654.906250
+Val Epoch 228 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 229 Total Loss 231077.984375
+Val Epoch 229 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 230 Total Loss 230186.859375
+Val Epoch 230 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 231 Total Loss 229825.531250
+Val Epoch 231 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 232 Total Loss 228957.890625
+Val Epoch 232 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 233 Total Loss 228578.968750
+Val Epoch 233 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 234 Total Loss 227768.187500
+Val Epoch 234 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 235 Total Loss 227150.109375
+Val Epoch 235 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 236 Total Loss 226715.781250
+Val Epoch 236 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 237 Total Loss 226219.468750
+Val Epoch 237 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 238 Total Loss 225508.281250
+Val Epoch 238 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 239 Total Loss 224847.953125
+Val Epoch 239 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 240 Total Loss 224389.125000
+Val Epoch 240 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 241 Total Loss 223593.984375
+Val Epoch 241 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 242 Total Loss 223208.390625
+Val Epoch 242 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 243 Total Loss 222956.421875
+Val Epoch 243 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 244 Total Loss 222324.718750
+Val Epoch 244 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 245 Total Loss 221728.890625
+Val Epoch 245 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 246 Total Loss 221313.109375
+Val Epoch 246 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 247 Total Loss 220847.578125
+Val Epoch 247 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 248 Total Loss 220199.453125
+Val Epoch 248 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 249 Total Loss 219680.500000
+Val Epoch 249 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 250 Total Loss 219326.687500
+Val Epoch 250 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 251 Total Loss 219022.562500
+Val Epoch 251 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 252 Total Loss 218467.453125
+Val Epoch 252 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 253 Total Loss 218030.656250
+Val Epoch 253 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 254 Total Loss 217680.125000
+Val Epoch 254 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 255 Total Loss 217487.125000
+Val Epoch 255 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 256 Total Loss 216707.109375
+Val Epoch 256 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 257 Total Loss 216364.703125
+Val Epoch 257 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 258 Total Loss 215880.609375
+Val Epoch 258 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 259 Total Loss 215398.671875
+Val Epoch 259 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 260 Total Loss 214946.984375
+Val Epoch 260 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 261 Total Loss 214646.078125
+Val Epoch 261 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 262 Total Loss 213955.234375
+Val Epoch 262 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 263 Total Loss 213645.156250
+Val Epoch 263 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 264 Total Loss 213162.281250
+Val Epoch 264 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 265 Total Loss 212759.578125
+Val Epoch 265 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 266 Total Loss 212541.953125
+Val Epoch 266 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 267 Total Loss 211992.140625
+Val Epoch 267 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 268 Total Loss 211383.718750
+Val Epoch 268 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 269 Total Loss 210808.656250
+Val Epoch 269 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 270 Total Loss 210427.437500
+Val Epoch 270 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 271 Total Loss 210162.500000
+Val Epoch 271 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 272 Total Loss 209461.781250
+Val Epoch 272 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 273 Total Loss 209317.953125
+Val Epoch 273 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 274 Total Loss 208949.671875
+Val Epoch 274 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 275 Total Loss 208343.843750
+Val Epoch 275 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 276 Total Loss 208054.500000
+Val Epoch 276 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 277 Total Loss 207578.546875
+Val Epoch 277 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 278 Total Loss 207083.421875
+Val Epoch 278 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 279 Total Loss 206868.546875
+Val Epoch 279 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 280 Total Loss 206262.890625
+Val Epoch 280 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 281 Total Loss 205942.031250
+Val Epoch 281 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 282 Total Loss 205581.093750
+Val Epoch 282 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 283 Total Loss 205222.625000
+Val Epoch 283 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 284 Total Loss 204892.906250
+Val Epoch 284 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 285 Total Loss 204405.453125
+Val Epoch 285 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 286 Total Loss 204138.359375
+Val Epoch 286 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 287 Total Loss 203875.109375
+Val Epoch 287 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 288 Total Loss 203365.546875
+Val Epoch 288 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 289 Total Loss 202891.859375
+Val Epoch 289 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 290 Total Loss 202849.000000
+Val Epoch 290 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 291 Total Loss 202406.265625
+Val Epoch 291 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 292 Total Loss 201966.187500
+Val Epoch 292 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 293 Total Loss 201501.484375
+Val Epoch 293 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 294 Total Loss 201432.468750
+Val Epoch 294 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 295 Total Loss 201047.000000
+Val Epoch 295 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 296 Total Loss 200706.843750
+Val Epoch 296 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 297 Total Loss 200304.812500
+Val Epoch 297 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 298 Total Loss 199847.625000
+Val Epoch 298 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 299 Total Loss 199489.234375
+Val Epoch 299 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 300 Total Loss 199112.421875
+Val Epoch 300 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 301 Total Loss 198796.359375
+Val Epoch 301 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 302 Total Loss 198191.859375
+Val Epoch 302 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 303 Total Loss 197751.015625
+Val Epoch 303 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 304 Total Loss 197555.156250
+Val Epoch 304 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 305 Total Loss 197054.187500
+Val Epoch 305 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 306 Total Loss 196685.562500
+Val Epoch 306 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 307 Total Loss 196392.046875
+Val Epoch 307 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 308 Total Loss 195953.781250
+Val Epoch 308 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 309 Total Loss 195723.890625
+Val Epoch 309 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 310 Total Loss 195169.906250
+Val Epoch 310 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 311 Total Loss 194800.125000
+Val Epoch 311 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 312 Total Loss 194317.968750
+Val Epoch 312 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 313 Total Loss 193935.781250
+Val Epoch 313 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 314 Total Loss 193423.875000
+Val Epoch 314 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 315 Total Loss 193198.062500
+Val Epoch 315 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 316 Total Loss 192741.406250
+Val Epoch 316 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 317 Total Loss 192437.640625
+Val Epoch 317 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 318 Total Loss 192149.312500
+Val Epoch 318 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 319 Total Loss 191713.250000
+Val Epoch 319 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 320 Total Loss 191170.453125
+Val Epoch 320 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 321 Total Loss 190954.921875
+Val Epoch 321 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 322 Total Loss 190555.500000
+Val Epoch 322 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 323 Total Loss 190125.265625
+Val Epoch 323 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 324 Total Loss 189911.093750
+Val Epoch 324 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 325 Total Loss 189322.062500
+Val Epoch 325 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 326 Total Loss 189417.906250
+Val Epoch 326 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 327 Total Loss 189007.343750
+Val Epoch 327 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 328 Total Loss 188732.984375
+Val Epoch 328 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 329 Total Loss 188361.421875
+Val Epoch 329 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 330 Total Loss 188103.859375
+Val Epoch 330 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 331 Total Loss 187455.906250
+Val Epoch 331 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 332 Total Loss 187211.078125
+Val Epoch 332 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 333 Total Loss 186643.046875
+Val Epoch 333 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 334 Total Loss 186378.812500
+Val Epoch 334 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 335 Total Loss 185942.093750
+Val Epoch 335 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 336 Total Loss 185441.890625
+Val Epoch 336 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 337 Total Loss 185080.765625
+Val Epoch 337 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 338 Total Loss 184681.406250
+Val Epoch 338 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 339 Total Loss 184389.406250
+Val Epoch 339 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 340 Total Loss 184053.937500
+Val Epoch 340 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 341 Total Loss 183627.031250
+Val Epoch 341 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 342 Total Loss 183351.468750
+Val Epoch 342 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 343 Total Loss 183048.328125
+Val Epoch 343 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 344 Total Loss 182819.078125
+Val Epoch 344 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 345 Total Loss 182347.453125
+Val Epoch 345 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 346 Total Loss 182071.218750
+Val Epoch 346 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 347 Total Loss 181528.812500
+Val Epoch 347 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 348 Total Loss 181426.812500
+Val Epoch 348 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 349 Total Loss 180873.359375
+Val Epoch 349 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 350 Total Loss 180568.671875
+Val Epoch 350 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 351 Total Loss 180191.218750
+Val Epoch 351 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 352 Total Loss 179999.687500
+Val Epoch 352 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 353 Total Loss 179762.609375
+Val Epoch 353 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 354 Total Loss 179250.468750
+Val Epoch 354 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 355 Total Loss 179033.265625
+Val Epoch 355 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 356 Total Loss 178864.906250
+Val Epoch 356 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 357 Total Loss 178312.968750
+Val Epoch 357 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 358 Total Loss 178175.250000
+Val Epoch 358 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 359 Total Loss 177924.218750
+Val Epoch 359 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 360 Total Loss 177806.703125
+Val Epoch 360 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 361 Total Loss 177211.437500
+Val Epoch 361 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 362 Total Loss 176955.250000
+Val Epoch 362 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 363 Total Loss 176673.765625
+Val Epoch 363 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 364 Total Loss 176165.609375
+Val Epoch 364 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 365 Total Loss 175826.312500
+Val Epoch 365 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 366 Total Loss 175491.312500
+Val Epoch 366 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 367 Total Loss 175054.937500
+Val Epoch 367 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 368 Total Loss 174846.953125
+Val Epoch 368 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 369 Total Loss 174506.671875
+Val Epoch 369 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 370 Total Loss 174209.156250
+Val Epoch 370 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 371 Total Loss 173865.984375
+Val Epoch 371 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 372 Total Loss 173362.828125
+Val Epoch 372 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 373 Total Loss 173115.421875
+Val Epoch 373 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 374 Total Loss 172764.937500
+Val Epoch 374 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 375 Total Loss 172439.156250
+Val Epoch 375 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 376 Total Loss 172112.250000
+Val Epoch 376 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 377 Total Loss 171720.375000
+Val Epoch 377 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 378 Total Loss 171310.750000
+Val Epoch 378 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 379 Total Loss 170970.359375
+Val Epoch 379 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 380 Total Loss 170963.328125
+Val Epoch 380 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 381 Total Loss 170516.171875
+Val Epoch 381 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 382 Total Loss 170145.750000
+Val Epoch 382 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 383 Total Loss 169894.625000
+Val Epoch 383 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 384 Total Loss 169648.671875
+Val Epoch 384 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 385 Total Loss 169300.968750
+Val Epoch 385 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 386 Total Loss 169059.937500
+Val Epoch 386 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 387 Total Loss 168666.609375
+Val Epoch 387 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 388 Total Loss 168469.140625
+Val Epoch 388 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 389 Total Loss 168072.343750
+Val Epoch 389 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 390 Total Loss 167961.296875
+Val Epoch 390 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 391 Total Loss 167527.562500
+Val Epoch 391 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 392 Total Loss 167046.406250
+Val Epoch 392 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 393 Total Loss 166760.671875
+Val Epoch 393 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 394 Total Loss 166435.453125
+Val Epoch 394 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 395 Total Loss 166195.171875
+Val Epoch 395 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 396 Total Loss 165704.500000
+Val Epoch 396 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 397 Total Loss 165374.421875
+Val Epoch 397 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 398 Total Loss 165066.406250
+Val Epoch 398 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 399 Total Loss 164884.281250
+Val Epoch 399 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 400 Total Loss 164610.250000
+Val Epoch 400 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 401 Total Loss 164119.984375
+Val Epoch 401 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 402 Total Loss 164021.562500
+Val Epoch 402 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 403 Total Loss 163531.890625
+Val Epoch 403 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 404 Total Loss 163139.953125
+Val Epoch 404 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 405 Total Loss 162946.281250
+Val Epoch 405 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 406 Total Loss 162681.421875
+Val Epoch 406 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 407 Total Loss 162351.640625
+Val Epoch 407 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 408 Total Loss 162101.421875
+Val Epoch 408 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 409 Total Loss 161701.453125
+Val Epoch 409 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 410 Total Loss 161463.750000
+Val Epoch 410 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 411 Total Loss 161061.109375
+Val Epoch 411 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 412 Total Loss 160816.468750
+Val Epoch 412 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 413 Total Loss 160693.765625
+Val Epoch 413 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 414 Total Loss 160576.203125
+Val Epoch 414 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 415 Total Loss 160128.093750
+Val Epoch 415 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 416 Total Loss 159884.000000
+Val Epoch 416 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 417 Total Loss 159501.875000
+Val Epoch 417 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 418 Total Loss 159262.921875
+Val Epoch 418 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 419 Total Loss 159220.390625
+Val Epoch 419 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 420 Total Loss 158949.937500
+Val Epoch 420 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 421 Total Loss 158527.328125
+Val Epoch 421 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 422 Total Loss 158321.812500
+Val Epoch 422 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 423 Total Loss 158033.406250
+Val Epoch 423 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 424 Total Loss 157475.625000
+Val Epoch 424 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 425 Total Loss 157392.890625
+Val Epoch 425 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 426 Total Loss 157033.109375
+Val Epoch 426 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 427 Total Loss 156912.703125
+Val Epoch 427 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 428 Total Loss 156442.562500
+Val Epoch 428 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 429 Total Loss 156221.843750
+Val Epoch 429 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 430 Total Loss 155813.953125
+Val Epoch 430 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 431 Total Loss 155613.718750
+Val Epoch 431 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 432 Total Loss 155309.718750
+Val Epoch 432 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 433 Total Loss 155092.031250
+Val Epoch 433 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 434 Total Loss 154572.296875
+Val Epoch 434 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 435 Total Loss 154598.515625
+Val Epoch 435 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 436 Total Loss 154407.078125
+Val Epoch 436 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 437 Total Loss 154134.984375
+Val Epoch 437 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 438 Total Loss 153779.656250
+Val Epoch 438 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 439 Total Loss 153637.171875
+Val Epoch 439 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 440 Total Loss 153362.578125
+Val Epoch 440 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 441 Total Loss 152876.359375
+Val Epoch 441 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 442 Total Loss 152563.375000
+Val Epoch 442 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 443 Total Loss 152429.000000
+Val Epoch 443 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 444 Total Loss 152315.125000
+Val Epoch 444 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 445 Total Loss 151991.609375
+Val Epoch 445 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 446 Total Loss 151663.406250
+Val Epoch 446 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 447 Total Loss 151407.109375
+Val Epoch 447 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 448 Total Loss 151386.140625
+Val Epoch 448 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 449 Total Loss 151144.062500
+Val Epoch 449 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 450 Total Loss 150931.187500
+Val Epoch 450 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 451 Total Loss 150532.171875
+Val Epoch 451 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 452 Total Loss 150454.875000
+Val Epoch 452 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 453 Total Loss 150061.906250
+Val Epoch 453 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 454 Total Loss 150011.015625
+Val Epoch 454 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 455 Total Loss 149627.781250
+Val Epoch 455 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 456 Total Loss 149279.218750
+Val Epoch 456 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 457 Total Loss 149138.265625
+Val Epoch 457 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 458 Total Loss 148815.937500
+Val Epoch 458 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 459 Total Loss 148574.546875
+Val Epoch 459 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 460 Total Loss 148277.078125
+Val Epoch 460 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 461 Total Loss 148189.125000
+Val Epoch 461 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 462 Total Loss 147958.765625
+Val Epoch 462 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 463 Total Loss 147745.750000
+Val Epoch 463 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 464 Total Loss 147405.703125
+Val Epoch 464 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 465 Total Loss 147202.859375
+Val Epoch 465 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 466 Total Loss 147131.140625
+Val Epoch 466 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 467 Total Loss 147029.968750
+Val Epoch 467 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 468 Total Loss 146672.484375
+Val Epoch 468 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 469 Total Loss 146486.234375
+Val Epoch 469 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 470 Total Loss 146455.875000
+Val Epoch 470 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 471 Total Loss 146015.093750
+Val Epoch 471 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 472 Total Loss 145674.265625
+Val Epoch 472 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 473 Total Loss 145509.109375
+Val Epoch 473 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 474 Total Loss 145390.578125
+Val Epoch 474 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 475 Total Loss 145113.875000
+Val Epoch 475 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 476 Total Loss 144883.234375
+Val Epoch 476 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 477 Total Loss 144490.140625
+Val Epoch 477 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 478 Total Loss 144409.703125
+Val Epoch 478 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 479 Total Loss 144297.828125
+Val Epoch 479 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 480 Total Loss 144078.250000
+Val Epoch 480 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 481 Total Loss 143837.359375
+Val Epoch 481 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 482 Total Loss 143450.703125
+Val Epoch 482 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 483 Total Loss 143585.250000
+Val Epoch 483 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 484 Total Loss 143213.421875
+Val Epoch 484 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 485 Total Loss 143105.562500
+Val Epoch 485 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 486 Total Loss 142881.718750
+Val Epoch 486 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 487 Total Loss 142607.484375
+Val Epoch 487 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 488 Total Loss 142320.515625
+Val Epoch 488 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 489 Total Loss 142365.750000
+Val Epoch 489 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 490 Total Loss 142216.359375
+Val Epoch 490 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 491 Total Loss 142136.125000
+Val Epoch 491 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 492 Total Loss 142064.140625
+Val Epoch 492 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 493 Total Loss 141782.531250
+Val Epoch 493 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 494 Total Loss 141654.500000
+Val Epoch 494 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 495 Total Loss 141407.671875
+Val Epoch 495 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 496 Total Loss 141124.328125
+Val Epoch 496 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 497 Total Loss 141083.125000
+Val Epoch 497 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 498 Total Loss 140766.171875
+Val Epoch 498 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+Epoch 499 Total Loss 140441.187500
+Val Epoch 499 RMSE nan nan MAE nan nan
+  C0 Prec: nan (+-0.000000) C0 Rec: nan (+-0.000000) C0 F1: nan (+-0.000000)
+  C1 Prec: nan (+-0.000000) C1 Rec: nan (+-0.000000) C1 F1: nan (+-0.000000)
+No best model saved. Using the model from the last epoch for testing.
+
+------- Iterative Forecast Test -------
+Iterative D2V Prediction on snapshot 22:
+  C0 Prec: 0.9660  C0 Rec: 0.9763  C0 F1: 0.9711
+  C1 Prec: 0.8448  C1 Rec: 0.7899  C1 F1: 0.8164
+  RMSE: 0.2955  MAE: 0.1672
+  Class 0 -> MAE: 0.1272  RMSE: 0.2177
+  Class 1 -> MAE: 0.4121  RMSE: 0.5759
+
+Iterative D2V Prediction on snapshot 23:
+  C0 Prec: 0.9603  C0 Rec: 0.9683  C0 F1: 0.9643
+  C1 Prec: 0.7959  C1 Rec: 0.7551  C1 F1: 0.7749
+  RMSE: 0.3349  MAE: 0.1839
+  Class 0 -> MAE: 0.1393  RMSE: 0.2520
+  Class 1 -> MAE: 0.4564  RMSE: 0.6400
+
+Iterative D2V Prediction on snapshot 24:
+  C0 Prec: 0.9577  C0 Rec: 0.9631  C0 F1: 0.9604
+  C1 Prec: 0.7639  C1 Rec: 0.7373  C1 F1: 0.7504
+  RMSE: 0.3553  MAE: 0.1934
+  Class 0 -> MAE: 0.1467  RMSE: 0.2717
+  Class 1 -> MAE: 0.4816  RMSE: 0.6707
+
+Iterative D2V Prediction on snapshot 25:
+  C0 Prec: 0.9558  C0 Rec: 0.9586  C0 F1: 0.9572
+  C1 Prec: 0.7352  C1 Rec: 0.7215  C1 F1: 0.7283
+  RMSE: 0.3735  MAE: 0.2033
+  Class 0 -> MAE: 0.1553  RMSE: 0.2899
+  Class 1 -> MAE: 0.5044  RMSE: 0.6984
+
+Iterative D2V Prediction on snapshot 26:
+  C0 Prec: 0.9528  C0 Rec: 0.9565  C0 F1: 0.9546
+  C1 Prec: 0.7219  C1 Rec: 0.7046  C1 F1: 0.7132
+  RMSE: 0.3868  MAE: 0.2095
+  Class 0 -> MAE: 0.1585  RMSE: 0.2975
+  Class 1 -> MAE: 0.5280  RMSE: 0.7285
+
+Iterative D2V Prediction on snapshot 27:
+  C0 Prec: 0.9508  C0 Rec: 0.9533  C0 F1: 0.9521
+  C1 Prec: 0.7014  C1 Rec: 0.6900  C1 F1: 0.6957
+  RMSE: 0.4009  MAE: 0.2169
+  Class 0 -> MAE: 0.1637  RMSE: 0.3089
+  Class 1 -> MAE: 0.5516  RMSE: 0.7559
+
+Final metrics mean and std
+
+  C0 Prec: 0.9572 (+-0.0055)  C0 Rec: 0.9627 (+-0.0085)  C0 F1: 0.9599 (+-0.0070)
+  C1 Prec: 0.7605 (+-0.0529)  C1 Rec: 0.7331 (+-0.0361)  C1 F1: 0.7465 (+-0.0441)
+
+RMSE 0.3578 (+-0.0383)  MAE 0.1957 (+-0.0182)
+Class 0 -> MAE 0.1484 (+-0.0136), RMSE 0.2729 (+-0.0337)
+Class 1 -> MAE 0.4890 (+-0.0504), RMSE 0.6783 (+-0.0647)
+
+Total runtime was: 1070.90 seconds
