@@ -1,0 +1,192 @@
+data_name: SMP22to95, max_thres: 2.0, win_size: 2, hid_dim: 256, alpha: 0.01, theta: 0.1, beta: 0.01, num_epochs: 500, lr: 0.1
+
+snapshot 2 metrics
+
+  C0 Prec: 0.966215  C0 Rec: 0.967132  C0 F1: 0.966673
+  C1 Prec: 0.777369  C1 Rec: 0.772399  C1 F1: 0.774876
+
+RMSE 0.499491 MAE 0.264376
+
+snapshot 3 metrics
+
+  C0 Prec: 0.967576  C0 Rec: 0.970495  C0 F1: 0.969034
+  C1 Prec: 0.801864  C1 Rec: 0.785941  C1 F1: 0.793823
+
+RMSE 0.467161 MAE 0.280027
+
+snapshot 4 metrics
+
+  C0 Prec: 0.963148  C0 Rec: 0.969693  C0 F1: 0.966409
+  C1 Prec: 0.796786  C1 Rec: 0.762061  C1 F1: 0.779037
+
+RMSE 0.474265 MAE 0.271753
+
+snapshot 5 metrics
+
+  C0 Prec: 0.961085  C0 Rec: 0.968154  C0 F1: 0.964607
+  C1 Prec: 0.794452  C1 Rec: 0.758445  C1 F1: 0.776031
+
+RMSE 0.492764 MAE 0.276468
+
+snapshot 6 metrics
+
+  C0 Prec: 0.967518  C0 Rec: 0.966266  C0 F1: 0.966892
+  C1 Prec: 0.792597  C1 Rec: 0.798956  C1 F1: 0.795764
+
+RMSE 0.484703 MAE 0.268992
+
+snapshot 7 metrics
+
+  C0 Prec: 0.965559  C0 Rec: 0.970824  C0 F1: 0.968184
+  C1 Prec: 0.811883  C1 Rec: 0.784309  C1 F1: 0.797858
+
+RMSE 0.459005 MAE 0.265696
+
+snapshot 8 metrics
+
+  C0 Prec: 0.966681  C0 Rec: 0.969631  C0 F1: 0.968154
+  C1 Prec: 0.806683  C1 Rec: 0.791309  C1 F1: 0.798922
+
+RMSE 0.461179 MAE 0.274363
+
+snapshot 9 metrics
+
+  C0 Prec: 0.966977  C0 Rec: 0.971464  C0 F1: 0.969216
+  C1 Prec: 0.817283  C1 Rec: 0.793702  C1 F1: 0.805320
+
+RMSE 0.454600 MAE 0.265128
+
+snapshot 10 metrics
+
+  C0 Prec: 0.967280  C0 Rec: 0.972377  C0 F1: 0.969822
+  C1 Prec: 0.823338  C1 Rec: 0.796494  C1 F1: 0.809694
+
+RMSE 0.437527 MAE 0.256274
+
+snapshot 11 metrics
+
+  C0 Prec: 0.968068  C0 Rec: 0.970203  C0 F1: 0.969134
+  C1 Prec: 0.816632  C1 Rec: 0.805696  C1 F1: 0.811127
+
+RMSE 0.448740 MAE 0.282363
+
+snapshot 12 metrics
+
+  C0 Prec: 0.963624  C0 Rec: 0.971125  C0 F1: 0.967360
+  C1 Prec: 0.821098  C1 Rec: 0.783318  C1 F1: 0.801763
+
+RMSE 0.461141 MAE 0.258630
+
+snapshot 13 metrics
+
+  C0 Prec: 0.966689  C0 Rec: 0.969134  C0 F1: 0.967910
+  C1 Prec: 0.814846  C1 Rec: 0.802666  C1 F1: 0.808710
+
+RMSE 0.441928 MAE 0.262042
+
+snapshot 14 metrics
+
+  C0 Prec: 0.966417  C0 Rec: 0.967512  C0 F1: 0.966964
+  C1 Prec: 0.803941  C1 Rec: 0.798483  C1 F1: 0.801203
+
+RMSE 0.447716 MAE 0.272674
+
+snapshot 15 metrics
+
+  C0 Prec: 0.963336  C0 Rec: 0.969571  C0 F1: 0.966444
+  C1 Prec: 0.811061  C1 Rec: 0.779727  C1 F1: 0.795085
+
+RMSE 0.466778 MAE 0.281689
+
+snapshot 16 metrics
+
+  C0 Prec: 0.968804  C0 Rec: 0.970554  C0 F1: 0.969678
+  C1 Prec: 0.817919  C1 Rec: 0.808886  C1 F1: 0.813378
+
+RMSE 0.436184 MAE 0.257741
+
+snapshot 17 metrics
+
+  C0 Prec: 0.968942  C0 Rec: 0.972915  C0 F1: 0.970925
+  C1 Prec: 0.832128  C1 Rec: 0.811508  C1 F1: 0.821689
+
+RMSE 0.433671 MAE 0.279702
+
+snapshot 18 metrics
+
+  C0 Prec: 0.968300  C0 Rec: 0.973337  C0 F1: 0.970812
+  C1 Prec: 0.833450  C1 Rec: 0.807216  C1 F1: 0.820123
+
+RMSE 0.411866 MAE 0.239309
+
+snapshot 19 metrics
+
+  C0 Prec: 0.967325  C0 Rec: 0.975947  C0 F1: 0.971617
+  C1 Prec: 0.845616  C1 Rec: 0.799856  C1 F1: 0.822100
+
+RMSE 0.404898 MAE 0.230602
+
+snapshot 20 metrics
+
+  C0 Prec: 0.972442  C0 Rec: 0.973032  C0 F1: 0.972737
+  C1 Prec: 0.833749  C1 Rec: 0.830644  C1 F1: 0.832193
+
+RMSE 0.425833 MAE 0.271341
+
+snapshot 21 metrics
+
+  C0 Prec: 0.967190  C0 Rec: 0.976290  C0 F1: 0.971719
+  C1 Prec: 0.843837  C1 Rec: 0.794596  C1 F1: 0.818477
+
+RMSE 0.405305 MAE 0.235960
+
+snapshot 22 metrics
+
+  C0 Prec: 0.970550  C0 Rec: 0.975415  C0 F1: 0.972977
+  C1 Prec: 0.844834  C1 Rec: 0.818922  C1 F1: 0.831676
+
+RMSE 0.411228 MAE 0.262537
+
+snapshot 23 metrics
+
+  C0 Prec: 0.974325  C0 Rec: 0.966885  C0 F1: 0.970591
+  C1 Prec: 0.806566  C1 Rec: 0.844219  C1 F1: 0.824963
+
+RMSE 0.425901 MAE 0.281930
+
+snapshot 24 metrics
+
+  C0 Prec: 0.970540  C0 Rec: 0.976609  C0 F1: 0.973565
+  C1 Prec: 0.849797  C1 Rec: 0.816990  C1 F1: 0.833070
+
+RMSE 0.393919 MAE 0.226132
+
+snapshot 25 metrics
+
+  C0 Prec: 0.971599  C0 Rec: 0.976290  C0 F1: 0.973939
+  C1 Prec: 0.846407  C1 Rec: 0.820737  C1 F1: 0.833374
+
+RMSE 0.387247 MAE 0.234581
+
+snapshot 26 metrics
+
+  C0 Prec: 0.968152  C0 Rec: 0.978136  C0 F1: 0.973119
+  C1 Prec: 0.854323  C1 Rec: 0.799393  C1 F1: 0.825946
+
+RMSE 0.380346 MAE 0.228583
+
+snapshot 27 metrics
+
+  C0 Prec: 0.971469  C0 Rec: 0.975092  C0 F1: 0.973277
+  C1 Prec: 0.839617  C1 Rec: 0.819925  C1 F1: 0.829654
+
+RMSE 0.395979 MAE 0.239042
+
+Final metrics mean and std
+
+  C0 Prec: 0.967685 (+-0.003015) C0 Rec: 0.971696 (+-0.003386) C0 F1: 0.969683 (+-0.002645)
+  C1 Prec: 0.820695 (+-0.020402) C1 Rec: 0.799477 (+-0.019885) C1 F1: 0.809841 (+-0.017717)
+
+RMSE 0.438822 0.033131 MAE 0.260305 0.018355
+
+Total runtime was: 29.662562131881714 seconds
