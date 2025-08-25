@@ -22,6 +22,7 @@ def parse_args():
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     #parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--num_epochs", type=int, default=100, help="Number of training epochs (default: 100)")
+    parser.add_argument("--pre_epochs", type=int, default=10, help="Number of pre-training epochs (default: 10)")
     parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
     parser.add_argument("--lr_pg", type=float, default=0.0001, help="Learning rate (default: 1e-4)")
@@ -77,12 +78,12 @@ def main():
 
     # List of TMF features
     # [S, M_list] for each snapshot
-    TMF_feat_list = np.load('data/NetworkGAN_TMF_feats_%s.npy' % (data_name), allow_pickle=True)
+    TMF_feat_list = np.load('data/NGAN_TMF_feats_%s.npy' % (data_name), allow_pickle=True)
 
     # ====================
     dropout_rate = args.dropout_rate # Dropout rate
     #epsilon = 1e-2 # Threshold of zero-refining
-    num_pre_epochs = 10 # Number of pre-training epochs
+    num_pre_epochs = args.pre_epochs # Number of pre-training epochs
     num_epochs = args.num_epochs # Number of training epochs
     num_val_snaps = args.num_val_snaps # Number of validation snapshots
     num_test_snaps = args.num_test_snaps # Number of test snapshots
