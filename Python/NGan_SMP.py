@@ -65,8 +65,10 @@ def main():
     max_thres = args.max_thres # Threshold for maximum edge weight
     noise_dim = 32 # Dimension of noise input
     struc_dims = [noise_dim, 32, 16] # Layer configuration of structural encoder
-    temp_dims = [2*num_nodes*struc_dims[-1], 1024] # Layer configuration of temporal encoder
-    dec_dims = [temp_dims[-1]+num_nodes*struc_dims[-1], num_nodes*num_nodes] # Layer configuration of decoder
+    #temp_dims = [2*num_nodes*struc_dims[-1], 1024] # Layer configuration of temporal encoder
+    temp_dims = [2*num_nodes*struc_dims[-1], 1024]
+    #dec_dims = [temp_dims[-1]+num_nodes*struc_dims[-1], num_nodes*num_nodes] # Layer configuration of decoder
+    dec_dims = [temp_dims[-1], num_nodes*num_nodes] # Layer configuration of decoder
     disc_dims = [num_nodes*num_nodes, 512, 256, 64, 1] # Layer configuration of discriminator
     win_size = args.win_size # Window size of historical snapshots
     gamma = args.gamma # Hyper-parameter to adjust the contribution of the MSE loss
