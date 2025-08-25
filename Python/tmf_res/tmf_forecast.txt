@@ -1,0 +1,55 @@
+data_name: SMP22to95, max_thres: 1.5, win_size: 6, hid_dim: 256, alpha: 0.005, theta: 1.2, beta: 0.01, num_epochs: 500, lr: 0.2
+
+======= Iterative Forecast with TMF =======
+Iterative TMF Forecast on snapshot 22:
+  C0 Prec: 0.9792  C0 Rec: 0.9734  C0 F1: 0.9763
+  C1 Prec: 0.8429  C1 Rec: 0.8738  C1 F1: 0.8581
+  RMSE: 0.2771  MAE: 0.1808
+  Class 0 -> MAE: 0.1540  RMSE: 0.2382
+  Class 1 -> MAE: 0.3444  RMSE: 0.4465
+
+Iterative TMF Forecast on snapshot 23:
+  C0 Prec: 0.9750  C0 Rec: 0.9604  C0 F1: 0.9676
+  C1 Prec: 0.7780  C1 Rec: 0.8492  C1 F1: 0.8120
+  RMSE: 0.4560  MAE: 0.3222
+  Class 0 -> MAE: 0.2713  RMSE: 0.3915
+  Class 1 -> MAE: 0.6331  RMSE: 0.7360
+
+Iterative TMF Forecast on snapshot 24:
+  C0 Prec: 0.9734  C0 Rec: 0.9491  C0 F1: 0.9611
+  C1 Prec: 0.7276  C1 Rec: 0.8397  C1 F1: 0.7796
+  RMSE: 0.6976  MAE: 0.5092
+  Class 0 -> MAE: 0.4304  RMSE: 0.5988
+  Class 1 -> MAE: 0.9959  RMSE: 1.1305
+
+Iterative TMF Forecast on snapshot 25:
+  C0 Prec: 0.9715  C0 Rec: 0.9374  C0 F1: 0.9542
+  C1 Prec: 0.6779  C1 Rec: 0.8271  C1 F1: 0.7451
+  RMSE: 1.0258  MAE: 0.7584
+  Class 0 -> MAE: 0.6462  RMSE: 0.8832
+  Class 1 -> MAE: 1.4632  RMSE: 1.6620
+
+Iterative TMF Forecast on snapshot 26:
+  C0 Prec: 0.9676  C0 Rec: 0.9275  C0 F1: 0.9472
+  C1 Prec: 0.6409  C1 Rec: 0.8066  C1 F1: 0.7143
+  RMSE: 1.4594  MAE: 1.0858
+  Class 0 -> MAE: 0.9293  RMSE: 1.2569
+  Class 1 -> MAE: 2.0614  RMSE: 2.3581
+
+Iterative TMF Forecast on snapshot 27:
+  C0 Prec: 0.9647  C0 Rec: 0.9147  C0 F1: 0.9391
+  C1 Prec: 0.5957  C1 Rec: 0.7898  C1 F1: 0.6792
+  RMSE: 2.0272  MAE: 1.5104
+  Class 0 -> MAE: 1.3014  RMSE: 1.7545
+  Class 1 -> MAE: 2.8244  RMSE: 3.2549
+
+Final metrics mean and std
+
+  C0 Prec: 0.9719 (+-0.0052)  C0 Rec: 0.9438 (+-0.0216)  C0 F1: 0.9576 (+-0.0136)
+  C1 Prec: 0.7105 (+-0.0911)  C1 Rec: 0.8310 (+-0.0301)  C1 F1: 0.7647 (+-0.0655)
+
+RMSE 0.9905 (+-0.6597)  MAE 0.7278 (+-0.5006)
+Class 0 -> MAE 0.6221 (+-0.4325), RMSE 0.8538 (+-0.5713)
+Class 1 -> MAE 1.3871 (+-0.9311), RMSE 1.5980 (+-1.0597)
+
+Total runtime was: 13.50 seconds
