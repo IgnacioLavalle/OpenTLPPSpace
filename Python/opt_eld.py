@@ -37,11 +37,11 @@ def objective(trial):
     # ====================
     # Hyperparameter search space
     dropout_rate = trial.suggest_float("dropout_rate", 0.1, 0.5, step = 0.1)
-    lr_val = trial.suggest_categorical("lr", [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005])
-    wd_val = trial.suggest_categorical("weight_decay", [0.00001, 0.00005, 0.0001, 0.0005, 0.001])
+    lr_val = trial.suggest_categorical("lr", [0.00005, 0.0001, 0.0005, 0.001, 0.005])
+    wd_val = trial.suggest_categorical("weight_decay", [0.00005, 0.0001, 0.0005, 0.001])
     hid_dim = trial.suggest_categorical("hid_dim", [16,32,64,128,256])
     beta = trial.suggest_categorical("beta", [0.5, 1.0, 1.5, 2.0, 3.0, 4.0 ])
-    win_size = trial.suggest_categorical("win_size", [2,5,7,10])
+    win_size = trial.suggest_categorical("win_size", [2,4,6])
     
     # ====================
     # Fixed parameters
@@ -53,7 +53,7 @@ def objective(trial):
     num_val_snaps = 3
     num_test_snaps = 3
     num_train_snaps = num_snaps - num_val_snaps - num_test_snaps
-    num_epochs = 200
+    num_epochs = 250
 
     # ====================
     struc_dims = [num_nodes, hid_dim*2]
@@ -117,11 +117,6 @@ def objective(trial):
         # Validate the model
         model.eval()
 
-        c0precision_list = []
-        c0recall_list = []
-        c0f1_list = []
-        c1precision_list = []
-        c1recall_list = []
         c1f1_list = []
 
         for tau in range(num_snaps-num_test_snaps-num_val_snaps, num_snaps-num_test_snaps):
@@ -159,7 +154,6 @@ def objective(trial):
             append_f1_with(c1f1_list, true_labels, pred_labels)
 
         val_c1_f1_mean = np.mean(c1f1_list)
-
 
 
     return val_c1_f1_mean  
