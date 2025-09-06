@@ -8,7 +8,7 @@ from utils import *
 
 import numpy as np
 import optuna
-
+import pandas as pd
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def parse_args():

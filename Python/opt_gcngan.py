@@ -12,6 +12,8 @@ import numpy as np
 from sklearn.metrics import precision_recall_fscore_support
 import warnings
 import optuna
+import pandas as pd
+
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 if torch.cuda.is_available():

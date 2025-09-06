@@ -10,7 +10,7 @@ from utils import *
 from sklearn.metrics import precision_recall_fscore_support
 import optuna
 import numpy as np
-
+import pandas as pd
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
