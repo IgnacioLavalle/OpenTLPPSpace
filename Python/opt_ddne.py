@@ -19,7 +19,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 def parse_args():
     parser = argparse.ArgumentParser(description="Demonstration of STSGN")
     #adding arguments and their respective default value
-    parser.add_argument("--trials", type=int, default=100, help="Number of trials")
+    parser.add_argument("--trials", type=int, default=300, help="Number of trials")
 
     return parser.parse_args()
 
@@ -56,7 +56,7 @@ def objective(trial):
 
     # ====================
     batch_size = 1 # Batch size
-    num_epochs = 250 # Number of training epochs
+    num_epochs = 300 # Number of training epochs
     num_val_snaps = 3 # Number of validation snapshots
     num_test_snaps = 3 # Number of test snapshots
     num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
