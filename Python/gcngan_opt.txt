@@ -1,0 +1,60 @@
+[I 2025-09-07 18:24:06,445] A new study created in memory with name: no-name-ee49fd5f-3806-4650-9a7e-894bdc1ab2cf
+[W 2025-09-07 18:24:26,273] Trial 0 failed with parameters: {'dropout_rate': 0.4, 'win_size': 1, 'lrgen': 0.001, 'weight_decay': 0.0001, 'cstep': 0.005, 'alpha': 7.0} because of the following error: OutOfMemoryError('CUDA out of memory. Tried to allocate 3.50 GiB. GPU 0 has a total capacity of 23.69 GiB of which 1.93 GiB is free. Including non-PyTorch memory, this process has 21.76 GiB memory in use. Of the allocated memory 21.40 GiB is allocated by PyTorch, and 52.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)').
+Traceback (most recent call last):
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 201, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/opt_gcngan.py", line 136, in objective
+    disc_opt.step()
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 485, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 79, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/rmsprop.py", line 175, in step
+    rmsprop(
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 147, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/rmsprop.py", line 511, in rmsprop
+    func(
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/rmsprop.py", line 434, in _multi_tensor_rmsprop
+    avg = torch._foreach_sqrt(grouped_square_avgs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.50 GiB. GPU 0 has a total capacity of 23.69 GiB of which 1.93 GiB is free. Including non-PyTorch memory, this process has 21.76 GiB memory in use. Of the allocated memory 21.40 GiB is allocated by PyTorch, and 52.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[W 2025-09-07 18:24:26,274] Trial 0 failed with value None.
+Traceback (most recent call last):
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/opt_gcngan.py", line 222, in <module>
+    study.optimize(objective, n_trials=num_trials)
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/optuna/study/study.py", line 490, in optimize
+    _optimize(
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial_id = _run_trial(study, func, catch)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 258, in _run_trial
+    raise func_err
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/optuna/study/_optimize.py", line 201, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/opt_gcngan.py", line 136, in objective
+    disc_opt.step()
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 485, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 79, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/rmsprop.py", line 175, in step
+    rmsprop(
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 147, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/rmsprop.py", line 511, in rmsprop
+    func(
+  File "/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/.venv/lib/python3.12/site-packages/torch/optim/rmsprop.py", line 434, in _multi_tensor_rmsprop
+    avg = torch._foreach_sqrt(grouped_square_avgs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.50 GiB. GPU 0 has a total capacity of 23.69 GiB of which 1.93 GiB is free. Including non-PyTorch memory, this process has 21.76 GiB memory in use. Of the allocated memory 21.40 GiB is allocated by PyTorch, and 52.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
