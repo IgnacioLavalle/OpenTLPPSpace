@@ -29,8 +29,8 @@ def parse_args():
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--num_epochs", type=int, default=260, help="Number of training epochs (default: 100)")
-    parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
-    parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
+    parser.add_argument("--num_val_snaps", type=int, default=0, help="Number of validation snapshots (default: 3)")
+    parser.add_argument("--num_test_snaps", type=int, default=6, help="Number of test snapshots (default: 3)")
     parser.add_argument("--lr_gen", type=float, default=0.00008, help="Learning rate for generator (default: 1e-4)")
     parser.add_argument("--lr_disc", type=float, default=0.0001, help="Learning rate for discriminator (default: 1e-4)")
     parser.add_argument("--weight_decay", type=float, default=0.00001, help="Weight decay (default: 1e-5)")
@@ -213,6 +213,7 @@ def main():
         disc_loss_mean = np.mean(disc_loss_list)
         print('#%d Train G-Loss %f D-Loss %f' % (epoch, gen_loss_mean, disc_loss_mean))
 
+        """
         # ====================
         # Validate the model
         gen_net.eval()
@@ -341,27 +342,17 @@ def main():
                     break
         
         # ====================
-        
+        """
     # =========================
     # Test the model
-    if best_gen_state is not None:
-        gen_net.load_state_dict(best_gen_state)
-        disc_net.load_state_dict(best_disc_state)
-        gen_opt.load_state_dict(best_gen_opt_state)     
-        disc_opt.load_state_dict(best_disc_opt_state) 
-        print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
-    else:
-        print("No best model saved. Using the model from the last epoch for testing.")
     # ==========
-    RMSE_list = []
-    MAE_list = []
+    
+    RMSE_list, MAE_list = [], []
+    c0precision_list, c0recall_list, c0f1_list = [], [], []
+    c1precision_list, c1recall_list, c1f1_list = [], [], []
 
-    c0precision_list = []
-    c0recall_list = []
-    c0f1_list = []
-    c1precision_list = []
-    c1recall_list = []
-    c1f1_list = []
+    mae_c0_list, mae_c1_list = [], []
+    rmse_c0_list, rmse_c1_list = [], []
 
     fpr_list = []
     tpr_list = []
@@ -426,7 +417,7 @@ def main():
         current_window.pop(0)
         current_window.append(sup_tnr)
 
-        # === Evaluación contra ground-truth ===
+        # === ground-truth ===
         edges = edge_seq[tau]
         gnd = get_adj_wei(edges, num_nodes, max_thres)
 
@@ -440,38 +431,32 @@ def main():
         mask_class_1 = (true_labels == 1)
         mask_class_0 = (true_labels == 0)
 
-
         abs_errors = np.abs(pred_vals - true_vals)
         sq_errors = (pred_vals - true_vals) ** 2
 
-        mae_class_1 = np.mean(abs_errors[mask_class_1])
-        rmse_class_1 = np.sqrt(np.mean(sq_errors[mask_class_1]))
-        mae_class_0 = np.mean(abs_errors[mask_class_0])
-        rmse_class_0 = np.sqrt(np.mean(sq_errors[mask_class_0]))
+        #global Mae & rmse
+        MAE = np.mean(abs_errors)
+        RMSE = np.sqrt(np.mean(sq_errors))
+        MAE_list.append(MAE)
+        RMSE_list.append(RMSE)
 
-        filtered_mae = np.mean(abs_errors)
-        filtered_rmse = np.sqrt(np.mean(sq_errors))
+        # MAE & RMSE per class
+        mae_c1 = np.mean(abs_errors[mask_class_1])
+        rmse_c1 = np.sqrt(np.mean(sq_errors[mask_class_1]))
+        mae_c0 = np.mean(abs_errors[mask_class_0])
+        rmse_c0 = np.sqrt(np.mean(sq_errors[mask_class_0]))
 
-        RMSE = filtered_rmse
-        MAE = filtered_mae
+        mae_c1_list.append(mae_c1)
+        rmse_c1_list.append(rmse_c1)
+        mae_c0_list.append(mae_c0)
+        rmse_c0_list.append(rmse_c0)
 
-        print(f"Iterative GAN Prediction on snapshot {tau}: RMSE {RMSE}, MAE {MAE}")
-
-        append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
-
-        print('  C0 Prec: %f  C0 Rec: %f  C0 F1: %f' %
-            (c0precision_list[-1],
-            c0recall_list[-1],
-            c0f1_list[-1]))
-        print('  C1 Prec: %f  C1 Rec: %f  C1 F1: %f' %
-            (c1precision_list[-1],
-            c1recall_list[-1],
-            c1f1_list[-1]))
-        print()
-        print(f"  MAE on class 1 ground truth: {mae_class_1} , RMSE on class 1: {rmse_class_1}")
-        print(f"  MAE on class 0 ground truth: {mae_class_0} , RMSE on class 0: {rmse_class_0}")
-        print()
-
+        #classification metrics
+        append_classification_metrics_with(
+            c0precision_list, c0recall_list, c0f1_list,
+            c1precision_list, c1recall_list, c1f1_list,
+            true_labels, pred_labels
+        )
         # Precision-Recall Curve
         precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
         avg_prec = average_precision_score(true_labels, pred_scores)
@@ -490,10 +475,34 @@ def main():
         roc_auc_list.append(roc_auc)
         accuracy_list.append(acc)
 
-        RMSE_list.append(RMSE)
-        MAE_list.append(MAE)
+        print(f"Iterative GCNGAN Prediction on snapshot {tau}:")
+        print(f"  C0 Prec: {c0precision_list[-1]:.4f}  C0 Rec: {c0recall_list[-1]:.4f}  C0 F1: {c0f1_list[-1]:.4f}")
+        print(f"  C1 Prec: {c1precision_list[-1]:.4f}  C1 Rec: {c1recall_list[-1]:.4f}  C1 F1: {c1f1_list[-1]:.4f}")
+        print(f"  RMSE: {RMSE:.4f}  MAE: {MAE:.4f}")
+        print(f"  Class 0 -> MAE: {mae_c0:.4f}  RMSE: {rmse_c0:.4f}")
+        print(f"  Class 1 -> MAE: {mae_c1:.4f}  RMSE: {rmse_c1:.4f}\n")
 
     # ====================
+
+    # === Final metrics ===
+    RMSE_mean, RMSE_std = np.mean(RMSE_list), np.std(RMSE_list, ddof=1)
+    MAE_mean, MAE_std = np.mean(MAE_list), np.std(MAE_list, ddof=1)
+    mae_c0_mean, mae_c0_std = np.mean(mae_c0_list), np.std(mae_c0_list, ddof=1)
+    mae_c1_mean, mae_c1_std = np.mean(mae_c1_list), np.std(mae_c1_list, ddof=1)
+    rmse_c0_mean, rmse_c0_std = np.mean(rmse_c0_list), np.std(rmse_c0_list, ddof=1)
+    rmse_c1_mean, rmse_c1_std = np.mean(rmse_c1_list), np.std(rmse_c1_list, ddof=1)
+
+    c0_prec_mean, c0_prec_std, c1_prec_mean, c1_prec_std = mean_and_std_from_classlists(c0precision_list, c1precision_list)
+    c0_recall_mean, c0_recall_std, c1_recall_mean, c1_recall_std = mean_and_std_from_classlists(c0recall_list, c1recall_list)
+    c0_f1_mean, c0_f1_std, c1_f1_mean, c1_f1_std = mean_and_std_from_classlists(c0f1_list, c1f1_list)
+
+    print("Final metrics mean and std\n")
+    print(f"  C0 Prec: {c0_prec_mean:.4f} (+-{c0_prec_std:.4f})  C0 Rec: {c0_recall_mean:.4f} (+-{c0_recall_std:.4f})  C0 F1: {c0_f1_mean:.4f} (+-{c0_f1_std:.4f})")
+    print(f"  C1 Prec: {c1_prec_mean:.4f} (+-{c1_prec_std:.4f})  C1 Rec: {c1_recall_mean:.4f} (+-{c1_recall_std:.4f})  C1 F1: {c1_f1_mean:.4f} (+-{c1_f1_std:.4f})\n")
+    print(f"RMSE {RMSE_mean:.4f} (+-{RMSE_std:.4f})  MAE {MAE_mean:.4f} (+-{MAE_std:.4f})")
+    print(f"Class 0 -> MAE {mae_c0_mean:.4f} (+-{mae_c0_std:.4f}), RMSE {rmse_c0_mean:.4f} (+-{rmse_c0_std:.4f})")
+    print(f"Class 1 -> MAE {mae_c1_mean:.4f} (+-{mae_c1_std:.4f}), RMSE {rmse_c1_mean:.4f} (+-{rmse_c1_std:.4f})\n")
+    print(f"Total runtime was: {time.time() - start_time:.2f} seconds")
 
     if save_metrics:
         # save metrics as json
@@ -508,7 +517,7 @@ def main():
 
         }
 
-        filename = f"gcngan_curve_metrics_with_train{num_train_snaps}_test{num_test_snaps}.json"
+        filename = f"gcngan_fc_curve_metrics_from_year{start_test}.json"
         with open(filename, "w") as f:
             json.dump(metrics_summary, f, indent=2)
 
