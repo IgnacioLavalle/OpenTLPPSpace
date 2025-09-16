@@ -60,16 +60,6 @@ def main():
     start_time = time.time()
     args = parse_args()
 
-    #Valid nodes mask filter
-    valid_mask = np.zeros((1355, 1355), dtype=bool)
-    valid_mask[0:137, 137:1355] = True
-
-    #One hot encoding
-    node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
-    node_labels[:137, 1] = 1.0
-    node_labels[137:, 0] = 1.0 
-    node_labels_tnr = torch.FloatTensor(node_labels).to(device)
-
     save_forecast = args.save_forecast
     save_metrics = args.save_metrics
     # ====================
@@ -97,6 +87,20 @@ def main():
     num_train_snaps = num_snaps-num_test_snaps # Number of training snapshots
     lr_val = args.lr
     weight_decay_val = args.weight_decay
+
+    # ====================
+
+    #Valid nodes mask filter
+    valid_mask = np.zeros((1355, 1355), dtype=bool)
+    valid_mask[0:137, 137:1355] = True
+
+    #One hot encoding
+    node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
+    node_labels[:137, 1] = 1.0
+    node_labels[137:, 0] = 1.0 
+    node_labels_tnr = torch.FloatTensor(node_labels).to(device)
+
+    # ====================
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
