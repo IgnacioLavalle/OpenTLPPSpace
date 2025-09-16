@@ -60,8 +60,15 @@ def main():
     start_time = time.time()
     args = parse_args()
 
+    #Valid nodes mask filter
     valid_mask = np.zeros((1355, 1355), dtype=bool)
     valid_mask[0:137, 137:1355] = True
+
+    #One hot encoding
+    node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
+    node_labels[:137, 1] = 1.0
+    node_labels[137:, 0] = 1.0 
+    node_labels_tnr = torch.FloatTensor(node_labels).to(device)
 
     save_forecast = args.save_forecast
     save_metrics = args.save_metrics
@@ -140,6 +147,7 @@ def main():
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
                 adj_est, dyn_emb = model(adj_list)
+                dyn_emb = torch.cat([dyn_emb, node_labels_tnr], dim=1)
                 loss_ = get_DDNE_loss(adj_est, gnd_tnr, neigh_tnr, dyn_emb, alpha, beta)
                 batch_loss = batch_loss + loss_
             # ==========
