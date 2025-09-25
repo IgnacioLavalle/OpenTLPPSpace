@@ -96,7 +96,7 @@ def main():
 
 
 
-    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, win_size: {win_size}, "
       f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
       f"dropout_rate: {dropout_rate}, batch_size: {batch_size}, "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
