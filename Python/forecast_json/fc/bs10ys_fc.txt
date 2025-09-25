@@ -1,0 +1,182 @@
+
+Snapshot 18: ROC AUC=0.965, PR AUC=0.881, Acc=0.961, Prec=0.862, Rec=0.862, F1=0.862
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98    143197
+           1       0.86      0.86      0.86     23669
+
+    accuracy                           0.96    166866
+   macro avg       0.92      0.92      0.92    166866
+weighted avg       0.96      0.96      0.96    166866
+
+
+Regresion metrics:
+Global RMSE 0.2607 std: 0.3681 Global MAE 0.0923 std: 0.2439
+
+RMSE clase 0: 0.206, MAE clase 0: 0.071
+RMSE clase 1: 0.473, MAE clase 1: 0.222
+------------------------------------------------------------------
+Snapshot 19: ROC AUC=0.953, PR AUC=0.838, Acc=0.951, Prec=0.824, Rec=0.828, F1=0.826
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97    143268
+           1       0.82      0.83      0.83     23598
+
+    accuracy                           0.95    166866
+   macro avg       0.90      0.90      0.90    166866
+weighted avg       0.95      0.95      0.95    166866
+
+
+Regresion metrics:
+Global RMSE 0.3041 std: 0.4377 Global MAE 0.1139 std: 0.2820
+
+RMSE clase 0: 0.239, MAE clase 0: 0.086
+RMSE clase 1: 0.553, MAE clase 1: 0.281
+------------------------------------------------------------------
+Snapshot 20: ROC AUC=0.946, PR AUC=0.807, Acc=0.943, Prec=0.792, Rec=0.803, F1=0.798
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97    143501
+           1       0.79      0.80      0.80     23365
+
+    accuracy                           0.94    166866
+   macro avg       0.88      0.88      0.88    166866
+weighted avg       0.94      0.94      0.94    166866
+
+
+Regresion metrics:
+Global RMSE 0.3313 std: 0.4788 Global MAE 0.1294 std: 0.3050
+
+RMSE clase 0: 0.262, MAE clase 0: 0.098
+RMSE clase 1: 0.601, MAE clase 1: 0.324
+------------------------------------------------------------------
+Snapshot 21: ROC AUC=0.938, PR AUC=0.783, Acc=0.938, Prec=0.770, Rec=0.787, F1=0.778
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.96      0.96    143697
+           1       0.77      0.79      0.78     23169
+
+    accuracy                           0.94    166866
+   macro avg       0.87      0.87      0.87    166866
+weighted avg       0.94      0.94      0.94    166866
+
+
+Regresion metrics:
+Global RMSE 0.3502 std: 0.5065 Global MAE 0.1407 std: 0.3207
+
+RMSE clase 0: 0.278, MAE clase 0: 0.106
+RMSE clase 1: 0.636, MAE clase 1: 0.354
+------------------------------------------------------------------
+Snapshot 22: ROC AUC=0.933, PR AUC=0.762, Acc=0.932, Prec=0.757, Rec=0.764, F1=0.760
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.96      0.96    143423
+           1       0.76      0.76      0.76     23443
+
+    accuracy                           0.93    166866
+   macro avg       0.86      0.86      0.86    166866
+weighted avg       0.93      0.93      0.93    166866
+
+
+Regresion metrics:
+Global RMSE 0.3658 std: 0.5289 Global MAE 0.1497 std: 0.3338
+
+RMSE clase 0: 0.289, MAE clase 0: 0.112
+RMSE clase 1: 0.665, MAE clase 1: 0.382
+------------------------------------------------------------------
+Snapshot 23: ROC AUC=0.927, PR AUC=0.746, Acc=0.929, Prec=0.745, Rec=0.753, F1=0.749
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.96      0.96    143410
+           1       0.75      0.75      0.75     23456
+
+    accuracy                           0.93    166866
+   macro avg       0.85      0.86      0.85    166866
+weighted avg       0.93      0.93      0.93    166866
+
+
+Regresion metrics:
+Global RMSE 0.3805 std: 0.5544 Global MAE 0.1580 std: 0.3461
+
+RMSE clase 0: 0.299, MAE clase 0: 0.118
+RMSE clase 1: 0.694, MAE clase 1: 0.405
+------------------------------------------------------------------
+Snapshot 24: ROC AUC=0.925, PR AUC=0.732, Acc=0.926, Prec=0.730, Rec=0.743, F1=0.736
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.96      0.96    143605
+           1       0.73      0.74      0.74     23261
+
+    accuracy                           0.93    166866
+   macro avg       0.84      0.85      0.85    166866
+weighted avg       0.93      0.93      0.93    166866
+
+
+Regresion metrics:
+Global RMSE 0.3909 std: 0.5688 Global MAE 0.1645 std: 0.3546
+
+RMSE clase 0: 0.310, MAE clase 0: 0.123
+RMSE clase 1: 0.709, MAE clase 1: 0.422
+------------------------------------------------------------------
+Snapshot 25: ROC AUC=0.922, PR AUC=0.710, Acc=0.922, Prec=0.707, Rec=0.731, F1=0.719
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.95      0.95    143950
+           1       0.71      0.73      0.72     22916
+
+    accuracy                           0.92    166866
+   macro avg       0.83      0.84      0.84    166866
+weighted avg       0.92      0.92      0.92    166866
+
+
+Regresion metrics:
+Global RMSE 0.4037 std: 0.5863 Global MAE 0.1728 std: 0.3649
+
+RMSE clase 0: 0.324, MAE clase 0: 0.130
+RMSE clase 1: 0.725, MAE clase 1: 0.439
+------------------------------------------------------------------
+Snapshot 26: ROC AUC=0.915, PR AUC=0.699, Acc=0.919, Prec=0.702, Rec=0.721, F1=0.712
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.95      0.95    143801
+           1       0.70      0.72      0.71     23065
+
+    accuracy                           0.92    166866
+   macro avg       0.83      0.84      0.83    166866
+weighted avg       0.92      0.92      0.92    166866
+
+
+Regresion metrics:
+Global RMSE 0.4143 std: 0.6056 Global MAE 0.1788 std: 0.3737
+
+RMSE clase 0: 0.331, MAE clase 0: 0.134
+RMSE clase 1: 0.748, MAE clase 1: 0.457
+------------------------------------------------------------------
+Snapshot 27: ROC AUC=0.910, PR AUC=0.678, Acc=0.915, Prec=0.685, Rec=0.708, F1=0.696
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.95      0.95    143970
+           1       0.68      0.71      0.70     22896
+
+    accuracy                           0.92    166866
+   macro avg       0.82      0.83      0.82    166866
+weighted avg       0.92      0.92      0.92    166866
+
+
+Regresion metrics:
+Global RMSE 0.4270 std: 0.6278 Global MAE 0.1855 std: 0.3846
+
+RMSE clase 0: 0.343, MAE clase 0: 0.140
+RMSE clase 1: 0.768, MAE clase 1: 0.474
+------------------------------------------------------------------
+Total runtime was: 5.742905139923096 seconds

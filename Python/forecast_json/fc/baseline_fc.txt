@@ -1,0 +1,110 @@
+
+Snapshot 22: ROC AUC=0.969, PR AUC=0.886, Acc=0.963, Prec=0.871, Rec=0.861, F1=0.866
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98    143423
+           1       0.87      0.86      0.87     23443
+
+    accuracy                           0.96    166866
+   macro avg       0.92      0.92      0.92    166866
+weighted avg       0.96      0.96      0.96    166866
+
+
+Regresion metrics:
+Global RMSE 0.2500 std: 0.3499 Global MAE 0.0870 std: 0.2344
+
+RMSE clase 0: 0.197, MAE clase 0: 0.066
+RMSE clase 1: 0.455, MAE clase 1: 0.213
+------------------------------------------------------------------
+Snapshot 23: ROC AUC=0.957, PR AUC=0.843, Acc=0.953, Prec=0.836, Rec=0.826, F1=0.831
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97    143410
+           1       0.84      0.83      0.83     23456
+
+    accuracy                           0.95    166866
+   macro avg       0.90      0.90      0.90    166866
+weighted avg       0.95      0.95      0.95    166866
+
+
+Regresion metrics:
+Global RMSE 0.2948 std: 0.4241 Global MAE 0.1087 std: 0.2740
+
+RMSE clase 0: 0.231, MAE clase 0: 0.082
+RMSE clase 1: 0.541, MAE clase 1: 0.275
+------------------------------------------------------------------
+Snapshot 24: ROC AUC=0.951, PR AUC=0.815, Acc=0.947, Prec=0.813, Rec=0.809, F1=0.811
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97    143605
+           1       0.81      0.81      0.81     23261
+
+    accuracy                           0.95    166866
+   macro avg       0.89      0.89      0.89    166866
+weighted avg       0.95      0.95      0.95    166866
+
+
+Regresion metrics:
+Global RMSE 0.3177 std: 0.4603 Global MAE 0.1208 std: 0.2939
+
+RMSE clase 0: 0.252, MAE clase 0: 0.091
+RMSE clase 1: 0.575, MAE clase 1: 0.304
+------------------------------------------------------------------
+Snapshot 25: ROC AUC=0.946, PR AUC=0.791, Acc=0.941, Prec=0.784, Rec=0.793, F1=0.788
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97    143950
+           1       0.78      0.79      0.79     22916
+
+    accuracy                           0.94    166866
+   macro avg       0.88      0.88      0.88    166866
+weighted avg       0.94      0.94      0.94    166866
+
+
+Regresion metrics:
+Global RMSE 0.3375 std: 0.4867 Global MAE 0.1328 std: 0.3103
+
+RMSE clase 0: 0.272, MAE clase 0: 0.101
+RMSE clase 1: 0.604, MAE clase 1: 0.332
+------------------------------------------------------------------
+Snapshot 26: ROC AUC=0.938, PR AUC=0.768, Acc=0.936, Prec=0.767, Rec=0.771, F1=0.769
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.96      0.96    143801
+           1       0.77      0.77      0.77     23065
+
+    accuracy                           0.94    166866
+   macro avg       0.87      0.87      0.87    166866
+weighted avg       0.94      0.94      0.94    166866
+
+
+Regresion metrics:
+Global RMSE 0.3562 std: 0.5169 Global MAE 0.1433 std: 0.3261
+
+RMSE clase 0: 0.283, MAE clase 0: 0.107
+RMSE clase 1: 0.647, MAE clase 1: 0.367
+------------------------------------------------------------------
+Snapshot 27: ROC AUC=0.931, PR AUC=0.740, Acc=0.930, Prec=0.742, Rec=0.750, F1=0.746
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.96      0.96    143970
+           1       0.74      0.75      0.75     22896
+
+    accuracy                           0.93    166866
+   macro avg       0.85      0.85      0.85    166866
+weighted avg       0.93      0.93      0.93    166866
+
+
+Regresion metrics:
+Global RMSE 0.3774 std: 0.5498 Global MAE 0.1552 std: 0.3441
+
+RMSE clase 0: 0.303, MAE clase 0: 0.117
+RMSE clase 1: 0.680, MAE clase 1: 0.396
+------------------------------------------------------------------
+Total runtime was: 4.627803325653076 seconds

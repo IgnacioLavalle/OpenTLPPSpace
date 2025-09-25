@@ -19,20 +19,38 @@ def parse_args():
     #adding arguments and their respective default value
 
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
-    parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size (default: 1)")
-    parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 100)")
+    parser.add_argument("--num_epochs", type=int, default=100, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
-    parser.add_argument("--lr", type=float, default=0.005, help="Learning rate (default: 1e-4)")
+    parser.add_argument("--lr", type=float, default=0.0001, help="Learning rate (default: 1e-4)")
     parser.add_argument("--weight_decay", type=float, default=0.0001, help="Weight decay (default: 1e-4)")
-    parser.add_argument("--alpha", type=float, default=3.0, help="Alpha value (default: 2.0)")
-    parser.add_argument("--beta", type=float, default=0.0, help="Alpha value (default: 0.2)")
+    parser.add_argument("--alpha", type=float, default=2.0, help="Alpha value (default: 2.0)")
+    parser.add_argument("--beta", type=float, default=0.2, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
-    parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
-
+    parser.add_argument("--data_name", type=str, default ='SMP22to95unweighted', help = "Dataset name")
+    parser.add_argument("--hid_dim", type=int, default=16)
 
     return parser.parse_args()
+
+def append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels):
+    precision_per_class, recall_per_class, f1_per_class, _ = \
+            precision_recall_fscore_support(true_labels, pred_labels, average=None, labels=[0, 1], zero_division=0)
+    c0precision_list.append(precision_per_class[0])
+    c1precision_list.append(precision_per_class[1])
+    c0recall_list.append(recall_per_class[0])
+    c1recall_list.append(recall_per_class[1])
+    c0f1_list.append(f1_per_class[0])
+    c1f1_list.append(f1_per_class[1])
+
+
+def mean_and_std_from_classlists(c0_list, c1_list):
+    c0_mean = np.mean(c0_list)
+    c0_std = np.std(c0_list, ddof=1) if len(c0_list) > 1 else 0.0
+    c1_mean = np.mean(c1_list)
+    c1_std = np.std(c1_list, ddof=1) if len(c1_list) > 1 else 0.0
+    return c0_mean,c0_std,c1_mean,c1_std
+
 
 def main():
     warnings.filterwarnings("ignore")
@@ -45,8 +63,10 @@ def main():
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     win_size = args.win_size # Window size of historical snapshots
-    enc_dims = [num_nodes, 16] # Layer configuration of encoder
-    dec_dims = [2*enc_dims[-1]*win_size, 32, num_nodes] # Layer configuration of decoder
+    h_dim = args.hid_dim
+    t_dim = h_dim*2
+    enc_dims = [num_nodes, h_dim] # Layer configuration of encoder
+    dec_dims = [2*enc_dims[-1]*win_size, t_dim, num_nodes] # Layer configuration of decoder
     alpha = args.alpha
     beta = args.beta
 
@@ -55,7 +75,6 @@ def main():
 
     # ====================
     dropout_rate = args.dropout_rate # Dropout rate
-    epsilon = 10 ** (-args.epsilon) # Threshold of zero-refining
     batch_size = args.batch_size # Batch size
     num_epochs = args.num_epochs # Number of training epochs
     num_val_snaps = args.num_val_snaps # Number of validation snapshots
@@ -77,9 +96,9 @@ def main():
 
 
 
-    print(f"data_name: {data_name}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
-      f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
+      f"dropout_rate: {dropout_rate}, batch_size: {batch_size}, "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
       f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {weight_decay_val}")
 
@@ -144,12 +163,14 @@ def main():
         # ====================
         # Validate the model
         model.eval()
+
         c0precision_list = []
         c0recall_list = []
         c0f1_list = []
         c1precision_list = []
         c1recall_list = []
         c1f1_list = []
+
         for tau in range(num_snaps-num_test_snaps-num_val_snaps, num_snaps-num_test_snaps):
             # ====================
             adj_list = [] # List of historical adjacency matrices
@@ -172,6 +193,7 @@ def main():
             # Get ground-truth
             edges = edge_seq[tau]
             gnd = get_adj_unweighted(edges, num_nodes)
+
             true_vals = gnd[valid_mask]
             pred_vals = adj_est[valid_mask]
             # ====================
@@ -179,31 +201,17 @@ def main():
 
             true_labels = (true_vals >= 1).astype(int)
             pred_labels = (pred_vals >= 1).astype(int)
-            precision_per_class, recall_per_class, f1_per_class, _ = \
-            precision_recall_fscore_support(true_labels, pred_labels, average=None, labels=[0, 1], zero_division=0)
-            c0precision_list.append(precision_per_class[0])
-            c1precision_list.append(precision_per_class[1])
-            c0recall_list.append(recall_per_class[0])
-            c1recall_list.append(recall_per_class[1])
-            c0f1_list.append(f1_per_class[0])
-            c1f1_list.append(f1_per_class[1])
+
+            append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
 
             # ====================
-            # Evaluate the quality of current prediction operation
-            c0_prec_mean = np.mean(c0precision_list)
-            c0_prec_std = np.std(c0precision_list, ddof=1)
-            c1_prec_mean = np.mean(c1precision_list)
-            c1_prec_std = np.std(c1precision_list, ddof=1)
+        # Classification metrics per class: Precision, Recall, F1
+        c0_prec_mean, c0_prec_std, c1_prec_mean, c1_prec_std = mean_and_std_from_classlists(c0precision_list, c1precision_list)
 
-            c0_recall_mean = np.mean(c0recall_list)
-            c0_recall_std = np.std(c0recall_list, ddof=1)
-            c1_recall_mean = np.mean(c1recall_list)
-            c1_recall_std = np.std(c1recall_list, ddof=1)
+        c0_recall_mean, c0_recall_std, c1_recall_mean, c1_recall_std = mean_and_std_from_classlists(c0recall_list, c1recall_list)
 
-            c0_f1_mean = np.mean(c0f1_list)
-            c0_f1_std = np.std(c0f1_list, ddof=1)
-            c1_f1_mean = np.mean(c1f1_list)
-            c1_f1_std = np.std(c1f1_list, ddof=1)
+        c0_f1_mean, c0_f1_std, c1_f1_mean, c1_f1_std = mean_and_std_from_classlists(c0f1_list, c1f1_list)
+
 
 
         # ====================
@@ -238,6 +246,7 @@ def main():
 
     # Test the model
     model.eval()
+
     c0precision_list = []
     c0recall_list = []
     c0f1_list = []
@@ -262,7 +271,6 @@ def main():
             adj_est = adj_est.cpu().data.numpy()
         else:
             adj_est = adj_est.data.numpy()
-        # ==========
         # ====================
         # Get the ground-truth
         edges = edge_seq[tau]
@@ -275,37 +283,37 @@ def main():
 
         true_labels = (true_vals >= 1).astype(int)
         pred_labels = (pred_vals >= 1).astype(int)
-        precision_per_class, recall_per_class, f1_per_class, _ = \
-        precision_recall_fscore_support(true_labels, pred_labels, average=None, labels=[0, 1], zero_division=0)
-        c0precision_list.append(precision_per_class[0])
-        c1precision_list.append(precision_per_class[1])
-        c0recall_list.append(recall_per_class[0])
-        c1recall_list.append(recall_per_class[1])
-        c0f1_list.append(f1_per_class[0])
-        c1f1_list.append(f1_per_class[1])
+
+        append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)    
         
+        print('Test snapshot %d metrics per snapshot:'
+            % (t))
+        print()
+        print('  C0 Prec: %f  C0 Rec: %f  C0 F1: %f' %
+            (c0precision_list[-1],
+            c0recall_list[-1],
+            c0f1_list[-1]))
+        print('  C1 Prec: %f  C1 Rec: %f  C1 F1: %f' %
+            (c1precision_list[-1],
+            c1recall_list[-1],
+            c1f1_list[-1]))
+        print()
+
         # ====================
-        # Evaluate the quality of current prediction operation
 
-        c0_prec_mean = np.mean(c0precision_list)
-        c0_prec_std = np.std(c0precision_list, ddof=1) if len(c0precision_list) > 1 else 0.0
-        c1_prec_mean = np.mean(c1precision_list)
-        c1_prec_std = np.std(c1precision_list, ddof=1) if len(c1precision_list) > 1 else 0.0
+    # Classification metrics per class: Precision, Recall, F1
+    c0_prec_mean, c0_prec_std, c1_prec_mean, c1_prec_std = mean_and_std_from_classlists(c0precision_list, c1precision_list)
 
+    c0_recall_mean, c0_recall_std, c1_recall_mean, c1_recall_std = mean_and_std_from_classlists(c0recall_list, c1recall_list)
 
-        c0_recall_mean = np.mean(c0recall_list)
-        c0_recall_std = np.std(c0recall_list, ddof=1) if len(c0recall_list) > 1 else 0.0
-        c1_recall_mean = np.mean(c1recall_list)
-        c1_recall_std = np.std(c1recall_list, ddof=1) if len(c1recall_list) > 1 else 0.0
+    c0_f1_mean, c0_f1_std, c1_f1_mean, c1_f1_std = mean_and_std_from_classlists(c0f1_list, c1f1_list)
 
-        c0_f1_mean = np.mean(c0f1_list)
-        c0_f1_std = np.std(c0f1_list, ddof=1) if len(c0f1_list) > 1 else 0.0
-        c1_f1_mean = np.mean(c1f1_list)
-        c1_f1_std = np.std(c1f1_list, ddof=1) if len(c1f1_list) > 1 else 0.0
 
     # ====================
 
-    print('Test Epoch %d' % epoch)
+    print('Test Epoch %d'
+        % (epoch))
+    print()
     print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
         (c0_prec_mean, c0_prec_std,
         c0_recall_mean, c0_recall_std,
@@ -315,7 +323,7 @@ def main():
         c1_recall_mean, c1_recall_std,
         c1_f1_mean, c1_f1_std))
     print()
-    # ====================
+    print('Best F1 during validation was: %f during epoch: %d' % (best_val_f1, best_epoch))
     print()
     print('Total runtime was: %s seconds' % (time.time() - start_time))
 
