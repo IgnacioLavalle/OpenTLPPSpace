@@ -95,7 +95,6 @@ def main():
 
     # ====================
     dropout_rate = args.dropout_rate # Dropout rate
-    epsilon = 10 ** (-args.epsilon) # Threshold of zero-refining
     c = args.clipping_step # Threshold of the clipping step (for parameters of discriminator)
     num_epochs = args.num_epochs # Number of training epochs
     num_val_snaps = args.num_val_snaps # Number of validation snapshots
