@@ -27,7 +27,6 @@ def parse_args():
     #adding arguments and their respective default value
 
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
-    parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--num_epochs", type=int, default=260, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_val_snaps", type=int, default=0, help="Number of validation snapshots (default: 3)")
     parser.add_argument("--num_test_snaps", type=int, default=6, help="Number of test snapshots (default: 3)")
@@ -36,12 +35,11 @@ def parse_args():
     parser.add_argument("--weight_decay", type=float, default=0.00001, help="Weight decay (default: 1e-5)")
     parser.add_argument("--alpha", type=float, default=4.0, help="Alpha value (default: 10.0)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
-    parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
+    parser.add_argument("--max_thres", type=float, default=1.5, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='Recortado677', help = "Dataset name")
     parser.add_argument("--clipping_step", type=float, default =0.005, help = "Threshold of the clipping step (for parameters of discriminator)")
-    parser.add_argument("--patience", type=int, default=10, help="Threshold of early stopping patience (default: 50)")
     parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the roc auc and pr auc metrics as json")
-
+    parser.add_argument("--pred_th", type=float, default=1.0, help="Prediction threshold")
 
 
     return parser.parse_args()
@@ -118,19 +116,13 @@ def main():
     disc_opt = optim.RMSprop(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
     #gen_opt = optim.Adam(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
     #disc_opt = optim.Adam(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
-
-    best_val_f1 = -1.0 # Or any metric you want to track for 'best' model
-    best_epoch = -1
-    counter = 0
-    patience = args.patience
-    best_gen_state = None
-    best_disc_state = None
+    pred_thr = args.pred_th
 
 
 
     print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
       f"alpha: {alpha}, clipping step: {c}, "
-      f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, patience: {patience} "
+      f"dropout_rate: {dropout_rate}, prediction threshold: {pred_thr}"
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
       f"num_train_snaps: {num_train_snaps}, lr_gen: {lr_gen}, lr_disc: {lr_disc},  weight_decay_val: {weight_decay_val}")
 
@@ -427,7 +419,7 @@ def main():
 
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= pred_thr).astype(int)
         mask_class_1 = (true_labels == 1)
         mask_class_0 = (true_labels == 0)
 

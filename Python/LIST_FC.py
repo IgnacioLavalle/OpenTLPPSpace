@@ -14,18 +14,19 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Demonstration of GCNGAN")
     #adding arguments and their respective default value
 
-    parser.add_argument("--num_epochs", type=int, default=750, help="Number of training epochs (default: 500)")
+    parser.add_argument("--num_epochs", type=int, default=1000, help="Number of training epochs (default: 500)")
     parser.add_argument("--lr", type=float, default=0.01, help="Learning rate for generator (default: 1e-4)")
-    parser.add_argument("--win_size", type=int, default=3, help="Window size of historical snapshots (default: 2)")
+    parser.add_argument("--win_size", type=int, default=5, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
-    parser.add_argument("--theta", type=float, default=5.0, help="theta value (default: 5)")
-    parser.add_argument("--beta", type=float, default=0.01, help="beta value (default: 0.01)")
+    parser.add_argument("--theta", type=float, default=7.0, help="theta value (default: 5)")
+    parser.add_argument("--beta", type=float, default=0.1, help="beta value (default: 0.01)")
     parser.add_argument("--lambd", type=float, default=0.1, help="theta value (default: 0.1)")
     parser.add_argument("--b", type= int, default=100, help="Number of iterations in order to get regularization matrix")
     parser.add_argument("--hid_dim", type = int, default=256, help="Dimensionality of latent space")
     parser.add_argument("--start", type = int, default=22, help="Forecast first year")
     parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the roc auc and pr auc metrics as json")
+    parser.add_argument("--pred_th", type=float, default=1.0, help="Prediction threshold")
 
 
     return parser.parse_args()
@@ -74,7 +75,9 @@ def main():
     valid_mask = np.zeros((1355, 1355), dtype=bool)
     valid_mask[0:137, 137:1355] = True
 
-    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+    pred_thr = args.pred_th
+
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, prediction threshold: {pred_thr}"
           f"hid_dim: {hid_dim}, lambd: {lambd}, theta: {theta}, beta: {beta}, "
           f"b_iterations: {b_iterations}, num_epochs: {num_epochs}, lr: {learn_rate}\n")
 
@@ -133,7 +136,7 @@ def main():
 
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= pred_thr).astype(int)
 
         mask_class_1 = (true_labels == 1)
         mask_class_0 = (true_labels == 0)

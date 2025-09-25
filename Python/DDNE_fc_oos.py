@@ -18,14 +18,14 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Demonstration of DDNE")
     #adding arguments and their respective default value
 
-    parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
+    parser.add_argument("--dropout_rate", type=float, default=0.3, help="Dropout rate (default: 0.2)")
     parser.add_argument("--epsilon", type=int, default=2, help="Threshold of zero-refining (default: 0.01)")
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size (default: 1)")
     parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 100)")
     parser.add_argument("--num_test_snaps", type=int, default=6, help="Number of test snapshots (default: 3)")
-    parser.add_argument("--lr", type=float, default=0.005, help="Learning rate (default: 1e-4)")
-    parser.add_argument("--weight_decay", type=float, default=0.0001, help="Weight decay (default: 1e-4)")
-    parser.add_argument("--alpha", type=float, default=3.0, help="Alpha value (default: 2.0)")
+    parser.add_argument("--lr", type=float, default=0.001, help="Learning rate (default: 1e-4)")
+    parser.add_argument("--weight_decay", type=float, default=0.0005, help="Weight decay (default: 1e-4)")
+    parser.add_argument("--alpha", type=float, default=2.0, help="Alpha value (default: 2.0)")
     parser.add_argument("--beta", type=float, default=0.0, help="Alpha value (default: 0.2)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 1) (el maximo del grafo es 17500)")
@@ -33,6 +33,7 @@ def parse_args():
     parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the classification metrics json")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
     parser.add_argument("--hid_dim", type=int, default=256)
+    parser.add_argument("--pred_th", type=float, default=1.0, help="Prediction threshold")
 
 
     return parser.parse_args()
@@ -87,6 +88,7 @@ def main():
     num_train_snaps = num_snaps-num_test_snaps # Number of training snapshots
     lr_val = args.lr
     weight_decay_val = args.weight_decay
+    pred_thr = args.pred_th
 
     # ====================
 
@@ -102,7 +104,7 @@ def main():
 
     # ====================
 
-    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, prediction threshold: {pred_thr}"
       f"enc_dims: {enc_dims}, dec_dims: {dec_dims}, alpha: {alpha}, beta: {beta}, "
       f"dropout_rate: {dropout_rate}, epsilon: {epsilon}, batch_size: {batch_size}, "
       f"num_epochs: {num_epochs}, num_test_snaps: {num_test_snaps}, "
@@ -283,7 +285,7 @@ def main():
 
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= pred_thr).astype(int)
         mask_class_1 = (true_labels == 1)
         mask_class_0 = (true_labels == 0)
 

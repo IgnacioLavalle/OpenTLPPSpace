@@ -28,10 +28,8 @@ def parse_args():
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 2) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
     parser.add_argument("--dim", type=int, default=1024)
-    parser.add_argument("--trigger", type=int, default=350)
-    parser.add_argument("--patience", type=int, default=10)
-    parser.add_argument("--es", type=bool, default=False)
     parser.add_argument("--save_metrics", type=bool, default=False)
+    parser.add_argument("--pred_th", type=float, default=1.0, help="Prediction threshold")
 
 
     return parser.parse_args()
@@ -88,18 +86,11 @@ def main():
     wdecay = args.weight_decay
     valid_mask = np.zeros((1355, 1355), dtype=bool)
     valid_mask[0:137, 137:1355] = True
-
-    best_val_f1 = -1.0 # Or any metric you want to track for 'best' model
-    best_epoch = -1
-    best_model_state = None
-    trigger = args.trigger
-    counter = 0
-    patience = args.patience
-    early_stopping_on = args.es
+    pred_thr = args.pred_th
 
     save_metrics = args.save_metrics
 
-    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, prediction threshold: {pred_thr}"
       f"dropout_rate: {dropout_rate}, beta: {beta}, batch_size: {batch_size}, dim_1: {dim_1}, dim_2: {dim_2}, "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
       f"num_train_snaps: {num_train_snaps}, lr_val: {lr_val}, weight_decay_val: {wdecay}")
@@ -157,104 +148,6 @@ def main():
 
         # ====================
         # Validate the model
-        model.eval()
-        RMSE_list = []
-        MAE_list = []
-
-        c0precision_list = []
-        c0recall_list = []
-        c0f1_list = []
-        c1precision_list = []
-        c1recall_list = []
-        c1f1_list = []
-
-        for tau in range(num_snaps-num_test_snaps-num_val_snaps, num_snaps-num_test_snaps):
-            # ====================
-            adj_list = [] # List of historical adjacency matrices
-            for t in range(tau-win_size, tau):
-                # ==========
-                edges = edge_seq[t]
-                adj = get_adj_wei(edges, num_nodes, max_thres)
-                adj_norm = adj/max_thres # Normalize the edge weights to [0, 1]
-                adj_tnr = torch.FloatTensor(adj_norm).to(device)
-                adj_list.append(adj_tnr)
-            # ====================
-            # Get the prediction result
-            adj_est = model(adj_list)
-            if torch.cuda.is_available():
-                adj_est = adj_est.cpu().data.numpy()
-            else:
-                adj_est = adj_est.data.numpy()
-            adj_est *= max_thres # Rescale edge weights to the original value range
-            # ==========
-            # Refine the prediction result
-            adj_est = (adj_est+adj_est.T)/2
-            # ====================
-            # Get ground-truth
-            edges = edge_seq[tau]
-            gnd = get_adj_wei(edges, num_nodes, max_thres)
-            # ====================
-            # Evaluate the quality of current prediction operation
-            true_vals = gnd[valid_mask]
-            pred_vals = adj_est[valid_mask]
-
-            true_labels = (true_vals >= 1).astype(int)
-            pred_labels = (pred_vals >= 1).astype(int)
-
-            append_classification_metrics_with(c0precision_list, c0recall_list, c0f1_list, c1precision_list, c1recall_list, c1f1_list, true_labels, pred_labels)
-
-            #Errors
-            abs_errors = np.abs(pred_vals - true_vals)
-            sq_errors = (pred_vals - true_vals) ** 2
-
-            #MAE and std
-            MAE = np.mean(abs_errors)
-
-            #RMSE and std
-            RMSE = np.sqrt(np.mean(sq_errors))
-
-            # ==========
-            RMSE_list.append(RMSE)
-            MAE_list.append(MAE)
-
-        # ====================
-        RMSE_mean = np.mean(RMSE_list)
-        RMSE_std = np.std(RMSE_list, ddof=1)
-        MAE_mean = np.mean(MAE_list)
-        MAE_std = np.std(MAE_list, ddof=1)
-
-        # Classification metrics per class: Precision, Recall, F1
-        c0_prec_mean, c0_prec_std, c1_prec_mean, c1_prec_std = mean_and_std_from_classlists(c0precision_list, c1precision_list)
-
-        c0_recall_mean, c0_recall_std, c1_recall_mean, c1_recall_std = mean_and_std_from_classlists(c0recall_list, c1recall_list)
-
-        c0_f1_mean, c0_f1_std, c1_f1_mean, c1_f1_std = mean_and_std_from_classlists(c0f1_list, c1f1_list)
-
-        print('Val Epoch %d RMSE %f %f MAE %f %f'
-            % (epoch, RMSE_mean, RMSE_std, MAE_mean, MAE_std))
-        print('  C0 Prec: %f (+-%f) C0 Rec: %f (+-%f) C0 F1: %f (+-%f)' %
-            (c0_prec_mean, c0_prec_std,
-            c0_recall_mean, c0_recall_std,
-            c0_f1_mean, c0_f1_std))
-        print('  C1 Prec: %f (+-%f) C1 Rec: %f (+-%f) C1 F1: %f (+-%f)' %
-            (c1_prec_mean, c1_prec_std,
-            c1_recall_mean, c1_recall_std,
-            c1_f1_mean, c1_f1_std))
-        
-        if c1_f1_mean > best_val_f1:
-            best_val_f1 = c1_f1_mean
-            best_epoch = epoch
-            best_model_state = model.state_dict() # Save model's parameters
-            print(f"  --> New best validation C1 F1: {best_val_f1:.4f} at epoch {best_epoch}. Model saved.")
-            counter = 0
-        
-        else:
-            if epoch >= trigger:
-                counter += 1
-                if counter > patience and early_stopping_on:
-                    print("Early stopping triggered")
-                    break
-
 
     # ====================
     # Iterative Forecast Test
@@ -278,11 +171,6 @@ def main():
     recall_curve_list = []
     average_precision_list = []
 
-    if best_model_state is not None:
-        model.load_state_dict(best_model_state)
-        print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
-    else:
-        print("No best model saved. Using the model from the last epoch for testing.")
     
     print("\n------- Iterative Forecast Test -------")
 
@@ -317,7 +205,7 @@ def main():
 
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= pred_thr).astype(int)
         mask_class_1 = (true_labels == 1)
         mask_class_0 = (true_labels == 0)
 

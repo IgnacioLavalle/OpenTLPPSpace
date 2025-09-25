@@ -15,16 +15,17 @@ def parse_args():
     #adding arguments and their respective default value
 
     parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 500)")
-    parser.add_argument("--lr", type=float, default=0.2, help="Learning rate for generator ")
-    parser.add_argument("--win_size", type=int, default=6, help="Window size of historical snapshots ")
+    parser.add_argument("--lr", type=float, default=0.01, help="Learning rate for generator ")
+    parser.add_argument("--win_size", type=int, default=10, help="Window size of historical snapshots ")
     parser.add_argument("--max_thres", type=float, default=1.5, help="Threshold for maximum edge weight  (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
     parser.add_argument("--theta", type=float, default=1.2, help="theta value ")
-    parser.add_argument("--beta", type=float, default=0.01, help="beta value ")
-    parser.add_argument("--alpha", type=float, default=0.005, help="alpha value")
+    parser.add_argument("--beta", type=float, default=0.001, help="beta value ")
+    parser.add_argument("--alpha", type=float, default=0.05, help="alpha value")
     parser.add_argument("--hid_dim", type = int, default=256, help="Dimensionality of latent space")
     parser.add_argument("--start", type = int, default=22, help="Forecast first year")
     parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the roc auc and pr auc metrics as json")
+    parser.add_argument("--pred_th", type=float, default=1.0, help="Prediction threshold")
 
 
     return parser.parse_args()
@@ -72,8 +73,10 @@ def main():
 
     start_test = args.start  
     save_metrics = args.save_metrics
+    
+    pred_thr = args.pred_th
 
-    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, prediction threshold: {pred_thr} "
       f"hid_dim: {hid_dim}, alpha: {alpha}, theta: {theta}, beta: {beta}, "
       f"num_epochs: {num_epochs}, lr: {learn_rate}")
     print()
@@ -130,7 +133,7 @@ def main():
 
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= pred_thr).astype(int)
 
         # global Mae & rmse
         abs_errors = np.abs(pred_vals - true_vals)
@@ -176,7 +179,7 @@ def main():
         accuracy_list.append(acc)
 
 
-        print(f"Iterative TMF Forecast on snapshot {tau}:")
+        print(f"Iterative TMF Prediction     on snapshot {tau}:")
         print(f"  C0 Prec: {c0precision_list[-1]:.4f}  C0 Rec: {c0recall_list[-1]:.4f}  C0 F1: {c0f1_list[-1]:.4f}")
         print(f"  C1 Prec: {c1precision_list[-1]:.4f}  C1 Rec: {c1recall_list[-1]:.4f}  C1 F1: {c1f1_list[-1]:.4f}")
         print(f"  RMSE: {RMSE:.4f}  MAE: {MAE:.4f}")

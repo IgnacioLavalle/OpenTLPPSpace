@@ -29,6 +29,8 @@ def parse_args():
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
     parser.add_argument("--hid_dim", type = int, default=256, help="Dimensionality of latent space")
     parser.add_argument("--save_metrics", type=bool, default=False)
+    parser.add_argument("--pred_th", type=float, default=1.0, help="Prediction threshold")
+
 
 
     return parser.parse_args()
@@ -88,12 +90,10 @@ def main():
     valid_mask = np.zeros((1355, 1355), dtype=bool)
     valid_mask[0:137, 137:1355] = True
 
-    best_val_f1 = -1.0 # Or any metric you want to track for 'best' model
-    best_epoch = -1
-    best_model_state = None # To store the state_dict of the best model
+    pred_thr = args.pred_th
     save_metrics = args.save_metrics
 
-    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, "
+    print(f"data_name: {data_name}, max_thres: {max_thres}, win_size: {win_size}, prediction threshold: {pred_thr}"
       f"t_dim: {t_dim}, s_dim: {s_dim}, beta: {beta}, "
       f"dropout_rate: {dropout_rate}, batch_size: {batch_size}, "
       f"num_epochs: {num_epochs}, num_val_snaps: {num_val_snaps}, num_test_snaps: {num_test_snaps}, "
@@ -273,11 +273,6 @@ def main():
     recall_curve_list = []
     average_precision_list = []
 
-    if best_model_state is not None:
-        model.load_state_dict(best_model_state)
-        print(f"Loaded model from epoch {best_epoch} (best validation C1 F1: {best_val_f1:.4f}).")
-    else:
-        print("No best model saved. Using the model from the last epoch for testing.")
     
     print("\n------- Iterative Forecast Test -------")
 
@@ -312,7 +307,7 @@ def main():
 
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= pred_thr).astype(int)
         mask_class_1 = (true_labels == 1)
         mask_class_0 = (true_labels == 0)
 
