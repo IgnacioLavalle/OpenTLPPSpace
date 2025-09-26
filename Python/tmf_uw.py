@@ -80,12 +80,12 @@ def main():
 
     for tau in range(win_size, num_snaps):
         edges = edge_seq[tau]
-        gnd = get_adj_unweighted(edges, num_nodes)
+        gnd = get_adj_un(edges, num_nodes)
         # ==========
         adj_list = [] # List of historical adjacency matrices
         for t in range(tau-win_size, tau):
             edges = edge_seq[t]
-            adj = get_adj_unweighted(edges, num_nodes)
+            adj = get_adj_un(edges, num_nodes)
             adj = adj
             adj_tnr = torch.FloatTensor(adj).to(device)
             adj_list.append(adj_tnr)

@@ -137,14 +137,14 @@ def main():
                 neigh_tnr = torch.zeros((num_nodes, num_nodes)).to(device)
                 for t in range(tau-win_size, tau):
                     edges = edge_seq[t]
-                    adj = get_adj_unweighted(edges, num_nodes)
+                    adj = get_adj_un(edges, num_nodes)
                     adj_norm = adj # Normalize the edge weights to [0, 1]
                     adj_tnr = torch.FloatTensor(adj_norm).to(device)
                     adj_list.append(adj_tnr)
                     neigh_tnr += adj_tnr
                 # ==========
                 edges = edge_seq[tau]
-                gnd = get_adj_unweighted(edges, num_nodes) # Training ground-truth
+                gnd = get_adj_un(edges, num_nodes) # Training ground-truth
                 gnd_norm = gnd  # Normalize the edge weights (in ground-truth) to [0, 1]
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
@@ -188,7 +188,7 @@ def main():
     current_window = []
     for t in range(start_test - win_size, start_test):
         edges = edge_seq[t]
-        adj = get_adj_unweighted(edges, num_nodes)
+        adj = get_adj_un(edges, num_nodes)
         adj_norm = adj
         current_window.append(torch.FloatTensor(adj_norm).to(device))
     
@@ -204,7 +204,7 @@ def main():
         
         # Calculate metrics comparing them with ground-truth
         edges = edge_seq[tau]
-        gnd = get_adj_unweighted(edges, num_nodes)
+        gnd = get_adj_un(edges, num_nodes)
 
         ### 
         #This part filters unwanted connections; we have a bipartite graph but DDNE takes it as a squared matrix, which makes a lot of noise in the results

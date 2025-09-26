@@ -131,14 +131,14 @@ def main():
                 neigh_tnr = torch.zeros((num_nodes, num_nodes)).to(device)
                 for t in range(tau-win_size, tau):
                     edges = edge_seq[t]
-                    adj = get_adj_unweighted(edges, num_nodes)
+                    adj = get_adj_un(edges, num_nodes)
                     adj_norm = adj # Normalize the edge weights to [0, 1]
                     adj_tnr = torch.FloatTensor(adj_norm).to(device)
                     adj_list.append(adj_tnr)
                     neigh_tnr += adj_tnr
                 # ==========
                 edges = edge_seq[tau]
-                gnd = get_adj_unweighted(edges, num_nodes) # Training ground-truth
+                gnd = get_adj_un(edges, num_nodes) # Training ground-truth
                 gnd_norm = gnd  # Normalize the edge weights (in ground-truth) to [0, 1]
                 gnd_tnr = torch.FloatTensor(gnd_norm).to(device)
                 # ==========
@@ -177,7 +177,7 @@ def main():
             for t in range(tau-win_size, tau):
                 # ==========
                 edges = edge_seq[t]
-                adj = get_adj_unweighted(edges, num_nodes)
+                adj = get_adj_un(edges, num_nodes)
                 adj_norm = adj # Normalize the edge weights to [0, 1]
                 adj_tnr = torch.FloatTensor(adj_norm).to(device)
                 adj_list.append(adj_tnr)
@@ -192,7 +192,7 @@ def main():
             # ====================
             # Get ground-truth
             edges = edge_seq[tau]
-            gnd = get_adj_unweighted(edges, num_nodes)
+            gnd = get_adj_un(edges, num_nodes)
 
             true_vals = gnd[valid_mask]
             pred_vals = adj_est[valid_mask]
@@ -260,7 +260,7 @@ def main():
         for t in range(tau-win_size, tau):
             # ==========
             edges = edge_seq[t]
-            adj = get_adj_unweighted(edges, num_nodes)
+            adj = get_adj_un(edges, num_nodes)
             adj_norm = adj # Normalize the edge weights to [0, 1]
             adj_tnr = torch.FloatTensor(adj_norm).to(device)
             adj_list.append(adj_tnr)
@@ -274,7 +274,7 @@ def main():
         # ====================
         # Get the ground-truth
         edges = edge_seq[tau]
-        gnd = get_adj_unweighted(edges, num_nodes)
+        gnd = get_adj_un(edges, num_nodes)
         true_vals = gnd[valid_mask]
         pred_vals = adj_est[valid_mask]
 
