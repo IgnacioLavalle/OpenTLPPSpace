@@ -1,0 +1,55 @@
+data_name: SMP22to95, max_thres: 1.5, win_size: 10, prediction threshold: 0.95 hid_dim: 256, alpha: 0.05, theta: 1.2, beta: 0.001, num_epochs: 500, lr: 0.01
+
+======= Iterative Forecast with TMF =======
+Iterative TMF Prediction     on snapshot 22:
+  C0 Prec: 0.9805  C0 Rec: 0.9725  C0 F1: 0.9765
+  C1 Prec: 0.8396  C1 Rec: 0.8819  C1 F1: 0.8602
+  RMSE: 0.2362  MAE: 0.1303
+  Class 0 -> MAE: 0.1114  RMSE: 0.2031
+  Class 1 -> MAE: 0.2460  RMSE: 0.3805
+
+Iterative TMF Prediction     on snapshot 23:
+  C0 Prec: 0.9752  C0 Rec: 0.9633  C0 F1: 0.9692
+  C1 Prec: 0.7912  C1 Rec: 0.8505  C1 F1: 0.8197
+  RMSE: 0.3347  MAE: 0.2076
+  Class 0 -> MAE: 0.1750  RMSE: 0.2903
+  Class 1 -> MAE: 0.4067  RMSE: 0.5309
+
+Iterative TMF Prediction     on snapshot 24:
+  C0 Prec: 0.9725  C0 Rec: 0.9553  C0 F1: 0.9639
+  C1 Prec: 0.7514  C1 Rec: 0.8334  C1 F1: 0.7903
+  RMSE: 0.4454  MAE: 0.2963
+  Class 0 -> MAE: 0.2511  RMSE: 0.3907
+  Class 1 -> MAE: 0.5750  RMSE: 0.6934
+
+Iterative TMF Prediction     on snapshot 25:
+  C0 Prec: 0.9704  C0 Rec: 0.9473  C0 F1: 0.9587
+  C1 Prec: 0.7118  C1 Rec: 0.8182  C1 F1: 0.7613
+  RMSE: 0.5837  MAE: 0.4043
+  Class 0 -> MAE: 0.3461  RMSE: 0.5164
+  Class 1 -> MAE: 0.7697  RMSE: 0.8974
+
+Iterative TMF Prediction     on snapshot 26:
+  C0 Prec: 0.9661  C0 Rec: 0.9412  C0 F1: 0.9535
+  C1 Prec: 0.6842  C1 Rec: 0.7940  C1 F1: 0.7350
+  RMSE: 0.7529  MAE: 0.5349
+  Class 0 -> MAE: 0.4602  RMSE: 0.6658
+  Class 1 -> MAE: 1.0010  RMSE: 1.1562
+
+Iterative TMF Prediction     on snapshot 27:
+  C0 Prec: 0.9623  C0 Rec: 0.9338  C0 F1: 0.9478
+  C1 Prec: 0.6491  C1 Rec: 0.7702  C1 F1: 0.7045
+  RMSE: 0.9608  MAE: 0.6921
+  Class 0 -> MAE: 0.6015  RMSE: 0.8563
+  Class 1 -> MAE: 1.2619  RMSE: 1.4549
+
+Final metrics mean and std
+
+  C0 Prec: 0.9712 (+-0.0065)  C0 Rec: 0.9522 (+-0.0143)  C0 F1: 0.9616 (+-0.0105)
+  C1 Prec: 0.7379 (+-0.0704)  C1 Rec: 0.8247 (+-0.0399)  C1 F1: 0.7785 (+-0.0569)
+
+RMSE 0.5523 (+-0.2708)  MAE 0.3776 (+-0.2103)
+Class 0 -> MAE 0.3242 (+-0.1837), RMSE 0.4871 (+-0.2440)
+Class 1 -> MAE 0.7100 (+-0.3790), RMSE 0.8522 (+-0.4021)
+
+Total runtime was: 17.74 seconds

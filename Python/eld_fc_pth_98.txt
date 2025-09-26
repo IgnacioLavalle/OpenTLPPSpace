@@ -1,0 +1,461 @@
+data_name: SMP22to95, max_thres: 2.0, win_size: 2, prediction threshold: 0.98t_dim: 256, s_dim: 512, beta: 3.0, dropout_rate: 0.1, batch_size: 1, num_epochs: 405, num_val_snaps: 0, num_test_snaps: 6, num_train_snaps: 22, lr_val: 0.0005, weight_decay_val: 0.0005
+
+Epoch 0 Total Loss 12641183.000000
+Epoch 1 Total Loss 6617671.000000
+Epoch 2 Total Loss 5514293.500000
+Epoch 3 Total Loss 4917931.000000
+Epoch 4 Total Loss 4753016.500000
+Epoch 5 Total Loss 4682816.500000
+Epoch 6 Total Loss 4625009.500000
+Epoch 7 Total Loss 4567461.000000
+Epoch 8 Total Loss 4524096.000000
+Epoch 9 Total Loss 4488975.500000
+Epoch 10 Total Loss 4456894.000000
+Epoch 11 Total Loss 4416970.000000
+Epoch 12 Total Loss 4376127.500000
+Epoch 13 Total Loss 4326861.000000
+Epoch 14 Total Loss 4265564.000000
+Epoch 15 Total Loss 4223554.000000
+Epoch 16 Total Loss 4179368.000000
+Epoch 17 Total Loss 4142620.000000
+Epoch 18 Total Loss 4106388.750000
+Epoch 19 Total Loss 4080732.250000
+Epoch 20 Total Loss 4055051.500000
+Epoch 21 Total Loss 4030525.250000
+Epoch 22 Total Loss 3998949.000000
+Epoch 23 Total Loss 3961725.500000
+Epoch 24 Total Loss 3933839.000000
+Epoch 25 Total Loss 3908607.250000
+Epoch 26 Total Loss 3880444.250000
+Epoch 27 Total Loss 3844048.500000
+Epoch 28 Total Loss 3800190.500000
+Epoch 29 Total Loss 3757358.000000
+Epoch 30 Total Loss 3717325.250000
+Epoch 31 Total Loss 3682858.500000
+Epoch 32 Total Loss 3646702.250000
+Epoch 33 Total Loss 3612624.750000
+Epoch 34 Total Loss 3581088.500000
+Epoch 35 Total Loss 3551982.250000
+Epoch 36 Total Loss 3519258.000000
+Epoch 37 Total Loss 3492839.500000
+Epoch 38 Total Loss 3465444.750000
+Epoch 39 Total Loss 3430156.500000
+Epoch 40 Total Loss 3403334.500000
+Epoch 41 Total Loss 3369625.500000
+Epoch 42 Total Loss 3337373.500000
+Epoch 43 Total Loss 3305626.750000
+Epoch 44 Total Loss 3277740.750000
+Epoch 45 Total Loss 3252441.250000
+Epoch 46 Total Loss 3231040.000000
+Epoch 47 Total Loss 3211794.750000
+Epoch 48 Total Loss 3162589.250000
+Epoch 49 Total Loss 3131398.500000
+Epoch 50 Total Loss 3106495.750000
+Epoch 51 Total Loss 3080072.750000
+Epoch 52 Total Loss 3055403.250000
+Epoch 53 Total Loss 3030161.000000
+Epoch 54 Total Loss 3008767.750000
+Epoch 55 Total Loss 2982820.250000
+Epoch 56 Total Loss 2962794.250000
+Epoch 57 Total Loss 2941332.500000
+Epoch 58 Total Loss 2924941.250000
+Epoch 59 Total Loss 2909443.250000
+Epoch 60 Total Loss 2891312.250000
+Epoch 61 Total Loss 2869743.750000
+Epoch 62 Total Loss 2859856.250000
+Epoch 63 Total Loss 2835067.500000
+Epoch 64 Total Loss 2829785.000000
+Epoch 65 Total Loss 2806499.750000
+Epoch 66 Total Loss 2779174.500000
+Epoch 67 Total Loss 2742011.000000
+Epoch 68 Total Loss 2706102.250000
+Epoch 69 Total Loss 2684652.500000
+Epoch 70 Total Loss 2664250.250000
+Epoch 71 Total Loss 2642039.000000
+Epoch 72 Total Loss 2621224.750000
+Epoch 73 Total Loss 2604744.750000
+Epoch 74 Total Loss 2589173.250000
+Epoch 75 Total Loss 2569512.250000
+Epoch 76 Total Loss 2549207.500000
+Epoch 77 Total Loss 2529359.500000
+Epoch 78 Total Loss 2506227.500000
+Epoch 79 Total Loss 2483280.000000
+Epoch 80 Total Loss 2472819.750000
+Epoch 81 Total Loss 2450490.000000
+Epoch 82 Total Loss 2428218.750000
+Epoch 83 Total Loss 2413928.750000
+Epoch 84 Total Loss 2396768.500000
+Epoch 85 Total Loss 2379586.250000
+Epoch 86 Total Loss 2362770.000000
+Epoch 87 Total Loss 2347788.250000
+Epoch 88 Total Loss 2332769.250000
+Epoch 89 Total Loss 2317057.250000
+Epoch 90 Total Loss 2305295.250000
+Epoch 91 Total Loss 2290487.000000
+Epoch 92 Total Loss 2275034.500000
+Epoch 93 Total Loss 2260416.750000
+Epoch 94 Total Loss 2247753.500000
+Epoch 95 Total Loss 2234971.500000
+Epoch 96 Total Loss 2227477.500000
+Epoch 97 Total Loss 2216356.500000
+Epoch 98 Total Loss 2202706.750000
+Epoch 99 Total Loss 2188114.250000
+Epoch 100 Total Loss 2174079.000000
+Epoch 101 Total Loss 2161305.000000
+Epoch 102 Total Loss 2146565.500000
+Epoch 103 Total Loss 2133507.500000
+Epoch 104 Total Loss 2121706.250000
+Epoch 105 Total Loss 2106327.250000
+Epoch 106 Total Loss 2094218.500000
+Epoch 107 Total Loss 2081249.375000
+Epoch 108 Total Loss 2070244.375000
+Epoch 109 Total Loss 2059509.375000
+Epoch 110 Total Loss 2053055.625000
+Epoch 111 Total Loss 2038676.000000
+Epoch 112 Total Loss 2023538.125000
+Epoch 113 Total Loss 2017727.125000
+Epoch 114 Total Loss 2011955.875000
+Epoch 115 Total Loss 1999560.875000
+Epoch 116 Total Loss 1996136.625000
+Epoch 117 Total Loss 1994067.000000
+Epoch 118 Total Loss 1998488.875000
+Epoch 119 Total Loss 2001102.750000
+Epoch 120 Total Loss 1999532.750000
+Epoch 121 Total Loss 1988556.875000
+Epoch 122 Total Loss 1972130.625000
+Epoch 123 Total Loss 1962598.625000
+Epoch 124 Total Loss 1945294.250000
+Epoch 125 Total Loss 1926157.750000
+Epoch 126 Total Loss 1902807.250000
+Epoch 127 Total Loss 1886085.750000
+Epoch 128 Total Loss 1872784.750000
+Epoch 129 Total Loss 1858776.375000
+Epoch 130 Total Loss 1849594.000000
+Epoch 131 Total Loss 1837885.375000
+Epoch 132 Total Loss 1828661.625000
+Epoch 133 Total Loss 1816642.125000
+Epoch 134 Total Loss 1811071.000000
+Epoch 135 Total Loss 1805631.625000
+Epoch 136 Total Loss 1797635.875000
+Epoch 137 Total Loss 1788728.125000
+Epoch 138 Total Loss 1779865.000000
+Epoch 139 Total Loss 1771426.125000
+Epoch 140 Total Loss 1764639.000000
+Epoch 141 Total Loss 1755556.250000
+Epoch 142 Total Loss 1748401.500000
+Epoch 143 Total Loss 1740046.000000
+Epoch 144 Total Loss 1731172.625000
+Epoch 145 Total Loss 1726036.625000
+Epoch 146 Total Loss 1721206.750000
+Epoch 147 Total Loss 1713867.250000
+Epoch 148 Total Loss 1706396.750000
+Epoch 149 Total Loss 1706314.500000
+Epoch 150 Total Loss 1703208.500000
+Epoch 151 Total Loss 1698706.375000
+Epoch 152 Total Loss 1698001.250000
+Epoch 153 Total Loss 1688863.000000
+Epoch 154 Total Loss 1682239.000000
+Epoch 155 Total Loss 1680607.500000
+Epoch 156 Total Loss 1670140.125000
+Epoch 157 Total Loss 1665373.375000
+Epoch 158 Total Loss 1656729.125000
+Epoch 159 Total Loss 1650072.375000
+Epoch 160 Total Loss 1648331.000000
+Epoch 161 Total Loss 1636150.500000
+Epoch 162 Total Loss 1633126.000000
+Epoch 163 Total Loss 1623989.625000
+Epoch 164 Total Loss 1617732.625000
+Epoch 165 Total Loss 1604720.125000
+Epoch 166 Total Loss 1600176.250000
+Epoch 167 Total Loss 1592309.000000
+Epoch 168 Total Loss 1583213.875000
+Epoch 169 Total Loss 1583633.750000
+Epoch 170 Total Loss 1578667.000000
+Epoch 171 Total Loss 1572547.000000
+Epoch 172 Total Loss 1567679.625000
+Epoch 173 Total Loss 1561267.875000
+Epoch 174 Total Loss 1555233.375000
+Epoch 175 Total Loss 1550144.625000
+Epoch 176 Total Loss 1542750.000000
+Epoch 177 Total Loss 1534213.375000
+Epoch 178 Total Loss 1532690.625000
+Epoch 179 Total Loss 1528659.625000
+Epoch 180 Total Loss 1523336.500000
+Epoch 181 Total Loss 1521826.000000
+Epoch 182 Total Loss 1514662.875000
+Epoch 183 Total Loss 1509929.875000
+Epoch 184 Total Loss 1503253.125000
+Epoch 185 Total Loss 1504477.375000
+Epoch 186 Total Loss 1498111.375000
+Epoch 187 Total Loss 1489495.750000
+Epoch 188 Total Loss 1479522.250000
+Epoch 189 Total Loss 1476743.250000
+Epoch 190 Total Loss 1472526.000000
+Epoch 191 Total Loss 1468849.875000
+Epoch 192 Total Loss 1464559.875000
+Epoch 193 Total Loss 1457170.625000
+Epoch 194 Total Loss 1452001.500000
+Epoch 195 Total Loss 1447582.875000
+Epoch 196 Total Loss 1439273.125000
+Epoch 197 Total Loss 1435370.000000
+Epoch 198 Total Loss 1428859.500000
+Epoch 199 Total Loss 1429594.625000
+Epoch 200 Total Loss 1430675.375000
+Epoch 201 Total Loss 1427932.125000
+Epoch 202 Total Loss 1429119.500000
+Epoch 203 Total Loss 1412088.000000
+Epoch 204 Total Loss 1397671.875000
+Epoch 205 Total Loss 1384584.500000
+Epoch 206 Total Loss 1380846.500000
+Epoch 207 Total Loss 1379098.500000
+Epoch 208 Total Loss 1373785.000000
+Epoch 209 Total Loss 1369339.250000
+Epoch 210 Total Loss 1367645.625000
+Epoch 211 Total Loss 1363372.500000
+Epoch 212 Total Loss 1360910.250000
+Epoch 213 Total Loss 1356481.000000
+Epoch 214 Total Loss 1348370.875000
+Epoch 215 Total Loss 1343751.000000
+Epoch 216 Total Loss 1338193.125000
+Epoch 217 Total Loss 1335084.250000
+Epoch 218 Total Loss 1331121.375000
+Epoch 219 Total Loss 1328869.125000
+Epoch 220 Total Loss 1322725.500000
+Epoch 221 Total Loss 1320239.375000
+Epoch 222 Total Loss 1315834.625000
+Epoch 223 Total Loss 1309918.375000
+Epoch 224 Total Loss 1306611.000000
+Epoch 225 Total Loss 1299866.750000
+Epoch 226 Total Loss 1300845.625000
+Epoch 227 Total Loss 1296177.500000
+Epoch 228 Total Loss 1296112.875000
+Epoch 229 Total Loss 1291935.500000
+Epoch 230 Total Loss 1293743.000000
+Epoch 231 Total Loss 1285673.125000
+Epoch 232 Total Loss 1277626.000000
+Epoch 233 Total Loss 1273656.000000
+Epoch 234 Total Loss 1272902.000000
+Epoch 235 Total Loss 1265198.000000
+Epoch 236 Total Loss 1265109.125000
+Epoch 237 Total Loss 1260729.125000
+Epoch 238 Total Loss 1258151.125000
+Epoch 239 Total Loss 1253737.250000
+Epoch 240 Total Loss 1250414.875000
+Epoch 241 Total Loss 1243026.000000
+Epoch 242 Total Loss 1242950.375000
+Epoch 243 Total Loss 1241242.750000
+Epoch 244 Total Loss 1240784.750000
+Epoch 245 Total Loss 1237425.875000
+Epoch 246 Total Loss 1231252.750000
+Epoch 247 Total Loss 1228917.375000
+Epoch 248 Total Loss 1225494.125000
+Epoch 249 Total Loss 1222078.250000
+Epoch 250 Total Loss 1219782.625000
+Epoch 251 Total Loss 1213604.250000
+Epoch 252 Total Loss 1211640.500000
+Epoch 253 Total Loss 1210375.250000
+Epoch 254 Total Loss 1203720.375000
+Epoch 255 Total Loss 1202419.875000
+Epoch 256 Total Loss 1199200.000000
+Epoch 257 Total Loss 1195743.375000
+Epoch 258 Total Loss 1191146.375000
+Epoch 259 Total Loss 1187909.500000
+Epoch 260 Total Loss 1188045.250000
+Epoch 261 Total Loss 1186329.000000
+Epoch 262 Total Loss 1185493.625000
+Epoch 263 Total Loss 1179195.875000
+Epoch 264 Total Loss 1174846.625000
+Epoch 265 Total Loss 1171207.375000
+Epoch 266 Total Loss 1168218.500000
+Epoch 267 Total Loss 1168200.750000
+Epoch 268 Total Loss 1163813.000000
+Epoch 269 Total Loss 1164094.375000
+Epoch 270 Total Loss 1161515.000000
+Epoch 271 Total Loss 1158787.750000
+Epoch 272 Total Loss 1156685.000000
+Epoch 273 Total Loss 1153446.750000
+Epoch 274 Total Loss 1151107.375000
+Epoch 275 Total Loss 1148474.250000
+Epoch 276 Total Loss 1142635.375000
+Epoch 277 Total Loss 1140998.750000
+Epoch 278 Total Loss 1138671.375000
+Epoch 279 Total Loss 1142426.750000
+Epoch 280 Total Loss 1140078.500000
+Epoch 281 Total Loss 1134887.625000
+Epoch 282 Total Loss 1134618.500000
+Epoch 283 Total Loss 1129705.000000
+Epoch 284 Total Loss 1130764.750000
+Epoch 285 Total Loss 1126564.875000
+Epoch 286 Total Loss 1125670.375000
+Epoch 287 Total Loss 1123258.625000
+Epoch 288 Total Loss 1122831.500000
+Epoch 289 Total Loss 1115086.875000
+Epoch 290 Total Loss 1111903.625000
+Epoch 291 Total Loss 1109673.125000
+Epoch 292 Total Loss 1109944.500000
+Epoch 293 Total Loss 1106050.250000
+Epoch 294 Total Loss 1103959.000000
+Epoch 295 Total Loss 1100950.750000
+Epoch 296 Total Loss 1099768.250000
+Epoch 297 Total Loss 1092057.125000
+Epoch 298 Total Loss 1092294.625000
+Epoch 299 Total Loss 1091646.000000
+Epoch 300 Total Loss 1089100.000000
+Epoch 301 Total Loss 1083907.000000
+Epoch 302 Total Loss 1083812.500000
+Epoch 303 Total Loss 1082361.750000
+Epoch 304 Total Loss 1077990.000000
+Epoch 305 Total Loss 1076272.000000
+Epoch 306 Total Loss 1074194.500000
+Epoch 307 Total Loss 1073232.000000
+Epoch 308 Total Loss 1070522.375000
+Epoch 309 Total Loss 1068680.125000
+Epoch 310 Total Loss 1070178.500000
+Epoch 311 Total Loss 1067253.125000
+Epoch 312 Total Loss 1066700.875000
+Epoch 313 Total Loss 1066908.750000
+Epoch 314 Total Loss 1065536.250000
+Epoch 315 Total Loss 1061167.125000
+Epoch 316 Total Loss 1056856.000000
+Epoch 317 Total Loss 1061752.000000
+Epoch 318 Total Loss 1055447.000000
+Epoch 319 Total Loss 1053022.250000
+Epoch 320 Total Loss 1049493.625000
+Epoch 321 Total Loss 1048304.875000
+Epoch 322 Total Loss 1048151.125000
+Epoch 323 Total Loss 1045956.875000
+Epoch 324 Total Loss 1050629.875000
+Epoch 325 Total Loss 1051133.375000
+Epoch 326 Total Loss 1051341.000000
+Epoch 327 Total Loss 1051043.750000
+Epoch 328 Total Loss 1049575.375000
+Epoch 329 Total Loss 1044731.312500
+Epoch 330 Total Loss 1035899.375000
+Epoch 331 Total Loss 1032916.687500
+Epoch 332 Total Loss 1029054.937500
+Epoch 333 Total Loss 1027385.437500
+Epoch 334 Total Loss 1025489.000000
+Epoch 335 Total Loss 1024755.625000
+Epoch 336 Total Loss 1019848.375000
+Epoch 337 Total Loss 1015933.125000
+Epoch 338 Total Loss 1016598.437500
+Epoch 339 Total Loss 1016149.312500
+Epoch 340 Total Loss 1016674.312500
+Epoch 341 Total Loss 1013735.687500
+Epoch 342 Total Loss 1015627.687500
+Epoch 343 Total Loss 1012524.250000
+Epoch 344 Total Loss 1005950.437500
+Epoch 345 Total Loss 1001897.187500
+Epoch 346 Total Loss 1002787.875000
+Epoch 347 Total Loss 1004827.375000
+Epoch 348 Total Loss 1005079.812500
+Epoch 349 Total Loss 1002113.062500
+Epoch 350 Total Loss 1003993.562500
+Epoch 351 Total Loss 998925.375000
+Epoch 352 Total Loss 995628.750000
+Epoch 353 Total Loss 991748.812500
+Epoch 354 Total Loss 991497.312500
+Epoch 355 Total Loss 987668.500000
+Epoch 356 Total Loss 987566.625000
+Epoch 357 Total Loss 986072.500000
+Epoch 358 Total Loss 981297.250000
+Epoch 359 Total Loss 978606.500000
+Epoch 360 Total Loss 977889.187500
+Epoch 361 Total Loss 979516.500000
+Epoch 362 Total Loss 976130.062500
+Epoch 363 Total Loss 973131.437500
+Epoch 364 Total Loss 971983.562500
+Epoch 365 Total Loss 971182.562500
+Epoch 366 Total Loss 967507.625000
+Epoch 367 Total Loss 966835.125000
+Epoch 368 Total Loss 964107.437500
+Epoch 369 Total Loss 963486.500000
+Epoch 370 Total Loss 961409.250000
+Epoch 371 Total Loss 959005.375000
+Epoch 372 Total Loss 955416.062500
+Epoch 373 Total Loss 956991.312500
+Epoch 374 Total Loss 955620.500000
+Epoch 375 Total Loss 952505.312500
+Epoch 376 Total Loss 951338.250000
+Epoch 377 Total Loss 945600.687500
+Epoch 378 Total Loss 947491.625000
+Epoch 379 Total Loss 943547.687500
+Epoch 380 Total Loss 941504.812500
+Epoch 381 Total Loss 942432.125000
+Epoch 382 Total Loss 938491.375000
+Epoch 383 Total Loss 935322.562500
+Epoch 384 Total Loss 936295.375000
+Epoch 385 Total Loss 932443.937500
+Epoch 386 Total Loss 935251.562500
+Epoch 387 Total Loss 932857.187500
+Epoch 388 Total Loss 934272.125000
+Epoch 389 Total Loss 931287.250000
+Epoch 390 Total Loss 931745.812500
+Epoch 391 Total Loss 930721.875000
+Epoch 392 Total Loss 932080.250000
+Epoch 393 Total Loss 929342.000000
+Epoch 394 Total Loss 929491.250000
+Epoch 395 Total Loss 929810.125000
+Epoch 396 Total Loss 930008.187500
+Epoch 397 Total Loss 927197.687500
+Epoch 398 Total Loss 921410.187500
+Epoch 399 Total Loss 920293.000000
+Epoch 400 Total Loss 919833.812500
+Epoch 401 Total Loss 919223.062500
+Epoch 402 Total Loss 913191.750000
+Epoch 403 Total Loss 914276.187500
+Epoch 404 Total Loss 912350.187500
+
+------- Iterative Forecast Test -------
+Iterative ELD Prediction on snapshot 22:
+  C0 Prec: 0.9722  C0 Rec: 0.9769  C0 F1: 0.9745
+  C1 Prec: 0.8545  C1 Rec: 0.8290  C1 F1: 0.8415
+  RMSE: 0.2647  MAE: 0.1345
+  Class 0 -> MAE: 0.1007  RMSE: 0.1929
+  Class 1 -> MAE: 0.3409  RMSE: 0.5208
+
+Iterative ELD Prediction on snapshot 23:
+  C0 Prec: 0.9675  C0 Rec: 0.9718  C0 F1: 0.9696
+  C1 Prec: 0.8226  C1 Rec: 0.8003  C1 F1: 0.8113
+  RMSE: 0.3017  MAE: 0.1541
+  Class 0 -> MAE: 0.1153  RMSE: 0.2222
+  Class 1 -> MAE: 0.3911  RMSE: 0.5880
+
+Iterative ELD Prediction on snapshot 24:
+  C0 Prec: 0.9653  C0 Rec: 0.9668  C0 F1: 0.9661
+  C1 Prec: 0.7931  C1 Rec: 0.7854  C1 F1: 0.7892
+  RMSE: 0.3217  MAE: 0.1634
+  Class 0 -> MAE: 0.1234  RMSE: 0.2427
+  Class 1 -> MAE: 0.4107  RMSE: 0.6156
+
+Iterative ELD Prediction on snapshot 25:
+  C0 Prec: 0.9633  C0 Rec: 0.9618  C0 F1: 0.9625
+  C1 Prec: 0.7623  C1 Rec: 0.7700  C1 F1: 0.7661
+  RMSE: 0.3423  MAE: 0.1746
+  Class 0 -> MAE: 0.1332  RMSE: 0.2633
+  Class 1 -> MAE: 0.4345  RMSE: 0.6461
+
+Iterative ELD Prediction on snapshot 26:
+  C0 Prec: 0.9604  C0 Rec: 0.9592  C0 F1: 0.9598
+  C1 Prec: 0.7474  C1 Rec: 0.7533  C1 F1: 0.7503
+  RMSE: 0.3569  MAE: 0.1812
+  Class 0 -> MAE: 0.1370  RMSE: 0.2724
+  Class 1 -> MAE: 0.4572  RMSE: 0.6775
+
+Iterative ELD Prediction on snapshot 27:
+  C0 Prec: 0.9581  C0 Rec: 0.9554  C0 F1: 0.9567
+  C1 Prec: 0.7244  C1 Rec: 0.7372  C1 F1: 0.7307
+  RMSE: 0.3750  MAE: 0.1907
+  Class 0 -> MAE: 0.1444  RMSE: 0.2888
+  Class 1 -> MAE: 0.4817  RMSE: 0.7075
+
+Final metrics mean and std
+
+  C0 Prec: 0.9645 (+-0.0051)  C0 Rec: 0.9653 (+-0.0081)  C0 F1: 0.9649 (+-0.0066)
+  C1 Prec: 0.7840 (+-0.0488)  C1 Rec: 0.7792 (+-0.0331)  C1 F1: 0.7815 (+-0.0408)
+
+RMSE 0.3271 (+-0.0399)  MAE 0.1664 (+-0.0203)
+Class 0 -> MAE 0.1257 (+-0.0159), RMSE 0.2470 (+-0.0353)
+Class 1 -> MAE 0.4193 (+-0.0501), RMSE 0.6259 (+-0.0668)
+
+Total runtime was: 1322.22 seconds
