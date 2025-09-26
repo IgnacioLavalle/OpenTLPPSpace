@@ -36,7 +36,7 @@ def objective(trial):
     num_epochs = trial.suggest_categorical("epochs", [500,750,1000]) # Number of training epochs
 
     # ====================
-    data_name = 'SMP22to95'
+    data_name = 'SMP22to95unweighted'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     b_iterations = 100
