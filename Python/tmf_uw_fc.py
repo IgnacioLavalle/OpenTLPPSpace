@@ -101,7 +101,7 @@ def main():
     # Initialize windows with ground truth before start_test
     for t in range(start_test - win_size, start_test):
         edges = edge_seq[t]
-        adj = get_adj_wei_un(edges, num_nodes)
+        adj = get_adj_un(edges, num_nodes)
         adj_tnr = torch.FloatTensor(adj).to(device)
         current_window.append(adj_tnr)
 
@@ -117,7 +117,7 @@ def main():
 
         # === Evaluate against ground truth ===
         gnd_edges = edge_seq[tau]
-        gnd = get_adj_wei_un(gnd_edges, num_nodes)
+        gnd = get_adj_un(gnd_edges, num_nodes)
 
         true_vals = gnd[valid_mask]
         pred_vals = adj_est[valid_mask]
