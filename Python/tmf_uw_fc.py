@@ -1,30 +1,30 @@
-# Demonstration of LIST
+# Demonstration of TMF
 
 import argparse
 import json
 import time
-
 from sklearn.metrics import auc, average_precision_score, precision_recall_curve, precision_recall_fscore_support, roc_curve, accuracy_score
-from LIST.LIST import *
+from TMF.TMF import *
 from utils import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+
 def parse_args():
-    parser = argparse.ArgumentParser(description="Demonstration of GCNGAN")
+    parser = argparse.ArgumentParser(description="Demonstration of TMF")
     #adding arguments and their respective default value
 
-    parser.add_argument("--num_epochs", type=int, default=750, help="Number of training epochs (default: 500)")
-    parser.add_argument("--lr", type=float, default=0.001, help="Learning rate for generator (default: 1e-4)")
-    parser.add_argument("--win_size", type=int, default=3, help="Window size of historical snapshots (default: 2)")
+    parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 500)")
+    parser.add_argument("--lr", type=float, default=0.01, help="Learning rate for generator ")
+    parser.add_argument("--win_size", type=int, default=8, help="Window size of historical snapshots ")
     parser.add_argument("--data_name", type=str, default ='SMP22to95unweighted', help = "Dataset name")
-    parser.add_argument("--theta", type=float, default=7.0, help="theta value (default: 5)")
-    parser.add_argument("--beta", type=float, default=0.1, help="beta value (default: 0.01)")
-    parser.add_argument("--lambd", type=float, default=0.1, help="theta value (default: 0.1)")
-    parser.add_argument("--b", type= int, default=100, help="Number of iterations in order to get regularization matrix")
-    parser.add_argument("--hid_dim", type = int, default=512, help="Dimensionality of latent space")
+    parser.add_argument("--theta", type=float, default=1.2, help="theta value ")
+    parser.add_argument("--beta", type=float, default=0.05, help="beta value ")
+    parser.add_argument("--alpha", type=float, default=0.01, help="alpha value")
+    parser.add_argument("--hid_dim", type = int, default=1024, help="Dimensionality of latent space")
     parser.add_argument("--start", type = int, default=22, help="Forecast first year")
     parser.add_argument("--save_metrics", type=bool, default=False, help="Indicates whether you want or not to save the roc auc and pr auc metrics as json")
+    parser.add_argument("--pred_th", type=float, default=1.0, help="Prediction threshold")
 
 
     return parser.parse_args()
@@ -48,45 +48,38 @@ def mean_and_std_from_classlists(c0_list, c1_list):
     return c0_mean,c0_std,c1_mean,c1_std
 
 
-
 def main():
     start_time = time.time()
     args = parse_args()
-    save_metrics = args.save_metrics
-
-    #Parameters
+    # ====================
     data_name = args.data_name
-    num_nodes = 1355
-    num_snaps = 28
-    hid_dim = args.hid_dim
+    num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
+    num_snaps = 28 # Number of snapshots
+    hid_dim = args.hid_dim # Dimensionality of latent space
     theta = args.theta
+    alpha = args.alpha
     beta = args.beta
-    lambd = args.lambd
-    b_iterations = args.b
-    learn_rate = args.lr
-    win_size = args.win_size
-    num_epochs = args.num_epochs
-    dec_list = get_dec_list(win_size, theta)
 
-    edge_seq = np.load(f"data/{data_name}_edge_seq.npy", allow_pickle=True)
+    # ====================
+    edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
     valid_mask = np.zeros((1355, 1355), dtype=bool)
     valid_mask[0:137, 137:1355] = True
+    # ====================
+    learn_rate = args.lr
+    win_size = args.win_size # Window size of historical snapshots
+    num_epochs = args.num_epochs # Number of training epochs
 
-    print(f"data_name: {data_name}, win_size: {win_size}, "
-          f"hid_dim: {hid_dim}, lambd: {lambd}, theta: {theta}, beta: {beta}, "
-          f"b_iterations: {b_iterations}, num_epochs: {num_epochs}, lr: {learn_rate}\n")
+    start_test = args.start  
+    save_metrics = args.save_metrics
+    
+    pred_thr = args.pred_th
 
-    # === iterative config ===
-    start_test = args.start  #Initial forecast snapshot 
-    current_window = []
+    print(f"data_name: {data_name},  win_size: {win_size}, prediction threshold: {pred_thr} "
+      f"hid_dim: {hid_dim}, alpha: {alpha}, theta: {theta}, beta: {beta}, "
+      f"num_epochs: {num_epochs}, lr: {learn_rate}")
+    print()
 
-    #Initialize windows with ground truth before start_test
-    for t in range(start_test - win_size, start_test):
-        edges = edge_seq[t]
-        adj = get_adj_un(edges, num_nodes)
-        adj_tnr = torch.FloatTensor(adj).to(device)
-        current_window.append(adj_tnr)
-
+    # ====================
     # Metric lists
     c0precision_list, c0recall_list, c0f1_list = [], [], []
     c1precision_list, c1recall_list, c1f1_list = [], [], []
@@ -101,33 +94,37 @@ def main():
     recall_curve_list = []
     average_precision_list = []
 
-    # === Forecast ===
+    # === TMF Forecast ===
+    print("======= Iterative Forecast with TMF =======")
+    current_window = []
+
+    # Initialize windows with ground truth before start_test
+    for t in range(start_test - win_size, start_test):
+        edges = edge_seq[t]
+        adj = get_adj_wei_un(edges, num_nodes)
+        adj_tnr = torch.FloatTensor(adj).to(device)
+        current_window.append(adj_tnr)
+
     for tau in range(start_test, num_snaps):
-        # Generarate P_list from current window
-        P_list = []
-        for adj_tnr in current_window:
-            adj_np = adj_tnr.cpu().numpy()
-            P = get_P(adj_np, num_nodes, lambd, b_iterations, device=device)
-            P_list.append(P)
+        # === Generate with current window ===
+        TMF_model = TMF(num_nodes, hid_dim, win_size, num_epochs, alpha, beta, theta, learn_rate, device)
+        adj_est = TMF_model.TMF_fun(current_window)
 
-        #LIST Model
-        LIST_model = LIST(num_nodes, hid_dim, win_size, dec_list, P_list,
-                          num_epochs, beta, learn_rate, device)
-        adj_est = LIST_model.LIST_fun(current_window)
-        adj_est = torch.nan_to_num(adj_est, nan=0.0, posinf=2.0, neginf=0.0)
-        adj_est = adj_est.detach().cpu().numpy()
+        if torch.cuda.is_available():
+            adj_est = adj_est.cpu().data.numpy()
+        else:
+            adj_est = adj_est.data.numpy()
 
-
-        # === Evaluate ===
+        # === Evaluate against ground truth ===
         gnd_edges = edge_seq[tau]
-        gnd = get_adj_un(gnd_edges, num_nodes)
+        gnd = get_adj_wei_un(gnd_edges, num_nodes)
 
         true_vals = gnd[valid_mask]
         pred_vals = adj_est[valid_mask]
 
         true_labels = (true_vals >= 1).astype(int)
         pred_scores = pred_vals
-        pred_labels = (pred_vals >= 1).astype(int)
+        pred_labels = (pred_vals >= pred_thr).astype(int)
 
         #classification metrics
         append_classification_metrics_with(
@@ -135,6 +132,7 @@ def main():
             c1precision_list, c1recall_list, c1f1_list,
             true_labels, pred_labels
         )
+
         # Precision-Recall Curve
         precision_vals, recall_vals, _ = precision_recall_curve(true_labels, pred_scores)
         avg_prec = average_precision_score(true_labels, pred_scores)
@@ -153,16 +151,18 @@ def main():
         roc_auc_list.append(roc_auc)
         accuracy_list.append(acc)
 
-        print(f"Iterative LIST Prediction on snapshot {tau}:")
+
+        print(f"Iterative TMF Prediction     on snapshot {tau}:")
         print(f"  C0 Prec: {c0precision_list[-1]:.4f}  C0 Rec: {c0recall_list[-1]:.4f}  C0 F1: {c0f1_list[-1]:.4f}")
         print(f"  C1 Prec: {c1precision_list[-1]:.4f}  C1 Rec: {c1recall_list[-1]:.4f}  C1 F1: {c1f1_list[-1]:.4f}")
 
-        # Update window for next iteration
+        #Update window for next iteration
         adj_tnr_new = torch.FloatTensor(adj_est).to(device)
         current_window.pop(0)
         current_window.append(adj_tnr_new)
 
-    # === Final metrics ===
+
+# === Final metrics ===
 
     c0_prec_mean, c0_prec_std, c1_prec_mean, c1_prec_std = mean_and_std_from_classlists(c0precision_list, c1precision_list)
     c0_recall_mean, c0_recall_std, c1_recall_mean, c1_recall_std = mean_and_std_from_classlists(c0recall_list, c1recall_list)
@@ -185,11 +185,10 @@ def main():
 
         }
 
-        filename = f"listfc_unweighted_curve_metrics_from_year{start_test}.json"
+        filename = f"tmf_fc_unweighted_curve_metrics_from_year{start_test}.json"
         with open(filename, "w") as f:
             json.dump(metrics_summary, f, indent=2)
 
-
-
+    
 if __name__ == '__main__':
     main()
