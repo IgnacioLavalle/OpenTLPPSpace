@@ -39,7 +39,7 @@ def objective(trial):
     dropout_rate = trial.suggest_float("dropout_rate", 0.1, 0.5, step = 0.1)
     lr_val = trial.suggest_categorical("lr", [0.00005, 0.0001, 0.0005, 0.001, 0.005])
     wd_val = trial.suggest_categorical("weight_decay", [0.00005, 0.0001, 0.0005, 0.001])
-    hid_dim = trial.suggest_categorical("hid_dim", [128,256])
+    hid_dim = trial.suggest_categorical("hid_dim", [512,1024,2048])
     beta = trial.suggest_categorical("beta", [0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0])
     win_size = trial.suggest_categorical("win_size", [2,4,6])
     
