@@ -32,15 +32,23 @@ def append_f1_with(c1f1_list, true_labels, pred_labels):
 
 def objective(trial):
     warnings.filterwarnings("ignore")
-    args = parse_args()
 
-    lr_val = trial.suggest_categorical("lr", [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01])
-    weight_decay_val = trial.suggest_categorical("weight_decay", [0.00005, 0.0001, 0.0005, 0.001])
-    dropout_rate = trial.suggest_float("dropout_rate", 0.1, 0.5, step = 0.1) # Dropout rate
-    alpha = trial.suggest_categorical("alpha", [0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
-    beta = trial.suggest_float("beta", 0.0, 1.0, step = 0.2)
-    hid_dim = trial.suggest_categorical("hid_dim", [256,512,1024,2048])
-    win_size = trial.suggest_categorical("win_size", [2,4,6]) # Window size of historical snapshots
+    #lr_val = trial.suggest_categorical("lr", [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01])
+    #weight_decay_val = trial.suggest_categorical("weight_decay", [0.00005, 0.0001, 0.0005, 0.001])
+    #dropout_rate = trial.suggest_categorical("dropout_rate", 0.1, 0.5, step = 0.1) # Dropout rate
+    #alpha = trial.suggest_categorical("alpha", [0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
+    #beta = trial.suggest_float("beta", 0.0, 1.0, step = 0.2)
+    #hid_dim = trial.suggest_categorical("hid_dim", [256,512,1024,2048])
+    #win_size = trial.suggest_categorical("win_size", [2,4,6]) # Window size of historical snapshots
+
+    lr_val = trial.suggest_categorical("lr", [0.008, 0.01, 0.07, 0.015, 0.2])
+    weight_decay_val = 0.00005
+    dropout_rate = trial.suggest_categorical("dropout_rate", [0.1, 0.2, 0.3]) # Dropout rate
+    alpha = trial.suggest_categorical("alpha", [2.0, 5.0, 6.0, 7.0, 8.0])
+    beta = 0.0
+    hid_dim = trial.suggest_categorical("hid_dim", [512,1024])
+    win_size = trial.suggest_categorical("win_size", [5,6,7,8,9]) # Window size of historical snapshots
+
 
     # ====================
     data_name = 'SMP22to95unweighted'
