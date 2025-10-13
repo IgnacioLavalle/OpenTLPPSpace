@@ -25,7 +25,7 @@ if torch.cuda.is_available():
 def parse_args():
     parser = argparse.ArgumentParser(description="Demonstration of GCNGAN")
     #adding arguments and their respective default value
-    parser.add_argument("--trials", type=int, default=500, help="Number of trials")
+    parser.add_argument("--trials", type=int, default=400, help="Number of trials")
 
     return parser.parse_args()
 
@@ -40,7 +40,7 @@ def append_f1_with(c1f1_list, true_labels, pred_labels):
 
 def objective(trial):
     # ====================
-    data_name = 'SMP22to95unweighted'
+    data_name = 'Recortado677uw'
     num_nodes = 1355 # Number of nodes (Level-1 w/ fixed node set)
     num_snaps = 28 # Number of snapshots
     noise_dim = 32 # Dimension of noise input
