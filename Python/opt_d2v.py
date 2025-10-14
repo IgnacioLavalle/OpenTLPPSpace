@@ -14,16 +14,9 @@ import optuna
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="optuna for d2v unweighted")
+    parser = argparse.ArgumentParser(description="optuna for d2v")
     parser.add_argument("--trials", type=int, default=250, help="Number of trials")
     return parser.parse_args()
-
-def mean_and_std_from_classlists(c0_list, c1_list):
-    c0_mean = np.mean(c0_list)
-    c0_std = np.std(c0_list, ddof=1) if len(c0_list) > 1 else 0.0
-    c1_mean = np.mean(c1_list)
-    c1_std = np.std(c1_list, ddof=1) if len(c1_list) > 1 else 0.0
-    return c0_mean,c0_std,c1_mean,c1_std
 
 def append_f1_with(c1f1_list, true_labels, pred_labels):
     _, _, f1_per_class, _ = \
@@ -53,7 +46,7 @@ def objective(trial):
     dropout_rate = trial.suggest_categorical("dropout_rate", [0.1, 0.2, 0.3, 0.4, 0.5]) # Dropout rate
     win_size = trial.suggest_categorical("win_size", [2,4,6,8]) # Window size of historical snapshots
     batch_size = 1 # Batch size
-    num_epochs = 250 # Number of training epochs
+    num_epochs = 350 # Number of training epochs
     num_val_snaps = 3 # Number of validation snapshots
     num_test_snaps = 3 # Number of test snapshots
     num_train_snaps = num_snaps-num_test_snaps-num_val_snaps # Number of training snapshots
@@ -110,19 +103,11 @@ def objective(trial):
             batch_loss.backward()
             opt.step()
             total_loss = total_loss + batch_loss
-        print('Epoch %d Total Loss %f' % (epoch, total_loss))
 
         # ====================
         # Validate the model
         model.eval()
-        RMSE_list = []
-        MAE_list = []
 
-        c0precision_list = []
-        c0recall_list = []
-        c0f1_list = []
-        c1precision_list = []
-        c1recall_list = []
         c1f1_list = []
 
         for tau in range(num_snaps-num_test_snaps-num_val_snaps, num_snaps-num_test_snaps):
@@ -157,6 +142,13 @@ def objective(trial):
 
             true_labels = (true_vals >= 1).astype(int)
             pred_labels = (pred_vals >= class_th).astype(int)
+
+            append_f1_with(c1f1_list, true_labels, pred_labels)
+
+        # ====================
+        val_c1_f1_mean = np.mean(c1f1_list)
+    
+    return val_c1_f1_mean
 
 def main():
     args = parse_args()
