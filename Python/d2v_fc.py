@@ -19,8 +19,8 @@ def parse_args():
     parser.add_argument("--dropout_rate", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size (default: 1)")
     parser.add_argument("--num_epochs", type=int, default=500, help="Number of training epochs (default: 500)")
-    parser.add_argument("--num_val_snaps", type=int, default=3, help="Number of validation snapshots (default: 3)")
-    parser.add_argument("--num_test_snaps", type=int, default=3, help="Number of test snapshots (default: 3)")
+    parser.add_argument("--num_val_snaps", type=int, default=0, help="Number of validation snapshots (default: 3)")
+    parser.add_argument("--num_test_snaps", type=int, default=6, help="Number of test snapshots (default: 3)")
     parser.add_argument("--lr", type=float, default=0.0001, help="Learning rate (default: 1e-4)")
     parser.add_argument("--weight_decay", type=float, default=0.002, help="Weight decay (default: 0.002)")
     parser.add_argument("--beta", type=float, default=0.2, help="Beta value (default: 0.2)")
@@ -144,7 +144,7 @@ def main():
             batch_loss.backward()
             opt.step()
             total_loss = total_loss + batch_loss
-        print('Epoch %d Total Loss %f' % (epoch, total_loss))
+        print('Epoch %d Total Loss %f' % (epoch, total_loss.detach().item()))
 
         # ====================
         # Validate the model
