@@ -106,10 +106,10 @@ def main():
     lr_disc = args.lr_disc
     weight_decay_val = args.weight_decay
     # Define the optimizer
-    gen_opt = optim.RMSprop(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
-    disc_opt = optim.RMSprop(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
-    #gen_opt = optim.Adam(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
-    #disc_opt = optim.Adam(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
+    #gen_opt = optim.RMSprop(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
+    #disc_opt = optim.RMSprop(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
+    gen_opt = optim.Adam(gen_net.parameters(), lr=lr_gen, weight_decay=weight_decay_val)
+    disc_opt = optim.Adam(disc_net.parameters(), lr=lr_disc, weight_decay=weight_decay_val)
 
     best_val_f1 = -1.0 # Or any metric you want to track for 'best' model
     best_epoch = -1
