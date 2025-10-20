@@ -34,7 +34,7 @@ def parse_args():
     parser.add_argument("--weight_decay", type=float, default=0.00001, help="Weight decay (default: 1e-5)")
     parser.add_argument("--alpha", type=float, default=10.0, help="Alpha value (default: 10.0)")
     parser.add_argument("--win_size", type=int, default=2, help="Window size of historical snapshots (default: 2)")
-    parser.add_argument("--data_name", type=str, default ='SMP22to95unweighted', help = "Dataset name")
+    parser.add_argument("--data_name", type=str, default ='Recortado677uw', help = "Dataset name")
     parser.add_argument("--clipping_step", type=float, default =0.01, help = "Threshold of the clipping step (for parameters of discriminator)")
 
 
@@ -79,8 +79,8 @@ def main():
 
     # ====================
     edge_seq = np.load('data/%s_edge_seq.npy' % (data_name), allow_pickle=True)
-    valid_mask = np.zeros((1355, 1355), dtype=bool)
-    valid_mask[0:137, 137:1355] = True
+    valid_mask = np.zeros((678, 678), dtype=bool)
+    valid_mask[0:137, 137:678] = True
 
     #La parte de abajo es el one hot encoding que todavia no se donde meterlo en este codigo
     #node_labels = np.zeros((num_nodes, 2), dtype=np.float32)
