@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument("--lr", type=float, default= 0.00005, help="Learning rate (default: 1e-4)")
     parser.add_argument("--weight_decay", type=float, default= 0.0005, help="Weight decay (default: 0.002)")
     parser.add_argument("--beta", type=float, default=0.4, help="Beta value (default: 0.2)")
-    parser.add_argument("--win_size", type=int, default=1, help="Window size of historical snapshots (default: 1)")
+    parser.add_argument("--win_size", type=int, default=4, help="Window size of historical snapshots (default: 1)")
     parser.add_argument("--max_thres", type=float, default=2.0, help="Threshold for maximum edge weight (default: 2) (el maximo del grafo es 17500)")
     parser.add_argument("--data_name", type=str, default ='SMP22to95', help = "Dataset name")
     parser.add_argument("--dim", type=int, default=2048)
