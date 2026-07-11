@@ -1,92 +1,60 @@
 #!/bin/bash
 
+set -e
 
-echo "===== Grafo pesado dataset completo ====="
+run_experiment() {
+    local nombre="$1"
+    shift
 
-for i in {1..4}
-do
-    echo "===== DDNE Corrida $i ====="
-    python3 DDNE_fc_oos.py 2>&1 | tee "tiempos/ddne_corrida${i}.txt"
-done
+    local total=0
 
-for i in {1..4}
-do
-    echo "===== ELD Corrida $i ====="
-    python3 eld_fc.py 2>&1 | tee "tiempos/eld_corrida${i}.txt"
-done
+    echo
+    echo "===== $nombre ====="
 
-for i in {1..4}
-do
-    echo "===== d2v Corrida $i ====="
-    python3 d2v_fc.py 2>&1 | tee "tiempos/d2v_corrida${i}.txt"
-done
+    for i in {1..5}
+    do
+        echo "--- Corrida $i ---"
 
-for i in {1..4}
-do
-    echo "===== TMF Corrida $i ====="
-    python3 TMF_fc.py 2>&1 | tee "tiempos/tmf_corrida${i}.txt"
-done
+        SECONDS=0
 
-for i in {1..4}
-do
-    echo "===== List Corrida $i ====="
-    python3 LIST_FC.py 2>&1 | tee "tiempos/list_corrida${i}.txt"
-done
+        python3 "$@"
 
+        local tiempo=$SECONDS
+        total=$((total + tiempo))
 
+        echo "Tiempo corrida $i: ${tiempo} s"
+        echo
+    done
 
-echo "===== Grafo no pesado dataset completo ====="
+    promedio=$(awk "BEGIN {printf \"%.2f\", $total/5}")
 
-for i in {1..4}
-do
-    echo "===== TMF no pesado Corrida $i ====="
-    python3 tmf_uw_fc.py 2>&1 | tee "tiempos/tmy_unw_corrida${i}.txt"
-done
+    echo "--------------------------------------"
+    echo "Tiempo total: ${total} s"
+    echo "Tiempo promedio: ${promedio} s"
+    echo "======================================"
+    echo
+}
 
-for i in {1..4}
-do
-    echo "===== List no pesado Corrida $i ====="
-    python3 list_uw_fc.py 2>&1 | tee "tiempos/list_unw_corrida${i}.txt"
-done
+echo "######## Grafo pesado - Dataset completo ########"
 
+run_experiment "DDNE" DDNE_fc_oos.py
+run_experiment "ELD" eld_fc.py
+run_experiment "D2V" d2v_fc.py
+run_experiment "TMF" TMF_fc.py
+run_experiment "LIST" LIST_FC.py
 
+echo "######## Grafo no pesado - Dataset completo ########"
 
-echo "===== Grafo pesado dataset recortado ====="
+run_experiment "TMF no pesado" tmf_uw_fc.py
+run_experiment "LIST no pesado" list_uw_fc.py
 
+echo "######## Grafo pesado - Dataset recortado ########"
 
-for i in {1..4}
-do
-    echo "===== DDNE rec Corrida $i ====="
-    python3 gcngan_fc_oos.py 2>&1 | tee "tiempos/ddne_rec_corrida${i}.txt"
-done
+run_experiment "GCNGAN recortado" gcngan_fc_oos.py
+run_experiment "DDNE recortado" DDNE_fc_oos.py --data_name Recortado677
+run_experiment "ELD recortado" eld_fc.py --data_name Recortado677
+run_experiment "D2V recortado" d2v_fc.py --data_name Recortado677
+run_experiment "TMF recortado" TMF_fc.py --data_name Recortado677
+run_experiment "LIST recortado" LIST_FC.py --data_name Recortado677
 
-for i in {1..4}
-do
-    echo "===== DDNE rec Corrida $i ====="
-    python3 DDNE_fc_oos.py --data_name 'Recortado677' 2>&1 | tee "tiempos/ddne_rec_corrida${i}.txt"
-done
-
-for i in {1..4}
-do
-    echo "===== ELD rec Corrida $i ====="
-    python3 eld_fc.py --data_name 'Recortado677' 2>&1 | tee "tiempos/eld_rec_corrida${i}.txt"
-done
-
-for i in {1..4}
-do
-    echo "===== d2v rec Corrida $i ====="
-    python3 d2v_fc.py --data_name 'Recortado677' 2>&1 | tee "tiempos/d2v_rec_corrida${i}.txt"
-done
-
-for i in {1..4}
-do
-    echo "===== TMF rec Corrida $i ====="
-    python3 TMF_fc.py --data_name 'Recortado677' 2>&1 | tee "tiempos/tmf_rec_corrida${i}.txt"
-done
-
-for i in {1..4}
-do
-    echo "===== List rec Corrida $i ====="
-    python3 LIST_FC.py --data_name 'Recortado677' 2>&1 | tee "tiempos/list_rec_corrida${i}.txt"
-done
-
+echo "######## Todos los experimentos finalizaron ########"
