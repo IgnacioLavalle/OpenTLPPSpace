@@ -1,1 +1,55 @@
-python3: can't open file '/home/ilavalle/tesisProductSpace/OpenTLP/OpenTLPPSpace/Python/TMF_fc.py': [Errno 2] No such file or directory
+data_name: Recortado677, max_thres: 1.5, win_size: 10, prediction threshold: 1.0 hid_dim: 256, alpha: 0.05, theta: 1.2, beta: 0.001, num_epochs: 500, lr: 0.01
+
+======= Iterative Forecast with TMF =======
+Iterative TMF Prediction     on snapshot 22:
+  C0 Prec: 0.9930  C0 Rec: 0.9872  C0 F1: 0.9901
+  C1 Prec: 0.8408  C1 Rec: 0.9065  C1 F1: 0.8724
+  RMSE: 0.1621  MAE: 0.0763
+  Class 0 -> MAE: 0.0598  RMSE: 0.1324
+  Class 1 -> MAE: 0.2980  RMSE: 0.3792
+
+Iterative TMF Prediction     on snapshot 23:
+  C0 Prec: 0.9918  C0 Rec: 0.9807  C0 F1: 0.9862
+  C1 Prec: 0.7736  C1 Rec: 0.8906  C1 F1: 0.8280
+  RMSE: 0.2363  MAE: 0.1148
+  Class 0 -> MAE: 0.0848  RMSE: 0.1863
+  Class 1 -> MAE: 0.5191  RMSE: 0.5843
+
+Iterative TMF Prediction     on snapshot 24:
+  C0 Prec: 0.9911  C0 Rec: 0.9755  C0 F1: 0.9833
+  C1 Prec: 0.7268  C1 Rec: 0.8817  C1 F1: 0.7968
+  RMSE: 0.3197  MAE: 0.1588
+  Class 0 -> MAE: 0.1146  RMSE: 0.2454
+  Class 1 -> MAE: 0.7573  RMSE: 0.8189
+
+Iterative TMF Prediction     on snapshot 25:
+  C0 Prec: 0.9912  C0 Rec: 0.9703  C0 F1: 0.9806
+  C1 Prec: 0.6826  C1 Rec: 0.8808  C1 F1: 0.7691
+  RMSE: 0.4201  MAE: 0.2111
+  Class 0 -> MAE: 0.1520  RMSE: 0.3186
+  Class 1 -> MAE: 1.0270  RMSE: 1.1005
+
+Iterative TMF Prediction     on snapshot 26:
+  C0 Prec: 0.9903  C0 Rec: 0.9665  C0 F1: 0.9782
+  C1 Prec: 0.6552  C1 Rec: 0.8702  C1 F1: 0.7476
+  RMSE: 0.5373  MAE: 0.2732
+  Class 0 -> MAE: 0.1953  RMSE: 0.3983
+  Class 1 -> MAE: 1.3371  RMSE: 1.4378
+
+Iterative TMF Prediction     on snapshot 27:
+  C0 Prec: 0.9896  C0 Rec: 0.9612  C0 F1: 0.9752
+  C1 Prec: 0.6160  C1 Rec: 0.8605  C1 F1: 0.7180
+  RMSE: 0.6847  MAE: 0.3481
+  Class 0 -> MAE: 0.2505  RMSE: 0.5081
+  Class 1 -> MAE: 1.6992  RMSE: 1.8398
+
+Final metrics mean and std
+
+  C0 Prec: 0.9912 (+-0.0012)  C0 Rec: 0.9736 (+-0.0095)  C0 F1: 0.9823 (+-0.0054)
+  C1 Prec: 0.7158 (+-0.0823)  C1 Rec: 0.8817 (+-0.0160)  C1 F1: 0.7887 (+-0.0560)
+
+RMSE 0.3934 (+-0.1949)  MAE 0.1970 (+-0.1016)
+Class 0 -> MAE 0.1428 (+-0.0714), RMSE 0.2982 (+-0.1395)
+Class 1 -> MAE 0.9396 (+-0.5224), RMSE 1.0267 (+-0.5466)
+
+Total runtime was: 17.12 seconds
