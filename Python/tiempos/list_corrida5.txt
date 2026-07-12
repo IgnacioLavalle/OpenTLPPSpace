@@ -1,0 +1,54 @@
+data_name: SMP22to95, max_thres: 2.0, win_size: 5, prediction threshold: 1.0hid_dim: 256, lambd: 0.1, theta: 7.0, beta: 0.1, b_iterations: 100, num_epochs: 1000, lr: 0.01
+
+Iterative LIST Prediction on snapshot 22:
+  C0 Prec: 0.9807  C0 Rec: 0.9729  C0 F1: 0.9768
+  C1 Prec: 0.8419  C1 Rec: 0.8829  C1 F1: 0.8619
+  RMSE: 0.3038  MAE: 0.1531
+  Class 0 -> MAE: 0.1122  RMSE: 0.2440
+  Class 1 -> MAE: 0.4028  RMSE: 0.5411
+
+Iterative LIST Prediction on snapshot 23:
+  C0 Prec: 0.9855  C0 Rec: 0.9019  C0 F1: 0.9419
+  C1 Prec: 0.6051  C1 Rec: 0.9190  C1 F1: 0.7297
+  RMSE: 1.2837  MAE: 0.6929
+  Class 0 -> MAE: 0.3704  RMSE: 0.7506
+  Class 1 -> MAE: 2.6647  RMSE: 2.8773
+
+Iterative LIST Prediction on snapshot 24:
+  C0 Prec: 0.9860  C0 Rec: 0.8541  C0 F1: 0.9153
+  C1 Prec: 0.5066  C1 Rec: 0.9250  C1 F1: 0.6547
+  RMSE: 3.7576  MAE: 2.0219
+  Class 0 -> MAE: 1.0627  RMSE: 2.0434
+  Class 1 -> MAE: 7.9438  RMSE: 8.6896
+
+Iterative LIST Prediction on snapshot 25:
+  C0 Prec: 0.9853  C0 Rec: 0.8322  C0 F1: 0.9023
+  C1 Prec: 0.4665  C1 Rec: 0.9218  C1 F1: 0.6195
+  RMSE: 9.5095  MAE: 5.1918
+  Class 0 -> MAE: 2.8461  RMSE: 5.2462
+  Class 1 -> MAE: 19.9263  RMSE: 22.0362
+
+Iterative LIST Prediction on snapshot 26:
+  C0 Prec: 0.9818  C0 Rec: 0.8179  C0 F1: 0.8924
+  C1 Prec: 0.4437  C1 Rec: 0.9057  C1 F1: 0.5956
+  RMSE: 22.7141  MAE: 12.6448
+  Class 0 -> MAE: 7.2462  RMSE: 12.9208
+  Class 1 -> MAE: 46.3030  RMSE: 51.8817
+
+Iterative LIST Prediction on snapshot 27:
+  C0 Prec: 0.9786  C0 Rec: 0.7975  C0 F1: 0.8788
+  C1 Prec: 0.4114  C1 Rec: 0.8902  C1 F1: 0.5628
+  RMSE: 52.4719  MAE: 29.8633
+  Class 0 -> MAE: 18.1282  RMSE: 31.5576
+  Class 1 -> MAE: 103.6537  RMSE: 117.4902
+
+Final metrics mean and std
+
+  C0 Prec: 0.9830 (+-0.0031)  C0 Rec: 0.8627 (+-0.0647)  C0 F1: 0.9179 (+-0.0360)
+  C1 Prec: 0.5459 (+-0.1597)  C1 Rec: 0.9074 (+-0.0176)  C1 F1: 0.6707 (+-0.1097)
+
+RMSE 15.0068 (+-20.1211)  MAE 8.4280 (+-11.4636)
+Class 0 -> MAE 4.9610 (+-6.9692), RMSE 8.7937 (+-12.0927)
+Class 1 -> MAE 30.1491 (+-39.7535), RMSE 33.9193 (+-45.0826)
+
+Total runtime was: 23.04 seconds

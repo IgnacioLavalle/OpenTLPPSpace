@@ -1,0 +1,26 @@
+data_name: SMP22to95unweighted, win_size: 3, hid_dim: 512, lambd: 0.1, theta: 7.0, beta: 0.1, b_iterations: 100, num_epochs: 750, lr: 0.001
+
+Iterative LIST Prediction on snapshot 22:
+  C0 Prec: 0.9773  C0 Rec: 0.9792  C0 F1: 0.9782
+  C1 Prec: 0.8711  C1 Rec: 0.8609  C1 F1: 0.8660
+Iterative LIST Prediction on snapshot 23:
+  C0 Prec: 0.9715  C0 Rec: 0.9735  C0 F1: 0.9725
+  C1 Prec: 0.8359  C1 Rec: 0.8257  C1 F1: 0.8308
+Iterative LIST Prediction on snapshot 24:
+  C0 Prec: 0.9691  C0 Rec: 0.9696  C0 F1: 0.9694
+  C1 Prec: 0.8119  C1 Rec: 0.8093  C1 F1: 0.8106
+Iterative LIST Prediction on snapshot 25:
+  C0 Prec: 0.9660  C0 Rec: 0.9353  C0 F1: 0.9504
+  C1 Prec: 0.6614  C1 Rec: 0.7935  C1 F1: 0.7214
+Iterative LIST Prediction on snapshot 26:
+  C0 Prec: 0.9604  C0 Rec: 0.8784  C0 F1: 0.9176
+  C1 Prec: 0.5052  C1 Rec: 0.7740  C1 F1: 0.6114
+Iterative LIST Prediction on snapshot 27:
+  C0 Prec: 0.9558  C0 Rec: 0.8423  C0 F1: 0.8955
+  C1 Prec: 0.4323  C1 Rec: 0.7552  C1 F1: 0.5498
+Final metrics mean and std
+
+  C0 Prec: 0.9667 (+-0.0078)  C0 Rec: 0.9297 (+-0.0570)  C0 F1: 0.9473 (+-0.0336)
+  C1 Prec: 0.6863 (+-0.1845)  C1 Rec: 0.8031 (+-0.0377)  C1 F1: 0.7317 (+-0.1278)
+
+Total runtime was: 15.30 seconds
